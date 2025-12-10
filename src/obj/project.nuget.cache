@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6DV05UvXQiw=",
+  "success": true,
+  "projectFilePath": "D:\\ksa-mods\\pebkaccompanion\\Compendium.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kerry\\.nuget\\packages\\lib.harmony\\2.4.2\\lib.harmony.2.4.2.nupkg.sha512",
+    "C:\\Users\\Kerry\\.nuget\\packages\\starmap.api\\0.3.4\\starmap.api.0.3.4.nupkg.sha512"
+  ],
+  "logs": []
+}

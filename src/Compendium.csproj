@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<!-- Your mod namespace, usually same as your project name -->
+		<!-- This is supposed to be the name the DLL file gets built with-->
+		<ModNamespace>Compendium</ModNamespace>
+
+		<!-- Edit (optional) - Location to send the built mod files, include your mod folder name! -->
+		<!--                   This location has to also have copies of the necessary core game dlls since it's also used to get the game dlls -->
+    <!--                   If you use the default game install location it saves alot of work and your mods copy there on build for testing -->
+		<KSAFolder>C:\Program Files\Kitten Space Agency</KSAFolder>
+
+		<!-- Do not edit - Location where the built mod files will be found -->
+		<!--               This folder will be named by your target framework when you build -->
+		<BuildDir>bin\Debug\$(TargetFramework)\</BuildDir>
+
+    <!-- Do not edit - Full path to send built mod files to -->
+		<SendBuildToTestDir>$(KSAFolder)\Content\$(ModNamespace)</SendBuildToTestDir>
+	</PropertyGroup>
+
+
+  <!-- Copies files -->
+	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+		<Copy SourceFiles="$(BuildDir)mod.toml" DestinationFolder="$(SendBuildToTestDir)" />
+		<Copy SourceFiles="$(BuildDir)$(ModNamespace).deps.json" DestinationFolder="$(SendBuildToTestDir)" />
+		<Copy SourceFiles="$(BuildDir)$(ModNamespace).dll" DestinationFolder="$(SendBuildToTestDir)" />
+    <Copy SourceFiles="ModMenu.Attributes.dll" DestinationFolder="$(SendBuildToTestDir)" />
+    
+    <!-- Copy Fonts folder to the build dir-->
+    <ItemGroup>
+      <FontFiles Include="$(BuildDir)Fonts\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(FontFiles)" DestinationFolder="$(SendBuildToTestDir)\Fonts\%(RecursiveDir)" />
+    <!-- Copy Data folder to the build dir-->
+    <ItemGroup>
+      <DataFiles Include="$(BuildDir)Data\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DataFiles)" DestinationFolder="$(SendBuildToTestDir)\Data\%(RecursiveDir)" />
+    <!-- Copy Compendium folder to the build dir-->
+    <ItemGroup>
+      <CompendiumFiles Include="$(BuildDir)Compendium\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(CompendiumFiles)" DestinationFolder="$(SendBuildToTestDir)\Compendium\%(RecursiveDir)" />
+	</Target>
+
+
+  <ItemGroup>
+  <!-- Nuget package references -->
+	  <PackageReference Include="Lib.Harmony" Version="2.4.2">
+		  <PrivateAssets>all</PrivateAssets>
+	  </PackageReference>
+	  <PackageReference Include="StarMap.API" Version="0.3.4">
+		  <PrivateAssets>all</PrivateAssets>
+	  </PackageReference>
+    <!-- nuget.org doesn't seem to actually have this as a package on nuget right now -->
+    <!-- (terminal command to add via nuget:) dotnet add package ModMenu.Attributes -->
+    <!-- <PackageReference Include="ModMenu.Attributes" Version="1.0.1" /> -->
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <!-- Copies each of the things to the output dir -->
+    <None Update="mod.toml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Fonts\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Compendium\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    
+    <Reference Include="ModMenu.Attributes">
+      <HintPath>ModMenu.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Brutal.Core.Common">
+      <HintPath>$(KSAFolder)\Brutal.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Brutal.Core.Numerics">
+      <HintPath>$(KSAFolder)\Brutal.Core.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Brutal.ImGui">
+      <HintPath>$(KSAFolder)\Brutal.ImGui.dll</HintPath>
+		<Private>false</Private>
+    </Reference>
+    <Reference Include="KSA">
+      <HintPath>$(KSAFolder)\KSA.dll</HintPath>
+		<Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>

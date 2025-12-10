@@ -1,0 +1,29 @@
+{
+    "CompendiumJson": "True",
+    "Compendium": {
+        "Luna": {
+            "ListGroups": [ "Moons" ],
+            "OrbitLineGroup": "Luna",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Moon"
+        },
+        "Phobos": {
+            "ListGroups": [ "Moons" ],
+            "OrbitLineGroup": "Moons",
+            "Text": "value4",
+            "Factoids": [ "value5", "value6" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Phobos_(moon)"
+        },
+        "Deimos": {
+            "ListGroups": [ "Moons" ],
+            "OrbitLineGroup": "Moons",
+            "Text": "value7",
+            "Factoids": [ "value8", "value9" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Deimos_(moon)"
+        }
+    }
+}

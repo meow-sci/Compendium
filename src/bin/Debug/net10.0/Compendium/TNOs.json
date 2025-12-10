@@ -1,0 +1,61 @@
+{
+    "CompendiumJson": "True",
+    "Compendium": {
+        "Orcus": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Orcus is a large trans-Neptunian object and a possible dwarf planet in the Kuiper belt, orbiting the Sun at an average distance of 39.2 AU.",
+            "Factoids": [ "Orcus has a large moon named Vanth.", "It has a diameter of approximately 910 kilometers." ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Haumea"
+        },
+        "Pluto": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Pluto is a dwarf planet in the Kuiper belt, a ring of bodies beyond Neptune. It was the first Kuiper belt object to be discovered and is the largest known plutoid.",
+            "Factoids": [ "Pluto has five known moons: Charon, Styx, Nix, Kerberos, and Hydra.", "It was reclassified from a planet to a dwarf planet in 2006." ],
+            "VisitedBy": [ "New Horizons" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Pluto"
+        },
+        "Haumea": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Haumea"
+        },
+        "Quaoar": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Quaoar"
+        },
+        "Makemake": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Makemake"
+        },
+        "Eris": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Eris"
+        },
+        "Sedna": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Sedna"
+        }
+    }
+}
