@@ -1,0 +1,237 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "Ariel": {
+      "ListGroups": ["Major"],
+      "OrbitLineGroup": "Major",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Ariel"
+    },
+    "Umbriel": {
+      "ListGroups": ["Major"],
+      "OrbitLineGroup": "Major",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Umbriel"
+    },
+    "Titania": {
+      "ListGroups": ["Major"],
+      "OrbitLineGroup": "Major",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Titania"
+    },
+    "Oberon": {
+      "ListGroups": ["Major"],
+      "OrbitLineGroup": "Major",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Oberon"
+    },
+    "Miranda": {
+      "ListGroups": ["Major"],
+      "OrbitLineGroup": "Major",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Miranda"
+    },
+    "Cordelia": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Cordelia"
+    },
+    "Ophelia": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Ophelia"
+    },
+    "Bianca": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Bianca"
+    },
+    "Cressida": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Cressida"
+    },
+    "Desdemona": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Desdemona"
+    },
+    "Juliet": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Juliet"
+    },
+    "Portia": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Portia"
+    },
+    "Rosalind": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Rosalind"
+    },
+    "Belinda": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Belinda"
+    },
+    "Puck": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Puck"
+    },
+    "Caliban": {
+      "ListGroups": ["Caliban"],
+      "OrbitLineGroup": "Caliban",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Caliban"
+    },
+    "Sycorax": {
+      "ListGroups": ["Irregular Uranus"],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Sycorax"
+    },
+    "Prospero": {
+      "ListGroups": ["Irregular Uranus"],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Prospero"
+    },
+    "Setebos": {
+      "ListGroups": ["Irregular Uranus"],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Setebos"
+    },
+    "Stephano": {
+      "ListGroups": ["Caliban"],
+      "OrbitLineGroup": "Caliban",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Stephano"
+    },
+    "Trinculo": {
+      "ListGroups": ["Irregular Uranus"],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Trinculo"
+    },
+    "Francisco": {
+      "ListGroups": ["Irregular Uranus"],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Francisco"
+    },
+    "Margaret": {
+      "ListGroups": ["Margaret"],
+      "OrbitLineGroup": "Margaret",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Margaret"
+    },
+    "Ferdinand": {
+      "ListGroups": ["Irregular Uranus"],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Ferdinand"
+    },
+    "Perdita": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Perdita"
+    },
+    "Mab": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Mab"
+    },
+    "Cupid": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Cupid"
+    },
+    "S2023_U_01": {
+      "ListGroups": ["Caliban"],
+      "OrbitLineGroup": "Caliban",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "S/2023_U_1"
+    },
+    "S2025_U_01": {
+      "ListGroups": ["Inner Uranus"],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "S/2025_U_1"
+    }
+  }
+}

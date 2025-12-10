@@ -1,0 +1,781 @@
+{
+    "CompendiumJson": "True",
+    "Compendium": {
+        "Io": {
+            "ListGroups": [ "Galilean" ],
+            "OrbitLineGroup": "Galilean",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Io_(moon)"
+        },
+        "Europa": {
+            "ListGroups": [ "Galilean" ],
+            "OrbitLineGroup": "Galilean",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Europa_(moon)"
+        },
+        "Ganymede": {
+            "ListGroups": [ "Galilean" ],
+            "OrbitLineGroup": "Galilean",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Ganymede_(moon)"
+        },
+        "Callisto": {
+            "ListGroups": [ "Galilean" ],
+            "OrbitLineGroup": "Galilean",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Callisto_(moon)"
+        },
+        "Amalthea": {
+            "ListGroups": [ "Inner Jupiter" ],
+            "OrbitLineGroup": "Inner Jupiter",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Amalthea_(moon)"
+        },
+        "Thebe": {
+            "ListGroups": [ "Inner Jupiter" ],
+            "OrbitLineGroup": "Inner Jupiter",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Thebe_(moon)"
+        },
+        "Adrastea": {
+            "ListGroups": [ "Inner Jupiter" ],
+            "OrbitLineGroup": "Inner Jupiter",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Adrastea_(moon)"
+        },
+        "Metis": {
+            "ListGroups": [ "Inner Jupiter" ],
+            "OrbitLineGroup": "Inner Jupiter",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Metis_(moon)"
+        },
+        "Himalia": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Himalia_(moon)"
+        },
+        "Elara": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Elara_(moon)"
+        },
+        "Pasiphae": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Pasiphae_(moon)"
+        },
+        "Sinope": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Sinope_(moon)"
+        },
+        "Lysithea": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Lysithea_(moon)"
+        },
+        "Carme": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Carme_(moon)"
+        },
+        "Ananke": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Ananke_(moon)"
+        },
+        "Leda": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Leda_(moon)"
+        },
+        "Callirrhoe": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Callirrhoe_(moon)"
+        },
+        "Themisto": {
+            "ListGroups": [ "Themisto" ],
+            "OrbitLineGroup": "Themisto",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Themisto_(moon)"
+        },
+        "Magaclite": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Megaclite_(moon)"
+        },
+        "Taygete": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Taygete_(moon)"
+        },
+        "Chaldene": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Chaldene_(moon)"
+        },
+        "Harpalyke": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Harpalyke_(moon)"
+        },
+        "Kalyke": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Kalyke_(moon)"
+        },
+        "Iocaste": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Iocaste_(moon)"
+        },
+        "Erinome": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Erinome_(moon)"
+        },
+        "Isonoe": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Isonoe_(moon)"
+        },
+        "Praxidike": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Praxidike_(moon)"
+        },
+        "Autonoe": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Autonoe_(moon)"
+        },
+        "Thyone": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Thyone_(moon)"
+        },
+        "Hermippe": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Hermippe_(moon)"
+        },
+        "Aitne": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Aitne_(moon)"
+        },
+        "Eurydome": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Eurydome_(moon)"
+        },
+        "Euanthe": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Euanthe_(moon)"
+        },
+        "Euporie": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Euporie_(moon)"
+        },
+        "Orthosie": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Orthosie_(moon)"
+        },
+        "Sponde": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Sponde_(moon)"
+        },
+        "Kale": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Kale_(moon)"
+        },
+        "Pasithee": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Pasithee_(moon)"
+        },
+        "Hegemone": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Hegemone_(moon)"
+        },
+        "Mneme": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Mneme_(moon)"
+        },
+        "Aoede": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Aoede_(moon)"
+        },
+        "Thelxinoe": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Thelxinoe_(moon)"
+        },
+        "Arche": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Arche_(moon)"
+        },
+        "Kallichore": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Kallichore_(moon)"
+        },
+        "Helike": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Helike_(moon)"
+        },
+        "Carpo": {
+            "ListGroups": [ "Carpo" ],
+            "OrbitLineGroup": "Carpo",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Carpo_(moon)"
+        },
+        "Eukelade": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Eukelade_(moon)"
+        },
+        "Cyllene": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Cyllene_(moon)"
+        },
+        "Kore": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Kore_(moon)"
+        },
+        "Herse": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Herse_(moon)"
+        },
+        "S2010_J_1": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2010_J_1"
+        },
+        "S2010_J_2": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2010_J_2"
+        },
+        "Dia": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Dia_(moon)"
+        },
+        "S2016_J_1": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2016_J_1"
+        },
+        "S2003_J_18": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_18"
+        },
+        "S2011_J_2": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2011_J_2"
+        },
+        "Eirene": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Eirene_(moon)"
+        },
+        "Philophrosyne": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Philophrosyne_(moon)"
+        },
+        "S2017_J_1": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_1"
+        },
+        "Eupheme": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Eupheme_(moon)"
+        },
+        "S2003_J_19": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_19"
+        },
+        "Valetudo": {
+            "ListGroups": [ "Valetudo" ],
+            "OrbitLineGroup": "Valetudo",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Valetudo_(moon)"
+        },
+        "S2017_J_2": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_2"
+        },
+        "S2017_J_3": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_3"
+        },
+        "Pandia": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Pandia_(moon)"
+        },
+        "S2017_J_5": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_5"
+        },
+        "S2017_J_6": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_6"
+        },
+        "S2017_J_7": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_7"
+        },
+        "S2017_J_8": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_8"
+        },
+        "S2017_J_9": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_9"
+        },
+        "Ersa": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Ersa_(moon)"
+        },
+        "S2011_J_1": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2011_J_1"
+        },
+        "S2003_J_2": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_2"
+        },
+        "S2003_J_4": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_4"
+        },
+        "S2003_J_9": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_9"
+        },
+        "S2003_J_10": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_10"
+        },
+        "S2003_J_12": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_12"
+        },
+        "S2003_J_16": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_16"
+        },
+        "S2003_J_23": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_23"
+        },
+        "S2003_J_24": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2003_J_24"
+        },
+        "S2011_J_3": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2011_J_3"
+        },
+        "S2018_J_2": {
+            "ListGroups": [ "Himalia" ],
+            "OrbitLineGroup": "Himalia",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2018_J_2"
+        },
+        "S2018_J_3": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2018_J_3"
+        },
+        "S2021_J_1": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2021_J_1"
+        },
+        "S2021_J_2": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2021_J_2"
+        },
+        "S2021_J_3": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2021_J_3"
+        },
+        "S2021_J_4": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2021_J_4"
+        },
+        "S2021_J_5": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2021_J_5"
+        },
+        "S2021_J_6": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2021_J_6"
+        },
+        "S2016_J_3": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2016_J_3"
+        },
+        "S2016_J_4": {
+            "ListGroups": [ "Pasiphae" ],
+            "OrbitLineGroup": "Pasiphae",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2016_J_4"
+        },
+        "S2018_J_4": {
+            "ListGroups": [ "Carpo" ],
+            "OrbitLineGroup": "Carpo",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2018_J_4"
+        },
+        "S2022_J_1": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2022_J_1"
+        },
+        "S2022_J_2": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2022_J_2"
+        },
+        "S2022_J_3": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2022_J_3"
+        },
+        "S2017_J_10": {
+            "ListGroups": [ "Ananke" ],
+            "OrbitLineGroup": "Ananke",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_10"
+        },
+        "S2017_J_11": {
+            "ListGroups": [ "Carme" ],
+            "OrbitLineGroup": "Carme",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "S/2017_J_11"
+        }
+    }
+}

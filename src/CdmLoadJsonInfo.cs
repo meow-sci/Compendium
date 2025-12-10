@@ -7,10 +7,11 @@ namespace Compendium
         // The different fields that can be in the JSON data for each celestial body
         public string? Sorting { get; set; }
         public List<string>? ListGroups { get; set; }
+        public string? OrbitLineGroup { get; set; }
         public string? Text { get; set; }
         public List<string>? Factoids { get; set; }
         public List<string>? VisitedBy { get; set; }
-        public string? LearnMoreUrl { get; set; }
+        public string? WikipediaUrl { get; set; }
     }
 
     public partial class Compendium

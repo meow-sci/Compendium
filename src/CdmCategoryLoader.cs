@@ -12,9 +12,45 @@ namespace Compendium
         // Method to load categories from the loaded JSON data, or hardcoded defaults if none found
         public void CategoryLoader(Astronomical? worldSun = null)
         {
-            // Uses the loaded JSON data to populate category lists for celestial bodies
-            // Extracts the key name (e.g., "Compendium" from "Compendium.Mercury")
-            // and collects all unique ListGroups values for each key
+            // Build the category tree structure
+            // buttonsCatsTree will have structure: [categoryName][parentBodyId] = { "Body": parentBodyId, "Children": [childBodyId1, childBodyId2, ...] }
+            buttonsCatsTree = new Dictionary<string, Dictionary<string, object>>();
+            
+            
+            // Collect all celestial objects from the tree
+            var allCelestials = new List<Celestial>();
+            
+            // Use passed worldSun parameter, or fall back to Universe.WorldSun
+            var sunToUse = worldSun ?? Universe.WorldSun;
+            
+            if (sunToUse != null)
+            {
+                CollectAllCelestials(sunToUse, allCelestials);
+                if (allCelestials.Count > 0)
+                {
+                    categoriesBuiltWithCelestials = true;
+                }
+            }
+            else
+            {
+                categoriesBuiltWithCelestials = false;
+            }
+
+            // Build a lookup for parent-child relationships
+            var childToParentMap = new Dictionary<string, string>();
+            foreach (var cel in allCelestials)
+            {
+                foreach (var child in cel.Children)
+                {
+                    if (child is Celestial childCel)
+                    {
+                        childToParentMap[childCel.Id] = cel.Id;
+                    }
+                }
+            }
+            
+            // NOW build categoriesDict from JSON data, but ONLY for bodies that are NOT children
+            categoriesDict.Clear(); // Clear any previous data
             
             foreach (var kvp in bodyJsonDict)
             {
@@ -25,13 +61,29 @@ namespace Compendium
                 if (fullKey == "CompendiumJson" || fullKey.StartsWith("CompendiumJson."))
                     { continue; }
 
+                // Extract the body ID (part after the dot)
+                string bodyId;
+                int dotIndex = fullKey.IndexOf('.');
+                if (dotIndex > 0)
+                { bodyId = fullKey.Substring(dotIndex + 1); }
+                else
+                { bodyId = fullKey; }
+                
+                // SKIP if this body is a child of another body (e.g., skip moons)
+                // Check case-insensitive since celestial IDs might have different casing
+                bool isChild = childToParentMap.Keys.Any(k => k.Equals(bodyId, StringComparison.OrdinalIgnoreCase));
+                if (isChild)
+                {
+                    continue;
+                }
+                
                 // Extract the key name (part before the first dot)
                 string keyName;
-                int dotIndex = fullKey.IndexOf('.');
                 if (dotIndex > 0)
                 { keyName = fullKey.Substring(0, dotIndex); }
                 else
                 { keyName = fullKey; }
+                
                 // Add ListGroups to the dictionary for this key
                 if (data != null && data.ListGroups != null)
                 {
@@ -69,46 +121,6 @@ namespace Compendium
 
             }
 
-            // Build the category tree structure
-            // buttonsCatsTree will have structure: [categoryName][parentBodyId] = { "Body": parentBodyId, "Children": [childBodyId1, childBodyId2, ...] }
-            buttonsCatsTree = new Dictionary<string, Dictionary<string, object>>();
-            
-            var logFile = @"C:\temp\compendium_debug.log";
-            
-            // Collect all celestial objects from the tree
-            var allCelestials = new List<Celestial>();
-            
-            // Use passed worldSun parameter, or fall back to Universe.WorldSun
-            var sunToUse = worldSun ?? Universe.WorldSun;
-            
-            if (sunToUse != null)
-            {
-                CollectAllCelestials(sunToUse, allCelestials);
-                System.IO.File.AppendAllText(logFile, $"CategoryLoader - Collected {allCelestials.Count} celestials\n");
-                if (allCelestials.Count > 0)
-                {
-                    categoriesBuiltWithCelestials = true;
-                }
-            }
-            else
-            {
-                System.IO.File.AppendAllText(logFile, "CategoryLoader - worldSun is NULL\n");
-                categoriesBuiltWithCelestials = false;
-            }
-
-            // Build a lookup for parent-child relationships
-            var childToParentMap = new Dictionary<string, string>();
-            foreach (var cel in allCelestials)
-            {
-                foreach (var child in cel.Children)
-                {
-                    if (child is Celestial childCel)
-                    {
-                        childToParentMap[childCel.Id] = cel.Id;
-                    }
-                }
-            }
-
             // Process each category
             if (categoryNames != null)
             {
@@ -124,6 +136,12 @@ namespace Compendium
                     var celestialsInCategory = new List<Celestial>();
                     foreach (var cel in allCelestials)
                     {
+                        // IGNORE bodies that are children of other bodies - their categories should not create buttons
+                        if (childToParentMap.ContainsKey(cel.Id))
+                        {
+                            continue;
+                        }
+                        
                         // Try system-specific key first (e.g., "SolarSystem.Mercury")
                         CompendiumData? celData = null;
                         string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
@@ -136,22 +154,15 @@ namespace Compendium
                             Compendium.bodyJsonDict.TryGetValue(compendiumKey, out celData);
                         }
                         
-                        System.IO.File.AppendAllText(logFile, $"  Checking {cel.Id} for category {categoryName}\n");
-                        System.IO.File.AppendAllText(logFile, $"    Tried keys: {systemKey}, {compendiumKey}\n");
-                        System.IO.File.AppendAllText(logFile, $"    celData is null: {celData == null}\n");
                         if (celData != null)
                         {
-                            System.IO.File.AppendAllText(logFile, $"    ListGroups is null: {celData.ListGroups == null}\n");
                             if (celData.ListGroups != null)
                             {
-                                System.IO.File.AppendAllText(logFile, $"    ListGroups: {string.Join(", ", celData.ListGroups)}\n");
-                                System.IO.File.AppendAllText(logFile, $"    Contains {categoryName}: {celData.ListGroups.Contains(categoryName)}\n");
                             }
                         }
 
                         if (celData != null && celData.ListGroups != null && celData.ListGroups.Contains(categoryName))
                         {
-                            System.IO.File.AppendAllText(logFile, $"    MATCHED! Adding {cel.Id} to category {categoryName}\n");
                             celestialsInCategory.Add(cel);
                         }
                     }
@@ -185,7 +196,6 @@ namespace Compendium
                                 if (child is Celestial childCel)
                                 {
                                     childrenList.Add(childCel.Id);
-                                    System.IO.File.AppendAllText(logFile, $"    Added child {childCel.Id} to parent {cel.Id}\n");
                                 }
                             }
                         }

@@ -7,7 +7,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Mariner 10", "MESSENGER" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Mercury_(planet)"
+            "WikipediaUrl": "Mercury_(planet)"
         },
         "Venus": {
             "ListGroups": [ "Planets" ],
@@ -15,7 +15,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Mariner 2", "Mariner 5", "Mariner 10", "Venera 7", "Venera 9", "Pioneer Venus", "Magellan", "Venus Express" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Venus"
+            "WikipediaUrl": "Venus"
         },
         "Earth": {
             "ListGroups": [ "Planets" ],
@@ -23,7 +23,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Apollo 11", "Apollo 12", "Apollo 14", "Apollo 15", "Apollo 16", "Apollo 17" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Earth"
+            "WikipediaUrl": "Earth"
         },
         "Mars": {
             "ListGroups": [ "Planets" ],
@@ -31,7 +31,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Viking 1", "Viking 2", "Pathfinder", "Spirit", "Opportunity", "Curiosity", "Perseverance" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Mars"
+            "WikipediaUrl": "Mars"
         },
         "Jupiter": {
             "ListGroups": [ "Planets" ],
@@ -39,7 +39,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Pioneer 10", "Pioneer 11", "Voyager 1", "Voyager 2", "Galileo", "Juno" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Jupiter"
+            "WikipediaUrl": "Jupiter"
         },
         "Saturn": {
             "ListGroups": [ "Planets" ],
@@ -47,7 +47,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Pioneer 11", "Voyager 1", "Voyager 2", "Cassini-Huygens" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Saturn"
+            "WikipediaUrl": "Saturn"
         },
         "Uranus": {
             "ListGroups": [ "Planets" ],
@@ -55,7 +55,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Voyager 2" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Uranus"
+            "WikipediaUrl": "Uranus"
         },
         "Neptune": {
             "ListGroups": [ "Planets" ],
@@ -63,7 +63,7 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Voyager 2" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Neptune"
+            "WikipediaUrl": "Neptune"
         }
     }
 }

@@ -1,0 +1,133 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "Triton": {
+      "ListGroups": ["Triton"],
+      "OrbitLineGroup": "Triton",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Triton"
+    },
+    "Nereid": {
+      "ListGroups": ["Nereid"],
+      "OrbitLineGroup": "Nereid",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Nereid"
+    },
+    "Naiad": {
+      "ListGroups": ["Inner Neptune"],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Naiad"
+    },
+    "Thalassa": {
+      "ListGroups": ["Inner Neptune"],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Thalassa"
+    },
+    "Despina": {
+      "ListGroups": ["Inner Neptune"],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Despina"
+    },
+    "Galatea": {
+      "ListGroups": ["Inner Neptune"],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Galatea"
+    },
+    "Larissa": {
+      "ListGroups": ["Inner Neptune"],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Larissa"
+    },
+    "Proteus": {
+      "ListGroups": ["Inner Neptune"],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Proteus"
+    },
+    "Halimede": {
+      "ListGroups": ["Halimede"],
+      "OrbitLineGroup": "Halimede",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Halimede"
+    },
+    "Psamathe": {
+      "ListGroups": ["Neso"],
+      "OrbitLineGroup": "Neso",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Psamathe"
+    },
+    "Sao": {
+      "ListGroups": ["Sao"],
+      "OrbitLineGroup": "Sao",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Sao"
+    },
+    "Laomedeia": {
+      "ListGroups": ["Sao"],
+      "OrbitLineGroup": "Sao",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Laomedeia"
+    },
+    "Neso": {
+      "ListGroups": ["Neso"],
+      "OrbitLineGroup": "Neso",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Neso"
+    },
+    "Hippocamp": {
+      "ListGroups": ["Inner"],
+      "OrbitLineGroup": "Inner",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Hippocamp"
+    },
+    "S2002_N_05": {
+      "ListGroups": ["Sao"],
+      "OrbitLineGroup": "Sao",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "S/2002_N_5"
+    },
+    "S2021_N_01": {
+      "ListGroups": ["Neso"],
+      "OrbitLineGroup": "Neso",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "S/2021_N_1"
+    }
+  }
+}

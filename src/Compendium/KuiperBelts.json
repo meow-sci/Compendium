@@ -1,0 +1,13 @@
+{
+    "CompendiumJson": "True",
+    "Compendium": {
+        "Arrokoth": {
+            "ListGroups": [ "Kuiper Belt" ],
+            "OrbitLineGroup": "Kuiper Belt Objects",
+            "Text": "Arrokoth is a contact binary Kuiper belt object that was visited by the New Horizons spacecraft in 2019.",
+            "Factoids": [ "Arrokoth has a bilobed shape resembling a snowman.", "It has a diameter of approximately 36 kilometers." ],
+            "VisitedBy": [ "New Horizons" ],
+            "WikipediaUrl": "486958_Arrokoth"
+        }
+    }
+}

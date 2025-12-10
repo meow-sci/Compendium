@@ -2,12 +2,20 @@
     "CompendiumJson": "True",
     "Compendium": {
         "Orcus": {
-            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects", "Kuiper Belt" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
             "Text": "Orcus is a large trans-Neptunian object and a possible dwarf planet in the Kuiper belt, orbiting the Sun at an average distance of 39.2 AU.",
             "Factoids": [ "Orcus has a large moon named Vanth.", "It has a diameter of approximately 910 kilometers." ],
             "VisitedBy": [ "None" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Haumea"
+            "WikipediaUrl": "Orcus"
+        },
+        "Vanth": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Vanth is the largest moon of the trans-Neptunian object Orcus.",
+            "Factoids": [ "Vanth has a diameter of approximately 442 kilometers. It was discovered in 2007." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "90482_Vanth"
         },
         "Pluto": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
@@ -15,15 +23,31 @@
             "Text": "Pluto is a dwarf planet in the Kuiper belt, a ring of bodies beyond Neptune. It was the first Kuiper belt object to be discovered and is the largest known plutoid.",
             "Factoids": [ "Pluto has five known moons: Charon, Styx, Nix, Kerberos, and Hydra.", "It was reclassified from a planet to a dwarf planet in 2006." ],
             "VisitedBy": [ "New Horizons" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Pluto"
+            "WikipediaUrl": "Pluto"
         },
         "Haumea": {
-            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects", "Kuiper Belt" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Haumea"
+            "WikipediaUrl": "Haumea"
+        },
+            "Hiaka": {
+            "ListGroups": [ "Trans-Neptunian Objects", "Kuiper Belt" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Hiaka is a small satellite of Haumea.",
+            "Factoids": [ "Hiaka has a diameter of approximately 4 kilometers.", "It was discovered in 2000." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "4766_Hiaka"
+        },
+        "Namaka": {
+            "ListGroups": [ "Trans-Neptunian Objects", "Kuiper Belt" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Namaka is a small satellite of Haumea.",
+            "Factoids": [ "Namaka has a diameter of approximately 5 kilometers.", "It was discovered in 2001." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "55576_Namaka"
         },
         "Quaoar": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
@@ -31,23 +55,49 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Quaoar"
+            "WikipediaUrl": "Quaoar"
         },
+        "Weywot": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Weywot is the only known moon of Quaoar.",
+            "Factoids": [ "Weywot has a diameter of approximately 81 kilometers.", "It was discovered in 2007." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Weywot"
+        },
+
         "Makemake": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Makemake"
+            "WikipediaUrl": "Makemake"
         },
+        "S/2015_M_1 (MK2)": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "S/2015 (MK2) is the only known moon of Makemake.",
+            "Factoids": [ "S/2015 (MK2) has a diameter of approximately 175 kilometers.", "It was discovered in 2015." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "2015_(136472)_1"
+        },
+
         "Eris": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Eris"
+            "WikipediaUrl": "Eris"
+        },
+        "Dysnomia": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "value1",
+            "Factoids": [ "value2", "value3" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Dysnomia_(moon)"
         },
         "Sedna": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
@@ -55,7 +105,15 @@
             "Text": "value1",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
-            "LearnMoreUrl": "https://en.wikipedia.org/wiki/Sedna"
+            "WikipediaUrl": "Sedna"
+        },
+        "Salacia": {
+            "ListGroups": [ "Dwarf Planets", "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Salacia is a large trans-Neptunian object classified as a dwarf planet.",
+            "Factoids": [ "Salacia has a diameter of approximately 854 kilometers.", "It has a moon named Actaea." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "120347_Salacia"
         }
     }
 }

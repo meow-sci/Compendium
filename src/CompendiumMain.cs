@@ -1,4 +1,5 @@
 ﻿using Brutal.ImGuiApi;
+using Brutal.ImGuiApi.Internal;
 using Brutal.Numerics;
 using KSA;
 using ModMenu;
@@ -184,24 +185,30 @@ namespace Compendium
                 
                 // Makes the category buttons by using which keys exist in the buttonsCatsTree dictionary,
                 // using the categoryKeys list made just after making buttonCatsTree
-                if (buttonsCatsTree != null && categoryKeys != null && categoryKeys.Count > 0)
+                // If there is a Planets category, make sure it is the first entry.  After that list all of the other categories alphabetically.
+                List<string> sortedCategoryKeys = new List<string>(categoryKeys);
+                if (sortedCategoryKeys.Contains("Planets"))
                 {
-                    for (int i = 0; i < categoryKeys.Count; i++)
-                    {
-                        string key = categoryKeys[i];
-                        // Skip Moons category
-                        if (key == "Moons")
-                            continue;
-                            
-                        ImString categoryButton = new ImString(key);
-                        if (ImGui.SmallButton(categoryButton))
-                        { 
-                            selectedCategoryIndex = i;
-                            selectedCategoryKey = key;
-                        }
-                    }
+                    sortedCategoryKeys.Remove("Planets");
+                    sortedCategoryKeys.Sort();
+                    sortedCategoryKeys.Insert(0, "Planets");
                 }
-                
+                else
+                {
+                    sortedCategoryKeys.Sort();
+                }
+                foreach (var categoryKey in sortedCategoryKeys)
+                {
+                    ImString buttonLabel = new ImString(categoryKey);
+                    
+                    if (ImGui.Button(buttonLabel))
+                    {
+                        selectedCategoryKey = categoryKey;
+                        selectedCategoryIndex = sortedCategoryKeys.IndexOf(categoryKey);
+                    }
+
+                }
+
                 // Pop small font and restore large font
                 ImGui.PopFont();
                 PushTheFont(1);
@@ -279,9 +286,9 @@ namespace Compendium
                 if (selectedCelestial != null)
                 {
                     // Show URL link if JSON data with URL is available
-                    if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.LearnMoreUrl))
+                    if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.WikipediaUrl))
                     { 
-                        ImString linkText = new ImString(bodyJson.LearnMoreUrl);
+                        ImString linkText = new ImString($"https://en.wikipedia.org/wiki/{bodyJson.WikipediaUrl}");
                         ImGui.TextLinkOpenURL(linkText);
                     }
                     
@@ -338,7 +345,7 @@ namespace Compendium
                     if (selectedCelestial.Children.Count > 0)
                     {
                         ImGui.Text(" ");
-                        ImString toggleMoonsText = new ImString("Toggle Satellite Body Orbits:  ");
+                        ImString toggleMoonsText = new ImString("Toggle All Satellite Body Orbits:  ");
                         ImGui.Text(toggleMoonsText); ImGui.SameLine();
                         // Makes two buttons, one which turns on all the orbit lines of the moons, and one which turns them all off
                         ImString moonsOnText = new ImString("< On >");
@@ -365,6 +372,88 @@ namespace Compendium
                             }
                         }
                     }
+                    // Now checks to see if the body is a Parent and has more than one group of Child OrbitLineGroups.  If so, make buttons to toggle each group on/off
+                    var orbitLineGroups = new HashSet<string>();
+                    foreach (var child in selectedCelestial.Children)
+                    {
+                        if (child is Celestial cel)
+                        {
+                            // Try to get the OrbitLineGroup from the JSON data for this child celestial
+                            CompendiumData? childBodyJson = null;
+                            string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+                            if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
+                            {
+                                Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson);
+                            }
+                            if (childBodyJson != null && !string.IsNullOrEmpty(childBodyJson.OrbitLineGroup))
+                            {
+                                orbitLineGroups.Add(childBodyJson.OrbitLineGroup);
+                            }
+                        }
+                    }
+                    if (orbitLineGroups.Count > 1)
+                    {
+                        ImGui.Text(" ");
+                        ImString orbitGroupText = new ImString("Toggle Orbit Lines by Group:  ");
+                        ImGui.Text(orbitGroupText);
+                        ImGui.Separator();
+                        foreach (var group in orbitLineGroups)
+                        {
+                            ImGui.BulletText($" "); ImGui.SameLine();
+                            ImString groupOnText = new ImString($"< On >##groupOn_{group}");
+         
+                            if (ImGui.Button(groupOnText))
+                            {
+                                foreach (var child in selectedCelestial.Children)
+                                {
+                                    if (child is Celestial cel)
+                                    {
+                                        // Get the OrbitLineGroup from JSON
+                                        CompendiumData? childBodyJson = null;
+                                        string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+                                        if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
+                                        {
+                                            Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson);
+                                        }
+                                        if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
+                                        {
+                                            cel.ShowOrbit = true;
+                                        }
+                                    }
+                                }
+                            }
+                            ImGui.SameLine();
+                            ImString groupOffText = new ImString($"< Off >##groupOff_{group}");
+                            if (ImGui.Button(groupOffText))
+                            {
+                                foreach (var child in selectedCelestial.Children)
+                                {
+                                    if (child is Celestial cel)
+                                    {
+                                        // Get the OrbitLineGroup from JSON
+                                        CompendiumData? childBodyJson = null;
+                                        string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+                                        if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
+                                        {
+                                            Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson);
+                                        }
+                                        if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
+                                        {
+                                            cel.ShowOrbit = false;
+                                        }
+                                    }
+                                    
+                                }
+                                
+                            }
+                            ImGui.SameLine();
+                            ImString groupText = new ImString($"{group}");
+                            ImGui.Text(groupText);
+
+                        }
+
+                    }
+                    ImGui.Text(" ");
 
                     // After displaying the celestial properties, show JSON compendium data if available
                     if (bodyJson != null)
@@ -441,16 +530,10 @@ namespace Compendium
         {
             try
             {
-                Console.WriteLine("=== Compendium - OnFullyLoaded START ===");
-
                 // Loads body categories from the loaded JSON data - this determines buttons to make.
-                Console.WriteLine("About to call CategoryLoader()");
                 CategoryLoader();
-                Console.WriteLine("CategoryLoader() completed");
 
-                Console.WriteLine("About to call GetCategoryKeys()");
                 categoryKeys = GetCategoryKeys();
-                Console.WriteLine($"GetCategoryKeys() returned {categoryKeys?.Count ?? 0} keys");
 
                 // Makes logging to show each thing added to the buttonsCatsTree dictionary
                 if (buttonsCatsTree == null)
@@ -459,7 +542,6 @@ namespace Compendium
                     return;
                 }
                 
-                Console.WriteLine($"buttonsCatsTree has {buttonsCatsTree.Count} categories");
                 foreach (var category in buttonsCatsTree)
                 {
                     Console.WriteLine($"Category: {category.Key}");
@@ -473,7 +555,6 @@ namespace Compendium
                     }
                 }
 
-                Console.WriteLine("=== Compendium - OnFullyLoaded END ===");
             }
             catch (Exception ex)
             {

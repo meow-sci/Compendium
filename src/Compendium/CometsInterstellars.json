@@ -1,0 +1,61 @@
+{
+    "CompendiumJson": "True",
+    "Compendium": {
+        "Oumuamua": {
+            "ListGroups": [ "Interstellar Objects" ],
+            "OrbitLineGroup": "Interstellar Objects",
+            "Text": "Oumuamua is the first known interstellar object detected passing through the Solar System.",
+            "Factoids": [ "Oumuamua has a highly elongated shape.", "It was discovered in October 2017." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "1I/ʻOumuamua"
+        },
+        "Halley": {
+            "ListGroups": [ "Comets" ],
+            "OrbitLineGroup": "Comets",
+            "Text": "Halley's Comet is a short-period comet visible from Earth every 75-76 years.",
+            "Factoids": [ "Halley's Comet last appeared in 1986.", "It is the only known short-period comet that is regularly visible to the naked eye from Earth." ],
+            "VisitedBy": [ "Giotto", "Vega 1", "Vega 2" ],
+            "WikipediaUrl": "Halley's_Comet"
+        },
+        "Borrelly": {
+            "ListGroups": [ "Comets" ],
+            "OrbitLineGroup": "Comets",
+            "Text": "Comet Borrelly is a short-period comet that was visited by the Deep Space 1 spacecraft in 2001.",
+            "Factoids": [ "Comet Borrelly has a nucleus approximately 8 kilometers long.", "It has a dark surface with low reflectivity." ],
+            "VisitedBy": [ "Deep Space 1" ],
+            "WikipediaUrl": "19P/Borrelly"
+        },
+        "Tempel 1": {
+            "ListGroups": [ "Comets" ],
+            "OrbitLineGroup": "Comets",
+            "Text": "Comet Tempel 1 is a periodic comet that was the target of NASA's Deep Impact mission in 2005.",
+            "Factoids": [ "Comet Tempel 1 has a nucleus approximately 6 kilometers in diameter.", "The Deep Impact mission created a crater on the comet's surface to study its composition." ],
+            "VisitedBy": [ "Deep Impact", "Stardust-NExT" ],
+            "WikipediaUrl": "9P/Tempel"
+        },
+        "Wild 2": {
+            "ListGroups": [ "Comets" ],
+            "OrbitLineGroup": "Comets",
+            "Text": "Comet Wild 2 is a Jupiter-family comet that was visited by NASA's Stardust mission in 2004.",
+            "Factoids": [ "Comet Wild 2 has a nucleus approximately 5 kilometers in diameter.", "The Stardust mission collected samples of the comet's dust and returned them to Earth." ],
+            "VisitedBy": [ "Stardust" ],
+            "WikipediaUrl": "81P/Wild"
+        },
+        "Hartley 2": {
+            "ListGroups": [ "Comets" ],
+            "OrbitLineGroup": "Comets",
+            "Text": "Comet Hartley 2 is a small, active comet that was visited by NASA's EPOXI mission in 2010.",
+            "Factoids": [ "Comet Hartley 2 has a nucleus approximately 2.2 kilometers long.", "The EPOXI mission observed the comet's activity and surface features." ],
+            "VisitedBy": [ "EPOXI" ],
+            "WikipediaUrl": "103P/Hartley"
+        },
+        "Churyumov-Gerasimenko": {
+            "ListGroups": [ "Comets" ],
+            "OrbitLineGroup": "Comets",
+            "Text": "Comet 67P/Churyumov-Gerasimenko is a Jupiter-family comet that was the target of the European Space Agency's Rosetta mission.",
+            "Factoids": [ "The comet has a distinctive rubber duck shape.", "The Rosetta mission deployed the Philae lander to the comet's surface." ],
+            "VisitedBy": [ "Rosetta", "Philae" ],
+            "WikipediaUrl": "67P/Churyumov–Gerasimenko"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "Charon": {
+      "ListGroups": ["Charon"],
+      "OrbitLineGroup": "Charon",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Charon_(moon)"
+    },
+    "Nix": {
+      "ListGroups": ["Minor Pluto"],
+      "OrbitLineGroup": "Minor Pluto",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Nix_(moon)"
+    },
+    "Hydra": {
+      "ListGroups": ["Minor Pluto"],
+      "OrbitLineGroup": "Minor Pluto",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Hydra_(moon)"
+    },
+    "Kerberos": {
+      "ListGroups": ["Minor Pluto"],
+      "OrbitLineGroup": "Minor Pluto",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Kerberos_(moon)"
+    },
+    "Styx": {
+      "ListGroups": ["Minor Pluto"],
+      "OrbitLineGroup": "Minor Pluto",
+      "Text": "value1",
+      "Factoids": ["value2", "value3"],
+      "VisitedBy": ["None"],
+      "WikipediaUrl": "Styx_(moon)"
+    }
+  }
+}
