@@ -1,6 +1,12 @@
 {
     "CompendiumJson": "True",
     "Compendium": {
+        "ListGroupsData": {
+            "Asteroids": {
+                "CatText": "Asteroids are rocky bodies that orbit the Sun, mostly found in the asteroid belt between Mars and Jupiter.",
+                "CatWikipediaUrl": "Asteroid"
+            }
+        },
         "Ceres": {
             "ListGroups": [ "Dwarf Planets", "Asteroids" ],
             "OrbitLineGroup": "Asteroids",
@@ -168,14 +174,22 @@
             "Factoids": [ "Dimorphos has a diameter of approximately 0.16 kilometers.", "It is the target of NASA's DART mission." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Dimorphos"
-    },
-    "Haunua": {
+        },
+        "Haunu": {
             "ListGroups": [ "Asteroids" ],
             "OrbitLineGroup": "Asteroids",
-            "Text": "Haunua is a small asteroid in the asteroid belt.",
-            "Factoids": [ "Haunua has a diameter of approximately 3 kilometers.", "It was discovered in 1999." ],
+            "Text": "Haunu is a small asteroid in the asteroid belt.",
+            "Factoids": [ "Haunu has a diameter of approximately 3 kilometers.", "It was discovered in 1999." ],
             "VisitedBy": [ "None" ],
-            "WikipediaUrl": "9950_Haunua"
-        } 
+            "WikipediaUrl": "469705_ǂKá̦gára"
+        },
+        "Kagara": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Kagara is a small asteroid in the asteroid belt.",
+            "Factoids": [ "Kagara has a diameter of approximately 4 kilometers.", "It was discovered in 1999." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "469705_ǂKá̦gára"
+        }
     }
 }

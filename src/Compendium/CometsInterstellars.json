@@ -1,6 +1,16 @@
 {
     "CompendiumJson": "True",
     "Compendium": {
+        "ListGroupsData": {
+            "Comets": {
+                "CatText": "Comets are icy bodies that release gas or dust, originating from the outer regions of the Solar System.",
+                "CatWikipediaUrl": "Comet"
+            },
+            "Interstellar Objects": {
+                "CatText": "Interstellar Objects are objects that originate outside the Solar System, passing through it.",
+                "CatWikipediaUrl": "Interstellar_object"
+            }
+        },
         "Oumuamua": {
             "ListGroups": [ "Interstellar Objects" ],
             "OrbitLineGroup": "Interstellar Objects",
@@ -49,7 +59,7 @@
             "VisitedBy": [ "EPOXI" ],
             "WikipediaUrl": "103P/Hartley"
         },
-        "Churyumov-Gerasimenko": {
+        "Churyumov-Gerasimnko": {
             "ListGroups": [ "Comets" ],
             "OrbitLineGroup": "Comets",
             "Text": "Comet 67P/Churyumov-Gerasimenko is a Jupiter-family comet that was the target of the European Space Agency's Rosetta mission.",

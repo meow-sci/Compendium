@@ -20,7 +20,47 @@ namespace Compendium
             }
         }
 
+        public Celestial? FindCelestialById(Astronomical? root, string id)
+        {
+            if (root == null) return null;
+            if (root is Celestial cel && cel.Id == id)
+            {
+                return cel;
+            }
+            foreach (var child in root.Children)
+            {
+                var found = FindCelestialById(child, id);
+                if (found != null) return found;
+            }
+            return null;
+        }
 
+        public void ToggleCategoryOrbits(string categoryKey, bool showOrbit)
+        {
+            if (buttonsCatsTree == null || !buttonsCatsTree.ContainsKey(categoryKey)) return;
+            
+            var categoryTreeData = buttonsCatsTree[categoryKey];
+            foreach (var parentEntry in categoryTreeData)
+            {
+                // Toggle parent orbit
+                var parentCelestial = FindCelestialById(Universe.WorldSun, parentEntry.Key);
+                if (parentCelestial != null)
+                {
+                    parentCelestial.ShowOrbit = showOrbit;
+                }
+                
+                // Toggle children orbits
+                var childrenIds = (List<string>)((Dictionary<string, object>)parentEntry.Value)["Children"];
+                foreach (var childId in childrenIds)
+                {
+                    var childCelestial = FindCelestialById(Universe.WorldSun, childId);
+                    if (childCelestial != null)
+                    {
+                        childCelestial.ShowOrbit = showOrbit;
+                    }
+                }
+            }
+        }
 
         public void PushTheFont(float scale)
         {

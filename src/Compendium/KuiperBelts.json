@@ -1,6 +1,12 @@
 {
     "CompendiumJson": "True",
     "Compendium": {
+        "ListGroupsData": {
+            "Kuiper Belt": {
+                "CatText": "The Kuiper Belt is a region of the Solar System beyond Neptune, populated with small icy bodies.",
+                "CatWikipediaUrl": "Kuiper_belt"
+            }
+        },
         "Arrokoth": {
             "ListGroups": [ "Kuiper Belt" ],
             "OrbitLineGroup": "Kuiper Belt Objects",

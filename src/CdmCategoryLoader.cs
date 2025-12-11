@@ -49,7 +49,7 @@ namespace Compendium
                 }
             }
             
-            // NOW build categoriesDict from JSON data, but ONLY for bodies that are NOT children
+            // NOW build categoriesDict from JSON data
             categoriesDict.Clear(); // Clear any previous data
             
             foreach (var kvp in bodyJsonDict)
@@ -57,7 +57,7 @@ namespace Compendium
                 string fullKey = kvp.Key; // e.g., "Compendium.Mercury"
                 CompendiumData data = kvp.Value;
 
-                // Skip CompendiumJson entries
+                // Skip CompendiumJson entries - that simply identifies it as a json to read.
                 if (fullKey == "CompendiumJson" || fullKey.StartsWith("CompendiumJson."))
                     { continue; }
 
@@ -119,6 +119,14 @@ namespace Compendium
                 // Fallback to hardcoded default categories
                 categoryNames = ["FallbackCats", "Planets", "Dwarf Planets", "Trans-Neptunian Objects", "Main Asteroids", "Comets", "Interstellar Objects", "Other"];
 
+            }
+
+
+
+            // Ensure "Other" category always exists for uncategorized bodies
+            if (categoryNames != null && !categoryNames.Contains("Other"))
+            {
+                categoryNames = categoryNames.Append("Other").ToArray();
             }
 
             // Process each category
@@ -200,10 +208,73 @@ namespace Compendium
                             }
                         }
                     }
+                    // Now for any game loaded celestial which did not get added to buttonsCatsTree at all (e.g., because it has no category in JSON), add it to the "Other" category if it exists and add the body there.
+                    if (categoryName == "Other")
+                    {
+                        foreach (var cel in allCelestials)
+                        {
+                            // IGNORE bodies that are children of other bodies - their categories should not create buttons
+                            if (childToParentMap.ContainsKey(cel.Id))
+                            {
+                                continue;
+                            }
+                            
+                            // Check if this celestial is already in buttonsCatsTree under any category
+                            bool alreadyAdded = false;
+                            foreach (var cat in buttonsCatsTree.Keys)
+                            {
+                                if (buttonsCatsTree[cat].ContainsKey(cel.Id))
+                                {
+                                    alreadyAdded = true;
+                                    break;
+                                }
+                            }
+                            
+                            if (!alreadyAdded)
+                            {
+                                // Add this celestial to the "Other" category
+                                buttonsCatsTree["Other"][cel.Id] = new Dictionary<string, object>
+                                {
+                                    ["Body"] = cel.Id,
+                                    ["Children"] = new List<string>()
+                                };
+                                
+                                // Also add its children
+                                var parentData = (Dictionary<string, object>)buttonsCatsTree["Other"][cel.Id];
+                                var childrenList = (List<string>)parentData["Children"];
+                                
+                                foreach (var child in cel.Children)
+                                {
+                                    if (child is Celestial childCel)
+                                    {
+                                        childrenList.Add(childCel.Id);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // Now see if the categoryName has a 'ListGroupsData.<categoryName>' key in buttonsCatsTree.  If it does, add a key named 'data' to the    buttonsCatsTree[categoryName] dictionary with that data.
+                    // This attaches some category-level descriptive data to the category for display in the UI when the category is selected.
+                    CompendiumData? listGroupData = null;
+                    if (!bodyJsonDict.TryGetValue($"{systemName}.ListGroupsData.{categoryName}", out listGroupData))
+                    {
+                        // Fall back to default "Compendium" key (e.g., "Compendium.ListGroupsData.Asteroids")
+                        bodyJsonDict.TryGetValue($"Compendium.ListGroupsData.{categoryName}", out listGroupData);
+                    }
+                    if (listGroupData != null)
+                    { buttonsCatsTree[categoryName]["Data"] = listGroupData; }
+                }
+                // Finally - look to the "Other" category and see if it has any bodies. If it does not, remove the "Other" category entirely.
+                if (buttonsCatsTree.ContainsKey("Other"))
+                {
+                    if (buttonsCatsTree["Other"].Count == 0)
+                    {
+                        buttonsCatsTree.Remove("Other");
+                    }
                 }
             }
-
-
+            
         }
         // Method to get the list of category keys - it gets called after CategoryLoader runs to populate buttonsCatsTree
         public List<string> GetCategoryKeys()

@@ -1,6 +1,12 @@
 {
     "CompendiumJson": "True",
     "Compendium": {
+        "ListGroupsData": {
+            "Trans-Neptunian Objects": {
+                "CatText": "Trans-Neptunian Objects (TNOs) are celestial bodies that orbit the Sun at a greater distance than Neptune. Many TNOs are classified as dwarf planets.",
+                "CatWikipediaUrl": "Trans-Neptunian_object"
+            }
+        },
         "Orcus": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects", "Kuiper Belt" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",

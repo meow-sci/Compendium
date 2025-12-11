@@ -1,6 +1,12 @@
 {
     "CompendiumJson": "True",
     "Compendium": {
+        "ListGroupsData": {
+            "Planets": {
+                "CatText": "Planets are large celestial bodies that orbit stars and have cleared their orbital neighborhood of other debris. There are eight planets in our solar system.",
+                "CatWikipediaUrl": "Planet"
+            }
+        },
         "Mercury": {
             "ListGroups": [ "Planets" ],
             "OrbitLineGroup": "Planets",

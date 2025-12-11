@@ -10,7 +10,6 @@ namespace Compendium
     {
         public void PrintSelectedCategoryByKey(string categoryKey)
         {
-            
             try
             {                
                 if (string.IsNullOrEmpty(categoryKey) || buttonsCatsTree == null || !buttonsCatsTree.ContainsKey(categoryKey))
@@ -49,7 +48,10 @@ namespace Compendium
                             { PushTheColor("ltblue"); }
                             
                             if (ImGui.Selectable(parentId, isParentSelected))
-                            { selectedCelestialId = parentBodyId; }
+                            { 
+                                selectedCelestialId = parentBodyId; 
+                                justSelected = parentBodyId;
+                            }
                             
                             if (isParentSelected)
                             { ImGui.PopStyleColor(1); }
@@ -97,7 +99,10 @@ namespace Compendium
                                             { PushTheColor("ltblue"); }
                                             
                                             if (ImGui.Selectable(childIdStr, isChildSelected))
-                                            { selectedCelestialId = childId; }
+                                            { 
+                                                selectedCelestialId = childId; 
+                                                justSelected = childId;
+                                            }
                                             
                                             if (isChildSelected)
                                             { ImGui.PopStyleColor(1); }
@@ -118,7 +123,10 @@ namespace Compendium
                                     { PushTheColor("ltblue"); }
                                     
                                     if (ImGui.Selectable(childIdStr, isChildSelected))
-                                    { selectedCelestialId = childId; }
+                                    { 
+                                        selectedCelestialId = childId; 
+                                        justSelected = childId;
+                                    }
                                     
                                     if (isChildSelected)
                                     { ImGui.PopStyleColor(1); }
@@ -139,7 +147,10 @@ namespace Compendium
                         { PushTheColor("ltblue"); }
                         
                         if (ImGui.Selectable(celestialId, isCelestialSelected))
-                        { selectedCelestialId = parentBodyId; }
+                        {
+                            selectedCelestialId = parentBodyId; 
+                            justSelected = parentBodyId;
+                        }
 
                         if (isCelestialSelected)
                         { ImGui.PopStyleColor(1); }

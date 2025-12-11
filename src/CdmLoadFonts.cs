@@ -44,19 +44,20 @@ namespace Compendium
                                         ImString fontPathStr = new ImString(fontPath);
                                         ImFontPtr font = atlas.AddFontFromFileTTF(fontPathStr, fontSizeCurrent);
                                         loadedFonts[fontName] = font;
-                                        Console.WriteLine($"Loaded font: {fontName}");
                                     }
                                 }
+                                // Now writes to console a single string with all loaded font names
+                                Console.WriteLine($"Compendium: {fontNames.Length} Loaded fonts - " + string.Join(", ", fontNames));
                             }
                         }
                     }
                     else
                     {
-                        Console.WriteLine("No font files found in Fonts folder");
+                        Console.WriteLine("Compendium: No font files found in Fonts folder");
                     }
                 }
                 else
-                { Console.WriteLine($"Fonts directory not found at: {fontsDir}"); }
+                { Console.WriteLine($"Compendium: Fonts directory not found at: {fontsDir}"); }
             }
         }
     }
