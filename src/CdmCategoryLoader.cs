@@ -52,6 +52,19 @@ namespace Compendium
             // NOW build categoriesDict from JSON data
             categoriesDict.Clear(); // Clear any previous data
             
+            // First, find the sun's direct children (top-level bodies)
+            var sunDirectChildren = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            if (sunToUse != null)
+            {
+                foreach (var child in sunToUse.Children)
+                {
+                    if (child is Celestial childCel)
+                    {
+                        sunDirectChildren.Add(childCel.Id);
+                    }
+                }
+            }
+            
             foreach (var kvp in bodyJsonDict)
             {
                 string fullKey = kvp.Key; // e.g., "Compendium.Mercury"
@@ -69,10 +82,10 @@ namespace Compendium
                 else
                 { bodyId = fullKey; }
                 
-                // SKIP if this body is a child of another body (e.g., skip moons)
-                // Check case-insensitive since celestial IDs might have different casing
-                bool isChild = childToParentMap.Keys.Any(k => k.Equals(bodyId, StringComparison.OrdinalIgnoreCase));
-                if (isChild)
+                // SKIP if this body is NOT a direct child of the sun
+                // Only include categories for bodies whose parent is the current sun
+                bool isDirectChildOfSun = sunDirectChildren.Any(id => id.Equals(bodyId, StringComparison.OrdinalIgnoreCase));
+                if (!isDirectChildOfSun)
                 {
                     continue;
                 }
