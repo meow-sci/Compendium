@@ -10,15 +10,15 @@
         "Mercury": {
             "ListGroups": [ "Planets" ],
             "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "Text": "Mercury is the smallest and innermost planet in the Solar System.  It has a rocky body and a very, very thin atmosphere.  It is actually rivaled in size by some of the larger moons in the solar system, such as Ganymede and Titan.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Mariner 10", "MESSENGER" ],
             "WikipediaUrl": "Mercury_(planet)"
         },
         "Venus": {
             "ListGroups": [ "Planets" ],
-            "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "OrbitLineGroup": "Venus is sometimes called Earth's sister planet because of their similar size, mass, proximity to the Sun, and bulk composition. However, Venus has a dense atmosphere composed mainly of carbon dioxide, with clouds of sulfuric acid, making its surface temperature extremely hot.",
+            "Text": "Venus is the second planet from the Sun and has the hottest surface temperature of any planet in our Solar System due to its thick atmosphere.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Mariner 2", "Mariner 5", "Mariner 10", "Venera 7", "Venera 9", "Pioneer Venus", "Magellan", "Venus Express" ],
             "WikipediaUrl": "Venus"
@@ -26,7 +26,7 @@
         "Earth": {
             "ListGroups": [ "Planets" ],
             "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "Text": "Earth is the third planet from the Sun and the only astronomical object known to harbor life. It has a diverse climate and a surface covered by water and land.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Apollo 11", "Apollo 12", "Apollo 14", "Apollo 15", "Apollo 16", "Apollo 17" ],
             "WikipediaUrl": "Earth"
@@ -34,7 +34,7 @@
         "Mars": {
             "ListGroups": [ "Planets" ],
             "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "Text": "Mars is the fourth planet from the Sun and is often referred to as the Red Planet due to its reddish appearance. It has a thin atmosphere and surface features both similar to both the Moon and Earth.  However Mars is a much smaller mass and radius body than Earth.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Viking 1", "Viking 2", "Pathfinder", "Spirit", "Opportunity", "Curiosity", "Perseverance" ],
             "WikipediaUrl": "Mars"
@@ -42,31 +42,31 @@
         "Jupiter": {
             "ListGroups": [ "Planets" ],
             "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "Text": "Jupiter is the largest planet in the Solar System and is known for its prominent bands of clouds and the Great Red Spot, a giant storm. It is a gas giant primarily composed of hydrogen and helium.  It is sometimes called the protector of the inner solar system due to its strong gravitational influence that helps shield the inner planets from some comet and asteroid impacts.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Pioneer 10", "Pioneer 11", "Voyager 1", "Voyager 2", "Galileo", "Juno" ],
             "WikipediaUrl": "Jupiter"
         },
         "Saturn": {
             "ListGroups": [ "Planets" ],
-            "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "OrbitLineGroup": "Saturn is renowned for its extensive ring system, which is composed of ice particles, rocky debris, and dust. It is a gas giant primarily made up of hydrogen and helium.  The rings likely formed from the remnants of comets, asteroids, or shattered moons that were torn apart by Saturn's gravity due to tidal forces within Saturn's Roche limit.",
+            "Text": "Saturn is the sixth planet from the Sun and is famous for its spectacular ring system visible from Earth.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Pioneer 11", "Voyager 1", "Voyager 2", "Cassini-Huygens" ],
             "WikipediaUrl": "Saturn"
         },
         "Uranus": {
             "ListGroups": [ "Planets" ],
-            "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "OrbitLineGroup": "Uranus is known for its unique sideways rotation, with an axial tilt of about 98 degrees. It is an ice giant primarily composed of hydrogen, helium, and ices such as water, ammonia, and methane. Uranus has a faint ring system and numerous moons.",
+            "Text": "Uranus is the seventh planet from the Sun and rotates on its side, making it unique among Solar System planets.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Voyager 2" ],
             "WikipediaUrl": "Uranus"
         },
         "Neptune": {
             "ListGroups": [ "Planets" ],
-            "OrbitLineGroup": "Planets",
-            "Text": "value1",
+            "OrbitLineGroup": "Neptune is the eighth and farthest known planet from the Sun in the Solar System. It is an ice giant primarily composed of hydrogen, helium, and ices such as water, ammonia, and methane. Neptune has a dynamic atmosphere with strong winds and storms.",
+            "Text": "Neptune is the eighth and outermost planet in our Solar System, known for its deep blue color and powerful winds.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "Voyager 2" ],
             "WikipediaUrl": "Neptune"

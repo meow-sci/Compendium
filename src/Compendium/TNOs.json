@@ -34,7 +34,7 @@
         "Haumea": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects", "Kuiper Belt" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
-            "Text": "value1",
+            "Text": "Haumea is a dwarf planet in the Kuiper Belt known for its elongated shape and rapid rotation. It has two known moons.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Haumea"
@@ -58,7 +58,7 @@
         "Quaoar": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
-            "Text": "value1",
+            "Text": "Quaoar is a large trans-Neptunian object and possible dwarf planet with one known moon, Weywot.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Quaoar"
@@ -75,7 +75,7 @@
         "Makemake": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
-            "Text": "value1",
+            "Text": "Makemake is the second brightest dwarf planet in the Kuiper Belt after Pluto. It has one known moon.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Makemake"
@@ -92,7 +92,7 @@
         "Eris": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
-            "Text": "value1",
+            "Text": "Eris is the most massive dwarf planet in the Solar System and was the discovery that triggered Pluto's reclassification.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Eris"
@@ -100,7 +100,7 @@
         "Dysnomia": {
             "ListGroups": [ "Trans-Neptunian Objects" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
-            "Text": "value1",
+            "Text": "Dysnomia is the only known moon of the dwarf planet Eris. It was discovered in 2005.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Dysnomia_(moon)"
@@ -108,7 +108,7 @@
         "Sedna": {
             "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
             "OrbitLineGroup": "Trans-Neptunian Objects",
-            "Text": "value1",
+            "Text": "Sedna is a distant trans-Neptunian object with one of the most elongated orbits in the Solar System.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Sedna"

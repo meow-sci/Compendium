@@ -48,6 +48,16 @@ namespace Compendium
                                 }
                                 // Now writes to console a single string with all loaded font names
                                 Console.WriteLine($"Compendium: {fontNames.Length} Loaded fonts - " + string.Join(", ", fontNames));
+
+                                // Now if the fontnames array has 'Regular' style, set that as default selected font index
+                                for (int i = 0; i < fontNames.Length; i++)
+                                {
+                                    if (fontNames[i].EndsWith("Regular", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        selectedFontIndex = i;
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }

@@ -12,20 +12,16 @@ namespace Compendium
     [StarMapMod]
     public partial class Compendium
     {
-        void BoldSeparator ()
-        {
-            DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color }
-        }
         public static string? dllDir;
-        public static float fontSizeCurrent = 26;
+        public static float fontSizeCurrent = 30f;
         public static float windowOpacity = 1.0f;
         public static bool CompendiumWindow = true;
         public static int selectedFontIndex = 0;
         public static int previousFontIndex = -1;
-        public static int selectedCategoryIndex = 0;
+        public static int selectedCategoryIndex = -1;
         public static string selectedCategoryKey = "";
         public static bool showFontSettings = false;
-        public static string selectedCelestialId = "None";
+        public static string selectedCelestialId = "Compendium Astronomicals Database";
         public static float mainContentWidth = 400f;
         public static List<string> categoryKeys = new List<string>();
         private static string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
@@ -124,35 +120,34 @@ namespace Compendium
                     
                     if (showFontSettings)
                     {
+                        PushTheFont(1);
                         ImGui.Text("Font Choices:");
-                        ImGui.Text(" ");
-                        // First gets the font style names to use for buttons by chopping off the beginning 'name-' part by using - as delimeter
+
+                        // Use the full font names for display
                         string[] fontStyles = new string[fontNames.Length];
                         for (int i = 0; i < fontNames.Length; i++)
                         {
-                            string[] parts = fontNames[i].Split('-');
-                            fontStyles[i] = parts.Length > 1 ? parts[1] : fontNames[i];
+                            fontStyles[i] = fontNames[i];
                         }
+                        // Makes a dropdown selection for the font styles instead of buttons
+                        
+                        string combinedFontStyles = string.Join("\0", fontStyles) + "\0\0";
+                        ImString fontStylesImString = new ImString(combinedFontStyles);
+                        ImGui.Combo(" ", ref selectedFontIndex, fontStylesImString, fontStyles.Length);
+                        ImGui.Text(" ");
 
-                        // tries out making a dropdown box instead of buttons
-                        //for (int j = 0; j < fontStyles.Length && j < fontNames.Length; j++)
-                        // {
-                        //     ImString fontLabel = new ImString(fontStyles[j]);
-                        //     if (ImGui.Selectable(fontLabel, selectedFontIndex == j))
-                        //     {selectedFontIndex = j; }
-                        // }
-
-                        for (int i = 0; i < fontStyles.Length && i < fontNames.Length; i++)
-                        {
-                            ImString buttonLabel = new ImString(fontStyles[i]);
-                            if (ImGui.SmallButton(buttonLabel))
-                            { selectedFontIndex = i; }
-                        }
+                        //for (int i = 0; i < fontStyles.Length && i < fontNames.Length; i++)
+                        //{
+                        //    ImString buttonLabel = new ImString(fontStyles[i]);
+                        //    if (ImGui.SmallButton(buttonLabel))
+                        //    { selectedFontIndex = i; }
+                        //}
                         
                         ImGui.Separator();
-                        ImGui.SliderFloat("Size", ref fontSizeCurrent, 12f, 42f);
+                        ImGui.SliderFloat("Size", ref fontSizeCurrent, 16f, 46f);
                         ImGui.SliderFloat("Opacity", ref windowOpacity, 0.1f, 1.0f);
                         ImGui.Separator();
+                        ImGui.Text(" ");
                         // Display the selected font name
                         ImString selectedText = new ImString($"Selected: {fontNames[selectedFontIndex]}");
                         ImGui.Text(selectedText); ImGui.Text(" ");
@@ -210,6 +205,13 @@ namespace Compendium
                         selectedCategoryIndex = sortedCategoryKeys.IndexOf(categoryKey);
                         justSelected = categoryKey;;
                     }
+                }
+                // If the button wasn't pushed and the selectedCategoryIndex is -1, set it to 0 and select the first category by default.
+                if (selectedCategoryIndex == -1 && sortedCategoryKeys.Count > 0)
+                {
+                 //   selectedCategoryIndex = 0;
+                    selectedCategoryKey = sortedCategoryKeys[0];
+                  //  justSelected = selectedCategoryKey;
                 }
 
                 // Pop small font and restore large font
@@ -293,12 +295,14 @@ namespace Compendium
                         if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.WikipediaUrl))
                         { 
                             ImString linkText = new ImString($"https://en.wikipedia.org/wiki/{bodyJson.WikipediaUrl}");
-                            ImGui.TextLinkOpenURL(linkText);
+                            ImString labelText = new ImString($"Wikipedia Page: {bodyJson.WikipediaUrl}");
+                            ImGui.TextLinkOpenURL(labelText, linkText);
                         }
-                        
+                        DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
+                        ImGui.Text(" ");
                         // Prints the radius
                         float radiusKm = selectedCelestial.ObjectRadius / 1000f;
-                        ImString radiusText = new ImString($"Radius: {radiusKm} km");
+                        ImString radiusText = new ImString($"Mean Radius: {radiusKm} km");
                         ImGui.Text(radiusText);
 
                         // now gets the mass of the selected celestial object with appropriate SI prefix unit
@@ -325,7 +329,76 @@ namespace Compendium
                         double escapeVelocity = Math.Sqrt(2 * 6.67430e-11 * selectedCelestial.Mass / selectedCelestial.ObjectRadius);
                         ImString escapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity / 1000f:F3} km/s");
                         ImGui.Text(escapeVelocityText);
+                        ImGui.Text(" ");
+                        // Makes a button to toggle showing or hiding a subsection for displaying the orbital properties of the selected celestial object.
+                        // Always starts hidden until button is clicked.
+                        bool showOrbitalProperties = false;
+                        ImString orbitalHeader = new ImString("More Orbital Properties");
+                        if (ImGui.CollapsingHeader(orbitalHeader))
+                        {
+                            showOrbitalProperties = true;
+                        }
+                        if (showOrbitalProperties)
+                        {
+                            // Makes a smaller font size for the orbital properties section
+                            PushTheFont(0.8f);
 
+                            
+                            // Figures out the timescale we want to use for displaying the orbital period.  If it's more than 2 years, use years.  If it's more than 2 days, use days.  Otherwise use hours.
+                            double orbitalPeriodSeconds = selectedCelestial.Orbit.Period;
+                            string orbitalDisplay;
+                            
+                            if (orbitalPeriodSeconds >= 63072000) // More than 2 years
+                            {
+                                double orbitalVal = orbitalPeriodSeconds / 31536000;
+                                orbitalDisplay = orbitalVal.ToString("F2") + " years";
+                            }
+                            else if (orbitalPeriodSeconds >= 172800) // More than 2 days
+                            {
+                                double orbitalVal = orbitalPeriodSeconds / 86400;
+                                orbitalDisplay = orbitalVal.ToString("F2") + " days";
+                            }
+                            else // Use hours
+                            {
+                                double orbitalVal = orbitalPeriodSeconds / 3600;
+                                orbitalDisplay = orbitalVal.ToString("F2") + " hours";
+                            }
+
+
+                            // Gets the axial tilt values depending on whether the selected celestial's parent is the sun or another body.
+                            double thisTilt;
+                            ImString thisTiltText;
+                            if (selectedCelestial.Parent == Universe.WorldSun)
+                            { 
+                                thisTilt = selectedCelestial.GetCce2Cci().ToXyzRadians().X * (180.0 / Math.PI);
+                                thisTiltText = new ImString($"{thisTilt:F2}°");
+                            }
+                            else
+                            {
+                                thisTilt = selectedCelestial.GetCci2Orb().Inverse().ToXyzRadians().X * (180.0 / Math.PI);
+                                string parentName = selectedCelestial.Parent.Id;
+                                thisTiltText = new ImString($"{thisTilt:F2}° ( Relative to {selectedCelestial.Parent.Id} )");
+                            } 
+
+                            ImString axialTiltText = new ImString($"Axial Tilt: {thisTiltText}");
+                            ImGui.Text(axialTiltText);
+                            ImString eccentricityText = new ImString($"Eccentricity: {selectedCelestial.Eccentricity:F4}");
+                            ImGui.Text(eccentricityText);
+                            ImString inclinationText = new ImString($"Inclination: {selectedCelestial.Inclination:F2}°");
+                            ImGui.Text(inclinationText);
+                            ImString orbitalPeriodText = new ImString($"Orbital Period: {orbitalDisplay}");
+                            ImGui.Text(orbitalPeriodText);
+                            ImString semiMajorAxisText = new ImString($"Semi-Major Axis: {selectedCelestial.SemiMajorAxis / 1000f:F1} km");
+                            ImGui.Text(semiMajorAxisText);
+                            ImString SemiMinorAxisText = new ImString($"Semi-Minor Axis: {selectedCelestial.SemiMinorAxis / 1000f:F1} km");
+                            ImGui.Text(SemiMinorAxisText);
+                            if (selectedCelestial.Orbit.GetType().Name != "Elliptical")
+                            {
+                                ImString orbitTypeText = new ImString($"Orbit Type: {selectedCelestial.Orbit.GetType().Name}");
+                                ImGui.Text(orbitTypeText);
+                            }
+                            ImGui.PopFont();
+                        }
                                             
                         DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                         ImGui.Text(" ");
@@ -478,7 +551,7 @@ namespace Compendium
                     }
                     else
                     {
-                        ImGui.Text("Celestial not found");
+                        ImGui.Text("\nSelect a category and celestial body!");
                     }
                     
                     ImGui.PopFont();

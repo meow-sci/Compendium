@@ -4,7 +4,7 @@
     "Charon": {
       "ListGroups": ["Charon"],
       "OrbitLineGroup": "Charon",
-      "Text": "value1",
+      "Text": "Charon is the largest moon of Pluto and is unique in that it is so large relative to Pluto that they are sometimes considered a double dwarf planet system.  Pluto and Charon orbit a mutual barycenter which lies outside of Pluto itself.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Charon_(moon)"
@@ -12,7 +12,7 @@
     "Nix": {
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
-      "Text": "value1",
+      "Text": "Nix is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Nix_(moon)"
@@ -20,7 +20,7 @@
     "Hydra": {
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
-      "Text": "value1",
+      "Text": "Hydra is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Hydra_(moon)"
@@ -28,7 +28,7 @@
     "Kerberos": {
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
-      "Text": "value1",
+      "Text": "Kerberos is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Kerberos_(moon)"
@@ -36,7 +36,7 @@
     "Styx": {
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
-      "Text": "value1",
+      "Text": "Styx is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Styx_(moon)"

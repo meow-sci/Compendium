@@ -4,7 +4,7 @@
         "Luna": {
             "ListGroups": [ "Moons" ],
             "OrbitLineGroup": "Luna",
-            "Text": "value1",
+            "Text": "Luna, or the Moon, is Earth's only natural satellite and the fifth largest moon in the Solar System.",
             "Factoids": [ "value2", "value3" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Moon"
@@ -12,7 +12,7 @@
         "Phobos": {
             "ListGroups": [ "Moons" ],
             "OrbitLineGroup": "Moons",
-            "Text": "value4",
+            "Text": "Phobos is the larger and closer of the two natural satellites of Mars. It is an irregularly shaped moon with a heavily cratered surface.",
             "Factoids": [ "value5", "value6" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Phobos_(moon)"
@@ -20,7 +20,7 @@
         "Deimos": {
             "ListGroups": [ "Moons" ],
             "OrbitLineGroup": "Moons",
-            "Text": "value7",
+            "Text": "Deimos is the smaller and more distant of the two natural satellites of Mars. It has a smoother surface with fewer craters compared to Phobos.  It is surmised that Deimos may have originally been an asteroid, captured by Mars' gravity.",
             "Factoids": [ "value8", "value9" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Deimos_(moon)"

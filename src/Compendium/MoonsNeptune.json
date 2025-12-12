@@ -4,7 +4,7 @@
     "Triton": {
       "ListGroups": ["Triton"],
       "OrbitLineGroup": "Triton",
-      "Text": "value1",
+      "Text": "Triton is the largest moon of Neptune and is unique among large moons in the Solar System for its retrograde orbit, indicating that it was likely captured by Neptune's gravity rather than forming in place.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Triton"
@@ -12,7 +12,7 @@
     "Nereid": {
       "ListGroups": ["Nereid"],
       "OrbitLineGroup": "Nereid",
-      "Text": "value1",
+      "Text": "Nereid is one of Neptune's irregular moons, known for its highly eccentric orbit. It was discovered in 1949 and is one of the largest irregular satellites of Neptune.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Nereid"
@@ -20,7 +20,7 @@
     "Naiad": {
       "ListGroups": ["Inner Neptune"],
       "OrbitLineGroup": "Inner Neptune",
-      "Text": "value1",
+      "Text": "Naiad is the innermost of Neptune's known moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Naiad"
@@ -28,7 +28,7 @@
     "Thalassa": {
       "ListGroups": ["Inner Neptune"],
       "OrbitLineGroup": "Inner Neptune",
-      "Text": "value1",
+      "Text": "Thalassa is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Thalassa"
@@ -36,7 +36,7 @@
     "Despina": {
       "ListGroups": ["Inner Neptune"],
       "OrbitLineGroup": "Inner Neptune",
-      "Text": "value1",
+      "Text": "Despina is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Despina"
@@ -44,7 +44,7 @@
     "Galatea": {
       "ListGroups": ["Inner Neptune"],
       "OrbitLineGroup": "Inner Neptune",
-      "Text": "value1",
+      "Text": "Galatea is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Galatea"
@@ -52,7 +52,7 @@
     "Larissa": {
       "ListGroups": ["Inner Neptune"],
       "OrbitLineGroup": "Inner Neptune",
-      "Text": "value1",
+      "Text": "Larissa is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Larissa"
@@ -60,7 +60,7 @@
     "Proteus": {
       "ListGroups": ["Inner Neptune"],
       "OrbitLineGroup": "Inner Neptune",
-      "Text": "value1",
+      "Text": "Proteus is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Proteus"
@@ -68,7 +68,7 @@
     "Halimede": {
       "ListGroups": ["Halimede"],
       "OrbitLineGroup": "Halimede",
-      "Text": "value1",
+      "Text": "Halimede is an irregular moon of Neptune with a retrograde orbit. It is believed to be a captured object and is part of Neptune's outer satellite system.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Halimede"
@@ -76,7 +76,7 @@
     "Psamathe": {
       "ListGroups": ["Neso"],
       "OrbitLineGroup": "Neso",
-      "Text": "value1",
+      "Text": "Psamathe is an irregular moon of Neptune with a retrograde orbit. It is believed to be a captured object and is part of Neptune's outer satellite system.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Psamathe"
@@ -84,7 +84,7 @@
     "Sao": {
       "ListGroups": ["Sao"],
       "OrbitLineGroup": "Sao",
-      "Text": "value1",
+      "Text": "Sao is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Sao"
@@ -92,7 +92,7 @@
     "Laomedeia": {
       "ListGroups": ["Sao"],
       "OrbitLineGroup": "Sao",
-      "Text": "value1",
+      "Text": "Laomedeia is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Laomedeia"
@@ -100,7 +100,7 @@
     "Neso": {
       "ListGroups": ["Neso"],
       "OrbitLineGroup": "Neso",
-      "Text": "value1",
+      "Text": "Neso is an irregular moon of Neptune with a retrograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Neso"
@@ -108,7 +108,7 @@
     "Hippocamp": {
       "ListGroups": ["Inner"],
       "OrbitLineGroup": "Inner",
-      "Text": "value1",
+      "Text": "Hippocamp is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Hippocamp"
@@ -116,7 +116,7 @@
     "S2002_N_05": {
       "ListGroups": ["Sao"],
       "OrbitLineGroup": "Sao",
-      "Text": "value1",
+      "Text": "S/2002 N 5 is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2002_N_5"
@@ -124,7 +124,7 @@
     "S2021_N_01": {
       "ListGroups": ["Neso"],
       "OrbitLineGroup": "Neso",
-      "Text": "value1",
+      "Text": "S/2021 N 1 is an irregular moon of Neptune with a retrograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
       "Factoids": ["value2", "value3"],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2021_N_1"
