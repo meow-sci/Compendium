@@ -9,6 +9,7 @@ namespace Compendium
         public string? OrbitLineGroup { get; set; }
         public string? Text { get; set; }
         public List<string>? Factoids { get; set; }
+        public List<string>? VisitedBy { get; set; }
         public string? WikipediaUrl { get; set; }
         public Dictionary<string, CompendiumData>? ListGroupsData { get; set; }
         public string? CatText { get; set; }

@@ -5,15 +5,15 @@
       "ListGroups": ["Charon"],
       "OrbitLineGroup": "Charon",
       "Text": "Charon is the largest moon of Pluto and is unique in that it is so large relative to Pluto that they are sometimes considered a double dwarf planet system.  Pluto and Charon orbit a mutual barycenter which lies outside of Pluto itself.",
-      "Factoids": ["value2", "value3"],
-      "VisitedBy": ["None"],
+      "Factoids": [ "Composed primarily of water ice with a small amount of rock.", "Discovered in 1978 by James Christy.", "Has a reddish-brown polar region known as Mordor Macula, thought to be composed of tholins.", "Exhibits signs of past geological activity, including canyons and cliffs." ],
+      "VisitedBy": ["New Horizons (2015)"],
       "WikipediaUrl": "Charon_(moon)"
     },
     "Nix": {
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
       "Text": "Nix is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Discovered in 2005 by the Hubble Space Telescope.", "Has a highly reflective surface, indicating it is covered in water ice.", "Exhibits a chaotic rotation, tumbling unpredictably as it orbits Pluto." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Nix_(moon)"
     },
@@ -21,7 +21,7 @@
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
       "Text": "Hydra is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Discovered in 2005 by the Hubble Space Telescope.", "Has a highly reflective surface, indicating it is covered in water ice.", "Exhibits a chaotic rotation, tumbling unpredictably as it orbits Pluto." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Hydra_(moon)"
     },
@@ -29,7 +29,7 @@
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
       "Text": "Kerberos is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Discovered in 2011 by the Hubble Space Telescope.", "Has a dark surface, indicating it may be covered in a layer of tholins.", "Exhibits a chaotic rotation, tumbling unpredictably as it orbits Pluto." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Kerberos_(moon)"
     },
@@ -37,7 +37,7 @@
       "ListGroups": ["Minor Pluto"],
       "OrbitLineGroup": "Minor Pluto",
       "Text": "Styx is one of Pluto's smaller moons. It orbits Pluto and Charon in a complex gravitational dance and is believed to be composed primarily of water ice.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Discovered in 2012 by the Hubble Space Telescope.", "Has a dark surface, indicating it may be covered in a layer of tholins.", "Exhibits a chaotic rotation, tumbling unpredictably as it orbits Pluto." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Styx_(moon)"
     }

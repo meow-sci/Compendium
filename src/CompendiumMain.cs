@@ -24,8 +24,8 @@ namespace Compendium
         public static string selectedCelestialId = "Compendium Astronomicals Database";
         public static float mainContentWidth = 400f;
         public static List<string> categoryKeys = new List<string>();
-        private static string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
         private static string justSelected = "";
+        private static string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
 
         [ModMenuEntry("Compendium Window")]
 
@@ -39,8 +39,9 @@ namespace Compendium
         }
 
         [StarMapAfterGui]
-        public unsafe void OnAfterUi(double dt)
+        public void OnAfterUi(double dt)
         {
+            systemName = Universe.CurrentSystem?.Id ?? "Dummy";
             try
             {
                 if (!CompendiumWindow)
@@ -49,11 +50,9 @@ namespace Compendium
                 }
                 
                 // Wait for universe to be fully loaded
-                var logFile = @"C:\temp\compendium_debug.log";
                 
                 if (Universe.WorldSun == null)
                 {
-                    System.IO.File.AppendAllText(logFile, "OnAfterUi - Universe.WorldSun is NULL, waiting...\n");
                     ImGui.SetNextWindowBgAlpha(windowOpacity);
                     if (ImGui.Begin("Compendium"))
                     {
@@ -61,29 +60,23 @@ namespace Compendium
                         ImGui.End();
                     }
                     return;
-                }
-                
-                System.IO.File.AppendAllText(logFile, $"Checking CategoryLoader - buttonsCatsTree null: {buttonsCatsTree == null}, count: {buttonsCatsTree?.Count ?? -1}, builtWithCelestials: {Compendium.categoriesBuiltWithCelestials}\n");
+                }                
                 
                 // Build category tree on first render when Universe is loaded, or rebuild if it was built without celestials
-                if ((buttonsCatsTree == null || buttonsCatsTree.Count == 0 || !Compendium.categoriesBuiltWithCelestials))
+                if (buttonsCatsTree == null || buttonsCatsTree.Count == 0 || !Compendium.categoriesBuiltWithCelestials)
                 {
                     var worldSun = Universe.WorldSun;
-                    System.IO.File.AppendAllText(logFile, $"CategoryLoader starting - WorldSun null: {worldSun == null}\n");
                     CategoryLoader(worldSun);
                     categoryKeys = GetCategoryKeys();
-                    System.IO.File.AppendAllText(logFile, $"CategoryLoader complete - Keys: {categoryKeys?.Count ?? 0}\n");
                     
                     // Initialize selectedCategoryKey with first non-Moons category
                     if (categoryKeys != null && categoryKeys.Count > 0)
                     {
                         foreach (var key in categoryKeys)
                         {
-                            System.IO.File.AppendAllText(logFile, $"  Key: {key}\n");
                             if (string.IsNullOrEmpty(selectedCategoryKey) && key != "Moons")
                             {
                                 selectedCategoryKey = key;
-                                System.IO.File.AppendAllText(logFile, $"  Set selectedCategoryKey to: {key}\n");
                             }
                         }
                     }
@@ -364,7 +357,6 @@ namespace Compendium
                                 orbitalDisplay = orbitalVal.ToString("F2") + " hours";
                             }
 
-
                             // Gets the axial tilt values depending on whether the selected celestial's parent is the sun or another body.
                             double thisTilt;
                             ImString thisTiltText;
@@ -388,10 +380,33 @@ namespace Compendium
                             ImGui.Text(inclinationText);
                             ImString orbitalPeriodText = new ImString($"Orbital Period: {orbitalDisplay}");
                             ImGui.Text(orbitalPeriodText);
-                            ImString semiMajorAxisText = new ImString($"Semi-Major Axis: {selectedCelestial.SemiMajorAxis / 1000f:F1} km");
-                            ImGui.Text(semiMajorAxisText);
-                            ImString SemiMinorAxisText = new ImString($"Semi-Minor Axis: {selectedCelestial.SemiMinorAxis / 1000f:F1} km");
-                            ImGui.Text(SemiMinorAxisText);
+
+
+                            // Gets the Semi-Major and Semi-Minor axes in AU for display if they are large enough - we only need a float.
+                            // Keep in mind that both values are saved in game as meters, so we need divide by the appropritate factor to get m to AU.  1 AU = 1.496e+11 m
+                            float semiMajorAxisAU = (float)selectedCelestial.SemiMajorAxis / 1.496e+11f; // Convert m to AU
+                            float semiMinorAxisAU = (float)selectedCelestial.SemiMinorAxis / 1.496e+11f; // Convert m to AU
+                            // Next saves the value of each in km as strings adding thousands separators for easier reading.
+                            // Clamps the decimal places to 1 for cleaner display.
+                            string semiMajorAxisKm = (selectedCelestial.SemiMajorAxis / 1000f).ToString("N1");
+                            string semiMinorAxisKm = (selectedCelestial.SemiMinorAxis / 1000f).ToString("N1");
+
+                            // If the semi-major axis is less than 0.1 AU, display it in AU - otherwise display with both km and then AU. Use the same semimajor test for both it and semiminor printing
+                            if (semiMajorAxisAU < 0.1f)
+                            {
+                                ImString semiMajorAxisAUText = new ImString($"Semi-Major Axis: {semiMajorAxisKm} km");
+                                ImGui.Text(semiMajorAxisAUText);
+                                ImString semiMinorAxisAUText = new ImString($"Semi-Minor Axis: {semiMinorAxisKm} km");
+                                ImGui.Text(semiMinorAxisAUText);
+                            }
+                            else
+                            {
+                                ImString semiMajorAxisBothText = new ImString($"Semi-Major Axis: {semiMajorAxisKm} km / {semiMajorAxisAU:F3} AU");
+                                ImGui.Text(semiMajorAxisBothText);
+                                ImString semiMinorAxisBothText = new ImString($"Semi-Minor Axis: {semiMinorAxisKm} km / {semiMinorAxisAU:F3} AU");
+                                ImGui.Text(semiMinorAxisBothText);
+                            }
+
                             if (selectedCelestial.Orbit.GetType().Name != "Elliptical")
                             {
                                 ImString orbitTypeText = new ImString($"Orbit Type: {selectedCelestial.Orbit.GetType().Name}");
@@ -537,16 +552,33 @@ namespace Compendium
                             {
                                 ImGui.TextWrapped(bodyJson.Text);
                             }
-                            
+                            // If the bodyJson has Factoids, display them as a pseudo-bulleted list
                             if (bodyJson.Factoids != null && bodyJson.Factoids.Count > 0)
                             {
                                 ImGui.Text(" ");
-                                ImGui.Text("Factoids:");
+                                ImGui.SeparatorText("Factoids:"); ImGui.Text(" ");
                                 foreach (var factoid in bodyJson.Factoids)
                                 {
-                                    ImGui.BulletText(factoid);
+                                    // Uses the unicode bullet point character for factoids and then the factoid text to make wrapping work properly
+                                    ImString factoidText = new ImString($"• {factoid}\n\n");
+                                    ImGui.TextWrapped(factoidText);
+
+                                    //ImGui.BulletText(factoid);
                                 }
                             }
+                            // If the bodyJson has a VisitedBy list, display it as a bulleted list
+                            if (bodyJson.VisitedBy != null && bodyJson.VisitedBy.Count > 0)
+                            {
+                                ImGui.Text(" ");
+                                ImGui.SeparatorText("Visited By:"); ImGui.Text(" ");
+                                foreach (var visitor in bodyJson.VisitedBy)
+                                {
+                                    ImString visitorText = new ImString($"{visitor}");
+                                    ImGui.BulletText(visitorText);
+                                }
+                                ImGui.Text(" ");
+                            }
+                            ImGui.Text(" ");
                         }
                     }
                     else
@@ -668,12 +700,13 @@ namespace Compendium
         }
         
         
-
         [StarMapAllModsLoaded]
         public void OnFullyLoaded()
         {
+            
             try
             {
+                
                 // Loads body categories from the loaded JSON data - this determines buttons to make.
                 CategoryLoader();
 
@@ -696,6 +729,7 @@ namespace Compendium
                 Console.WriteLine($"Stack trace: {ex.StackTrace}");
             }
             //Patcher.Patch();
+            
         }
 
 

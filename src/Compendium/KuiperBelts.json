@@ -10,9 +10,9 @@
         "Arrokoth": {
             "ListGroups": [ "Kuiper Belt" ],
             "OrbitLineGroup": "Kuiper Belt Objects",
-            "Text": "Arrokoth is a contact binary Kuiper belt object that was visited by the New Horizons spacecraft in 2019.",
-            "Factoids": [ "Arrokoth has a bilobed shape resembling a snowman.", "It has a diameter of approximately 36 kilometers." ],
-            "VisitedBy": [ "New Horizons" ],
+            "Text": "Arrokoth is a contact binary Kuiper belt object that was visited by the New Horizons spacecraft in 2019. It is composed of two lobes that are thought to have gently collided and stuck together in the early Solar System. Its surface is covered in a mixture of ices and organic compounds, giving it a reddish color.",
+            "Factoids": [ "Arrokoth has a bilobed shape resembling a snowman.", "It was discovered in 2014 using the Hubble Space Telescope.", "Named 'Arrokoth', meaning 'sky' in the Powhatan/Algonquian language, in 2020.", "Has a very low density, suggesting it is composed mostly of ice with some rock.", "Provides insights into the conditions of the early Solar System and the formation of planetesimals." ],
+            "VisitedBy": [ "New Horizons (2019)" ],
             "WikipediaUrl": "486958_Arrokoth"
         }
     }

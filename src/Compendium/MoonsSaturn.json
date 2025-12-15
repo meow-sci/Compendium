@@ -4,8 +4,8 @@
     "Mimas": {
       "ListGroups": ["Major Saturn"],
       "OrbitLineGroup": "Major Saturn",
-      "Text": "Mimas is one of Saturn's major moons. It is known for its large impact crater, Herschel, which gives it a distinctive appearance.",
-      "Factoids": ["value2", "value3"],
+      "Text": "Mimas is one of Saturn's major moons. It is known for its large impact crater, Herschel, which gives it a distinctive appearance.  Mimas's presence is also responsible for the Cassini Division, a gap in Saturn's rings and the largest such gap in the ring system.",
+      "Factoids": [ "Composed primarily of water ice with only a small percentage of rock.", "The smallest astronomical body known to be spherically shaped by its own gravity." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Mimas"
     },
@@ -13,7 +13,7 @@
       "ListGroups": ["Major Saturn"],
       "OrbitLineGroup": "Major Saturn",
       "Text": "Enceladus is one of Saturn's major moons. It is known for its geysers that spew water ice and other materials from its subsurface ocean into space.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Has a subsurface ocean beneath its icy crust.", "Geysers contribute to Saturn's E ring.", "Surface is primarily composed of water ice, making it one of the most reflective bodies in the Solar System.", "Considered one of the most promising places to search for extraterrestrial life in our Solar System due to its subsurface ocean." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Enceladus"
     },
@@ -21,7 +21,7 @@
       "ListGroups": ["Major Saturn"],
       "OrbitLineGroup": "Major Saturn",
       "Text": "Tethys is one of Saturn's major moons. It is known for its large impact crater, Odysseus, and a huge valley called Ithaca Chasma.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Composed primarily of water ice with a small amount of rock." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Tethys"
     },
@@ -29,7 +29,7 @@
       "ListGroups": ["Major Saturn"],
       "OrbitLineGroup": "Major Saturn",
       "Text": "Dione is one of Saturn's major moons. It is known for its bright ice cliffs and a heavily cratered surface.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Composed primarily of water ice with a small amount of rock.", "Has a thin atmosphere composed mostly of oxygen ions." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Dione"
     },
@@ -37,23 +37,23 @@
       "ListGroups": ["Major Saturn"],
       "OrbitLineGroup": "Major Saturn",
       "Text": "Rhea is one of Saturn's major moons. It has a heavily cratered surface and is composed primarily of water ice.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Composed primarily of water ice with a small amount of rock." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Rhea"
     },
     "Titan": {
       "ListGroups": ["Major Saturn"],
       "OrbitLineGroup": "Major Saturn",
-      "Text": "Titan is one of Saturn's major moons. It is the largest moon of Saturn and is known for its dense atmosphere and surface lakes of liquid methane and ethane.  Titan is one of the largest moons in the solar system and is larger than the planet Mercury.",
-      "Factoids": ["value2", "value3"],
-      "VisitedBy": ["None"],
+      "Text": "Titan is one of Saturn's major moons. It is the largest moon of Saturn and is known for its dense atmosphere and surface lakes of liquid methane and ethane.  Titan is one of the largest moons in the solar system and is larger than the planet Mercury, although it is less massive due to its lower density.",
+      "Factoids": [ "The only moon in the solar system with a dense atmosphere.", "Its atmosphere is primarily composed of nitrogen, with methane and other hydrocarbons.", "Surface lakes and rivers of liquid methane and ethane have been observed on Titan both from orbit and by the Huygens probe which landed on its surface in 2005.", "Titan's thick atmosphere and surface liquids make it one of the most Earth-like bodies in the solar system." ],
+      "VisitedBy": ["Cassini-Huygens (2004-2017)"],
       "WikipediaUrl": "Titan"
     },
     "Hyperion": {
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
-      "Text": "Hyperion is one of Saturn's irregular moons. It has a chaotic rotation and orbital path and a heavily cratered surface.",
-      "Factoids": ["value2", "value3"],
+      "Text": "Hyperion is one of Saturn's irregular moons.",
+      "Factoids": [ "Hyperion has a chaotic rotation, meaning its spin axis wobbles unpredictably due to gravitational interactions with other moons.", "Its surface is covered in deep craters, giving it a sponge-like appearance." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Hyperion"
     },
@@ -61,7 +61,7 @@
       "ListGroups": ["Major Saturn"],
       "OrbitLineGroup": "Major Saturn",
       "Text": "Iapetus is one of Saturn's major moons. It is known for its distinctive two-tone coloration, with one hemisphere much darker than the other.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Features a prominent equatorial ridge that gives it a walnut-like appearance.", "Composed primarily of water ice with a small amount of rock.", "The dark material on one hemisphere is thought to be composed of organic compounds and other complex molecules." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Iapetus"
     },
@@ -69,7 +69,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Phoebe is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Phoebe is thought to be a captured object because of its retrograde orbit, possibly a Kuiper Belt object." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Phoebe"
     },
@@ -77,7 +77,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Janus is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Janus"
     },
@@ -85,7 +85,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Epimetheus is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Epimetheus"
     },
@@ -93,7 +93,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Helene is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Helene"
     },
@@ -101,7 +101,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Telesto is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Telesto"
     },
@@ -109,7 +109,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Calypso is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Calypso"
     },
@@ -117,7 +117,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Atlas is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Atlas"
     },
@@ -125,7 +125,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Prometheus is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Prometheus"
     },
@@ -133,7 +133,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Pandora is one of Saturn's irregular moons. It has a chaotic rotation and orbits close to the planet.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Pandora"
     },
@@ -141,7 +141,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Pan is a small irregular moon orbiting close to Saturn within the Encke Gap. It was discovered in 1990.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Pan acts as a shepherd moon for the Encke Gap in Saturn's rings." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Pan"
     },
@@ -149,7 +149,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Ymir is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Ymir"
     },
@@ -157,7 +157,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "Paaliaq is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Paaliaq"
     },
@@ -165,7 +165,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "Tarvos is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Tarvos"
     },
@@ -173,7 +173,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "Ijiraq is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Ijiraq"
     },
@@ -181,7 +181,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Suttungr is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Suttungr"
     },
@@ -189,7 +189,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "Kiviuq is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Kiviuq"
     },
@@ -197,7 +197,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Mundilfari is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Mundilfari"
     },
@@ -205,7 +205,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "Albiorix is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Albiorix"
     },
@@ -213,7 +213,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Skathi is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Skathi"
     },
@@ -221,7 +221,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "Erriapus is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Erriapus"
     },
@@ -229,7 +229,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "Siarnaq is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Siarnaq"
     },
@@ -237,7 +237,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Thrymr is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Thrymr"
     },
@@ -245,7 +245,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Narvi is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Narvi"
     },
@@ -253,7 +253,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Methone is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Methone"
     },
@@ -261,7 +261,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Pallene is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Pallene"
     },
@@ -269,7 +269,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Polydeuces is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Polydeuces"
     },
@@ -277,7 +277,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Daphnis is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Daphnis"
     },
@@ -285,7 +285,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Aegir is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Aegir"
     },
@@ -293,7 +293,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "Bebhionn is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Bebhionn"
     },
@@ -301,7 +301,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Bergelmir is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Bergelmir"
     },
@@ -309,7 +309,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Bestla is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Bestla"
     },
@@ -317,7 +317,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Farbauti is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Farbauti"
     },
@@ -325,7 +325,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Fenrir is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Fenrir"
     },
@@ -333,7 +333,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Fornjot is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Fornjot"
     },
@@ -341,7 +341,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Hati is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Hati"
     },
@@ -349,7 +349,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Hyrrokkin is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Hyrrokkin"
     },
@@ -357,7 +357,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Kari is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Kari"
     },
@@ -365,7 +365,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Loge is one of Saturn's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Saturn.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Loge"
     },
@@ -373,7 +373,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Skoll is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Skoll"
     },
@@ -381,7 +381,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Surtur is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Surtur"
     },
@@ -389,7 +389,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Anthe is a small irregular moon orbiting close to Saturn. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Anthe"
     },
@@ -397,7 +397,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Jarnsaxa is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Jarnsaxa"
     },
@@ -405,7 +405,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Greip is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Greip"
     },
@@ -413,7 +413,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "Tarqeq is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Tarqeq"
     },
@@ -421,7 +421,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "Aegaeon is a small irregular moon orbiting close to Saturn. It was discovered in 2008.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Aegaeon"
     },
@@ -429,7 +429,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Gridr is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Gridr"
     },
@@ -437,7 +437,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Angrboda is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Angrboda"
     },
@@ -445,7 +445,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Skrymir is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Skrymir"
     },
@@ -453,7 +453,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Gerd is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Gerd"
     },
@@ -461,7 +461,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Eggther is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Eggther"
     },
@@ -469,7 +469,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Beli is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Beli"
     },
@@ -477,7 +477,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Gunnlod is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Gunnlod"
     },
@@ -485,7 +485,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Thiazzi is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2000.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Thiazzi"
     },
@@ -493,7 +493,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Alvaldi is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Alvaldi"
     },
@@ -501,7 +501,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "Geirrod is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "Geirrod"
     },
@@ -509,7 +509,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 7 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_7"
     },
@@ -517,7 +517,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 12 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_12"
     },
@@ -525,7 +525,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 13 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_13"
     },
@@ -533,7 +533,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 17 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_17"
     },
@@ -541,7 +541,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 21 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_21"
     },
@@ -549,7 +549,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2004 S 24 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_24"
     },
@@ -557,7 +557,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 28 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_28"
     },
@@ -565,7 +565,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 26 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_26"
     },
@@ -573,7 +573,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2004 S 29 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_29"
     },
@@ -581,7 +581,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2004 S 31 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_31"
     },
@@ -589,7 +589,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 34 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_34"
     },
@@ -597,7 +597,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 36 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_36"
     },
@@ -605,7 +605,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 37 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_37"
     },
@@ -613,7 +613,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 39 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_39"
     },
@@ -621,7 +621,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 40 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_40"
     },
@@ -629,7 +629,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 41 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_41"
     },
@@ -637,7 +637,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 42 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_42"
     },
@@ -645,7 +645,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 43 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_43"
     },
@@ -653,7 +653,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 44 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_44"
     },
@@ -661,7 +661,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 45 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_45"
     },
@@ -669,7 +669,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 46 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_46"
     },
@@ -677,7 +677,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 47 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_47"
     },
@@ -685,7 +685,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 48 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_48"
     },
@@ -693,7 +693,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 49 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_49"
     },
@@ -701,7 +701,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 50 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_50"
     },
@@ -709,7 +709,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 51 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_51"
     },
@@ -717,7 +717,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 52 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_52"
     },
@@ -725,7 +725,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 53 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_53"
     },
@@ -733,7 +733,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2004 S 54 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_54"
     },
@@ -741,7 +741,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2004 S 55 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_55"
     },
@@ -749,7 +749,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 56 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_56"
     },
@@ -757,7 +757,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 57 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_57"
     },
@@ -765,7 +765,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2004 S 58 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_58"
     },
@@ -773,7 +773,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 59 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_59"
     },
@@ -781,7 +781,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 60 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_60"
     },
@@ -789,7 +789,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2004 S 61 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2004.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2004_S_61"
     },
@@ -797,7 +797,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2005 S 4 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2005.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2005_S_4"
     },
@@ -805,7 +805,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2005 S 5 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2005.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2005_S_5"
     },
@@ -813,7 +813,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2005 S 6 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2005.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2005_S_6"
     },
@@ -821,7 +821,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2005 S 7 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2005.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2005_S_7"
     },
@@ -829,7 +829,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 1 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_1"
     },
@@ -837,7 +837,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 3 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_3"
     },
@@ -845,7 +845,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 9 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_9"
     },
@@ -853,7 +853,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 10 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_10"
     },
@@ -861,7 +861,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 11 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_11"
     },
@@ -869,7 +869,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2006 S 12 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_12"
     },
@@ -877,7 +877,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 13 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_13"
     },
@@ -885,7 +885,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 14 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_14"
     },
@@ -893,7 +893,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 15 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_15"
     },
@@ -901,7 +901,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 16 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_16"
     },
@@ -909,7 +909,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 17 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_17"
     },
@@ -917,7 +917,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 18 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_18"
     },
@@ -925,7 +925,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 19 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_19"
     },
@@ -933,7 +933,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 20 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_20"
     },
@@ -941,7 +941,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 21 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_21"
     },
@@ -949,7 +949,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 22 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_22"
     },
@@ -957,7 +957,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2006 S 23 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_23"
     },
@@ -965,7 +965,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 24 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_24"
     },
@@ -973,7 +973,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 25 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_25"
     },
@@ -981,7 +981,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 26 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_26"
     },
@@ -989,7 +989,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 27 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_27"
     },
@@ -997,7 +997,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 28 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_28"
     },
@@ -1005,7 +1005,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2006 S 29 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2006.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2006_S_29"
     },
@@ -1013,7 +1013,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2007 S 2 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_2"
     },
@@ -1021,7 +1021,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2007 S 3 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_3"
     },
@@ -1029,7 +1029,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2007 S 5 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_5"
     },
@@ -1037,7 +1037,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2007 S 6 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_6"
     },
@@ -1045,7 +1045,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2007 S 7 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_7"
     },
@@ -1053,7 +1053,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2007 S 8 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_8"
     },
@@ -1061,7 +1061,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2007 S 9 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_9"
     },
@@ -1069,7 +1069,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2007 S 10 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_10"
     },
@@ -1077,7 +1077,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2007 S 11 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2007.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2007_S_11"
     },
@@ -1085,7 +1085,7 @@
       "ListGroups": ["Irregular Saturn"],
       "OrbitLineGroup": "Irregular Saturn",
       "Text": "S/2009 S 1 is a small irregular moon orbiting close to Saturn. It was discovered in 2009.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "Closest known orbiting moon to Saturn." ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2009_S_1"
     },
@@ -1093,7 +1093,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 1 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_1"
     },
@@ -1101,7 +1101,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 2 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_2"
     },
@@ -1109,7 +1109,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 3 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_3"
     },
@@ -1117,7 +1117,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 4 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_4"
     },
@@ -1125,7 +1125,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 5 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_5"
     },
@@ -1133,7 +1133,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 6 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_6"
     },
@@ -1141,7 +1141,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 7 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_7"
     },
@@ -1149,7 +1149,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 8 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_8"
     },
@@ -1157,7 +1157,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 9 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_9"
     },
@@ -1165,7 +1165,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 10 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_10"
     },
@@ -1173,7 +1173,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 11 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_11"
     },
@@ -1181,7 +1181,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 12 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_12"
     },
@@ -1189,7 +1189,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 13 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_13"
     },
@@ -1197,7 +1197,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 14 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_14"
     },
@@ -1205,7 +1205,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 15 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_15"
     },
@@ -1213,7 +1213,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 16 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_16"
     },
@@ -1221,7 +1221,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 17 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_17"
     },
@@ -1229,7 +1229,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 18 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_18"
     },
@@ -1237,7 +1237,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 19 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_19"
     },
@@ -1245,7 +1245,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 20 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_20"
     },
@@ -1253,7 +1253,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 21 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_21"
     },
@@ -1261,7 +1261,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 22 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_22"
     },
@@ -1269,7 +1269,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 23 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_23"
     },
@@ -1277,7 +1277,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 24 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_24"
     },
@@ -1285,7 +1285,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 25 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_25"
     },
@@ -1293,7 +1293,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 26 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_26"
     },
@@ -1301,7 +1301,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 27 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_27"
     },
@@ -1309,7 +1309,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 28 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_28"
     },
@@ -1317,7 +1317,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2019 S 29 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_29"
     },
@@ -1325,7 +1325,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 30 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_30"
     },
@@ -1333,7 +1333,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2019 S 31 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_31"
     },
@@ -1341,7 +1341,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2019 S 32 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_32"
     },
@@ -1349,7 +1349,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 33 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_33"
     },
@@ -1357,7 +1357,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "S/2019 S 34 is a small irregular moon in the Gallic group with a prograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_34"
     },
@@ -1365,7 +1365,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 35 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_35"
     },
@@ -1373,7 +1373,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 36 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_36"
     },
@@ -1381,7 +1381,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 37 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_37"
     },
@@ -1389,7 +1389,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 38 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_38"
     },
@@ -1397,7 +1397,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 39 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_39"
     },
@@ -1405,7 +1405,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 40 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_40"
     },
@@ -1413,7 +1413,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 41 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_41"
     },
@@ -1421,7 +1421,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 42 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_42"
     },
@@ -1429,7 +1429,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 43 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_43"
     },
@@ -1437,7 +1437,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "S/2019 S 44 is a small irregular moon in the Norse group with a retrograde orbit. It was discovered in 2019.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2019_S_44"
     },
@@ -1445,7 +1445,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "S/2020 S 1 is a small irregular moon in the Inuit group with a retrograde orbit. It was discovered in 2020.",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_1"
     },
@@ -1453,7 +1453,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_2"
     },
@@ -1461,7 +1461,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_3"
     },
@@ -1469,7 +1469,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_4"
     },
@@ -1477,7 +1477,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_5"
     },
@@ -1485,7 +1485,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_6"
     },
@@ -1493,7 +1493,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_7"
     },
@@ -1501,7 +1501,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_8"
     },
@@ -1509,7 +1509,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_9"
     },
@@ -1517,7 +1517,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_10"
     },
@@ -1525,7 +1525,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_11"
     },
@@ -1533,7 +1533,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_12"
     },
@@ -1541,7 +1541,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_13"
     },
@@ -1549,7 +1549,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_14"
     },
@@ -1557,7 +1557,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_15"
     },
@@ -1565,7 +1565,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_16"
     },
@@ -1573,7 +1573,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_17"
     },
@@ -1581,7 +1581,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_18"
     },
@@ -1589,7 +1589,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_19"
     },
@@ -1597,7 +1597,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_20"
     },
@@ -1605,7 +1605,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_21"
     },
@@ -1613,7 +1613,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_22"
     },
@@ -1621,7 +1621,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_23"
     },
@@ -1629,7 +1629,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_24"
     },
@@ -1637,7 +1637,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_25"
     },
@@ -1645,7 +1645,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_26"
     },
@@ -1653,7 +1653,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_27"
     },
@@ -1661,7 +1661,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_28"
     },
@@ -1669,7 +1669,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_29"
     },
@@ -1677,7 +1677,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_30"
     },
@@ -1685,7 +1685,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_31"
     },
@@ -1693,7 +1693,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_32"
     },
@@ -1701,7 +1701,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_33"
     },
@@ -1709,7 +1709,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_34"
     },
@@ -1717,7 +1717,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_35"
     },
@@ -1725,7 +1725,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_36"
     },
@@ -1733,7 +1733,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_37"
     },
@@ -1741,7 +1741,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_38"
     },
@@ -1749,7 +1749,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_39"
     },
@@ -1757,7 +1757,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_40"
     },
@@ -1765,7 +1765,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_41"
     },
@@ -1773,7 +1773,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_42"
     },
@@ -1781,7 +1781,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_43"
     },
@@ -1789,7 +1789,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2020_S_44"
     },
@@ -1797,7 +1797,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_1"
     },
@@ -1805,7 +1805,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_2"
     },
@@ -1813,7 +1813,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_3"
     },
@@ -1821,7 +1821,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_4"
     },
@@ -1829,7 +1829,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_5"
     },
@@ -1837,7 +1837,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_6"
     },
@@ -1845,7 +1845,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_7"
     },
@@ -1853,7 +1853,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_8"
     },
@@ -1861,7 +1861,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_9"
     },
@@ -1869,7 +1869,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_10"
     },
@@ -1877,7 +1877,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_11"
     },
@@ -1885,7 +1885,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_12"
     },
@@ -1893,7 +1893,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_13"
     },
@@ -1901,7 +1901,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_14"
     },
@@ -1909,7 +1909,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_15"
     },
@@ -1917,7 +1917,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_16"
     },
@@ -1925,7 +1925,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_17"
     },
@@ -1933,7 +1933,7 @@
       "ListGroups": ["Gallic"],
       "OrbitLineGroup": "Gallic",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_18"
     },
@@ -1941,7 +1941,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_19"
     },
@@ -1949,7 +1949,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_20"
     },
@@ -1957,7 +1957,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_21"
     },
@@ -1965,7 +1965,7 @@
       "ListGroups": ["Inuit"],
       "OrbitLineGroup": "Inuit",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_22"
     },
@@ -1973,7 +1973,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_23"
     },
@@ -1981,7 +1981,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_24"
     },
@@ -1989,7 +1989,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_25"
     },
@@ -1997,7 +1997,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_26"
     },
@@ -2005,7 +2005,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_27"
     },
@@ -2013,7 +2013,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_28"
     },
@@ -2021,7 +2021,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_29"
     },
@@ -2029,7 +2029,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_30"
     },
@@ -2037,7 +2037,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_31"
     },
@@ -2045,7 +2045,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_32"
     },
@@ -2053,7 +2053,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_33"
     },
@@ -2061,7 +2061,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_34"
     },
@@ -2069,7 +2069,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_35"
     },
@@ -2077,7 +2077,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_36"
     },
@@ -2085,7 +2085,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_37"
     },
@@ -2093,7 +2093,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_38"
     },
@@ -2101,7 +2101,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_39"
     },
@@ -2109,7 +2109,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_40"
     },
@@ -2117,7 +2117,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_41"
     },
@@ -2125,7 +2125,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_42"
     },
@@ -2133,7 +2133,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_43"
     },
@@ -2141,7 +2141,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_44"
     },
@@ -2149,7 +2149,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_45"
     },
@@ -2157,7 +2157,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_46"
     },
@@ -2165,7 +2165,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_47"
     },
@@ -2173,7 +2173,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_48"
     },
@@ -2181,7 +2181,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_49"
     },
@@ -2189,7 +2189,7 @@
       "ListGroups": ["Norse"],
       "OrbitLineGroup": "Norse",
       "Text": "value1",
-      "Factoids": ["value2", "value3"],
+      "Factoids": [ "" ],
       "VisitedBy": ["None"],
       "WikipediaUrl": "S/2023_S_50"
     }

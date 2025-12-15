@@ -4,16 +4,16 @@
         "Luna": {
             "ListGroups": [ "Moons" ],
             "OrbitLineGroup": "Luna",
-            "Text": "Luna, or the Moon, is Earth's only natural satellite and the fifth largest moon in the Solar System.",
-            "Factoids": [ "value2", "value3" ],
-            "VisitedBy": [ "None" ],
+            "Text": "Luna, or the Moon, is Earth's only natural satellite and the fifth largest moon in the Solar System. It has a synchronous rotation, meaning the same side always faces Earth. The Moon's surface is characterized by craters, maria, and highlands, and it plays a crucial role in influencing Earth's tides and stabilizing its axial tilt.",
+            "Factoids": [ "The Moon's surface is covered in regolith, a layer of loose, fragmented material.", "It has no atmosphere, leading to extreme temperature variations between day and night.", "The Moon was formed about 4.5 billion years ago, hypothesized as a result of a giant impact between then-Earth and a Mars-sized body dubbed Theia." ],
+            "VisitedBy": [ "Apollo missions (1969-1972)", "Luna missions (1959-1976)", "Surveyor missions (1966-1968)", "Lunar Reconnaissance Orbiter (2009-present)", "Chandrayaan-2 (2019-present)", "Artemis I (2022)", "Various other missions" ],
             "WikipediaUrl": "Moon"
         },
         "Phobos": {
             "ListGroups": [ "Moons" ],
             "OrbitLineGroup": "Moons",
             "Text": "Phobos is the larger and closer of the two natural satellites of Mars. It is an irregularly shaped moon with a heavily cratered surface.",
-            "Factoids": [ "value5", "value6" ],
+            "Factoids": [ "It was discovered in 1877 by Asaph Hall.", "Thought to be a captured asteroid due to its irregular shape and composition.", "Orbits Mars very closely, at an average distance of about 6,000 kilometers from the Martian surface.", "Gradually spiraling inward and is expected to either crash into Mars or break apart into a ring system in about 50 million years." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Phobos_(moon)"
         },
@@ -21,7 +21,7 @@
             "ListGroups": [ "Moons" ],
             "OrbitLineGroup": "Moons",
             "Text": "Deimos is the smaller and more distant of the two natural satellites of Mars. It has a smoother surface with fewer craters compared to Phobos.  It is surmised that Deimos may have originally been an asteroid, captured by Mars' gravity.",
-            "Factoids": [ "value8", "value9" ],
+            "Factoids": [ "It was discovered in 1877 by Asaph Hall.", "Thought to be a captured asteroid due to its irregular shape and composition.", "Has a smoother surface with fewer craters compared to Phobos.", "Has a very low density, suggesting it may be composed of porous rock or ice." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Deimos_(moon)"
         }

@@ -4,8 +4,8 @@
         "Io": {
             "ListGroups": [ "Galilean" ],
             "OrbitLineGroup": "Galilean",
-            "Text": "Io is the innermost of the four Galilean moons of Jupiter and is the most geologically active body in the Solar System, with over 400 active volcanoes on its surface.",
-            "Factoids": [ "value2", "value3" ],
+            "Text": "Io is the innermost of the four Galilean moons of Jupiter and is the most geologically active body in the Solar System, with over 400 active volcanoes on its surface. The extreme volcanic activity is due to the intense tidal heating caused by gravitational interactions with Jupiter and the other Galilean moons.",
+            "Factoids": [ "Its surface is constantly being reshaped by volcanic activity.", "It has a thin atmosphere primarily composed of sulfur dioxide." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Io_(moon)"
         },
@@ -13,15 +13,15 @@
             "ListGroups": [ "Galilean" ],
             "OrbitLineGroup": "Galilean",
             "Text": "Europa is the second of the four Galilean moons of Jupiter and is known for its smooth icy surface and the possibility of a subsurface ocean beneath its ice crust, which may harbor conditions suitable for life.",
-            "Factoids": [ "value2", "value3" ],
-            "VisitedBy": [ "None" ],
+            "Factoids": [ "Europa's surface is primarily composed of water ice.", "It has a subsurface ocean that may contain more than twice the amount of water found on Earth." ],
+            "VisitedBy": [ "Europa Clipper (Arriving 2030)" ],
             "WikipediaUrl": "Europa_(moon)"
         },
         "Ganymede": {
             "ListGroups": [ "Galilean" ],
             "OrbitLineGroup": "Galilean",
-            "Text": "Ganymede is the largest moon in the Solar System and is even larger than the planet Mercury. It has a magnetic field and is believed to have a subsurface ocean beneath its icy crust.",
-            "Factoids": [ "value2", "value3" ],
+            "Text": "Ganymede is the largest moon in the Solar System. It is believed to have a subsurface ocean beneath its icy crust.",
+            "Factoids": [ "Larger in diameter than the planet Mercury, although less massive due to its lower average density.", "Has a magnetic field, which is unique among moons." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Ganymede_(moon)"
         },
@@ -29,7 +29,7 @@
             "ListGroups": [ "Galilean" ],
             "OrbitLineGroup": "Galilean",
             "Text": "Callisto is the outermost of the four Galilean moons of Jupiter and is heavily cratered with a surface composed of ice and rock. It is believed to have a subsurface ocean beneath its icy crust.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "Has a heavily cratered surface, indicating it is one of the oldest landscapes in the Solar System." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Callisto_(moon)"
         },
@@ -37,7 +37,7 @@
             "ListGroups": [ "Inner Jupiter" ],
             "OrbitLineGroup": "Inner Jupiter",
             "Text": "Amalthea is the third moon of Jupiter and is one of the largest irregularly shaped moons in the Solar System. It has a reddish color due to the presence of sulfur compounds on its surface.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "Has a reddish color due to sulfur compounds on its surface.", "Orbits within Jupiter's faint ring system." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Amalthea_(moon)"
         },
@@ -45,7 +45,7 @@
             "ListGroups": [ "Inner Jupiter" ],
             "OrbitLineGroup": "Inner Jupiter",
             "Text": "Thebe is the fourth moon of Jupiter and is irregularly shaped with a heavily cratered surface. It orbits within Jupiter's faint ring system.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "Irregularly shaped with a heavily cratered surface.", "Has a reddish color due to sulfur compounds on its surface." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Thebe_(moon)"
         },
@@ -53,7 +53,7 @@
             "ListGroups": [ "Inner Jupiter" ],
             "OrbitLineGroup": "Inner Jupiter",
             "Text": "Adrastea is one of Jupiter's small inner moons and orbits within Jupiter's faint ring system. It is irregularly shaped and heavily cratered.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Adrastea_(moon)"
         },
@@ -61,7 +61,7 @@
             "ListGroups": [ "Inner Jupiter" ],
             "OrbitLineGroup": "Inner Jupiter",
             "Text": "Metis is the innermost of Jupiter's moons and orbits within Jupiter's faint ring system. It is irregularly shaped and heavily cratered.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Metis_(moon)"
         },
@@ -69,7 +69,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "Himalia is the largest irregular satellite of Jupiter and is part of the Himalia group of moons. It has a dark surface and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Himalia_(moon)"
         },
@@ -77,7 +77,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "Elara is a member of the Himalia group of moons and is one of Jupiter's irregular satellites. It has a dark surface and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Elara_(moon)"
         },
@@ -85,7 +85,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Pasiphae is the largest irregular satellite of Jupiter and is the namesake of the Pasiphae group of moons. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Pasiphae_(moon)"
         },
@@ -93,7 +93,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Sinope is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Sinope_(moon)"
         },
@@ -101,7 +101,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "Lysithea is a member of the Himalia group of moons and is one of Jupiter's irregular satellites. It has a dark surface and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Lysithea_(moon)"
         },
@@ -109,7 +109,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Carme is the largest member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Carme_(moon)"
         },
@@ -117,7 +117,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Ananke is the largest member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Ananke_(moon)"
         },
@@ -125,7 +125,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "Leda is a member of the Himalia group of moons and is one of Jupiter's irregular satellites. It has a dark surface and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Leda_(moon)"
         },
@@ -133,7 +133,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Callirrhoe is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Callirrhoe_(moon)"
         },
@@ -141,7 +141,7 @@
             "ListGroups": [ "Themisto" ],
             "OrbitLineGroup": "Themisto",
             "Text": "Themisto is a small irregular satellite of Jupiter that orbits independently of the major groups of moons. It has a prograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Themisto_(moon)"
         },
@@ -149,7 +149,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Megaclite is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Megaclite_(moon)"
         },
@@ -157,7 +157,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Taygete is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Taygete_(moon)"
         },
@@ -165,7 +165,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Chaldene is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Chaldene_(moon)"
         },
@@ -173,7 +173,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Harpalyke is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Harpalyke_(moon)"
         },
@@ -181,7 +181,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Kalyke is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Kalyke_(moon)"
         },
@@ -189,7 +189,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Iocaste is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Iocaste_(moon)"
         },
@@ -197,7 +197,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Erinome is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Erinome_(moon)"
         },
@@ -205,7 +205,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Isonoe is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Isonoe_(moon)"
         },
@@ -213,7 +213,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Praxidike is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Praxidike_(moon)"
         },
@@ -221,7 +221,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Autonoe is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Autonoe_(moon)"
         },
@@ -229,7 +229,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Thyone is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Thyone_(moon)"
         },
@@ -237,7 +237,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Hermippe is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Hermippe_(moon)"
         },
@@ -245,7 +245,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Aitne is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Aitne_(moon)"
         },
@@ -253,7 +253,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Eurydome is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Eurydome_(moon)"
         },
@@ -261,7 +261,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Euanthe is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Euanthe_(moon)"
         },
@@ -269,7 +269,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Euporie is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Euporie_(moon)"
         },
@@ -277,7 +277,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Orthosie is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Orthosie_(moon)"
         },
@@ -285,7 +285,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Sponde is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Sponde_(moon)"
         },
@@ -293,7 +293,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Kale is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Kale_(moon)"
         },
@@ -301,7 +301,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Pasithee is a member of the Carme group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Pasithee_(moon)"
         },
@@ -309,7 +309,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Hegemone is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Hegemone_(moon)"
         },
@@ -317,7 +317,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Mneme is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Mneme_(moon)"
         },
@@ -325,7 +325,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Aoede is a member of the Pasiphae group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Aoede_(moon)"
         },
@@ -333,7 +333,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Thelxinoe is a member of the Ananke group of moons and is one of Jupiter's irregular satellites. It has a retrograde orbit and is believed to be a captured asteroid.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Thelxinoe_(moon)"
         },
@@ -341,7 +341,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Arche is a member of the Carme group of irregular retrograde moons of Jupiter. It was discovered in 2002 and is believed to be a fragment of a larger body that was broken apart by a collision.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Arche_(moon)"
         },
@@ -349,7 +349,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Kallichore is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2003 and is thought to be a fragment of a larger moon that broke apart.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Kallichore_(moon)"
         },
@@ -357,7 +357,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Helike is a small irregular retrograde moon of Jupiter belonging to the Ananke group. It was discovered in 2003 and orbits Jupiter at a significant distance.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Helike_(moon)"
         },
@@ -365,7 +365,7 @@
             "ListGroups": [ "Carpo" ],
             "OrbitLineGroup": "Carpo",
             "Text": "Carpo is a small prograde irregular moon of Jupiter discovered in 2003. It is unique among Jupiter's outer moons for its prograde orbit and does not belong to any of the main irregular moon groups.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Carpo_(moon)"
         },
@@ -373,7 +373,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Eukelade is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2003 and is thought to be a fragment from a larger parent body.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Eukelade_(moon)"
         },
@@ -381,7 +381,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Cyllene is a small irregular retrograde moon of Jupiter belonging to the Pasiphae group. It was discovered in 2003 and has a retrograde orbit around Jupiter.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Cyllene_(moon)"
         },
@@ -389,7 +389,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "Kore is a small irregular retrograde moon of Jupiter belonging to the Pasiphae group. It was discovered in 2003 and orbits Jupiter in a retrograde direction.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Kore_(moon)"
         },
@@ -397,7 +397,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Herse is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2003 and shares similar orbital characteristics with other Carme group members.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Herse_(moon)"
         },
@@ -405,7 +405,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2010 J 1 is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2010 and orbits Jupiter at a considerable distance.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2010_J_1"
         },
@@ -413,7 +413,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2010 J 2 is a small irregular retrograde moon of Jupiter belonging to the Ananke group. It was discovered in 2010 and has a retrograde orbit similar to other Ananke group members.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2010_J_2"
         },
@@ -421,7 +421,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "Dia is a small prograde irregular moon of Jupiter belonging to the Himalia group. It was discovered in 2000 and orbits Jupiter in the same direction as the planet's rotation.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Dia_(moon)"
         },
@@ -429,7 +429,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2016 J 1 is a small irregular retrograde moon of Jupiter belonging to the Ananke group. It was discovered in 2016 as part of surveys searching for new Jovian satellites.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2016_J_1"
         },
@@ -437,7 +437,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2003 J 18 is a small irregular retrograde moon of Jupiter belonging to the Ananke group. It was discovered in 2003 and shares the retrograde orbital motion characteristic of its group.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_18"
         },
@@ -445,7 +445,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "S/2011 J 2 is a small irregular retrograde moon of Jupiter belonging to the Pasiphae group. It was discovered in 2011 and has orbital characteristics similar to other Pasiphae group members.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2011_J_2"
         },
@@ -453,7 +453,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Eirene is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2003 and is thought to be a collision fragment from a larger parent body.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Eirene_(moon)"
         },
@@ -461,7 +461,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "Philophrosyne is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2003 and orbits Jupiter in a retrograde direction at a significant distance.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Philophrosyne_(moon)"
         },
@@ -469,7 +469,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "S/2017 J 1 is a small irregular retrograde moon of Jupiter belonging to the Pasiphae group. It was discovered in 2017 during systematic surveys of Jupiter's irregular satellite population.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_1"
         },
@@ -477,7 +477,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "Eupheme is a small irregular retrograde moon of Jupiter belonging to the Ananke group. It was discovered in 2003 and has similar orbital properties to other members of its group.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Eupheme_(moon)"
         },
@@ -485,7 +485,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2003 J 19 is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2003 and is believed to be a fragment from a collision of a larger body.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_19"
         },
@@ -493,7 +493,7 @@
             "ListGroups": [ "Valetudo" ],
             "OrbitLineGroup": "Valetudo",
             "Text": "Valetudo is a small prograde irregular moon of Jupiter with an unusual orbit. Discovered in 2016, it orbits in the prograde direction but crosses the paths of retrograde moons, making it unique among Jupiter's satellites.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Valetudo_(moon)"
         },
@@ -501,7 +501,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2017 J 2 is a small irregular retrograde moon of Jupiter belonging to the Carme group. It was discovered in 2017 as part of ongoing surveys to catalog Jupiter's satellite system.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_2"
         },
@@ -509,7 +509,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2017 J 3 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_3"
         },
@@ -517,7 +517,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "Pandia is a small irregular moon in the Himalia group with a prograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Pandia_(moon)"
         },
@@ -525,7 +525,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2017 J 5 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_5"
         },
@@ -533,7 +533,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "S/2017 J 6 is a small irregular moon in the Pasiphae group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_6"
         },
@@ -541,7 +541,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2017 J 7 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_7"
         },
@@ -549,7 +549,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2017 J 8 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_8"
         },
@@ -557,7 +557,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2017 J 9 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_9"
         },
@@ -565,7 +565,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "Ersa is a small irregular moon in the Himalia group with a prograde orbit. It was discovered in 2018.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Ersa_(moon)"
         },
@@ -573,7 +573,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2011 J 1 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2011.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2011_J_1"
         },
@@ -581,7 +581,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2003 J 2 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_2"
         },
@@ -589,7 +589,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "S/2003 J 4 is a small irregular moon in the Pasiphae group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_4"
         },
@@ -597,7 +597,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2003 J 9 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_9"
         },
@@ -605,7 +605,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2003 J 10 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_10"
         },
@@ -613,7 +613,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2003 J 12 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_12"
         },
@@ -621,7 +621,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2003 J 16 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_16"
         },
@@ -629,7 +629,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "S/2003 J 23 is a small irregular moon in the Pasiphae group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_23"
         },
@@ -637,7 +637,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2003 J 24 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2003.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2003_J_24"
         },
@@ -645,7 +645,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "S/2011 J 3 is a small irregular moon in the Himalia group with a prograde orbit. It was discovered in 2011.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2011_J_3"
         },
@@ -653,7 +653,7 @@
             "ListGroups": [ "Himalia" ],
             "OrbitLineGroup": "Himalia",
             "Text": "S/2018 J 2 is a small irregular moon in the Himalia group with a prograde orbit. It was discovered in 2018.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2018_J_2"
         },
@@ -661,7 +661,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2018 J 3 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2018.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2018_J_3"
         },
@@ -669,7 +669,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2021 J 1 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2021.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2021_J_1"
         },
@@ -677,7 +677,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2021 J 2 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2021.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2021_J_2"
         },
@@ -685,7 +685,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2021 J 3 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2021.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2021_J_3"
         },
@@ -693,7 +693,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2021 J 4 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2021.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2021_J_4"
         },
@@ -701,7 +701,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2021 J 5 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2021.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2021_J_5"
         },
@@ -709,7 +709,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2021 J 6 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2021.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2021_J_6"
         },
@@ -717,7 +717,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2016 J 3 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2016.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2016_J_3"
         },
@@ -725,7 +725,7 @@
             "ListGroups": [ "Pasiphae" ],
             "OrbitLineGroup": "Pasiphae",
             "Text": "S/2016 J 4 is a small irregular moon in the Pasiphae group with a retrograde orbit. It was discovered in 2016.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2016_J_4"
         },
@@ -733,7 +733,7 @@
             "ListGroups": [ "Carpo" ],
             "OrbitLineGroup": "Carpo",
             "Text": "S/2018 J 4 is a small irregular moon in the Carpo group with a prograde orbit. It was discovered in 2018.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2018_J_4"
         },
@@ -741,7 +741,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2022 J 1 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2022.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2022_J_1"
         },
@@ -749,7 +749,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2022 J 2 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2022.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2022_J_2"
         },
@@ -757,7 +757,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2022 J 3 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2022.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2022_J_3"
         },
@@ -765,7 +765,7 @@
             "ListGroups": [ "Ananke" ],
             "OrbitLineGroup": "Ananke",
             "Text": "S/2017 J 10 is a small irregular moon in the Ananke group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_10"
         },
@@ -773,7 +773,7 @@
             "ListGroups": [ "Carme" ],
             "OrbitLineGroup": "Carme",
             "Text": "S/2017 J 11 is a small irregular moon in the Carme group with a retrograde orbit. It was discovered in 2017.",
-            "Factoids": [ "value2", "value3" ],
+            "Factoids": [ "" ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "S/2017_J_11"
         }
