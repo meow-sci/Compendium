@@ -20,14 +20,14 @@ namespace Compendium
             }
         }
 
-        public Celestial? FindCelestialById(Astronomical? root, string id)
+        public static Celestial? FindCelestialById(Astronomical? body, string id)
         {
-            if (root == null) return null;
-            if (root is Celestial cel && cel.Id == id)
+            if (body == null) return null;
+            if (body is Celestial cel && cel.Id == id)
             {
                 return cel;
             }
-            foreach (var child in root.Children)
+            foreach (var child in body.Children)
             {
                 var found = FindCelestialById(child, id);
                 if (found != null) return found;
@@ -35,28 +35,55 @@ namespace Compendium
             return null;
         }
 
-        public void ToggleCategoryOrbits(string categoryKey, bool showOrbit)
+        public static void ToggleCategoryOrbits(string categoryKey, bool showOrbit)
         {
             if (buttonsCatsTree == null || !buttonsCatsTree.ContainsKey(categoryKey)) return;
             
+            var systemName = Universe.CurrentSystem?.Id ?? "Dummy";
             var categoryTreeData = buttonsCatsTree[categoryKey];
             foreach (var parentEntry in categoryTreeData)
             {
+                // Skip the "Data" entry which contains CompendiumData for category description
+                if (parentEntry.Key == "Data") continue;
+                
                 // Toggle parent orbit
                 var parentCelestial = FindCelestialById(Universe.WorldSun, parentEntry.Key);
                 if (parentCelestial != null)
                 {
+                    // Toggle orbit visibility
                     parentCelestial.ShowOrbit = showOrbit;
+                    
+                    // Try to get the body's data from bodyJsonDict with proper key format
+                    CompendiumData? parentData = null;
+                    if (!bodyJsonDict.TryGetValue($"{systemName}.{parentCelestial.Id}", out parentData))
+                    {
+                        bodyJsonDict.TryGetValue($"Compendium.{parentCelestial.Id}", out parentData);
+                    }
+                    
+                    // Set DrawnUiBox based on data or default
+                    parentCelestial.DrawnUiBox = showOrbit ? true : (parentData?.DrawnUiBox ?? false);
                 }
                 
                 // Toggle children orbits
-                var childrenIds = (List<string>)((Dictionary<string, object>)parentEntry.Value)["Children"];
+                var parentEntryData = (Dictionary<string, object>)parentEntry.Value;
+                var childrenIds = (List<string>)parentEntryData["Children"];
                 foreach (var childId in childrenIds)
                 {
                     var childCelestial = FindCelestialById(Universe.WorldSun, childId);
                     if (childCelestial != null)
                     {
+                        // Toggle orbit visibility
                         childCelestial.ShowOrbit = showOrbit;
+                        
+                        // Try to get the child's data from bodyJsonDict with proper key format
+                        CompendiumData? childData = null;
+                        if (!bodyJsonDict.TryGetValue($"{systemName}.{childCelestial.Id}", out childData))
+                        {
+                            bodyJsonDict.TryGetValue($"Compendium.{childCelestial.Id}", out childData);
+                        }
+                        
+                        // Set DrawnUiBox based on data or default
+                        childCelestial.DrawnUiBox = showOrbit ? true : (childData?.DrawnUiBox ?? false);
                     }
                 }
             }
@@ -97,7 +124,7 @@ namespace Compendium
             ImGui.GetWindowDrawList().AddRectFilled(p_min, p_max, colorU32);
         }
 
-        public string FormatMassWithUnit(double massInKg)
+        public static string FormatMassWithUnit(double massInKg)
         {
             // Convert mass to appropriate order of magnitude unit
             // Based on https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)

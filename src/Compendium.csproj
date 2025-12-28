@@ -57,7 +57,7 @@
 	  <PackageReference Include="Lib.Harmony" Version="2.4.2">
 		  <PrivateAssets>all</PrivateAssets>
 	  </PackageReference>
-	  <PackageReference Include="StarMap.API" Version="0.3.4">
+	  <PackageReference Include="StarMap.API" Version="0.3.6">
 		  <PrivateAssets>all</PrivateAssets>
 	  </PackageReference>
     <!-- nuget.org doesn't seem to actually have this as a package on nuget right now -->

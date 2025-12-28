@@ -115,11 +115,60 @@
         },
         "Salacia": {
             "ListGroups": [ "Dwarf Planets", "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
+            "OrbitLineGroup": "Trans-Neptunian Objects",
             "Text": "Salacia is a large trans-Neptunian object classified as a dwarf planet. It has one known moon, Actaea. Salacia's surface is believed to be composed of a mixture of water ice and rock, giving it a relatively dark appearance compared to other TNOs. Its orbit is moderately eccentric and inclined, taking it through the outer regions of the Solar System.",
             "Factoids": [ "It has one known moon named Actaea.", "Discovered in 2004.", "Named after the Roman goddess of saltwater." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "120347_Salacia"
+        },
+        "Actaea": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Actaea is a satellite moon of the Dwarf Planet Salacia.",
+            "Factoids": [ "" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Actaea_(moon)"
+        },
+        "Ixion": {
+            "ListGroups": [ "Dwarf Planets", "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Ixion is a large trans-Neptunian object and possible dwarf planet in the Kuiper belt.",
+            "Factoids": [ "Discovered in 2001.", "Named after a figure from Greek mythology who was punished to eternally spin on a fiery wheel." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "28978_Ixion"
+        },
+        "Achlys": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Achlys is a distant trans-Neptunian object discovered in 2015. It is one of the most distant known objects in the Solar System, with an orbit that takes it far beyond the Kuiper Belt into the inner Oort Cloud.",
+            "Factoids": [ "Discovered in 2015.", "Has an extremely elongated orbit that takes about 4,000 years to complete.", "Named after the Greek goddess of mist and darkness." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "208996_Achlys"
+        },
+        "Lempo": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Lempo is a triple system in the Kuiper Belt, consisting of a primary body and two smaller moons, Hiisi and Paha.",
+            "Factoids": [ "Discovered in 2001.", "The primary body is approximately 272 kilometers in diameter.", "Hiisi and Paha are much smaller, with diameters of about 100 kilometers and 80 kilometers respectively.", "Named after figures from Finnish mythology." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "47171_Lempo"
+        },
+        "Hiisi": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Hiisi is one of the two moons of the trans-Neptunian object Lempo.",
+            "Factoids": [ "Discovered in 2001.", "Has a diameter of approximately 100 kilometers." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Hiisi_(moon)"
+        },
+        "Paha": {
+            "ListGroups": [ "Trans-Neptunian Objects" ],
+            "OrbitLineGroup": "Trans-Neptunian Objects",
+            "Text": "Paha is one of the two moons of the trans-Neptunian object Lempo.",
+            "Factoids": [ "Discovered in 2001.", "Has a diameter of approximately 80 kilometers." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Paha_(moon)"
         }
     }
+        
 }

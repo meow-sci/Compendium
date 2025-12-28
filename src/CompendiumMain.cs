@@ -1,5 +1,4 @@
 ﻿using Brutal.ImGuiApi;
-using Brutal.ImGuiApi.Internal;
 using Brutal.Numerics;
 using KSA;
 using ModMenu;
@@ -26,6 +25,9 @@ namespace Compendium
         public static List<string> categoryKeys = new List<string>();
         private static string justSelected = "";
         private static string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+        public static Dictionary<string, CompendiumData> bodyJsonDict = new Dictionary<string, CompendiumData>();
+        public static string? parentDir;
+        public static bool processedBodyJsonDict = false;
 
         [ModMenuEntry("Compendium Window")]
 
@@ -60,7 +62,11 @@ namespace Compendium
                         ImGui.End();
                     }
                     return;
-                }                
+                } else if (!processedBodyJsonDict)
+                {
+                    AttachInfoBodyJsonDict();
+                    processedBodyJsonDict = true;
+                }
                 
                 // Build category tree on first render when Universe is loaded, or rebuild if it was built without celestials
                 if (buttonsCatsTree == null || buttonsCatsTree.Count == 0 || !Compendium.categoriesBuiltWithCelestials)
@@ -110,7 +116,30 @@ namespace Compendium
                     // Dropdown arrow button for font settings
                     if (ImGui.ArrowButton("FontSettingsArrow", showFontSettings ? ImGuiDir.Up : ImGuiDir.Down))
                     { showFontSettings = !showFontSettings; }
-                    
+                    if (ImGui.IsItemHovered())
+                        {
+                            ImGui.BeginTooltip();
+                            ImGui.Text("Font Settings");
+                            ImGui.EndTooltip();
+                        }
+                    ImGui.SameLine();
+                // Makes a Legend button but make it so that it displays on the same line as the font settings arrow button, but on the right side of the window.
+
+                float buttonWidth = ImGui.CalcTextSize(" L ").X;
+                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonWidth);
+
+                if (ImGui.Button("L##LegendButton", new float2(buttonWidth, 0)))
+                {
+                    selectedCategoryKey = "Legend";
+                    justSelected = "Legend";
+                }
+                if (ImGui.IsItemHovered())
+                {
+                    ImGui.BeginTooltip();
+                    ImGui.Text("Legend of Astronomical / Celestial terms.");
+                    ImGui.EndTooltip();
+                }
+
                     if (showFontSettings)
                     {
                         PushTheFont(1);
@@ -221,8 +250,11 @@ namespace Compendium
 
                 PrintSelectedCategoryByKey(selectedCategoryKey);
 
-                ImGui.PopFont();
 
+
+
+
+                ImGui.PopFont();
                 ImGui.EndChild();
                 
                 // Resizable splitter
@@ -244,10 +276,25 @@ namespace Compendium
                 ImGui.SameLine();
                 float sidePaneWidth = windowSize.X - mainContentWidth - 16f; // Account for splitter and spacing
                 ImGui.BeginChild("SidePane", new float2(sidePaneWidth, 0));
+
+                Celestial? selectedCelestial = null;
+
+                // First check if the category selected is 'Legend' and make the legend information display
+                if (selectedCategoryKey == "Legend" && justSelected == "Legend")
+                {
+                    selectedCategoryIndex = -2;
+                    selectedCelestial = null;
+                    PrintLegendCategory();
+                    ImGui.EndChild(); // End side pane
+                    ImGui.End();
+                    return;
+                }
+
                 
-                // First regular bodies if selected, then if category was just selected make special text for the category and it's information / data.
+                // Next if regular bodies if selected, then later in 'else' meaning the category was just selected, make special text for the category and it's information / data.
                 if (justSelected != selectedCategoryKey)
                 {
+
                     ImGui.Separator();
                     // pushes a larger font only for the selected celestial id display
                     PushTheFont(1.7f);
@@ -258,7 +305,7 @@ namespace Compendium
                     ImGui.Text(" ");
 
                     // Find the selected celestial object from Universe.WorldSun tree
-                    Celestial? selectedCelestial = null;
+                    
                     if (selectedCelestialId != "None" && Universe.WorldSun != null)
                     {
                         var allCelestials = new List<Celestial>();
@@ -294,34 +341,51 @@ namespace Compendium
                         DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                         ImGui.Text(" ");
                         // Prints the radius
-                        float radiusKm = selectedCelestial.ObjectRadius / 1000f;
-                        ImString radiusText = new ImString($"Mean Radius: {radiusKm} km");
-                        ImGui.Text(radiusText);
+                        //float radiusKm = selectedCelestial.ObjectRadius / 1000f;
+                        //ImString radiusText = new ImString($"Mean Radius: {radiusKm} km");
+                        if (bodyJson != null && !float.IsNaN(bodyJson.RadiusKm))
+                        { ImString radiusText = new ImString($"Mean Radius: {bodyJson.RadiusKm} km");
+                          ImGui.Text(radiusText); }
+                        else { ImGui.Text("Mean Radius: N/A"); }
 
                         // now gets the mass of the selected celestial object with appropriate SI prefix unit
-                        string massWithSIPrefix = FormatMassWithUnit(selectedCelestial.Mass);
+                        //string massWithSIPrefix = FormatMassWithUnit(selectedCelestial.Mass);
                         // now gets a value for how many Earth masses the selected celestial object is, or if it's 1 percent or less of that, use Lunar masses
-                        double earthMasses = selectedCelestial.Mass / 5.972168e24;
-                        double lunarMasses = selectedCelestial.Mass / 7.342e22;
-                        ImString massText;
-                        if (earthMasses > 0.01) { massText = new ImString($"Mass: {selectedCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({earthMasses:F3} Earths)"); }
-                        else if (lunarMasses > 0.00001) { massText = new ImString($"Mass: {selectedCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({lunarMasses:F5} Lunas)"); }
-                        else { massText = new ImString($"Mass: {selectedCelestial.Mass:E2} Kg / ({massWithSIPrefix})"); }
-                        ImGui.Text(massText);
+                        //double earthMasses = selectedCelestial.Mass / 5.972168e24;
+                        // double lunarMasses = selectedCelestial.Mass / 7.342e22;
+                        //ImString massText;
+                        //if (earthMasses > 0.01) { massText = new ImString($"Mass: {selectedCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({earthMasses:F3} Earths)"); }
+                        //else if (lunarMasses > 0.00001) { massText = new ImString($"Mass: {selectedCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({lunarMasses:F5} Lunas)"); }
+                        //else { massText = new ImString($"Mass: {selectedCelestial.Mass:E2} Kg / ({massWithSIPrefix})"); }
+                        //ImGui.Text(massText);
+                        if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.MassText))
+                        { ImGui.Text(bodyJson.MassText); }
+                        else
+                        { ImGui.Text("Mass: N/A"); }
 
                         // Calculates gravity using the formula: g = G * M / R^2 and then what the surface gravity would be.
                         // where G is the gravitational constant (6.67430 × 10^-11 m^3 kg^-1 s^-2), M is the mass in kg, R is the radius in meters.
-                        double gravity = 6.67430e-11 * selectedCelestial.Mass / (selectedCelestial.ObjectRadius * selectedCelestial.ObjectRadius);
+                        //double gravity = 6.67430e-11 * selectedCelestial.Mass / (selectedCelestial.ObjectRadius * selectedCelestial.ObjectRadius);
                         // if the gravity just found is less than 0.001 m/s², display it as up to six decimal places.
-                        ImString gravityText;
-                        if (gravity < 0.001) { gravityText = new ImString($"Gravity: {gravity:F6} m/s²");}
-                        else { gravityText = new ImString($"Gravity: {gravity:F3} m/s²"); }
-                        ImGui.Text(gravityText);
+                        //ImString gravityText;
+                        //if (gravity < 0.001) { gravityText = new ImString($"Gravity: {gravity:F6} m/s²");}
+                        //else { gravityText = new ImString($"Gravity: {gravity:F3} m/s²"); }
+                        //ImGui.Text(gravityText);
+                        if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.GravityText))
+                        { ImGui.Text(bodyJson.GravityText); }
+                        else
+                        { ImGui.Text("Gravity: N/A"); }
+
 
                         // calculates the escape velocity using the formula: v = sqrt(2 * G * M / R)
-                        double escapeVelocity = Math.Sqrt(2 * 6.67430e-11 * selectedCelestial.Mass / selectedCelestial.ObjectRadius);
-                        ImString escapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity / 1000f:F3} km/s");
-                        ImGui.Text(escapeVelocityText);
+                        //double escapeVelocity = Math.Sqrt(2 * 6.67430e-11 * selectedCelestial.Mass / selectedCelestial.ObjectRadius);
+                        //ImString escapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity / 1000f:F3} km/s");
+                        //ImGui.Text(escapeVelocityText);
+                        if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.EscapeVelocityText))
+                        { ImGui.Text(bodyJson.EscapeVelocityText); }
+                        else
+                        { ImGui.Text("Escape Velocity: N/A"); }
+
                         ImGui.Text(" ");
                         // Makes a button to toggle showing or hiding a subsection for displaying the orbital properties of the selected celestial object.
                         // Always starts hidden until button is clicked.
@@ -338,80 +402,163 @@ namespace Compendium
 
                             
                             // Figures out the timescale we want to use for displaying the orbital period.  If it's more than 2 years, use years.  If it's more than 2 days, use days.  Otherwise use hours.
-                            double orbitalPeriodSeconds = selectedCelestial.Orbit.Period;
-                            string orbitalDisplay;
+                            // double orbitalPeriodSeconds = selectedCelestial.Orbit.Period;
+                            // string orbitalDisplay;
                             
-                            if (orbitalPeriodSeconds >= 63072000) // More than 2 years
-                            {
-                                double orbitalVal = orbitalPeriodSeconds / 31536000;
-                                orbitalDisplay = orbitalVal.ToString("F2") + " years";
-                            }
-                            else if (orbitalPeriodSeconds >= 172800) // More than 2 days
-                            {
-                                double orbitalVal = orbitalPeriodSeconds / 86400;
-                                orbitalDisplay = orbitalVal.ToString("F2") + " days";
-                            }
-                            else // Use hours
-                            {
-                                double orbitalVal = orbitalPeriodSeconds / 3600;
-                                orbitalDisplay = orbitalVal.ToString("F2") + " hours";
-                            }
+                            // if (orbitalPeriodSeconds >= 63072000) // More than 2 years
+                            // {
+                            //     double orbitalVal = orbitalPeriodSeconds / 31536000;
+                            //     orbitalDisplay = orbitalVal.ToString("F2") + " years";
+                            // }
+                            // else if (orbitalPeriodSeconds >= 172800) // More than 2 days
+                            // {
+                            //     double orbitalVal = orbitalPeriodSeconds / 86400;
+                            //     orbitalDisplay = orbitalVal.ToString("F2") + " days";
+                            // }
+                            // else // Use hours
+                            // {
+                            //     double orbitalVal = orbitalPeriodSeconds / 3600;
+                            //     orbitalDisplay = orbitalVal.ToString("F2") + " hours";
+                            // }
 
                             // Gets the axial tilt values depending on whether the selected celestial's parent is the sun or another body.
-                            double thisTilt;
-                            ImString thisTiltText;
-                            if (selectedCelestial.Parent == Universe.WorldSun)
-                            { 
-                                thisTilt = selectedCelestial.GetCce2Cci().ToXyzRadians().X * (180.0 / Math.PI);
-                                thisTiltText = new ImString($"{thisTilt:F2}°");
-                            }
+                            //double thisTilt;
+                            //ImString thisTiltText;
+                            //if (selectedCelestial.Parent == Universe.WorldSun)
+                            //{ 
+                            //thisTilt = selectedCelestial.GetCce2Cci().ToXyzRadians().X * (180.0 / Math.PI);
+                            //     thisTilt = selectedCelestial.BodyTemplate.Rotation.Tilt.ToDegrees();
+                            //     thisTiltText = new ImString($"{thisTilt:F2}°");
+                            // }
+                            // else
+                            // {
+                            //     thisTilt = selectedCelestial.GetCci2Orb().Inverse().ToXyzRadians().X * (180.0 / Math.PI);
+                            //     string parentName = selectedCelestial.Parent.Id;
+                            //     thisTiltText = new ImString($"{thisTilt:F2}° ( Relative to {selectedCelestial.Parent.Id} )");
+                            // } 
+             
+                            //ImString axialTiltText = new ImString($"Axial Tilt: {thisTiltText}");
+                            //ImGui.Text(axialTiltText);
+                            if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.ThisTiltText))
+                            { ImGui.Text(bodyJson.ThisTiltText); }
                             else
+                            { ImGui.Text("Axial Tilt: N/A"); }
+
+
+                            //ImString eccentricityText = new ImString($"Eccentricity: {selectedCelestial.Eccentricity:F4}");
+                            //ImGui.Text(eccentricityText);
+
+                            if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.EccentricityText))
+                            { ImGui.Text(bodyJson.EccentricityText); }
+                            else
+                            { ImGui.Text("Eccentricity: N/A"); }
+
+                            // test variable to see if the original Inclination is in radians.  If so, convert to degrees for display.
+
+                            double inclinationDeg = selectedCelestial.Inclination * (180.0 / Math.PI);
+  
+                            // first printing with the original value from the Celestial object.
+                            //ImString inclinationText = new ImString($"Inclination (rad?): {selectedCelestial.Inclination:F2}°");
+                            //ImGui.Text(inclinationText);
+                            // then printing with the converted degrees value for comparison.
+                            //ImString inclinationDegText = new ImString($"Inclination (deg?): {inclinationDeg:F2}°");
+                            //ImGui.Text(inclinationDegText);
+
+                            if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.InclinationText))
+                            { ImGui.Text(bodyJson.InclinationText); }
+                            else
+                            { ImGui.Text("Inclination: N/A"); }
+
+
+                            //ImString orbitalPeriodText = new ImString($"Orbital Period: {orbitalDisplay}");
+                            //ImGui.Text(orbitalPeriodText);
+                            if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.OrbitalDisplay))
+                            { ImGui.Text(bodyJson.OrbitalDisplay); }
+                            else
+                            { ImGui.Text("Orbital Period: N/A"); }
+                            
+
+
+
+                            // Gets the sidereal period in hours or days depending on length, and checks for tidal locking
+                            // For now uses .ToNearest() to return back the closest range to report the stat as..
+                            // string siderealPeriod;
+                            // ImString siderealPeriodText;
+                            // if (selectedCelestial.BodyTemplate.Rotation.IsTidallyLocked.Value == true || selectedCelestial.BodyTemplate.Rotation.SiderealPeriod == 0)
+                            // {
+                            //     ImString tidalLockText = new ImString("Tidally locked rotation");
+                            //     ImGui.Text(tidalLockText);
+                            // }
+                            // else
+                            // {
+                            //     siderealPeriod = selectedCelestial.BodyTemplate.Rotation.SiderealPeriod.ToNearest();
+                            //     if (siderealPeriod != null)
+                            //     {
+                            //         siderealPeriodText = new ImString($"Sidereal Period: {siderealPeriod:F2}");
+                            //         ImGui.Text(siderealPeriodText);
+                            //     }
+                            // }
+
+                            //
+                            if (bodyJson != null)
                             {
-                                thisTilt = selectedCelestial.GetCci2Orb().Inverse().ToXyzRadians().X * (180.0 / Math.PI);
-                                string parentName = selectedCelestial.Parent.Id;
-                                thisTiltText = new ImString($"{thisTilt:F2}° ( Relative to {selectedCelestial.Parent.Id} )");
-                            } 
-
-                            ImString axialTiltText = new ImString($"Axial Tilt: {thisTiltText}");
-                            ImGui.Text(axialTiltText);
-                            ImString eccentricityText = new ImString($"Eccentricity: {selectedCelestial.Eccentricity:F4}");
-                            ImGui.Text(eccentricityText);
-                            ImString inclinationText = new ImString($"Inclination: {selectedCelestial.Inclination:F2}°");
-                            ImGui.Text(inclinationText);
-                            ImString orbitalPeriodText = new ImString($"Orbital Period: {orbitalDisplay}");
-                            ImGui.Text(orbitalPeriodText);
-
+                                
+                                if (bodyJson.TidalLockText == "False" && !string.IsNullOrEmpty(bodyJson.SiderealPeriodText))
+                                { ImGui.Text(bodyJson.SiderealPeriodText); }
+                                else if (bodyJson.TidalLockText == "True" || bodyJson.TidalLockText == "Tidally locked rotation")
+                                { ImGui.Text(bodyJson.TidalLockText); }
+                                else 
+                                { ImGui.Text("Sidereal Period: N/A"); }
+                            }
 
                             // Gets the Semi-Major and Semi-Minor axes in AU for display if they are large enough - we only need a float.
                             // Keep in mind that both values are saved in game as meters, so we need divide by the appropritate factor to get m to AU.  1 AU = 1.496e+11 m
                             float semiMajorAxisAU = (float)selectedCelestial.SemiMajorAxis / 1.496e+11f; // Convert m to AU
-                            float semiMinorAxisAU = (float)selectedCelestial.SemiMinorAxis / 1.496e+11f; // Convert m to AU
-                            // Next saves the value of each in km as strings adding thousands separators for easier reading.
-                            // Clamps the decimal places to 1 for cleaner display.
-                            string semiMajorAxisKm = (selectedCelestial.SemiMajorAxis / 1000f).ToString("N1");
-                            string semiMinorAxisKm = (selectedCelestial.SemiMinorAxis / 1000f).ToString("N1");
+                            // float semiMinorAxisAU = (float)selectedCelestial.SemiMinorAxis / 1.496e+11f; // Convert m to AU
+                            // // Next saves the value of each in km as strings adding thousands separators for easier reading.
+                            // // Clamps the decimal places to 1 for cleaner display.
+                            // string semiMajorAxisKm = (selectedCelestial.SemiMajorAxis / 1000f).ToString("N1");
+                            // string semiMinorAxisKm = (selectedCelestial.SemiMinorAxis / 1000f).ToString("N1");
 
-                            // If the semi-major axis is less than 0.1 AU, display it in AU - otherwise display with both km and then AU. Use the same semimajor test for both it and semiminor printing
-                            if (semiMajorAxisAU < 0.1f)
+                            // // If the semi-major axis is less than 0.1 AU, display it in AU - otherwise display with both km and then AU. Use the same semimajor test for both it and semiminor printing
+                            // if (semiMajorAxisAU < 0.1f)
+                            // {
+                            //     ImString semiMajorAxisAUText = new ImString($"Semi-Major Axis: {semiMajorAxisKm} km");
+                            //     ImGui.Text(semiMajorAxisAUText);
+                            //     ImString semiMinorAxisAUText = new ImString($"Semi-Minor Axis: {semiMinorAxisKm} km");
+                            //     ImGui.Text(semiMinorAxisAUText);
+                            // }
+                            // else
+                            // {
+                            //     ImString semiMajorAxisBothText = new ImString($"Semi-Major Axis: {semiMajorAxisKm} km / {semiMajorAxisAU:F3} AU");
+                            //     ImGui.Text(semiMajorAxisBothText);
+                            //     ImString semiMinorAxisBothText = new ImString($"Semi-Minor Axis: {semiMinorAxisKm} km / {semiMinorAxisAU:F3} AU");
+                            //     ImGui.Text(semiMinorAxisBothText);
+                            // }
+
+                            // if (selectedCelestial.Orbit.GetType().Name != "Elliptical")
+                            // {
+                            //     ImString orbitTypeText = new ImString($"Orbit Type: {selectedCelestial.Orbit.GetType().Name}");
+                            //     ImGui.Text(orbitTypeText);
+                            // }
+                            if (bodyJson != null)
                             {
-                                ImString semiMajorAxisAUText = new ImString($"Semi-Major Axis: {semiMajorAxisKm} km");
-                                ImGui.Text(semiMajorAxisAUText);
-                                ImString semiMinorAxisAUText = new ImString($"Semi-Minor Axis: {semiMinorAxisKm} km");
-                                ImGui.Text(semiMinorAxisAUText);
-                            }
-                            else
-                            {
-                                ImString semiMajorAxisBothText = new ImString($"Semi-Major Axis: {semiMajorAxisKm} km / {semiMajorAxisAU:F3} AU");
-                                ImGui.Text(semiMajorAxisBothText);
-                                ImString semiMinorAxisBothText = new ImString($"Semi-Minor Axis: {semiMinorAxisKm} km / {semiMinorAxisAU:F3} AU");
-                                ImGui.Text(semiMinorAxisBothText);
+                                if (!string.IsNullOrEmpty(bodyJson.SemiMajorAxisText))
+                                { ImGui.Text(bodyJson.SemiMajorAxisText); }
+                                else
+                                { ImGui.Text("Semi-Major Axis: N/A"); }
+
+                                if (!string.IsNullOrEmpty(bodyJson.SemiMinorAxisText))
+                                { ImGui.Text(bodyJson.SemiMinorAxisText); }
+                                else
+                                { ImGui.Text("Semi-Minor Axis: N/A"); }
+
+                                if (!string.IsNullOrEmpty(bodyJson.OrbitTypeText) && bodyJson.OrbitTypeText != "Elliptical")
+                                { ImGui.Text(bodyJson.OrbitTypeText); }
                             }
 
-                            if (selectedCelestial.Orbit.GetType().Name != "Elliptical")
-                            {
-                                ImString orbitTypeText = new ImString($"Orbit Type: {selectedCelestial.Orbit.GetType().Name}");
-                                ImGui.Text(orbitTypeText);
-                            }
+
+
                             ImGui.PopFont();
                         }
                                             
@@ -590,6 +737,11 @@ namespace Compendium
                 }
                 else
                 {
+                    
+
+                    // This means category was selected but a body was not selected yet
+                    // This is effectively the "category option / information" screen.
+
                     // Pushes font for category-level data display
                     PushTheFont(1.9f);
                     ImString categoryTitle = new ImString($"{selectedCategoryKey}");
@@ -687,6 +839,8 @@ namespace Compendium
                 {
                     // Load celestial body descriptions from JSON files - pass dllDir since LoadCompendiumJsonData will search subdirectories
                     LoadCompendiumJsonData(dllDir);
+                    // Now we have a dictionary of bodyJsonDict loaded from JSON files.  Another function now goes through that list of bodies and harvests data to attach to each body.
+                    //AttachInfoBodyJsonDict();
                 }
                 
                // Console.WriteLine("=== Compendium - OnImmediateLoad END ===");
@@ -703,7 +857,6 @@ namespace Compendium
         [StarMapAllModsLoaded]
         public void OnFullyLoaded()
         {
-            
             try
             {
                 
@@ -721,6 +874,8 @@ namespace Compendium
                 // Makes a single string containing all of the categories in buttonsCatsTree
                 string allCategories = string.Join(", ", buttonsCatsTree.Keys);
                 Console.WriteLine($"Compendium: All categories loaded: {allCategories}");
+
+
             }
             catch (Exception ex)
             {
@@ -729,6 +884,17 @@ namespace Compendium
                 Console.WriteLine($"Stack trace: {ex.StackTrace}");
             }
             //Patcher.Patch();
+            
+            // Finally, attach the bodyJson data to each loaded celestial body in the jsonBodyDict that got made on initial load.
+            //AttachInfoBodyJsonDict();
+
+            // Prints to debug log all of the body IDs that were processed and had data attached inside bodyJsonDict
+            // foreach (var kvp in bodyJsonDict)
+            // {
+            //     var bodyId = kvp.Key;
+            //     var bodyJsonData = kvp.Value;
+            //     Console.WriteLine($"Compendium: Processed bodyJson data for celestial body: {bodyId}");
+            // }
             
         }
 

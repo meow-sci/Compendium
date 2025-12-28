@@ -19,6 +19,30 @@
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "1I/ʻOumuamua"
         },
+        "1I/Oumuamua": {
+            "ListGroups": [ "Interstellar Objects" ],
+            "OrbitLineGroup": "Interstellar Objects",
+            "Text": "Oumuamua is the first known interstellar object detected passing through the Solar System.",
+            "Factoids": [ "Oumuamua has a highly elongated shape.", "It was discovered in October 2017." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "1I/ʻOumuamua"
+        },
+        "2I/Borisov": {
+            "ListGroups": [ "Interstellar Objects" ],
+            "OrbitLineGroup": "Interstellar Objects",
+            "Text": "2I/Borisov is the second known interstellar object and the first known interstellar comet.",
+            "Factoids": [ "2I/Borisov has a composition similar to Solar System comets.", "It was discovered in August 2019." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "2I/Borisov"
+        },
+        "3I/Atlas": {
+            "ListGroups": [ "Interstellar Objects" ],
+            "OrbitLineGroup": "Interstellar Objects",
+            "Text": "3I/Atlas, the third known interstellar, a comet  Made closest approach to the Earth on December 19th, 2025 .",
+            "Factoids": [ "" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "3I/Atlas"
+        },
         "Halley": {
             "ListGroups": [ "Comets" ],
             "OrbitLineGroup": "Comets",

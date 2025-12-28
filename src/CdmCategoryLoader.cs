@@ -267,14 +267,24 @@ namespace Compendium
                         }
                     }
 
-                    // Now see if the categoryName has a 'ListGroupsData.<categoryName>' key in buttonsCatsTree.  If it does, add a key named 'data' to the    buttonsCatsTree[categoryName] dictionary with that data.
+                    // Now see if the categoryName has category-level data in ListGroupsData
                     // This attaches some category-level descriptive data to the category for display in the UI when the category is selected.
                     CompendiumData? listGroupData = null;
-                    if (!bodyJsonDict.TryGetValue($"{systemName}.ListGroupsData.{categoryName}", out listGroupData))
+                    
+                    // Try to get the ListGroupsData container, checking system-specific first, then default
+                    CompendiumData? listGroupsContainer = null;
+                    if (!bodyJsonDict.TryGetValue($"{systemName}.ListGroupsData", out listGroupsContainer))
                     {
-                        // Fall back to default "Compendium" key (e.g., "Compendium.ListGroupsData.Asteroids")
-                        bodyJsonDict.TryGetValue($"Compendium.ListGroupsData.{categoryName}", out listGroupData);
+                        // Fall back to default "Compendium" key
+                        bodyJsonDict.TryGetValue("Compendium.ListGroupsData", out listGroupsContainer);
                     }
+                    
+                    // If ListGroupsData was found, try to get the specific category from it
+                    if (listGroupsContainer?.ListGroupsData != null)
+                    {
+                        listGroupsContainer.ListGroupsData.TryGetValue(categoryName, out listGroupData);
+                    }
+                    
                     if (listGroupData != null)
                     { buttonsCatsTree[categoryName]["Data"] = listGroupData; }
                 }

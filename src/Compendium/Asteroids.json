@@ -7,110 +7,6 @@
                 "CatWikipediaUrl": "Asteroid"
             }
         },
-        "Ceres": {
-            "ListGroups": [ "Dwarf Planets", "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Ceres is the largest object in the asteroid belt between Mars and Jupiter and is classified as a dwarf planet.  In fact, Ceres mass accounts for about a third of the total combined mass of the asteroid belt.\nCeres existence was predicted before its discovery due to irregularities in the orbits of Mars and Jupiter as early the early 1600s by Johannes Kepler.",
-            "Factoids": [ "It was the first known asteroid - discovered (observed) in 1801 by Giuseppe Piazzi.", "At its brightest apparent magnitude from Earth Ceres may be seen on clear dark nights via binoculars or a small telescope.", "The only body designated as a dwarf planet within the orbit of Neptune.", "The only dwarf planet without a moon." ],
-            "VisitedBy": [ "Dawn (2015-2018)" ],
-            "WikipediaUrl": "Ceres_(dwarf_planet)"
-        },
-        "Pallas": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Pallas is the third largest asteroid in the asteroid belt between Mars and Jupiter and was the second asteroid to be discovered in 1802.",
-            "Factoids": [ "Pallas mass accounts for about 7 percent of the total mass of the asteroid belt.", "Likely a protoplanet remnant from the early solar system.", "It has an unusual orbit that is highly inclined to the plane of the solar system." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "2_Pallas"
-        },
-        "Juno": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Juno is one of the larger asteroids in the asteroid belt - tied with three other asteroids as the thirteenth largest. It was the third asteroid to be discovered in 1804.",
-            "Factoids": [ "An S-type asteroid composed primarily of silicate rock, with relatively high metal content and relatively high density compared to other asteroids.", "Has a fairly eccentric orbit about the Sun.", "Observations suggest Junos orbit may have shifted slightly around the year 1839 due to the influence of an unobserved celestial passerby." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "3_Juno"
-        },
-        "Vesta": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Vesta is one of the largest asteroids in the asteroid belt with a mass of about 9 percent of the total mass.  It is known for its bright surface and large impact basins.  It is likely a protoplanet remnant from the early solar system, perhaps the only remaining of the rocky type which formed the terrestrail planets.  Since it's initial formation Vesta has been in several violent collisions, the fragments of which sometimes even fall into the path of Earth.  Vesta was visited in 2011-2012 by the Dawn spacecraft for one year, before continuing its mission to Ceres.",
-            "Factoids": [ "The brightest asteroid visible from earth with a maximum apparent magnitude of 5.1.", "It was visited by the Dawn spacecraft.", "~1200 meteorites have been found on Earth that are believed to have originated from Vesta." ],
-            "VisitedBy": [ "Dawn" ],
-            "WikipediaUrl": "4_Vesta"
-        },
-        "Psyche": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Psyche is the largest known M-type dense / metallic asteroid located in the asteroid belt and is the target of NASA's Psyche mission due to arrive in 2029.\nIt is hypothesized to be the exposed core of a protoplanet that lost its outer layers due to violent collisions in the early solar system.",
-            "Factoids": [ "Psyche has a diameter of approximately 226 kilometers.", "It is believed to be the exposed core of a protoplanet." ],
-            "VisitedBy": [ "Psyche (2029 arrival)" ],
-            "WikipediaUrl": "16_Psyche"
-        },
-        "Lutetia": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Lutetia is a large M-type asteroid in the asteroid belt that was visited by the Rosetta spacecraft.",
-            "Factoids": [ "With a high density it is believed to be mainly metallic by mass.", "It has a diverse surface composition.", "Similar to Uranus, has an axial tilt of about 96 degrees to the plane of the solar system (ecliptic)." ],
-            "VisitedBy": [ "Rosetta (2010)" ],
-            "WikipediaUrl": "21_Lutetia"
-        },
-        "Ida": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Ida is an S-type asteroid in the asteroid belt, the second to have been visited by a spacecraft (Galileo).  The Galileo probe was launched to it's mission by the space shuttle Atlantis in 1989, and flew past Ida twice on its way to Jupiter.",
-            "Factoids": [ "Has an elongated shape ~60km at longest and ~25km at shortest.", "Ida has a small moon named Dactyl."],
-            "VisitedBy": [ "Galileo (1993)" ],
-            "WikipediaUrl": "243_Ida"
-        },
-        "Dactyl": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Dactyl is the small moon of the asteroid Ida.",
-            "Factoids": [ "Has a spherical, although heavily cratered shape", "Observed by the Galileo probe, it was the first direct observation of a moonlet orbiting an asteroid." ],
-            "VisitedBy": [ "Galileo (1993)" ],
-            "WikipediaUrl": "Dactyl_(moon)"
-        },
-        "Mathilde": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Mathilde is a dark, carbonaceous asteroid in the asteroid belt that was visited by the NEAR Shoemaker spacecraft.",
-            "Factoids": [ "Mathilde has a diameter of approximately 53 kilometers.", "It has a very low density, suggesting a porous structure." ],
-            "VisitedBy": [ "NEAR_Shoemaker (1997)" ],
-            "WikipediaUrl": "253_Mathilde"
-        },
-        "Eros": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Eros is a near-Earth asteroid that was the first asteroid to be orbited and landed on by a spacecraft.",
-            "Factoids": [ "Eros has a diameter of approximately 34 kilometers.", "It was visited by the NEAR Shoemaker spacecraft." ],
-            "VisitedBy": [ "NEAR_Shoemaker (1998)" ],
-            "WikipediaUrl": "433_Eros"
-        },
-        "Gaspra": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Gaspra is a small asteroid in the asteroid belt that was the first asteroid to be closely approached by a spacecraft.",
-            "Factoids": [ "Gaspra has a diameter of approximately 18 kilometers.", "It was visited by the Galileo spacecraft." ],
-            "VisitedBy": [ "Galileo (1991)" ],
-            "WikipediaUrl": "951_Gaspra"
-        },
-        "Steins": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Steins is a small asteroid in the asteroid belt that was visited by the Rosetta spacecraft.",
-            "Factoids": [ "Steins has a diameter of approximately 5 kilometers.", "It has a diamond-shaped appearance." ],
-            "VisitedBy": [ "Rosetta (2008)" ],
-            "WikipediaUrl": "2867_Steins"
-        },
-        "Toutatis": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Toutatis is a near-Earth asteroid known for its irregular shape and tumbling rotation.",
-            "Factoids": [ "Toutatis has a diameter of approximately 4.5 kilometers.", "It was closely approached by the Chinese Chang'e 2 spacecraft." ],
-            "VisitedBy": [ "Chang'e_2 (2012)" ],
-            "WikipediaUrl": "4179_Toutatis"
-        },
         "Annefrank": {
             "ListGroups": [ "Asteroids" ],
             "OrbitLineGroup": "Asteroids",
@@ -119,29 +15,13 @@
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "5535_Annefrank"
         },
-        "Braille": {
+        "Apophis": {
             "ListGroups": [ "Asteroids" ],
             "OrbitLineGroup": "Asteroids",
-            "Text": "Braille is a small asteroid in the asteroid belt named after Louis Braille, the inventor of the Braille writing system.",
-            "Factoids": [ "Braille has a diameter of approximately 3 kilometers.", "It was discovered in 1982." ],
+            "Text": "Apophis is a near-Earth asteroid that gained notoriety due to initial predictions of a potential impact with Earth in 2029 or 2036, which have since been ruled out.",
+            "Factoids": [ "Apophis has a diameter of approximately 370 meters.", "It will make a close approach to Earth on April 13, 2029." ],
             "VisitedBy": [ "None" ],
-            "WikipediaUrl": "9969_Braille"
-        },
-        "Itokawa": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Itokawa is a small near-Earth asteroid that was visited by the Japanese Hayabusa spacecraft.",
-            "Factoids": [ "Itokawa has a diameter of approximately 0.33 kilometers.", "It is a rubble-pile asteroid." ],
-            "VisitedBy": [ "Hayabusa (2005)" ],
-            "WikipediaUrl": "25143_Itokawa"
-        },
-        "Didymos": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Didymos is a binary near-Earth asteroid system that is the target of NASA's DART mission.",
-            "Factoids": [ "Didymos has a primary body with a diameter of approximately 0.78 kilometers.", "It has a small moon named Dimorphos." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "65803_Didymos"
+            "WikipediaUrl": "99942_Apophis"
         },
         "Bennu": {
             "ListGroups": [ "Asteroids" ],
@@ -151,21 +31,45 @@
             "VisitedBy": [ "OSIRIS-REx (2018-2021)" ],
             "WikipediaUrl": "101955_Bennu"
         },
-        "Ryugu": {
+        "Braille": {
             "ListGroups": [ "Asteroids" ],
             "OrbitLineGroup": "Asteroids",
-            "Text": "Ryugu is a near-Earth asteroid that was visited by the Japanese Hayabusa2 spacecraft.",
-            "Factoids": [ "Ryugu has a diameter of approximately 0.87 kilometers.", "It is a carbonaceous asteroid." ],
-            "VisitedBy": [ "Hayabusa2 (2018-2019)" ],
-            "WikipediaUrl": "162173_Ryugu"
-        },
-        "Kagarawa": {
-            "ListGroups": [ "Asteroids" ],
-            "OrbitLineGroup": "Asteroids",
-            "Text": "Kagarawa is a small asteroid in the asteroid belt.",
-            "Factoids": [ "Kagarawa has a diameter of approximately 2 kilometers.", "It was discovered in 1997." ],
+            "Text": "Braille is a small asteroid in the asteroid belt named after Louis Braille, the inventor of the Braille writing system.",
+            "Factoids": [ "Braille has a diameter of approximately 3 kilometers.", "It was discovered in 1982." ],
             "VisitedBy": [ "None" ],
-            "WikipediaUrl": "11302_Kagarawa"
+            "WikipediaUrl": "9969_Braille"
+        },
+        "Ceres": {
+            "ListGroups": [ "Dwarf Planets", "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Ceres is the largest object in the asteroid belt between Mars and Jupiter and is classified as a dwarf planet.  In fact, Ceres mass accounts for about a third of the total combined mass of the asteroid belt.\nCeres existence was predicted before its discovery due to irregularities in the orbits of Mars and Jupiter as early the early 1600s by Johannes Kepler.",
+            "Factoids": [ "It was the first known asteroid - discovered (observed) in 1801 by Giuseppe Piazzi.", "At its brightest apparent magnitude from Earth Ceres may be seen on clear dark nights via binoculars or a small telescope.", "The only body designated as a dwarf planet within the orbit of Neptune.", "The only dwarf planet without a moon." ],
+            "VisitedBy": [ "Dawn (2015-2018)" ],
+            "WikipediaUrl": "Ceres_(dwarf_planet)"
+        },
+        "Dactyl": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Dactyl is the small moon of the asteroid Ida.",
+            "Factoids": [ "Has a spherical, although heavily cratered shape", "Observed by the Galileo probe, it was the first direct observation of a moonlet orbiting an asteroid." ],
+            "VisitedBy": [ "Galileo (1993)" ],
+            "WikipediaUrl": "Dactyl_(moon)"
+        },
+        "Davida": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Davida is the fifth largest Asteroid in the asteroid belt between Mars and Jupiter.",
+            "Factoids": [ "" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "511_Davida"
+        },
+        "Didymos": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Didymos is a binary near-Earth asteroid system that is the target of NASA's DART mission.",
+            "Factoids": [ "Didymos has a primary body with a diameter of approximately 0.78 kilometers.", "It has a small moon named Dimorphos." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "65803_Didymos"
         },
         "Dimorphos": {
             "ListGroups": [ "Asteroids" ],
@@ -175,13 +79,93 @@
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "Dimorphos"
         },
-        "Haunu": {
+        "Eros": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Eros is a near-Earth asteroid that was the first asteroid to be orbited and landed on by a spacecraft.",
+            "Factoids": [ "Eros has a diameter of approximately 34 kilometers.", "It was visited by the NEAR Shoemaker spacecraft." ],
+            "VisitedBy": [ "NEAR_Shoemaker (1998)" ],
+            "WikipediaUrl": "433_Eros"
+        },
+        "Eunomia": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Eunomia is a large asteroid in the asteroid belt between Mars and Jupiter.",
+            "Factoids": [ "" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "15_Eunomia"
+        },
+        "Europa52": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Europa 52 is the sixth largest Asteroid in the asteroid belt between Mars and Jupiter.",
+            "Factoids": [ "" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "52_Europa"
+        },
+        "Gaspra": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Gaspra is a small asteroid in the asteroid belt that was the first asteroid to be closely approached by a spacecraft.",
+            "Factoids": [ "Gaspra has a diameter of approximately 18 kilometers.", "It was visited by the Galileo spacecraft." ],
+            "VisitedBy": [ "Galileo (1991)" ],
+            "WikipediaUrl": "951_Gaspra"
+        },
+         "Haunu": {
             "ListGroups": [ "Asteroids" ],
             "OrbitLineGroup": "Asteroids",
             "Text": "Haunu is a small asteroid in the asteroid belt.",
             "Factoids": [ "Haunu has a diameter of approximately 3 kilometers.", "It was discovered in 1999." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "469705_ǂKá̦gára"
+        },
+         "Hektor": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Hektor is the largest of the Jupiter Trojan asteroids, which share Jupiter's orbit around the Sun.",
+            "Factoids": [ "Hektor has a highly elongated shape.", "It has a small moon named Skamandrios." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "624_Hektor"
+        },
+        "Ida": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Ida is an S-type asteroid in the asteroid belt, the second to have been visited by a spacecraft (Galileo).  The Galileo probe was launched to it's mission by the space shuttle Atlantis in 1989, and flew past Ida twice on its way to Jupiter.",
+            "Factoids": [ "Has an elongated shape ~60km at longest and ~25km at shortest.", "Ida has a small moon named Dactyl."],
+            "VisitedBy": [ "Galileo (1993)" ],
+            "WikipediaUrl": "243_Ida"
+        },
+         "Interamnia": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Intermania is a small asteroid in the asteroid belt.",
+            "Factoids": [ "Intermania has a diameter of approximately 5 kilometers.", "It was discovered in 1909." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "704_Interamnia"
+        },
+        "Iris": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Iris is a large asteroid in the asteroid belt between Mars and Jupiter.",
+            "Factoids": [ "Possible remnant planetesimal." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "7_Iris"
+        },
+         "Itokawa": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Itokawa is a small near-Earth asteroid that was visited by the Japanese Hayabusa spacecraft.",
+            "Factoids": [ "Itokawa has a diameter of approximately 0.33 kilometers.", "It is a rubble-pile asteroid." ],
+            "VisitedBy": [ "Hayabusa (2005)" ],
+            "WikipediaUrl": "25143_Itokawa"
+        },
+        "Juno": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Juno is one of the larger asteroids in the asteroid belt - tied with three other asteroids as the thirteenth largest. It was the third asteroid to be discovered in 1804.",
+            "Factoids": [ "An S-type asteroid composed primarily of silicate rock, with relatively high metal content and relatively high density compared to other asteroids.", "Has a fairly eccentric orbit about the Sun.", "Observations suggest Junos orbit may have shifted slightly around the year 1839 due to the influence of an unobserved celestial passerby." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "3_Juno"
         },
         "Kagara": {
             "ListGroups": [ "Asteroids" ],
@@ -190,6 +174,78 @@
             "Factoids": [ "Kagara has a diameter of approximately 4 kilometers.", "It was discovered in 1999." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "469705_ǂKá̦gára"
+        },
+        "Lutetia": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Lutetia is a large M-type asteroid in the asteroid belt that was visited by the Rosetta spacecraft.",
+            "Factoids": [ "With a high density it is believed to be mainly metallic by mass.", "It has a diverse surface composition.", "Similar to Uranus, has an axial tilt of about 96 degrees to the plane of the solar system (ecliptic)." ],
+            "VisitedBy": [ "Rosetta (2010)" ],
+            "WikipediaUrl": "21_Lutetia"
+        },
+        "Pallas": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Pallas is the third largest asteroid in the asteroid belt between Mars and Jupiter and was the second asteroid to be discovered in 1802.",
+            "Factoids": [ "Pallas mass accounts for about 7 percent of the total mass of the asteroid belt.", "Likely a protoplanet remnant from the early solar system.", "It has an unusual orbit that is highly inclined to the plane of the solar system." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "2_Pallas"
+        },
+        "Psyche": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Psyche is the largest known M-type dense / metallic asteroid located in the asteroid belt and is the target of NASA's Psyche mission due to arrive in 2029.\nIt is hypothesized to be the exposed core of a protoplanet that lost its outer layers due to violent collisions in the early solar system.",
+            "Factoids": [ "Psyche has a diameter of approximately 226 kilometers.", "It is believed to be the exposed core of a protoplanet." ],
+            "VisitedBy": [ "Psyche (2029 arrival)" ],
+            "WikipediaUrl": "16_Psyche"
+        },
+        "Mathilde": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Mathilde is a dark, carbonaceous asteroid in the asteroid belt that was visited by the NEAR Shoemaker spacecraft.",
+            "Factoids": [ "Mathilde has a diameter of approximately 53 kilometers.", "It has a very low density, suggesting a porous structure." ],
+            "VisitedBy": [ "NEAR_Shoemaker (1997)" ],
+            "WikipediaUrl": "253_Mathilde"
+        },
+        "Steins": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Steins is a small asteroid in the asteroid belt that was visited by the Rosetta spacecraft.",
+            "Factoids": [ "Steins has a diameter of approximately 5 kilometers.", "It has a diamond-shaped appearance." ],
+            "VisitedBy": [ "Rosetta (2008)" ],
+            "WikipediaUrl": "2867_Steins"
+        },
+        "Thisbe": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Thisbe is a large asteroid in the asteroid belt between Mars and Jupiter.",
+            "Factoids": [ "" ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "88_Thisbe"
+        },
+        "Toutatis": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Toutatis is a near-Earth asteroid known for its irregular shape and tumbling rotation.",
+            "Factoids": [ "Toutatis has a diameter of approximately 4.5 kilometers.", "It was closely approached by the Chinese Chang'e 2 spacecraft." ],
+            "VisitedBy": [ "Chang'e_2 (2012)" ],
+            "WikipediaUrl": "4179_Toutatis"
+        },
+        "Ryugu": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Ryugu is a near-Earth asteroid that was visited by the Japanese Hayabusa2 spacecraft.",
+            "Factoids": [ "Ryugu has a diameter of approximately 0.87 kilometers.", "It is a carbonaceous asteroid." ],
+            "VisitedBy": [ "Hayabusa2 (2018-2019)" ],
+            "WikipediaUrl": "162173_Ryugu"
+        }, 
+        "Vesta": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Vesta is one of the largest asteroids in the asteroid belt with a mass of about 9 percent of the total mass.  It is known for its bright surface and large impact basins.  It is likely a protoplanet remnant from the early solar system, perhaps the only remaining of the rocky type which formed the terrestrail planets.  Since it's initial formation Vesta has been in several violent collisions, the fragments of which sometimes even fall into the path of Earth.  Vesta was visited in 2011-2012 by the Dawn spacecraft for one year, before continuing its mission to Ceres.",
+            "Factoids": [ "The brightest asteroid visible from earth with a maximum apparent magnitude of 5.1.", "It was visited by the Dawn spacecraft.", "~1200 meteorites have been found on Earth that are believed to have originated from Vesta." ],
+            "VisitedBy": [ "Dawn" ],
+            "WikipediaUrl": "4_Vesta"
         }
     }
 }

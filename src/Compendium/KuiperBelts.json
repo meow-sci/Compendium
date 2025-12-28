@@ -14,6 +14,38 @@
             "Factoids": [ "Arrokoth has a bilobed shape resembling a snowman.", "It was discovered in 2014 using the Hubble Space Telescope.", "Named 'Arrokoth', meaning 'sky' in the Powhatan/Algonquian language, in 2020.", "Has a very low density, suggesting it is composed mostly of ice with some rock.", "Provides insights into the conditions of the early Solar System and the formation of planetesimals." ],
             "VisitedBy": [ "New Horizons (2019)" ],
             "WikipediaUrl": "486958_Arrokoth"
+        },
+        "Varuna": {
+            "ListGroups": [ "Dwarf Planets", "Kuiper Belt" ],
+            "OrbitLineGroup": "Kuiper Belt Objects",
+            "Text": "Varuna is a large Kuiper belt object that is considered a possible dwarf planet. It has a rapid rotation period and an elongated shape, suggesting it may be a contact binary or have a significant elongation due to its spin. Varuna's surface is thought to be composed of water ice and other ices, giving it a relatively bright appearance compared to other Kuiper belt objects.",
+            "Factoids": [ "Varuna has a rotation period of approximately 6.34 hours.", "It was discovered in 2000.", "Named after the Hindu god of water and the celestial ocean." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "20000_Varuna"
+        },
+        "Uni": {
+            "ListGroups": [ "Kuiper Belt" ],
+            "OrbitLineGroup": "Kuiper Belt Objects",
+            "Text": "Unis is a mid-sized Kuiper belt object that orbits the Sun beyond Neptune. It has a relatively circular orbit and is thought to be composed of a mixture of rock and ice. Unis's surface is believed to be covered in a layer of complex organic compounds, giving it a reddish color.",
+            "Factoids": [ "Unis has an estimated diameter of around 300 kilometers.", "It was discovered in 2004.", "Named after the ancient Egyptian goddess of the sky." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "55637_Uni"
+        },
+        "2003_VS_2": {
+            "ListGroups": [ "Kuiper Belt" ],
+            "OrbitLineGroup": "Kuiper Belt Objects",
+            "Text": "2003 VS2 is Kuiper belt object, which like Pluto, orbits the sun in a 3:2 resonance with Neptune. It has a relatively bright surface, suggesting it may be covered in a layer of ices. 2003 VS2's orbit is less eccentric and inclined than Pluto however.",
+            "Factoids": [ "Likely has an ellipsoid shape", "Has a reddish color." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "(84922)_2003_VS2"
+        },
+        "2003_UZ_413": {
+            "ListGroups": [ "Kuiper Belt" ],
+            "OrbitLineGroup": "Kuiper Belt Objects",
+            "Text": "2003 UZ413 is a Kuiper belt object that orbits the Sun beyond Neptune. It has a relatively circular orbit and is thought to be composed of a mixture of rock and ice. 2003 UZ413's surface is believed to be covered in a layer of complex organic compounds, giving it a reddish color.  It's very likely a dwarf planet but isn't currently classified as such pending confirmation.",
+            "Factoids": [ "Has a very high density compared with other Kuiper belt objects.", "It was discovered in 2003.", "Has a rapid rotation period of approximately 4.13 hours." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "(455502)_2003_UZ413"
         }
     }
 }

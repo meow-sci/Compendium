@@ -1,4 +1,6 @@
 using System.Text.Json;
+using KSA;
+using Brutal.ImGuiApi;
 
 namespace Compendium
 {
@@ -14,14 +16,34 @@ namespace Compendium
         public Dictionary<string, CompendiumData>? ListGroupsData { get; set; }
         public string? CatText { get; set; }
         public string? CatWikipediaUrl { get; set; }
+        public OrbitLineMode? OrbitLineMode { get; set; }
+        public bool? DrawnUiBox { get; set; }
+        public float RadiusKm { get; internal set; }
+        public string? MassWithSIPrefix { get; internal set; }
+        public double EarthMasses { get; internal set; }
+        public double LunarMasses { get; internal set; }
+        public double Mass { get; internal set; }
+        public string? MassText { get; internal set; }
+        public double Gravity { get; internal set; }
+        public string? GravityText { get; internal set; }
+        public string? EccentricityText { get; internal set; }
+        public double EscapeVelocity { get; internal set; }
+        public string? OrbitalDisplay { get; internal set; }
+        public string? ThisTiltText { get; internal set; }
+        public string? TidalLockText { get; internal set; }
+        public string? SiderealPeriodText { get; internal set; }
+        public string? EscapeVelocityText { get; internal set; }
+        public string? SemiMajorAxisText { get; internal set; }
+        public string? SemiMinorAxisText { get; internal set; }
+        public string? OrbitTypeText { get; internal set; }
+        public string? InclinationText { get; internal set; }
     }
 
     public partial class Compendium
     {
         // Deserializes the json data for text descriptions later into a dictionary, load all of the jsons found in the folderpath given
         // The resulting dictionary is stored in bodyJsonDict
-        public  static Dictionary<string, CompendiumData> bodyJsonDict = new Dictionary<string, CompendiumData>();
-        public static string? parentDir;
+
 
         public void LoadCompendiumJsonData(string dataDir)
         {

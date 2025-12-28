@@ -10,7 +10,7 @@
         "Mercury": {
             "ListGroups": [ "Planets" ],
             "OrbitLineGroup": "Planets",
-            "Text": "Mercury is the smallest and innermost planet in the Solar System.  It has a rocky body and a very, very thin atmosphere.  It is actually rivaled in size by some of the larger moons in the solar system, such as Ganymede and Titan.  Mercury has a very large iron core which generates a magnetic field about 1% as strong as Earth's.  It has a heavily cratered surface, similar in appearance to the Moon, and experiences extreme temperature variations between its day and night sides.",
+            "Text": "Mercury is the smallest and innermost planet in the Solar System.  It has a rocky body and a very, very thin atmosphere.  It is actually rivaled in size by some of the larger moons in the solar system, such as Ganymede and Titan.  Mercury has a very large iron core which generates a magnetic field about 1 percent as strong as Earth's.  It has a heavily cratered surface, similar in appearance to the Moon, and experiences extreme temperature variations between its day and night sides.",
             "Factoids": [ "Rotates at a 3:2 spin-orbit resonance", "Generates X-ray auroras directly on its surface with solar wind interactions and its magnetic field causing the charged solar particles to strike minerals on its surface which flouresce.", "Planet with the highest delta-V requirement to reach and enter orbit from Earth" ],
             "VisitedBy": [ "Mariner 10 (1974-1975)", "MESSENGER (2011-2015)", "BepiColombo (2021-present)" ],
             "WikipediaUrl": "Mercury_(planet)"

@@ -14,12 +14,36 @@ namespace Compendium
             {                
                 if (string.IsNullOrEmpty(categoryKey) || buttonsCatsTree == null || !buttonsCatsTree.ContainsKey(categoryKey))
                 {
+                    if (selectedCategoryKey != "Legend")
+                    {
                     ImGui.Text("No data for this category");
+                    }
                     return;
                 }
 
                 // Get the category data from buttonsCatsTree
-                var categoryData = buttonsCatsTree[categoryKey];
+                IDictionary<string, object> categoryData = buttonsCatsTree[categoryKey];
+                // Sorts the parent bodies alphabetically, but ONLY if the category is not "Planets" or is "Planets" but does not contain Mercury
+                if (categoryKey != "Planets" || (categoryKey == "Planets" && !categoryData.ContainsKey("Mercury")))
+                {
+                    categoryData = new SortedDictionary<string, object>(categoryData);
+                }
+                else
+                {
+                    // For "Planets" category which contains Mercury, fix to put Mercury first. For some reason the game lists it second after Venus.
+                    // Only gets here if Mercury is present in the category
+                        var tempDict = new Dictionary<string, object>
+                        {
+                            { "Mercury", buttonsCatsTree[categoryKey]["Mercury"] }
+                        };
+                        foreach (var kvp in categoryData)
+                        {
+                            if (kvp.Key == "Mercury")
+                                { continue; }
+                            tempDict.Add(kvp.Key, kvp.Value);
+                        }
+                        categoryData = tempDict;
+                }
             
             if (categoryData.Count > 0)
             {
@@ -28,6 +52,11 @@ namespace Compendium
                 foreach (var parentEntry in categoryData)
                 {
                     string parentBodyId = parentEntry.Key;
+                    
+                    // Skip the "Data" entry which contains category-level information
+                    if (parentBodyId == "Data")
+                        continue;
+                    
                     var parentData = (Dictionary<string, object>)parentEntry.Value;
                     var childrenIds = (List<string>)parentData["Children"];
                     
@@ -163,6 +192,25 @@ namespace Compendium
                 ImString errorMsg = new ImString($"Error: {ex.Message}");
                 ImGui.Text(errorMsg);
             }
+        }
+
+        public void PrintLegendCategory()
+        {
+            ImGui.Text("Compendium Legend");
+            ImGui.Separator();
+            ImGui.Text("This is the legend for the Compendium categories and their celestial bodies.");
+            ImGui.Text("Each category groups celestial bodies based on specific characteristics or themes.");
+            ImGui.Separator();
+            ImGui.Text("Categories:");
+            ImGui.BulletText("Planets: Major planets in the solar system.");
+            ImGui.BulletText("Moons: Natural satellites orbiting planets.");
+            ImGui.BulletText("Dwarf Planets: Celestial bodies that are similar to planets but do not meet all criteria.");
+            ImGui.BulletText("Asteroids: Small rocky bodies orbiting the sun, primarily found in the asteroid belt.");
+            ImGui.BulletText("Comets: Icy bodies that release gas or dust, often forming a visible coma or tail when near the sun.");
+            ImGui.BulletText("Stars: Luminous celestial bodies made of plasma, primarily hydrogen and helium.");
+            ImGui.BulletText("Black Holes: Regions of spacetime exhibiting gravitational acceleration so strong that nothing can escape from it.");
+            ImGui.Separator();
+            ImGui.Text("Select a category from the side pane to view its celestial bodies.");
         }
     }
 }
