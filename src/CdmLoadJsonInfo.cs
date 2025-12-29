@@ -37,6 +37,9 @@ namespace Compendium
         public string? SemiMinorAxisText { get; internal set; }
         public string? OrbitTypeText { get; internal set; }
         public string? InclinationText { get; internal set; }
+        public string? SphereOfInfluenceText { get; internal set; }
+        public bool HasAtmosphere { get; internal set; }
+        public string? AtmosphereHeightText { get; internal set; }
     }
 
     public partial class Compendium

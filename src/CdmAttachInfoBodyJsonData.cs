@@ -62,8 +62,8 @@ namespace Compendium
                 // where G is the gravitational constant (6.67430 × 10^-11 m^3 kg^-1 s^-2), M is the mass in kg, R is the radius in meters.
                 double gravity = 6.67430e-11 * bodyCelestial.Mass / (bodyCelestial.ObjectRadius * bodyCelestial.ObjectRadius);
                 // if the gravity just found is less than 0.001 m/s², display it as up to six decimal places.
-                if (gravity < 0.001) { bodyJsonData.GravityText = new ImString($"Gravity: {gravity:F6} m/s²");}
-                else { bodyJsonData.GravityText = new ImString($"Gravity: {gravity:F3} m/s²"); }
+                if (gravity < 0.001) { bodyJsonData.GravityText = new ImString($"Gravity (Surface): {gravity:F6} m/s²");}
+                else { bodyJsonData.GravityText = new ImString($"Gravity (Surface): {gravity:F3} m/s²"); }
 
 
 
@@ -154,11 +154,14 @@ namespace Compendium
                     siderealPeriod = bodyCelestial.BodyTemplate.Rotation.SiderealPeriod.ToNearest();
                     if (siderealPeriod != null)
                     {
-                        bodyJsonData.SiderealPeriodText = new ImString($"Sidereal Period: {siderealPeriod:F2}");
                         bodyJsonData.TidalLockText = new ImString("False");
+
+                        if (!bodyCelestial.BodyTemplate.Rotation.IsRetrograde)
+                            { bodyJsonData.SiderealPeriodText = new ImString($"Sidereal Period: {siderealPeriod:F2}"); }
+                        else
+                            { bodyJsonData.SiderealPeriodText = new ImString($"Sidereal Period: {siderealPeriod:F2} ( Retrograde )"); }
                     }
                 }
-
 
 
                 // Gets the Semi-Major and Semi-Minor axes in AU for display if they are large enough - we only need a float.
@@ -187,8 +190,21 @@ namespace Compendium
                 else
                 { bodyJsonData.OrbitTypeText = new ImString("Elliptical"); }
 
+                // Sphere of influence
+                double sphereOfInfluenceKm = bodyCelestial.SphereOfInfluence / 1000f;
+                bodyJsonData.SphereOfInfluenceText = new ImString($"Sphere of Influence: {sphereOfInfluenceKm:N1} km");
+
+                // If body has an atmosphere true/false
+                bodyJsonData.HasAtmosphere = (bodyCelestial.BodyTemplate.AtmosphereReference != null) ? true : false;
+
+                // Atmosphere height
+                if (bodyCelestial.BodyTemplate.AtmosphereReference != null)
+                {
+                    string atmosphereHeightKm = bodyCelestial.BodyTemplate.AtmosphereReference.Physical.Height.ToNearest();
+                    bodyJsonData.AtmosphereHeightText = new ImString($"Atmosphere Height: {atmosphereHeightKm}");
                 }
-            }
-        
+
+            }    
+        }
     }
 }

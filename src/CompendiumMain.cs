@@ -340,7 +340,7 @@ namespace Compendium
                         if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.GravityText))
                         { ImGui.Text(bodyJson.GravityText); }
                         else
-                        { ImGui.Text("Gravity: N/A"); }
+                        { ImGui.Text("Gravity (Surface): N/A"); }
                         // Escape Velocity
                         if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.EscapeVelocityText))
                         { ImGui.Text(bodyJson.EscapeVelocityText); }
@@ -377,7 +377,7 @@ namespace Compendium
                             { ImGui.Text("Inclination: N/A"); }
                             // Orbital Period
                             if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.OrbitalPeriod))
-                            { ImGui.Text(bodyJson.OrbitalPeriod); }
+                            { ImGui.Text("Orbital period: " + bodyJson.OrbitalPeriod); }
                             else
                             { ImGui.Text("Orbital Period: N/A"); }
                             // Sidereal Period / Tidal Lock
@@ -406,6 +406,30 @@ namespace Compendium
                                 if (!string.IsNullOrEmpty(bodyJson.OrbitTypeText) && bodyJson.OrbitTypeText != "Elliptical")
                                 { ImGui.Text(bodyJson.OrbitTypeText); }
                             }
+
+                            // Atmosphere / Height
+                            if (bodyJson != null)
+                            {
+                                if (bodyJson.HasAtmosphere)
+                                {
+                                    if (!string.IsNullOrEmpty(bodyJson.AtmosphereHeightText))
+                                    { ImGui.Text(bodyJson.AtmosphereHeightText); }
+                                    else
+                                    { ImGui.Text("Has Atmosphere"); }
+                                }
+                                else
+                                { ImGui.Text("Atmosphere: None"); }
+                            }
+
+
+
+                            // Sphere of Influence
+                            if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.SphereOfInfluenceText))
+                            { ImGui.Text(bodyJson.SphereOfInfluenceText); }
+                            else
+                            { ImGui.Text("Sphere of Influence: N/A"); }
+
+
                             ImGui.PopFont();
                         }
                                             
