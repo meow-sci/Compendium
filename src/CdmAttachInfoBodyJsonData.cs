@@ -29,17 +29,17 @@ namespace Compendium
                 var bodyJsonData = kvp.Value;
                 // gets the celestial body by its ID
                 var worldSun = Universe.WorldSun;
-                Console.WriteLine($"Compendium: Looking for celestial body with ID: {bodyId} with WorldSun {worldSun}");
+                //Console.WriteLine($"Compendium: Looking for celestial body with ID: {bodyId} with WorldSun {worldSun}");
                 Celestial? bodyCelestial = FindCelestialById(worldSun, bodyId);
 
                 // First checks if the entry as key exists as a celestial body in the current universe - if it doesn't then skip it.
                 if (bodyCelestial == null)
                 {
-                    Console.WriteLine($"Compendium: bodyCelestial is null for bodyId: '{bodyId}' / '{bodyCelestial}', skipping...");
+                    //Console.WriteLine($"Compendium: bodyCelestial is null for bodyId: '{bodyId}' / '{bodyCelestial}', skipping...");
                     continue;
                 }
 
-                Console.WriteLine($"Compendium: Attaching bodyJson data to celestial body: {bodyId}");
+                //Console.WriteLine($"Compendium: Attaching bodyJson data to celestial body: {bodyId}");
                 bodyJsonData.OrbitLineMode = bodyCelestial.OrbitLineMode;
                 bodyJsonData.DrawnUiBox = bodyCelestial.DrawnUiBox;
                 // Mean radius in kilometers
@@ -79,17 +79,17 @@ namespace Compendium
                 if (orbitalPeriodSeconds >= 63072000) // More than 2 years
                 {
                     double orbitalVal = orbitalPeriodSeconds / 31536000;
-                    bodyJsonData.OrbitalDisplay = orbitalVal.ToString("F2") + " years";
+                    bodyJsonData.OrbitalPeriod = orbitalVal.ToString("F2") + " years";
                 }
                 else if (orbitalPeriodSeconds >= 172800) // More than 2 days
                 {
                     double orbitalVal = orbitalPeriodSeconds / 86400;
-                    bodyJsonData.OrbitalDisplay = orbitalVal.ToString("F2") + " days";
+                    bodyJsonData.OrbitalPeriod = orbitalVal.ToString("F2") + " days";
                 }
                 else // Use hours
                 {
                     double orbitalVal = orbitalPeriodSeconds / 3600;
-                    bodyJsonData.OrbitalDisplay = orbitalVal.ToString("F2") + " hours";
+                    bodyJsonData.OrbitalPeriod = orbitalVal.ToString("F2") + " hours";
                 }
 
 
@@ -119,13 +119,22 @@ namespace Compendium
 
                 // First gets the inclination in degrees from radians.
                 double inclinationDeg = bodyCelestial.Inclination * (180.0 / Math.PI);
+                // Gets a string for the WorldSun's ID for display purposes.
+                string worldsunId = (Universe.WorldSun != null && Universe.WorldSun.Id != null) ? Universe.WorldSun.Id.ToString() : "Unknown";
+
                 // If a body is not a child of the sun, it is a satellite of another body, so we need to get the inclination relative to its parent body's orbital plane.
                 // We need to calculate the relative inclination by subtracting the parent's axial tilt from the body's inclination.
                 if (bodyCelestial.Parent != Universe.WorldSun)
                 {
-                    double parentTiltDeg = bodyCelestial.GetCci2Orb().Inverse().ToXyzRadians().X * (180.0 / Math.PI);
+                    double parentTiltDeg = bodyCelestial.GetOrb2Cci().ToXyzRadians().X * (180.0 / Math.PI);
+
                     double relativeInclination = inclinationDeg - parentTiltDeg;
-                    bodyJsonData.InclinationText = new ImString($"Inclination: {relativeInclination:F2}° ( Relative to {bodyCelestial.Parent.Id} equator )");
+                    // The solar ecliptic inclination we can get from the Inclination value which is inclination with respect to the parent body's equatorial plane - plus the parent's tilt.
+                    // So to get the inclination relative to the solar ecliptic, we add the parent's tilt to the body's inclination to the parent.
+                    double solarEclipticInclination = Math.Abs(inclinationDeg - bodyCelestial.Parent.BodyTemplate.Rotation.Tilt.ToDegrees());
+
+                    string parentId = bodyCelestial.Parent != null ? bodyCelestial.Parent.Id : "Unknown";
+                    bodyJsonData.InclinationText = new ImString($"Inclination: {relativeInclination:F2}° ( Relative to {parentId} equator )\nInclination: {solarEclipticInclination:F2}° ( Relative to {worldsunId} ecliptic )");
                 }
                 else
                 { bodyJsonData.InclinationText = new ImString($"Inclination: {inclinationDeg:F2}°"); }

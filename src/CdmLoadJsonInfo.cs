@@ -28,7 +28,7 @@ namespace Compendium
         public string? GravityText { get; internal set; }
         public string? EccentricityText { get; internal set; }
         public double EscapeVelocity { get; internal set; }
-        public string? OrbitalDisplay { get; internal set; }
+        public string? OrbitalPeriod { get; internal set; }
         public string? ThisTiltText { get; internal set; }
         public string? TidalLockText { get; internal set; }
         public string? SiderealPeriodText { get; internal set; }
