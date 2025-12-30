@@ -20,6 +20,8 @@ namespace Compendium
         public static int selectedCategoryIndex = -1;
         public static string selectedCategoryKey = "";
         public static bool showFontSettings = false;
+        public static bool showOrbitLineSettings = false;
+        public static Dictionary<string, bool>? showOrbitGroupColor;
         public static string selectedCelestialId = "Compendium Astronomicals Database";
         public static float mainContentWidth = 400f;
         public static List<string> categoryKeys = new List<string>();
@@ -407,15 +409,22 @@ namespace Compendium
                                 { ImGui.Text(bodyJson.OrbitTypeText); }
                             }
 
-                            // Atmosphere / Height
+                            // Atmosphere Height & Sea Level Pressure
                             if (bodyJson != null)
                             {
                                 if (bodyJson.HasAtmosphere)
                                 {
+                                    // Atmosphere height
                                     if (!string.IsNullOrEmpty(bodyJson.AtmosphereHeightText))
                                     { ImGui.Text(bodyJson.AtmosphereHeightText); }
                                     else
                                     { ImGui.Text("Has Atmosphere"); }
+                                    // Sea Level Pressure
+                                    if (!string.IsNullOrEmpty(bodyJson.SLPressureText))
+                                    { ImGui.Text(bodyJson.SLPressureText); }
+                                    else
+                                    { ImGui.Text("Sea Level Pressure: N/A"); }
+
                                 }
                                 else
                                 { ImGui.Text("Atmosphere: None"); }
@@ -429,7 +438,10 @@ namespace Compendium
                             else
                             { ImGui.Text("Sphere of Influence: N/A"); }
 
+                            // current speed
 
+                            { ImGui.Text("Current Speed: " + DistanceReference.FromMeters(selectedCelestial.OrbitalSpeed).ToNearestPerSecond()); }
+  
                             ImGui.PopFont();
                         }
                                             
@@ -500,7 +512,7 @@ namespace Compendium
                         if (orbitLineGroups.Count > 1)
                         {
                             ImGui.Text(" ");
-                            ImString orbitGroupText = new ImString("Toggle Orbit Lines by Group:  ");
+                            ImString orbitGroupText = new ImString("Orbit Lines by Group:  ");
                             ImGui.Text(orbitGroupText);
                             ImGui.Separator();
                             foreach (var group in orbitLineGroups)
@@ -543,12 +555,190 @@ namespace Compendium
                                     }
                                 }
                                 ImGui.SameLine();
+                                if (showOrbitGroupColor == null)
+                                    showOrbitGroupColor = new Dictionary<string, bool>();
+                                if (!showOrbitGroupColor.ContainsKey(group))
+                                    showOrbitGroupColor[group] = false;
+
+                                if (ImGui.ArrowButton($"OrbitGroupColorArrow##{group}", showOrbitGroupColor[group] ? ImGuiDir.Up : ImGuiDir.Down))
+                                { 
+                                    // Toggles visibility of this group's color picker and sliders
+                                    showOrbitGroupColor[group] = !showOrbitGroupColor[group]; 
+                                    // Toggles off other groups' color pickers
+                                    foreach (var otherGroup in orbitLineGroups)
+                                    { if (otherGroup != group) { showOrbitGroupColor[otherGroup] = false; } }
+                                }
+
+
+
+
+                                ImGui.SameLine();
                                 ImString groupText = new ImString($"{group}");
                                 ImGui.Text(groupText);
+
+                                if (showOrbitGroupColor[group])
+                                {
+                                    
+                                    // Color picker for this orbit group
+                                    ImGui.Separator();
+                                    ImGui.Indent();
+                                    ImGui.Indent();
+                                    ImString colorPickerLabel = new ImString($"##colorPicker_{group}");
+                                    if (ImGui.BeginCombo(colorPickerLabel, "Select Color", ImGuiComboFlags.WidthFitPreview))
+                                    {
+                                        foreach (var colorEntry in orbitLineColors)
+                                        {
+                                            ImString colorOptionLabel = new ImString($"{colorEntry.Key}");
+                                            bool isSelected = false;
+                                            if (ImGui.Selectable(colorOptionLabel, isSelected))
+                                            {
+                                                foreach (var child in selectedCelestial.Children)
+                                                {
+                                                    if (child is Celestial cel)
+                                                    {
+                                                        // Get the OrbitLineGroup from JSON
+                                                        CompendiumData? childBodyJson = null;
+
+                                                        if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
+                                                            { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                                        if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
+                                                        {
+                                                            var orbitColor = cel.Orbit.OrbitLineColor;
+                                                            orbitColor.RGB = new Brutal.Numerics.byte3(
+                                                                (byte)(colorEntry.Value.X * 255),
+                                                                (byte)(colorEntry.Value.Y * 255),
+                                                                (byte)(colorEntry.Value.Z * 255)
+                                                            );
+                                                            cel.Orbit.OrbitLineColor = orbitColor;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ImGui.EndCombo();
+                                    }
+                                    // Now makes 3 sliders populated with the current RGB values of the orbit line color for this orbit group, which when moved adjust the color also
+                                    // First, get the current color of the first celestial in this group to use as reference
+                                    Brutal.Numerics.byte3? currentColor = null;
+                                    foreach (var child in selectedCelestial.Children)
+                                    {
+                                        if (child is Celestial cel)
+                                        {
+                                            // Get the OrbitLineGroup from JSON
+                                            CompendiumData? childBodyJson = null;
+
+                                            if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
+                                                { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                            if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
+                                            {
+                                                currentColor = cel.Orbit.OrbitLineColor.RGB;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (currentColor != null)
+                                    {
+                                        float r = currentColor.Value.X / 255f;
+                                        float g = currentColor.Value.Y / 255f;
+                                        float b = currentColor.Value.Z / 255f;
+                                        
+                                        ImGui.Text("Adjust Orbit Line Color:");
+                                        ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X * 0.25f); // Set item width
+                                        ImGui.Indent();
+                                        ImGui.SliderFloat($"R##{group}", ref r, 0f, 1f);
+                                        ImGui.SliderFloat($"G##{group}", ref g, 0f, 1f);
+                                        ImGui.SliderFloat($"B##{group}", ref b, 0f, 1f);
+                                        ImGui.PopItemWidth();
+                                        
+                                        ImGui.Unindent(); ImGui.Unindent(); ImGui.Unindent();
+                                        
+                                        // After sliders, set the orbit line color to the new RGB values for all celestials in this group
+                                        foreach (var child in selectedCelestial.Children)
+                                        {
+                                            if (child is Celestial cel)
+                                            {
+                                                // Get the OrbitLineGroup from JSON
+                                                CompendiumData? childBodyJson = null;
+
+                                                if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
+                                                    { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                                if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
+                                                {
+                                                    var orbitColor2 = cel.Orbit.OrbitLineColor;
+                                                    orbitColor2.RGB = new Brutal.Numerics.byte3(
+                                                        (byte)(r * 255),
+                                                        (byte)(g * 255),
+                                                        (byte)(b * 255)
+                                                    );
+                                                    cel.Orbit.OrbitLineColor = orbitColor2;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ImGui.Separator();
+                                }
                             }
                         }
                         ImGui.Text(" ");
 
+                        // Makes a dropdown color picker to set the orbit line color for this group.  The dropdown list is the entries in orbitLineColors dictionary.
+
+                    // Puts all of the following color picking business inside a dropdown
+                    if (ImGui.ArrowButton("OrbitSettingsArrow", showOrbitLineSettings ? ImGuiDir.Up : ImGuiDir.Down))
+                    { showOrbitLineSettings = !showOrbitLineSettings; }
+
+                    ImGui.SameLine();
+                    ImGui.Text(" Orbit Line Color");
+
+
+                    if (showOrbitLineSettings)
+                    {
+                        ImGui.Separator();
+                        ImString colorPickerLabel = new ImString($"##colorPicker");
+                        if (ImGui.BeginCombo(colorPickerLabel, "Select Color", ImGuiComboFlags.WidthFitPreview))
+                        {
+                            foreach (var colorEntry in orbitLineColors)
+                            {
+                                ImString colorOptionLabel = new ImString($"{colorEntry.Key}");
+                                bool isSelected = false;
+                                if (ImGui.Selectable(colorOptionLabel, isSelected))
+                                {
+                                    var orbitColor = selectedCelestial.Orbit.OrbitLineColor;
+                                    orbitColor.RGB = new Brutal.Numerics.byte3(
+                                        (byte)(colorEntry.Value.X * 255),
+                                        (byte)(colorEntry.Value.Y * 255),
+                                        (byte)(colorEntry.Value.Z * 255)
+                                    );
+                                    selectedCelestial.Orbit.OrbitLineColor = orbitColor;
+                                }
+                            }
+                            ImGui.EndCombo();
+                        }
+                        // ImGui.Text("Orbit Color: " + 
+                        //     $"R: {selectedCelestial.Orbit.OrbitLineColor.RGB.X}, " +
+                        //     $"G: {selectedCelestial.Orbit.OrbitLineColor.RGB.Y}, " +
+                        //     $"B: {selectedCelestial.Orbit.OrbitLineColor.RGB.Z}"
+                        // );
+                        
+                        // Makes 3 sliders populated with the current RGB values of the orbit line color for this celestial, which when moved adjust the color also
+                        float r = selectedCelestial.Orbit.OrbitLineColor.RGB.X / 255f;
+                        float g = selectedCelestial.Orbit.OrbitLineColor.RGB.Y / 255f;
+                        float b = selectedCelestial.Orbit.OrbitLineColor.RGB.Z / 255f;
+                        ImGui.Text("Adjust Orbit Line Color:");
+                        ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X * 0.25f); // Set item width
+                        ImGui.SliderFloat("R", ref r, 0f, 1f);
+                        ImGui.SliderFloat("G", ref g, 0f, 1f);
+                        ImGui.SliderFloat("B", ref b, 0f, 1f);
+                        ImGui.PopItemWidth();
+                        // After sliders, set the orbit line color to the new RGB values
+                        var orbitColor2 = selectedCelestial.Orbit.OrbitLineColor;
+                        orbitColor2.RGB = new Brutal.Numerics.byte3(
+                            (byte)(r * 255),
+                            (byte)(g * 255),
+                            (byte)(b * 255)
+                        );
+                        selectedCelestial.Orbit.OrbitLineColor = orbitColor2;
+                    }
                         // After displaying the celestial properties, show JSON compendium data if available
                         if (bodyJson != null)
                         {

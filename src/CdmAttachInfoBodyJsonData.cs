@@ -1,5 +1,8 @@
+using System.Security.Cryptography.X509Certificates;
 using Brutal.ImGuiApi;
 using KSA;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.FileIO;
 
 namespace Compendium
 {
@@ -52,10 +55,12 @@ namespace Compendium
                 double earthMasses = bodyCelestial.Mass / 5.972168e24;
                 double lunarMasses = bodyCelestial.Mass / 7.342e22;
 
-                if (earthMasses > 0.01) { bodyJsonData.MassText = new ImString($"Mass: {bodyCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({earthMasses:F3} Earths)"); }
-                else if (lunarMasses > 0.00001) { bodyJsonData.MassText = new ImString($"Mass: {bodyCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({lunarMasses:F5} Lunas)"); }
+                // Depending on the mass of the body, display different mass text formats.  If the body mass falls within certain ranges show it in relation to Earth and/or Luna masses.
+                if (earthMasses > 0.1) { bodyJsonData.MassText = new ImString($"Mass: {bodyCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({earthMasses:F3} Earths)"); }
+                else if (earthMasses > 0.02) { bodyJsonData.MassText = new ImString($"Mass: {bodyCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({earthMasses:F3} Earths) / ({lunarMasses:F3} Lunas)"); }
+                else if (lunarMasses > 0.1) { bodyJsonData.MassText = new ImString($"Mass: {bodyCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({lunarMasses:F3} Lunas)"); }
+                else if (lunarMasses > 0.001) { bodyJsonData.MassText = new ImString($"Mass: {bodyCelestial.Mass:E2} Kg / ({massWithSIPrefix}) / ({lunarMasses:F3} Lunas)"); }
                 else { bodyJsonData.MassText = new ImString($"Mass: {bodyCelestial.Mass:E2} Kg / ({massWithSIPrefix})"); }
-
 
                 // Gravity values
                 // Calculates gravity using the formula: g = G * M / R^2 and then what the surface gravity would be.
@@ -65,9 +70,7 @@ namespace Compendium
                 if (gravity < 0.001) { bodyJsonData.GravityText = new ImString($"Gravity (Surface): {gravity:F6} m/s²");}
                 else { bodyJsonData.GravityText = new ImString($"Gravity (Surface): {gravity:F3} m/s²"); }
 
-
-
-
+                // Escape velocity
                 // calculates the escape velocity using the formula: v = sqrt(2 * G * M / R)
                 var escapeVelocity = Math.Sqrt(2 * 6.67430e-11 * bodyCelestial.Mass / bodyCelestial.MeanRadius);
                 bodyJsonData.EscapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity / 1000f:F3} km/s");
@@ -75,7 +78,7 @@ namespace Compendium
                 // Orbital period
                 // Figures out the timescale we want to use for displaying the orbital period.  If it's more than 2 years, use years.  If it's more than 2 days, use days.  Otherwise use hours.
                 double orbitalPeriodSeconds = bodyCelestial.Orbit.Period;
-                
+            
                 if (orbitalPeriodSeconds >= 63072000) // More than 2 years
                 {
                     double orbitalVal = orbitalPeriodSeconds / 31536000;
@@ -134,7 +137,7 @@ namespace Compendium
                     double solarEclipticInclination = Math.Abs(inclinationDeg - bodyCelestial.Parent.BodyTemplate.Rotation.Tilt.ToDegrees());
 
                     string parentId = bodyCelestial.Parent != null ? bodyCelestial.Parent.Id : "Unknown";
-                    bodyJsonData.InclinationText = new ImString($"Inclination: {relativeInclination:F2}° ( Relative to {parentId} equator )\nInclination: {solarEclipticInclination:F2}° ( Relative to {worldsunId} ecliptic )");
+                    bodyJsonData.InclinationText = new ImString($"Inclination: {relativeInclination:F2}° ( Relative to {parentId} equator )\nInclination: {solarEclipticInclination:F2}° ( Relative to {worldsunId} plane )");
                 }
                 else
                 { bodyJsonData.InclinationText = new ImString($"Inclination: {inclinationDeg:F2}°"); }
@@ -197,13 +200,14 @@ namespace Compendium
                 // If body has an atmosphere true/false
                 bodyJsonData.HasAtmosphere = (bodyCelestial.BodyTemplate.AtmosphereReference != null) ? true : false;
 
-                // Atmosphere height
+                // Atmosphere height & SL pressure
                 if (bodyCelestial.BodyTemplate.AtmosphereReference != null)
                 {
                     string atmosphereHeightKm = bodyCelestial.BodyTemplate.AtmosphereReference.Physical.Height.ToNearest();
                     bodyJsonData.AtmosphereHeightText = new ImString($"Atmosphere Height: {atmosphereHeightKm}");
-                }
 
+                    bodyJsonData.SLPressureText = new ImString("Sea Level Pressure: " + bodyCelestial.BodyTemplate.AtmosphereReference.Physical.SeaLevelPressure.ToNearest());
+                }
             }    
         }
     }

@@ -8,6 +8,22 @@ namespace Compendium
 {  
     public partial class Compendium
     {
+
+        // Makes a dictionary of predetermined colors for orbit lines
+        public static Dictionary<string, float3> orbitLineColors = new Dictionary<string, float3>
+        {
+            { "White", new float3(1.0f, 1.0f, 1.0f) },
+            { "Pink", new float3(1.0f, 0.75f, 0.8f) },
+            { "Red", new float3(1.0f, 0.0f, 0.0f) },
+            { "Orange", new float3(1.0f, 0.65f, 0.0f) },
+            { "Yellow", new float3(1.0f, 1.0f, 0.0f) },
+            { "Green", new float3(0.0f, 1.0f, 0.0f) },
+            { "Cyan", new float3(0.0f, 1.0f, 1.0f) },
+            { "Blue", new float3(0.0f, 0.0f, 1.0f) },
+            { "Magenta", new float3(1.0f, 0.0f, 1.0f) },
+            { "Purple", new float3(0.5f, 0.0f, 0.5f) },
+            { "Black", new float3(0.0f, 0.0f, 0.0f) },
+        };
         public void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
         {
             foreach (var child in astro.Children)

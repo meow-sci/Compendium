@@ -90,6 +90,9 @@
     <Reference Include="Brutal.Core.Numerics">
       <HintPath>$(KSAFolder)\Brutal.Core.Numerics.dll</HintPath>
     </Reference>
+    <Reference Include="Brutal.Core.Strings">
+      <HintPath>$(KSAFolder)\Brutal.Core.Strings.dll</HintPath>
+    </Reference>
     <Reference Include="Brutal.ImGui">
       <HintPath>$(KSAFolder)\Brutal.ImGui.dll</HintPath>
 		<Private>false</Private>

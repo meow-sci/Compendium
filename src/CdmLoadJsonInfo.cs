@@ -40,6 +40,7 @@ namespace Compendium
         public string? SphereOfInfluenceText { get; internal set; }
         public bool HasAtmosphere { get; internal set; }
         public string? AtmosphereHeightText { get; internal set; }
+        public string? SLPressureText { get; internal set; }
     }
 
     public partial class Compendium
