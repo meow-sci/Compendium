@@ -1,7 +1,5 @@
 using Brutal.ImGuiApi;
 using KSA;
-using StarMap.API;
-using System;
 using ImGui = Brutal.ImGuiApi.ImGui;
 
 namespace Compendium

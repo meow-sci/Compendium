@@ -19,15 +19,10 @@ namespace Compendium
         public OrbitLineMode? OrbitLineMode { get; set; }
         public bool? DrawnUiBox { get; set; }
         public float RadiusKm { get; internal set; }
-        public string? MassWithSIPrefix { get; internal set; }
-        public double EarthMasses { get; internal set; }
-        public double LunarMasses { get; internal set; }
         public double Mass { get; internal set; }
         public string? MassText { get; internal set; }
-        public double Gravity { get; internal set; }
         public string? GravityText { get; internal set; }
         public string? EccentricityText { get; internal set; }
-        public double EscapeVelocity { get; internal set; }
         public string? OrbitalPeriod { get; internal set; }
         public string? ThisTiltText { get; internal set; }
         public string? TidalLockText { get; internal set; }

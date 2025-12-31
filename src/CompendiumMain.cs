@@ -4,6 +4,7 @@ using KSA;
 using ModMenu;
 using StarMap.API;
 using System.Numerics;
+using System.Text.Json;
 using ImGui = Brutal.ImGuiApi.ImGui;
 
 namespace Compendium
@@ -22,6 +23,7 @@ namespace Compendium
         public static bool showFontSettings = false;
         public static bool showOrbitLineSettings = false;
         public static Dictionary<string, bool>? showOrbitGroupColor;
+        public static bool showOrbitCategoryColor = false;
         public static string selectedCelestialId = "Compendium Astronomicals Database";
         public static float mainContentWidth = 400f;
         public static List<string> categoryKeys = new List<string>();
@@ -31,7 +33,6 @@ namespace Compendium
         public static string? parentDir;
         public static bool processedBodyJsonDict = false;
         public static StellarBody? worldSun = Universe.WorldSun;
-        public static string worldsunId = Universe.WorldSun?.Id ?? "DummySun";
 
         [ModMenuEntry("Compendium Window")]
 
@@ -54,9 +55,7 @@ namespace Compendium
                 {
                     return;
                 }
-                
                 // Wait for universe to be fully loaded
-                
                 if (Universe.WorldSun == null)
                 {
                     ImGui.SetNextWindowBgAlpha(windowOpacity);
@@ -70,6 +69,11 @@ namespace Compendium
                 {
                     AttachInfoBodyJsonDict();
                     processedBodyJsonDict = true;
+
+                    // now that the full jsonBodyDict is processed, for debugging purposes export it as a json named "ProcessedBodyJsonDict.json" in the Compendium folder
+                    //string processedJsonPath = Path.Combine(parentDir ?? "", "ProcessedBodyJsonDict.json");
+                    //string processedJsonContent = JsonSerializer.Serialize(Compendium.bodyJsonDict, new JsonSerializerOptions { WriteIndented = true });
+                    //File.WriteAllText(processedJsonPath, processedJsonContent);
                 }
                 
                 // Build category tree on first render when Universe is loaded, or rebuild if it was built without celestials
@@ -89,6 +93,26 @@ namespace Compendium
                             }
                         }
                     }
+
+                    // // for debugging purposes writes to console each body in each category
+                    // if (buttonsCatsTree != null)
+                    // {
+                    //     foreach (var category in buttonsCatsTree)
+                    //     {
+                    //         Console.WriteLine($"Category: {category.Key}");
+                    //         foreach (var parentEntry in category.Value)
+                    //         {
+                    //             if (parentEntry.Key == "Data") continue;
+                    //             Console.WriteLine($"  Parent: {parentEntry.Key}");
+                    //             var parentEntryData = (Dictionary<string, object>)parentEntry.Value;
+                    //             var childrenIds = (List<string>)parentEntryData["Children"];
+                    //             foreach (var childId in childrenIds)
+                    //             {
+                    //                 Console.WriteLine($"    Child: {childId}");
+                    //             }
+                    //         }
+                    //     }
+                    // }
                 }
                 
                 // Get category keys if not already set
@@ -194,10 +218,11 @@ namespace Compendium
                 // using the categoryKeys list made just after making buttonCatsTree
                 
                 List<string> sortedCategoryKeys = new List<string>(categoryKeys);
-                // If there is a Planets category, make sure it is the first entry.
+                
                 // IF there is a category named 'Other', make sure it is the last entry - but only if it exists in sortedCategoryKeys.
                 // Otherwise everything else is sorted alphabetically.
                 sortedCategoryKeys.Sort();
+                // If there is a Planets category, make it the first entry.
                 if (sortedCategoryKeys.Contains("Planets"))
                 {
                     sortedCategoryKeys.Remove("Planets");
@@ -219,9 +244,10 @@ namespace Compendium
                     {
                         selectedCategoryKey = categoryKey;
                         selectedCategoryIndex = sortedCategoryKeys.IndexOf(categoryKey);
-                        justSelected = categoryKey;;
+                        justSelected = categoryKey;
                     }
                 }
+                
                 // If the button wasn't pushed and the selectedCategoryIndex is -1, set it to 0 and select the first category by default.
                 if (selectedCategoryIndex == -1 && sortedCategoryKeys.Count > 0)
                 {
@@ -280,7 +306,6 @@ namespace Compendium
                     return;
                 }
 
-                
                 // Next if regular bodies if selected, then later in 'else' meaning the category was just selected, make special text for the category and it's information / data.
                 if (justSelected != selectedCategoryKey)
                 {
@@ -569,9 +594,6 @@ namespace Compendium
                                     { if (otherGroup != group) { showOrbitGroupColor[otherGroup] = false; } }
                                 }
 
-
-
-
                                 ImGui.SameLine();
                                 ImString groupText = new ImString($"{group}");
                                 ImGui.Text(groupText);
@@ -603,13 +625,17 @@ namespace Compendium
                                                             { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
                                                         if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
                                                         {
-                                                            var orbitColor = cel.Orbit.OrbitLineColor;
-                                                            orbitColor.RGB = new Brutal.Numerics.byte3(
-                                                                (byte)(colorEntry.Value.X * 255),
-                                                                (byte)(colorEntry.Value.Y * 255),
-                                                                (byte)(colorEntry.Value.Z * 255)
-                                                            );
-                                                            cel.Orbit.OrbitLineColor = orbitColor;
+                                                            {
+                                                                {
+                                                                    var orbitColor = cel.Orbit.OrbitLineColor;
+                                                                    orbitColor.RGB = new Brutal.Numerics.byte3(
+                                                                        (byte)(colorEntry.Value.X * 255),
+                                                                        (byte)(colorEntry.Value.Y * 255),
+                                                                        (byte)(colorEntry.Value.Z * 255)
+                                                                    );
+                                                                    cel.Orbit.OrbitLineColor = orbitColor;
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -681,7 +707,7 @@ namespace Compendium
                         }
                         ImGui.Text(" ");
 
-                        // Makes a dropdown color picker to set the orbit line color for this group.  The dropdown list is the entries in orbitLineColors dictionary.
+                    // Makes a dropdown color picker to set the orbit line color for this group.  The dropdown list is the entries in orbitLineColors dictionary.
 
                     // Puts all of the following color picking business inside a dropdown
                     if (ImGui.ArrowButton("OrbitSettingsArrow", showOrbitLineSettings ? ImGuiDir.Up : ImGuiDir.Down))
@@ -689,7 +715,6 @@ namespace Compendium
 
                     ImGui.SameLine();
                     ImGui.Text(" Orbit Line Color");
-
 
                     if (showOrbitLineSettings)
                     {
@@ -714,11 +739,6 @@ namespace Compendium
                             }
                             ImGui.EndCombo();
                         }
-                        // ImGui.Text("Orbit Color: " + 
-                        //     $"R: {selectedCelestial.Orbit.OrbitLineColor.RGB.X}, " +
-                        //     $"G: {selectedCelestial.Orbit.OrbitLineColor.RGB.Y}, " +
-                        //     $"B: {selectedCelestial.Orbit.OrbitLineColor.RGB.Z}"
-                        // );
                         
                         // Makes 3 sliders populated with the current RGB values of the orbit line color for this celestial, which when moved adjust the color also
                         float r = selectedCelestial.Orbit.OrbitLineColor.RGB.X / 255f;
@@ -782,7 +802,6 @@ namespace Compendium
                 }
                 else
                 {
-
                     // This means category was selected but a body was not selected yet
                     // This is effectively the "category option / information" screen.
 
@@ -810,8 +829,114 @@ namespace Compendium
                     if (ImGui.Button(categoryOffText))
                     { ToggleCategoryOrbits(selectedCategoryKey, false); }
                     ImGui.Text(" ");
-                    
+
+                    // Now on sameline makes an arrow button to show/hide the category-level orbit line color picker and sliders, and then make the color picker and sliders similar to the other times it was done above.
+                    // In order to change the orbitlinecolors of each body in the category we need to iterate over all celestials in the loaded system's Universe.WorldSun.Children and apply the orbitlinecolor to each one of those which is in this category of the buttonsCatsTree.
+                    if (ImGui.ArrowButton("CategoryOrbitColorArrow", showOrbitCategoryColor ? ImGuiDir.Up : ImGuiDir.Down))
+                    { showOrbitCategoryColor = !showOrbitCategoryColor; }
+                    ImGui.SameLine();
+                    ImString categoryColorText = new ImString(" Set Orbit Line Color for Category Bodies");
+                    ImGui.Text(categoryColorText);
+                    if (showOrbitCategoryColor)
+                    {
+                        ImGui.Separator();
+                        ImString colorPickerLabel = new ImString($"##categoryColorPicker");
+                        if (ImGui.BeginCombo(colorPickerLabel, "Select Color", ImGuiComboFlags.WidthFitPreview))
+                        {
+                            foreach (var colorEntry in orbitLineColors)
+                            {
+                                ImString colorOptionLabel = new ImString($"{colorEntry.Key}");
+                                bool isSelected = false;
+                                if (ImGui.Selectable(colorOptionLabel, isSelected))
+                                {
+                                    // Iterate over all celestials in the current system and set orbit line color if in this category
+                                    foreach (var celestial in KSA.Universe.WorldSun.Children)
+                                    {
+                                        if (celestial is Celestial cel &&
+                                            buttonsCatsTree != null &&
+                                            buttonsCatsTree.ContainsKey(selectedCategoryKey) &&
+                                            buttonsCatsTree[selectedCategoryKey].ContainsKey(celestial.Id))
+
+                                        {
+                                            var orbitColor = cel.Orbit.OrbitLineColor;
+                                            orbitColor.RGB = new Brutal.Numerics.byte3(
+                                                (byte)(colorEntry.Value.X * 255),
+                                                (byte)(colorEntry.Value.Y * 255),
+                                                (byte)(colorEntry.Value.Z * 255)
+                                            );
+                                            cel.Orbit.OrbitLineColor = orbitColor;
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                            ImGui.EndCombo();
+                        }
+                        
+                        // Makes 3 sliders populated with the current RGB values of the orbit line color for the first celestial found in this category, which when moved adjust the color also
+                        // Declare and initialize currentColor before using it
+                        Brutal.Numerics.byte3? currentColor = null;
+                        // First, get the current color of the first celestial in this category to use as reference
+                        foreach (var celestial in KSA.Universe.WorldSun.Children)
+                        {
+                            if (celestial is Celestial cel &&
+                                buttonsCatsTree != null &&
+                                buttonsCatsTree.ContainsKey(selectedCategoryKey) &&
+                                buttonsCatsTree[selectedCategoryKey].ContainsKey(celestial.Id))
+                            {
+                                currentColor = cel.Orbit.OrbitLineColor.RGB;
+                                break;
+                            }
+
+                        }
+                        if (currentColor != null)
+                        {
+                            float r = currentColor.Value.X / 255f;
+                            float g = currentColor.Value.Y / 255f;
+                            float b = currentColor.Value.Z / 255f;
+
+                            ImGui.Text("Adjust Orbit Line Color:");
+                            ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X * 0.25f); // Set item width
+                            ImGui.Indent();
+                            bool changedR = ImGui.SliderFloat($"R##category", ref r, 0f, 1f);
+                            bool changedG = ImGui.SliderFloat($"G##category", ref g, 0f, 1f);
+                            bool changedB = ImGui.SliderFloat($"B##category", ref b, 0f, 1f);
+                            ImGui.PopItemWidth();
+                            ImGui.Unindent(); ImGui.Unindent(); ImGui.Unindent();
+
+                            // Only update if any slider was changed
+                            if (changedR || changedG || changedB)
+                            {
+                                if (buttonsCatsTree != null && buttonsCatsTree.ContainsKey(selectedCategoryKey))
+                                {
+                                    var categoryEntry = buttonsCatsTree[selectedCategoryKey];
+                                    if (categoryEntry is Dictionary<string, object> parentEntryDict)
+                                    {
+                                        foreach (var kvp in parentEntryDict)
+                                        {
+                                            string celestialId = kvp.Key;
+                                            // Find the celestial by id in WorldSun.Children
+                                            var celestial = KSA.Universe.WorldSun.Children.FirstOrDefault(c => c is Celestial cel && cel.Id == celestialId) as Celestial;
+                                            if (celestial != null)
+                                            {
+                                                var orbitColor2 = celestial.Orbit.OrbitLineColor;
+                                                orbitColor2.RGB = new Brutal.Numerics.byte3(
+                                                    (byte)(r * 255),
+                                                    (byte)(g * 255),
+                                                    (byte)(b * 255)
+                                                );
+                                                celestial.Orbit.OrbitLineColor = orbitColor2;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     ImGui.PopFont();
+
+                    // Add this at class level (private static):
+                    // private static Dictionary<string, (float r, float g, float b)>? categoryOrbitColorDict;
                     // Category was just selected - show category-level data if available
                     CompendiumData? categoryData = null;
                     // Try to get the ListGroupsData container, checking system-specific first, then default
@@ -856,7 +981,7 @@ namespace Compendium
                     }
                 }
                 ImGui.EndChild(); // End side pane
-                
+
                 ImGui.End();
             }
             catch (Exception ex)
@@ -869,11 +994,8 @@ namespace Compendium
         [StarMapImmediateLoad]
         public void OnImmediateLoad(Mod mod)
         {
-            Console.WriteLine($"=== Compendium - OnImmediateLoad Begin ===");
             try
             {
-                //Console.WriteLine("=== Compendium - OnImmediateLoad START ===");
-
                 // Gets the current working directory path (of the DLL)
                 dllDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
@@ -884,11 +1006,7 @@ namespace Compendium
                 {
                     // Load celestial body descriptions from JSON files - pass dllDir since LoadCompendiumJsonData will search subdirectories
                     LoadCompendiumJsonData(dllDir);
-                    // Now we have a dictionary of bodyJsonDict loaded from JSON files.  Another function now goes through that list of bodies and harvests data to attach to each body.
-                    //AttachInfoBodyJsonDict();
                 }
-                
-               Console.WriteLine("=== Compendium - OnImmediateLoad END ===");
             }
             catch (Exception ex)
             {
@@ -903,23 +1021,14 @@ namespace Compendium
         {
             try
             {
-                Console.WriteLine($"=== Compendium - OnFullyLoaded Begin ===");
                 // Loads body categories from the loaded JSON data - this determines buttons to make.
                 CategoryLoader();
 
                 categoryKeys = GetCategoryKeys();
 
-                // Makes logging to show each thing added to the buttonsCatsTree dictionary
-                if (buttonsCatsTree == null)
-                {
-                    Console.WriteLine("buttonsCatsTree is null");
-                    return;
-                }
                 // Makes a single string containing all of the categories in buttonsCatsTree
-                string allCategories = string.Join(", ", buttonsCatsTree.Keys);
-                Console.WriteLine($"Compendium: All categories loaded: {allCategories}");
-
-                Console.WriteLine($"=== Compendium - OnFullyLoaded End ===");
+                //string allCategories = string.Join(", ", buttonsCatsTree.Keys);
+                //Console.WriteLine($"Compendium: All categories loaded: {allCategories}");
             }
             catch (Exception ex)
             {

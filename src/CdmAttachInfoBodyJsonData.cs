@@ -1,29 +1,22 @@
-using System.Security.Cryptography.X509Certificates;
 using Brutal.ImGuiApi;
 using KSA;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.FileIO;
 
 namespace Compendium
 {
-
-
     public partial class Compendium
     {
-
         public static void AttachInfoBodyJsonDict()
         {
-            Console.WriteLine("Compendium: Attaching bodyJson data to celestial bodies...");
+            Console.WriteLine("Compendium: Attaching game data to collected bodyJsonData for references...");
             // If somehow bodyJsonDict is null or empty, just return
             if (bodyJsonDict == null || bodyJsonDict.Count == 0)
             {
-                Console.WriteLine("Compendium: HEY - bodyJsonDict IS NULL OR EMPTY - WHAT");
+                Console.WriteLine("Compendium: HEY - bodyJsonDict IS NULL OR EMPTY!  Somehow NO Json data was found or loaded?");
                 return;
             }
 
             foreach (var kvp in bodyJsonDict)
             {
-
                 // The key is the body ID, but it may need to be looked up with the system prefix or Compendium prefix, that isn't part of the bodyId itself.
                 // For example, "Sol.Earth" or "Compendium.Earth" both refer to the body with ID "Earth".  We want bodyId to just be "Earth" here.
                 string fullKey = kvp.Key;
@@ -73,7 +66,9 @@ namespace Compendium
                 // Escape velocity
                 // calculates the escape velocity using the formula: v = sqrt(2 * G * M / R)
                 var escapeVelocity = Math.Sqrt(2 * 6.67430e-11 * bodyCelestial.Mass / bodyCelestial.MeanRadius);
-                bodyJsonData.EscapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity / 1000f:F3} km/s");
+                // If the escape velocity is less than 1000 m/s, display it in m/s with one decimal place, otherwise display in km/s with three decimal places.
+                if (escapeVelocity < 1000) { bodyJsonData.EscapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity:F1} m/s"); }
+                else { bodyJsonData.EscapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity / 1000f:F3} km/s"); }
 
                 // Orbital period
                 // Figures out the timescale we want to use for displaying the orbital period.  If it's more than 2 years, use years.  If it's more than 2 days, use days.  Otherwise use hours.
@@ -95,11 +90,8 @@ namespace Compendium
                     bodyJsonData.OrbitalPeriod = orbitalVal.ToString("F2") + " hours";
                 }
 
-
                 // Axial tilt
                 // Gets the axial tilt values depending on whether the selected celestial's parent is the sun or another body.
-  
-                //ImString thisTiltText;
                 if (bodyCelestial.Parent == Universe.WorldSun)
                 { 
                     //thisTilt = selectedCelestial.GetCce2Cci().ToXyzRadians().X * (180.0 / Math.PI);
@@ -116,7 +108,6 @@ namespace Compendium
                 } 
                 // Eccentricity
                 bodyJsonData.EccentricityText = new ImString($"Eccentricity: {bodyCelestial.Eccentricity:F4}");
-
 
                 // Inclination 
 
@@ -142,7 +133,6 @@ namespace Compendium
                 else
                 { bodyJsonData.InclinationText = new ImString($"Inclination: {inclinationDeg:F2}°"); }
 
-
                 // Sidereal period and tidal locking
                 // Gets the sidereal period in hours or days depending on length, and checks for tidal locking
                 // For now uses .ToNearest() to return back the closest range to report the stat as..
@@ -166,7 +156,6 @@ namespace Compendium
                     }
                 }
 
-
                 // Gets the Semi-Major and Semi-Minor axes in AU for display if they are large enough - we only need a float.
                 // Keep in mind that both values are saved in game as meters, so we need divide by the appropritate factor to get m to AU.  1 AU = 1.496e+11 m
                 float semiMajorAxisAU = (float)bodyCelestial.SemiMajorAxis / 1.496e+11f; // Convert m to AU
@@ -186,8 +175,7 @@ namespace Compendium
                     bodyJsonData.SemiMajorAxisText = new ImString($"Semi-Major Axis: {semiMajorAxisKm} km / {semiMajorAxisAU:F3} AU");
                     bodyJsonData.SemiMinorAxisText = new ImString($"Semi-Minor Axis: {semiMinorAxisKm} km / {semiMinorAxisAU:F3} AU");
                 }
-
-
+                // Orbit type
                 if (bodyCelestial.Orbit.GetType().Name != "Elliptical")
                 { bodyJsonData.OrbitTypeText = new ImString($"Orbit Type: {bodyCelestial.Orbit.GetType().Name}"); }
                 else

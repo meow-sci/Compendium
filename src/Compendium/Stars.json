@@ -1,0 +1,20 @@
+{
+    "CompendiumJson": "True",
+    "Compendium": {
+        "ListGroupsData": {
+            "Stars": {
+                "CatText": "Stars are luminous spheres of plasma held together by gravity. They are the fundamental building blocks of galaxies and are responsible for producing light and heat through nuclear fusion processes in their cores.",
+                "CatWikipediaUrl": "Star"
+            }
+        },
+        "Sol": {
+            "ListGroups": [ "Stars" ],
+            "OrbitLineGroup": "Stars",
+            "Text": "The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core. The Sun provides the necessary light and heat to sustain life on Earth and influences the orbits of all the planets and other objects in the Solar System.  It is the dominant gravitational body in the Solar System, containing more than 99.8% of its total mass.",
+            "Factoids": [ "Known by several names historically including: Sol, Helios, and the Sun." ],
+            "VisitedBy": [ "SOHO 1995-Present, Solar Dynamics Observatory 2010-Present, Parker Solar Probe 2018-Present" ],
+            "WikipediaUrl": "Sun"
+        }
+    }
+        
+}

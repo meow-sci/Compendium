@@ -131,10 +131,7 @@ namespace Compendium
             {
                 // Fallback to hardcoded default categories
                 categoryNames = ["FallbackCats", "Planets", "Dwarf Planets", "Trans-Neptunian Objects", "Main Asteroids", "Comets", "Interstellar Objects", "Other"];
-
             }
-
-
 
             // Ensure "Other" category always exists for uncategorized bodies
             if (categoryNames != null && !categoryNames.Contains("Other"))
@@ -162,27 +159,26 @@ namespace Compendium
                         {
                             continue;
                         }
-                        
+
                         // Try system-specific key first (e.g., "SolarSystem.Mercury")
                         CompendiumData? celData = null;
                         string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
                         string systemKey = $"{systemName}.{cel.Id}";
                         string compendiumKey = $"Compendium.{cel.Id}";
-                        
+
                         if (!Compendium.bodyJsonDict.TryGetValue(systemKey, out celData))
                         {
                             // Fall back to default "Compendium" key (e.g., "Compendium.Mercury")
                             Compendium.bodyJsonDict.TryGetValue(compendiumKey, out celData);
                         }
-                        
-                        if (celData != null)
+
+                        bool addToCategory = false;
+                        if (celData != null && celData.ListGroups != null && celData.ListGroups.Contains(categoryName))
                         {
-                            if (celData.ListGroups != null)
-                            {
-                            }
+                            addToCategory = true;
                         }
 
-                        if (celData != null && celData.ListGroups != null && celData.ListGroups.Contains(categoryName))
+                        if (addToCategory)
                         {
                             celestialsInCategory.Add(cel);
                         }

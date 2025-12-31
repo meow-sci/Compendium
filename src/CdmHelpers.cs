@@ -26,13 +26,13 @@ namespace Compendium
         };
         public void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
         {
+            if (astro is Celestial cel && !collection.Contains(cel))
+            {
+                collection.Add(cel);
+            }
             foreach (var child in astro.Children)
             {
-                if (child is Celestial cel)
-                {
-                    collection.Add(cel);
-                    CollectAllCelestials(cel, collection);
-                }
+                CollectAllCelestials(child, collection);
             }
         }
 
