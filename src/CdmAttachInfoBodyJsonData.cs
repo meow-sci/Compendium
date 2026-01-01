@@ -14,6 +14,38 @@ namespace Compendium
                 Console.WriteLine("Compendium: HEY - bodyJsonDict IS NULL OR EMPTY!  Somehow NO Json data was found or loaded?");
                 return;
             }
+            
+            // Checks all celestials in the current universe and looks for an entry for that celestial ID in bodyJsonDict.
+            // If no entry exists then make a new entry for holding for that celestial in a bodyJsonDict entry in a key with the current system ID (Universe.CurrentSystem.Id).
+            // This is all for the sake of Celestials which are not in the default Compendium JSON data, and also not in any other jsons loaded by other mods or by the user, it givses a place to attach body data to.
+
+            // Collect all celestial objects from the tree
+            var allCelestials = new List<Celestial>();
+            // Use passed worldSun parameter, or fall back to Universe.WorldSun
+            var sunToUse = worldSun ?? Universe.WorldSun;
+            
+            if (sunToUse != null)
+            {
+                Compendium.CollectAllCelestials(sunToUse, allCelestials);
+                foreach (Celestial cel in allCelestials)
+                {
+                    string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+                    string fullKey = $"{systemName}.{cel.Id}";
+                    if (!bodyJsonDict.ContainsKey(fullKey))
+                    {
+                        // If no entry exists for this celestial in the current system, create one.
+                        bodyJsonDict[fullKey] = new CompendiumData();
+                    }
+                    // If the Celestial has no entry in either the default Compendium or the system-specific entry, create an entry for this Celestial for holding.
+                    if (!bodyJsonDict.ContainsKey($"Compendium.{cel.Id}") && !bodyJsonDict.ContainsKey(fullKey))
+                    { bodyJsonDict[$"{Universe.CurrentSystem}.{cel.Id}"] = new CompendiumData(); }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Compendium: sunToUse is null, cannot collect celestials.");
+                return;
+            }
 
             foreach (var kvp in bodyJsonDict)
             {

@@ -123,7 +123,7 @@ namespace Compendium
                                     if (mainData != null)
                                     {
                                         Console.WriteLine($"Compendium: File has CompendiumJson marker - {Path.GetFileName(file)} - {mainData.Count} entries found");
-                                        
+
                                         // Check if ListGroupsData exists and deserialize it specially
                                         if (mainData.TryGetValue("ListGroupsData", out var listGroupsElement))
                                         {

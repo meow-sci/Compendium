@@ -1,11 +1,9 @@
 ﻿using Brutal.ImGuiApi;
 using Brutal.Numerics;
 using KSA;
-using Microsoft.VisualBasic;
 using ModMenu;
 using StarMap.API;
 using System.Numerics;
-using System.Text.Json;
 using ImGui = Brutal.ImGuiApi.ImGui;
 
 namespace Compendium
@@ -340,8 +338,11 @@ namespace Compendium
                     PopTheFont();
                     PushTheFont(1.4f);
                     ImGui.Text("\n\n\nAstronomicals Information\n\nPlease select a category, astronomical, or option!\n\n\n");
-                    PopTheFont();
 
+                    PopTheFont();
+                    //ImTextureDataPtr photoPath = Path.Combine(parentDir ?? "", "Photos", "KSA_Logo.png");
+                    //Brutal.ImGuiApi.ImTextureRef myTextureRef = (Path.Combine(parentDir ?? "", "Photos", "KSA_Logo.png"));
+                    //ImGui.ImageWithBg(myTextureRef, new float2(sidePaneWidth - 20f, (sidePaneWidth - 20f) * 0.6f));
                     // Puts up a logo image if it exists in the Photos folder - if we can figure out how to do that
 
                     ImGui.EndChild(); // End side pane

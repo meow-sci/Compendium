@@ -24,7 +24,7 @@ namespace Compendium
             { "Purple", new float3(0.5f, 0.0f, 0.5f) },
             { "Black", new float3(0.0f, 0.0f, 0.0f) },
         };
-        public void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
+        public static void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
         {
             if (astro is Celestial cel && !collection.Contains(cel))
             {
