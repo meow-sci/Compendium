@@ -2,10 +2,15 @@ using Brutal.ImGuiApi;
 using KSA;
 using ImGui = Brutal.ImGuiApi.ImGui;
 
+using System.Numerics;
+
 namespace Compendium
 {
     public partial class Compendium
     {
+        // Add this field to store the selected celestial object
+        public static object? selectedCelestial;
+
         public void PrintSelectedCategoryByKey(string categoryKey)
         {
             try
@@ -77,7 +82,8 @@ namespace Compendium
                             if (ImGui.Selectable(parentId, isParentSelected))
                             { 
                                 selectedCelestialId = parentBodyId; 
-                                justSelected = parentBodyId;
+                                selectedCelestial = FindCelestialById(Universe.WorldSun, parentBodyId);
+                                showWindow = "Celestial";
                             }
                             
                             if (isParentSelected)
@@ -128,7 +134,8 @@ namespace Compendium
                                             if (ImGui.Selectable(childIdStr, isChildSelected))
                                             { 
                                                 selectedCelestialId = childId; 
-                                                justSelected = childId;
+                                                selectedCelestial = FindCelestialById(Universe.WorldSun, childId);
+                                                showWindow = "Celestial";
                                             }
                                             
                                             if (isChildSelected)
@@ -152,7 +159,8 @@ namespace Compendium
                                     if (ImGui.Selectable(childIdStr, isChildSelected))
                                     { 
                                         selectedCelestialId = childId; 
-                                        justSelected = childId;
+                                        selectedCelestial = FindCelestialById(Universe.WorldSun, childId);
+                                        showWindow = "Celestial";
                                     }
                                     
                                     if (isChildSelected)
@@ -176,7 +184,8 @@ namespace Compendium
                         if (ImGui.Selectable(celestialId, isCelestialSelected))
                         {
                             selectedCelestialId = parentBodyId; 
-                            justSelected = parentBodyId;
+                            selectedCelestial = FindCelestialById(Universe.WorldSun, parentBodyId);
+                            showWindow = "Celestial";
                         }
 
                         if (isCelestialSelected)
@@ -192,23 +201,52 @@ namespace Compendium
             }
         }
 
-        public void PrintLegendCategory()
+        public void PrintTermsCategory()
         {
-            ImGui.Text("Compendium Legend");
-            ImGui.Separator();
-            ImGui.Text("This is the legend for the Compendium categories and their celestial bodies.");
-            ImGui.Text("Each category groups celestial bodies based on specific characteristics or themes.");
-            ImGui.Separator();
-            ImGui.Text("Categories:");
-            ImGui.BulletText("Planets: Major planets in the solar system.");
-            ImGui.BulletText("Moons: Natural satellites orbiting planets.");
-            ImGui.BulletText("Dwarf Planets: Celestial bodies that are similar to planets but do not meet all criteria.");
-            ImGui.BulletText("Asteroids: Small rocky bodies orbiting the sun, primarily found in the asteroid belt.");
-            ImGui.BulletText("Comets: Icy bodies that release gas or dust, often forming a visible coma or tail when near the sun.");
-            ImGui.BulletText("Stars: Luminous celestial bodies made of plasma, primarily hydrogen and helium.");
-            ImGui.BulletText("Black Holes: Regions of spacetime exhibiting gravitational acceleration so strong that nothing can escape from it.");
-            ImGui.Separator();
-            ImGui.Text("Select a category from the side pane to view its celestial bodies.");
+            PushTheFont(1.7f);
+            ImGui.TextWrapped("Terms and Definitions:\n");
+            PopTheFont();
+            DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
+            ImGui.Text("");
+            PushTheFont(1.0f);
+
+
+
+            // Unfortunately, bullets don't do text wrapping, so do a bullet but then sameline and text for the actual content
+            ImGui.Text("ATMOSPHERE: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("Indicates whether the celestial body has an atmosphere.  Some celestial bodies may have very thin atmospheres, while others may have thick, dense atmospheres.\n\n");
+            ImGui.Text("AXIAL TILT: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The angle of tilt from it's rotational axis to either the KSA solar reference plane or the equatorial plane of the body which the orbit is around. A higher tilt results in more extreme seasons over it's orbital period, because different hemispheres receive more or less sunlight at different times of the year.  ** Real axial tilt values are defined as the angle between the body's rotational axis and the perpendicular to its orbital plane. **\n\n");
+            ImGui.Text("CURRENT SPEED: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The current velocity of the celestial body in its orbit around its parent body.  In a perfectly circular orbit, this speed remains constant.  In non-circular orbits, the speed varies - being fastest at periapsis (closest approach) and slowest at apoapsis (farthest distance).\n\n");
+            ImGui.Text("ECCENTRICITY: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("A measure of how much an orbit deviates from a perfect circle. An eccentricity of 0 indicates a perfectly circular orbit, while values closer to 1 indicate more elongated orbits.  Eccentricity values greater than 1 indicate hyperbolic trajectories - meaning the object is not gravitationally bound to the central body and is on an escape trajectory.\n\n");
+            ImGui.Text("ESCAPE VELOCITY: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped(" The minimum speed needed for an object to escape from the gravitational influence of the celestial body without further propulsion.\n\n");
+            ImGui.Text("GRAVITY: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The acceleration due to gravity at a given point in space. This value indicates how strongly the body pulls objects towards its center.  The gravity (surface) value displayed here is calculated from what would be felt at an average surface (mean radius) location.   Locations farther from the celestial's center will experience a drop-off in gravitational acceleration, while locations closer to the center will experience a higher gravity.\n\n");
+            ImGui.Text("INCLINATION: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The tilt of an object's orbital plane in relation to another plane - for example the solar reference plane, or the equatorial plane of the body which the orbit is around.\n\n");
+            ImGui.Text("MASS: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The amount of matter contained in the celestial body, typically measured in kilograms (kg).  Because diffrent celestial bodies can be made of very different materials, their mass in relation to size (average density) can vary widely.  For example - ice is much less dense than rock or metal.\n\n");
+            ImGui.Text("MEAN RADIUS: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The average radius of the celestial body, calculated as the radius of a sphere with the same volume as the body.  For non-spherical bodies, this provides a standardized way to compare sizes.\n\n");
+            ImGui.Text("ORBITAL PERIOD: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The time it takes for a celestial body to complete one full orbit around its parent body.\n\n");
+            ImGui.Text("SEA LEVEL PRESSURE: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The atmospheric pressure at the mean surface level of the celestial body.  This value indicates how dense or thin the atmosphere is at the average surface level.\n\n");
+            ImGui.Text("SEMIMAJOR AXIS: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("Half of the longest diameter of an elliptical orbit. It represents the average distance between the celestial body and its parent body over the course of its orbit.\n\n");
+            ImGui.Text("SEMIMINOR AXIS: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("Half of the shortest diameter of an elliptical orbit. It is perpendicular to the semimajor axis and helps define the shape of the orbit.\n\n");
+            ImGui.Text("SIDEREAL PERIOD: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The time it takes for a celestial body to complete one full rotation on its axis relative to distant stars.  This is different from a solar day, which is based on the position of the sun in the sky from one rotation to the next.  A Retrograde rotation means the body spins in the opposite direction to its orbit around the parent body.\n\n");
+            ImGui.Text("SPHERE OF INFLUENCE: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("The region around a celestial body where its gravitational influence dominates over that of other bodies.\n\n");
+            ImGui.Text("TIDALLY LOCKED ROTATION: "); ImGui.Bullet(); ImGui.SameLine();
+            ImGui.TextWrapped("Indicates whether the celestial body is tidally locked to its parent body.  A tidally locked body always shows the same face to the body it orbits about.  In some cases both the parent and satellite are tidally locked to each other, both always showing the same face to each other.\n\n");
+
+            PopTheFont();
         }
     }
 }

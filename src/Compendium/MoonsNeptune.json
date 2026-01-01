@@ -4,8 +4,8 @@
     "Triton": {
       "ListGroups": ["Triton"],
       "OrbitLineGroup": "Triton",
-      "Text": "Triton is the largest moon of Neptune and is unique among large moons in the Solar System for its retrograde orbit, indicating that it was likely captured by Neptune's gravity rather than forming in place.",
-      "Factoids": [ "One of the brightest bodies in the Solar System due to its highly reflective surface.", "Has geysers that erupt nitrogen gas.", "Its surface is primarily composed of frozen nitrogen, with traces of methane and carbon monoxide.", "Triton is one of the coldest objects in the Solar System, with surface temperatures around -235 degrees Celsius.", "It has a thin atmosphere primarily composed of you guessed it - nitrogen." ],
+      "Text": "Triton is the largest moon of Neptune and is unique among large moons in the Solar System for its retrograde orbit, indicating that it was likely a Kuiper Belt object captured by Neptune's gravity rather than forming in place.  One of the most geologically active bodies in the Solar System due to cryovolcanism - the surface is one of the youngest in the known solar system due to constant resurfacing.",
+      "Factoids": [ "One of the brightest bodies in the Solar System due to its highly reflective surface.", "Has geysers that erupt nitrogen gas / slush", "Its surface is primarily composed of frozen nitrogen, with traces of methane and carbon monoxide.", "Triton is one of the coldest objects in the Solar System, with surface temperatures around -235 degrees Celsius.", "It has a thin atmosphere primarily composed of you guessed it - nitrogen." ],
       "VisitedBy": ["Voyager 2 (1989)"],
       "WikipediaUrl": "Triton"
     },

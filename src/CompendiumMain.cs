@@ -1,6 +1,7 @@
 ﻿using Brutal.ImGuiApi;
 using Brutal.Numerics;
 using KSA;
+using Microsoft.VisualBasic;
 using ModMenu;
 using StarMap.API;
 using System.Numerics;
@@ -19,7 +20,8 @@ namespace Compendium
         public static int selectedFontIndex = 0;
         public static int previousFontIndex = -1;
         public static int selectedCategoryIndex = -1;
-        public static string selectedCategoryKey = "";
+        public static string selectedCategoryKey = "None";
+        public static string showWindow = "None"; // "None", "Category", "Celestial", "Terms"
         public static bool showFontSettings = false;
         public static bool showOrbitLineSettings = false;
         public static Dictionary<string, bool>? showOrbitGroupColor;
@@ -27,7 +29,7 @@ namespace Compendium
         public static string selectedCelestialId = "Compendium Astronomicals Database";
         public static float mainContentWidth = 400f;
         public static List<string> categoryKeys = new List<string>();
-        private static string justSelected = "";
+        //private static string justSelected = "";
         private static string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
         public static Dictionary<string, CompendiumData> bodyJsonDict = new Dictionary<string, CompendiumData>();
         public static string? parentDir;
@@ -49,6 +51,7 @@ namespace Compendium
         public void OnAfterUi(double dt)
         {
             systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+            Celestial? selectedCelestial = null;
             try
             {
                 if (!CompendiumWindow)
@@ -150,22 +153,42 @@ namespace Compendium
                             ImGui.EndTooltip();
                         }
                     ImGui.SameLine();
-                // Makes a Legend button but make it so that it displays on the same line as the font settings arrow button, but on the right side of the window.
 
-                float buttonWidth = ImGui.CalcTextSize(" L ").X;
-                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonWidth);
+                    // Makes a Terms button AND a button which focuses on the Sun but make it so that it displays on the same line as the font settings arrow button, with them on the right side of the window.
+                    // Make it so that the first button is the S button, and the second is the D button for Definitions/Terms (all the way on the right)
+                    float buttonSWidth = ImGui.CalcTextSize(" S ").X;
+                    float buttonDWidth = ImGui.CalcTextSize(" D ").X;
+                    
+                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonSWidth - buttonDWidth - 4); // 4 for spacing
+                    if (ImGui.Button(" S ##SunButton", new float2(buttonSWidth, 0)))
+                    {
+                        // Focus camera on the Sun
+                        var sun = Universe.WorldSun;
+                        if (sun != null)
+                        {
+                            KSA.Universe.MoveCameraTo(sun);
+                        }
+                    }
+                    if (ImGui.IsItemHovered())
+                    {
+                        ImGui.BeginTooltip();
+                        ImGui.Text($"Focus Camera on {Universe.WorldSun.Id}");
+                        ImGui.EndTooltip();
+                    }
+                    // Now make the D button for Definitions/Terms all the way to the right
+                    ImGui.SameLine();
+                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonDWidth);
 
-                if (ImGui.Button("L##LegendButton", new float2(buttonWidth, 0)))
-                {
-                    selectedCategoryKey = "Legend";
-                    justSelected = "Legend";
-                }
-                if (ImGui.IsItemHovered())
-                {
-                    ImGui.BeginTooltip();
-                    ImGui.Text("Legend of Astronomical / Celestial terms.");
-                    ImGui.EndTooltip();
-                }
+                    if (ImGui.Button("D##TermsButton", new float2(buttonDWidth, 0)))
+                    {
+                        showWindow = "Terms";
+                    }
+                    if (ImGui.IsItemHovered())
+                    {
+                        ImGui.BeginTooltip();
+                        ImGui.Text("Definitions and Terms");
+                        ImGui.EndTooltip();
+                    }
 
                     if (showFontSettings)
                     {
@@ -193,7 +216,7 @@ namespace Compendium
                         // Display the selected font name
                         ImString selectedText = new ImString($"Selected: {fontNames[selectedFontIndex]}");
                         ImGui.Text(selectedText); ImGui.Text(" ");
-                        ImGui.PopFont();
+                        PopTheFont();
                         DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                         ImGui.Text(" ");
                     }
@@ -208,16 +231,17 @@ namespace Compendium
                 PushTheFont(1);
    
                 // Category selection buttons
-                ImGui.Text("Astronomicals Categories:");
+                ImGui.Text("\nAstronomicals Categories:");
                 
                 // Pop the large font and push smaller font for category buttons
-                ImGui.PopFont();
+                PopTheFont();
                 PushTheFont(0.75f);
                 
                 // Makes the category buttons by using which keys exist in the buttonsCatsTree dictionary,
                 // using the categoryKeys list made just after making buttonCatsTree
                 
                 List<string> sortedCategoryKeys = new List<string>(categoryKeys);
+                
                 
                 // IF there is a category named 'Other', make sure it is the last entry - but only if it exists in sortedCategoryKeys.
                 // Otherwise everything else is sorted alphabetically.
@@ -244,7 +268,9 @@ namespace Compendium
                     {
                         selectedCategoryKey = categoryKey;
                         selectedCategoryIndex = sortedCategoryKeys.IndexOf(categoryKey);
-                        justSelected = categoryKey;
+                        selectedCelestial = null;
+                        selectedCelestialId = "Category";
+                        showWindow = "Category";
                     }
                 }
                 
@@ -270,7 +296,7 @@ namespace Compendium
 
                 PrintSelectedCategoryByKey(selectedCategoryKey);
 
-                ImGui.PopFont();
+                PopTheFont();
                 ImGui.EndChild();
                 
                 // Resizable splitter
@@ -293,31 +319,48 @@ namespace Compendium
                 float sidePaneWidth = windowSize.X - mainContentWidth - 16f; // Account for splitter and spacing
                 ImGui.BeginChild("SidePane", new float2(sidePaneWidth, 0));
 
-                Celestial? selectedCelestial = null;
+                
 
-                // First check if the category selected is 'Legend' and make the legend information display
-                if (selectedCategoryKey == "Legend" && justSelected == "Legend")
+                // First check if the category selected is 'Terms' and make the terms information display
+                if (showWindow == "Terms")
                 {
                     selectedCategoryIndex = -2;
-                    selectedCelestial = null;
-                    PrintLegendCategory();
+                    PrintTermsCategory();
+                    ImGui.EndChild(); // End side pane
+                    ImGui.End();
+                    return;
+                }
+
+                // If no category is selected yet, show a placeholder message
+                if (showWindow == "None")
+                {
+                    PushTheFont(2f);
+                    ImGui.Text("Compendium");
+                    DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
+                    PopTheFont();
+                    PushTheFont(1.4f);
+                    ImGui.Text("\n\n\nAstronomicals Information\n\nPlease select a category, astronomical, or option!\n\n\n");
+                    PopTheFont();
+
+                    // Puts up a logo image if it exists in the Photos folder - if we can figure out how to do that
+
                     ImGui.EndChild(); // End side pane
                     ImGui.End();
                     return;
                 }
 
                 // Next if regular bodies if selected, then later in 'else' meaning the category was just selected, make special text for the category and it's information / data.
-                if (justSelected != selectedCategoryKey)
+                if (showWindow == "Celestial")
                 {
                     ImGui.Separator();
                     // pushes a larger font only for the selected celestial id display
                     PushTheFont(1.7f);
                     ImString selectedIdText = new ImString($"{selectedCelestialId}");
                     ImGui.Text(selectedIdText);
-                    ImGui.PopFont();
+                    PopTheFont();
                     PushTheFont(1);
                     ImGui.Text(" ");
-
+                    
                     // Find the selected celestial object from Universe.WorldSun tree
                     
                     if (selectedCelestialId != "None" && Universe.WorldSun != null)
@@ -341,8 +384,13 @@ namespace Compendium
                     }
     
                     // If selectedCelestial was found, display its information, checking at each step if the specific data being looked for is available.
-                    if (selectedCelestial != null)
+                    if (selectedCelestialId != "None")
                     {
+                        if (selectedCelestial != null)
+                        {
+                        var celestial = selectedCelestial;
+                        var children = celestial.Children;
+
                         // Show URL link if JSON data with URL is available
                         if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.WikipediaUrl))
                         { 
@@ -352,7 +400,6 @@ namespace Compendium
                         }
                         DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                         ImGui.Text(" ");
-
                         // Mean Radius
                         if (bodyJson != null && !float.IsNaN(bodyJson.RadiusKm))
                         { ImString radiusText = new ImString($"Mean Radius: {bodyJson.RadiusKm} km");
@@ -386,7 +433,8 @@ namespace Compendium
                         if (showOrbitalProperties)
                         {
                             // Makes a smaller font size for the orbital properties section
-                            PushTheFont(0.8f);
+                            PushTheFont(1.0f);
+                            ImGui.Text(" ");             
                             // Axial Tilt
                             if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.ThisTiltText))
                             { ImGui.Text(bodyJson.ThisTiltText); }
@@ -465,31 +513,75 @@ namespace Compendium
 
                             // current speed
 
-                            { ImGui.Text("Current Speed: " + DistanceReference.FromMeters(selectedCelestial.OrbitalSpeed).ToNearestPerSecond()); }
+                            ImGui.Text("Current Speed: " + DistanceReference.FromMeters(celestial.OrbitalSpeed).ToNearestPerSecond());
   
-                            ImGui.PopFont();
+                            PopTheFont();
                         }
                                             
                         DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                         ImGui.Text(" ");
                         // Makes a button to focus on the selected celestial objeect, but does not put a newline after it
-                        ImString focusText = new ImString($"Focus Camera on {selectedCelestial.Id}");
+                        ImString focusText = new ImString($"Focus Camera on {celestial.Id}");
                         if (ImGui.Button(focusText))
                         {
-                            KSA.Universe.MoveCameraTo(selectedCelestial);
+                            KSA.Universe.MoveCameraTo(celestial);
                         }
                         ImGui.SameLine(); ImGui.Text(" | "); ImGui.SameLine();
                         // Tries to make a button which toggles on/off the orbit lines for the selected celestial object
                         ImString orbitText = new ImString("Orbit Line"); 
                         if (ImGui.Button(orbitText))
                         {
-                            selectedCelestial.ShowOrbit = !selectedCelestial.ShowOrbit;
+                            celestial.ShowOrbit = !celestial.ShowOrbit;
                         }
                         ImGui.SameLine();
                         // Makes a checkbox that has an x to show the current state of the orbit line visibility
-                        ImGui.Checkbox("##orbitCheckbox", ref selectedCelestial.ShowOrbit);
+                        ImGui.Checkbox("##orbitCheckbox", ref celestial.ShowOrbit);
+
+                        // Gets the current vessel ID as a string if there is a controlled vehicle.
+                        string thisVehicle = Program.ControlledVehicle != null ? Program.ControlledVehicle.Id.ToString() : "None";
+
+                        // Makes a button to set the current celestial as the Target for the currently controlled vehicle, if there is one.
+                        ImString targetText = new ImString($"Select {celestial.Id} as Target");
+                        if (ImGui.Button(targetText))
+                        {
+                            // Toggles setting or unsetting the target for the controlled vehicle
+                            if (thisVehicle != "None")
+                            {
+                                if (!selectedCelestial.TargetOfControlledVehicle)
+                                { KSA.Universe.SetTargetCommand(thisVehicle, celestial.Id.ToString()); }
+                                else
+                                {  KSA.Universe.UnsetTargetCommand(thisVehicle); }
+                            }
+                        }
+
+                        // If the selected celestial is targeted by the controlled vehicle show indicator text
+                        if (thisVehicle != "None" && selectedCelestial.TargetOfControlledVehicle)
+                        {
+                            ImGui.SameLine();
+                            //ImString targetIndicatorText = new ImString(" >> Current Target <<");
+                            //ImGui.TextColored(new Brutal.Numerics.float4(0.0f, 1.0f, 0.0f, 1.0f), targetIndicatorText);
+                            // test indicator button colored red, which does nothing
+                            ImGui.SameLine();
+                            ImString colorbuttontext = new ImString(" >> Current Target << ##colorbutton");
+                            ImGui.PushStyleColor(ImGuiCol.Button, new Brutal.Numerics.float4(0.0f, 0.0f, 0.0f, 1.0f));
+                            ImGui.PushStyleColor(ImGuiCol.Text, new Brutal.Numerics.float4(0.0f, 1.0f, 0.0f, 1.0f));
+                            if (ImGui.Button(colorbuttontext))
+                            {
+                                KSA.Universe.UnsetTargetCommand(thisVehicle);
+                            }
+                            ImGui.PopStyleColor();
+                            ImGui.PopStyleColor();
+                        }
+                        // If there is no controlled vehicle, show indicator text
+                        else if (thisVehicle == "None")
+                        {
+                            ImGui.SameLine();
+                            ImString noVesselText = new ImString(" ( No Controlled Vehicle )");
+                            ImGui.TextColored(new Brutal.Numerics.float4(1.0f, 1.0f, 0.0f, 1.0f), noVesselText);
+                        }
+
                         // If the selectedcelestial has moons/children, make a button which toggles all of their orbit lines on/off
-                        if (selectedCelestial.Children.Count > 0)
+                        if (children != null && children.Count > 0)
                         {
                             ImGui.Text(" ");
                             ImString toggleMoonsText = new ImString("Toggle All Satellite Body Orbits:  ");
@@ -498,7 +590,7 @@ namespace Compendium
                             ImString moonsOnText = new ImString("< On >");
                             if (ImGui.Button(moonsOnText))
                             {
-                                foreach (var child in selectedCelestial.Children)
+                                foreach (var child in children)
                                 {
                                     if (child is Celestial cel)
                                     {
@@ -510,7 +602,7 @@ namespace Compendium
                             ImString moonsOffText = new ImString("< Off >");
                             if (ImGui.Button(moonsOffText))
                             {
-                                foreach (var child in selectedCelestial.Children)
+                                foreach (var child in children)
                                 {
                                     if (child is Celestial cel)
                                     {
@@ -521,7 +613,9 @@ namespace Compendium
                         }
                         // Now checks to see if the body is a Parent and has more than one group of Child OrbitLineGroups.  If so, make buttons to toggle each group on/off
                         var orbitLineGroups = new HashSet<string>();
-                        foreach (var child in selectedCelestial.Children)
+                        if (children != null)
+                        {
+                        foreach (var child in children)
                         {
                             if (child is Celestial cel)
                             {
@@ -533,6 +627,7 @@ namespace Compendium
                                 if (childBodyJson != null && !string.IsNullOrEmpty(childBodyJson.OrbitLineGroup))
                                     { orbitLineGroups.Add(childBodyJson.OrbitLineGroup); }
                             }
+                        }
                         }
                         if (orbitLineGroups.Count > 1)
                         {
@@ -547,7 +642,8 @@ namespace Compendium
             
                                 if (ImGui.Button(groupOnText))
                                 {
-                                    foreach (var child in selectedCelestial.Children)
+                                    if (children != null)
+                                    foreach (var child in children)
                                     {
                                         if (child is Celestial cel)
                                         {
@@ -565,7 +661,8 @@ namespace Compendium
                                 ImString groupOffText = new ImString($"< Off >##groupOff_{group}");
                                 if (ImGui.Button(groupOffText))
                                 {
-                                    foreach (var child in selectedCelestial.Children)
+                                    if (children != null)
+                                    foreach (var child in children)
                                     {
                                         if (child is Celestial cel)
                                         {
@@ -603,8 +700,8 @@ namespace Compendium
                                     
                                     // Color picker for this orbit group
                                     ImGui.Separator();
-                                    ImGui.Indent();
-                                    ImGui.Indent();
+                                    BigIndent(); ImGui.SameLine();ImGui.Text("Orbit Line Color:");
+                                    BigIndent(); ImGui.SameLine();
                                     ImString colorPickerLabel = new ImString($"##colorPicker_{group}");
                                     if (ImGui.BeginCombo(colorPickerLabel, "Select Color", ImGuiComboFlags.WidthFitPreview))
                                     {
@@ -614,7 +711,8 @@ namespace Compendium
                                             bool isSelected = false;
                                             if (ImGui.Selectable(colorOptionLabel, isSelected))
                                             {
-                                                foreach (var child in selectedCelestial.Children)
+                                                if (children != null)
+                                                foreach (var child in children)
                                                 {
                                                     if (child is Celestial cel)
                                                     {
@@ -625,16 +723,15 @@ namespace Compendium
                                                             { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
                                                         if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
                                                         {
+                                                            if (cel.Orbit != null)
                                                             {
-                                                                {
-                                                                    var orbitColor = cel.Orbit.OrbitLineColor;
-                                                                    orbitColor.RGB = new Brutal.Numerics.byte3(
-                                                                        (byte)(colorEntry.Value.X * 255),
-                                                                        (byte)(colorEntry.Value.Y * 255),
-                                                                        (byte)(colorEntry.Value.Z * 255)
-                                                                    );
-                                                                    cel.Orbit.OrbitLineColor = orbitColor;
-                                                                }
+                                                                var orbitColor = cel.Orbit.OrbitLineColor;
+                                                                orbitColor.RGB = new Brutal.Numerics.byte3(
+                                                                    (byte)(colorEntry.Value.X * 255),
+                                                                    (byte)(colorEntry.Value.Y * 255),
+                                                                    (byte)(colorEntry.Value.Z * 255)
+                                                                );
+                                                                cel.Orbit.OrbitLineColor = orbitColor;
                                                             }
                                                         }
                                                     }
@@ -646,7 +743,8 @@ namespace Compendium
                                     // Now makes 3 sliders populated with the current RGB values of the orbit line color for this orbit group, which when moved adjust the color also
                                     // First, get the current color of the first celestial in this group to use as reference
                                     Brutal.Numerics.byte3? currentColor = null;
-                                    foreach (var child in selectedCelestial.Children)
+                                    if (children != null)
+                                    foreach (var child in children)
                                     {
                                         if (child is Celestial cel)
                                         {
@@ -657,7 +755,10 @@ namespace Compendium
                                                 { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
                                             if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
                                             {
-                                                currentColor = cel.Orbit.OrbitLineColor.RGB;
+                                                if (cel.Orbit != null)
+                                                {
+                                                    currentColor = cel.Orbit.OrbitLineColor.RGB;
+                                                }
                                                 break;
                                             }
                                         }
@@ -668,18 +769,17 @@ namespace Compendium
                                         float g = currentColor.Value.Y / 255f;
                                         float b = currentColor.Value.Z / 255f;
                                         
-                                        ImGui.Text("Adjust Orbit Line Color:");
+                                        ImGui.Text(" "); BigIndent(); ImGui.Text("Adjust Color:");
                                         ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X * 0.25f); // Set item width
-                                        ImGui.Indent();
-                                        ImGui.SliderFloat($"R##{group}", ref r, 0f, 1f);
-                                        ImGui.SliderFloat($"G##{group}", ref g, 0f, 1f);
-                                        ImGui.SliderFloat($"B##{group}", ref b, 0f, 1f);
+                                        
+                                        BigIndent(); ImGui.SliderFloat($"R##{group}", ref r, 0f, 1f);
+                                        BigIndent(); ImGui.SliderFloat($"G##{group}", ref g, 0f, 1f);
+                                        BigIndent(); ImGui.SliderFloat($"B##{group}", ref b, 0f, 1f);
                                         ImGui.PopItemWidth();
                                         
-                                        ImGui.Unindent(); ImGui.Unindent(); ImGui.Unindent();
-                                        
                                         // After sliders, set the orbit line color to the new RGB values for all celestials in this group
-                                        foreach (var child in selectedCelestial.Children)
+                                        if (children != null)
+                                        foreach (var child in children)
                                         {
                                             if (child is Celestial cel)
                                             {
@@ -690,13 +790,16 @@ namespace Compendium
                                                     { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
                                                 if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
                                                 {
-                                                    var orbitColor2 = cel.Orbit.OrbitLineColor;
-                                                    orbitColor2.RGB = new Brutal.Numerics.byte3(
-                                                        (byte)(r * 255),
-                                                        (byte)(g * 255),
-                                                        (byte)(b * 255)
-                                                    );
-                                                    cel.Orbit.OrbitLineColor = orbitColor2;
+                                                    if (cel.Orbit != null)
+                                                    {
+                                                        var orbitColor2 = cel.Orbit.OrbitLineColor;
+                                                        orbitColor2.RGB = new Brutal.Numerics.byte3(
+                                                            (byte)(r * 255),
+                                                            (byte)(g * 255),
+                                                            (byte)(b * 255)
+                                                        );
+                                                        cel.Orbit.OrbitLineColor = orbitColor2;
+                                                    }
                                                 }
                                             }
                                         }
@@ -719,6 +822,15 @@ namespace Compendium
                     if (showOrbitLineSettings)
                     {
                         ImGui.Separator();
+                        if (celestial.Orbit == null)
+                        {
+                            ImGui.Text("Orbit: N/A");
+                        }
+                        else
+                        {
+                        var orbit = celestial.Orbit;
+                        BigIndent(); ImGui.SameLine(); ImGui.Text("Orbit Line Color:");
+                        BigIndent(); ImGui.SameLine();
                         ImString colorPickerLabel = new ImString($"##colorPicker");
                         if (ImGui.BeginCombo(colorPickerLabel, "Select Color", ImGuiComboFlags.WidthFitPreview))
                         {
@@ -728,36 +840,37 @@ namespace Compendium
                                 bool isSelected = false;
                                 if (ImGui.Selectable(colorOptionLabel, isSelected))
                                 {
-                                    var orbitColor = selectedCelestial.Orbit.OrbitLineColor;
+                                    var orbitColor = orbit.OrbitLineColor;
                                     orbitColor.RGB = new Brutal.Numerics.byte3(
                                         (byte)(colorEntry.Value.X * 255),
                                         (byte)(colorEntry.Value.Y * 255),
                                         (byte)(colorEntry.Value.Z * 255)
                                     );
-                                    selectedCelestial.Orbit.OrbitLineColor = orbitColor;
+                                    orbit.OrbitLineColor = orbitColor;
                                 }
                             }
                             ImGui.EndCombo();
                         }
                         
                         // Makes 3 sliders populated with the current RGB values of the orbit line color for this celestial, which when moved adjust the color also
-                        float r = selectedCelestial.Orbit.OrbitLineColor.RGB.X / 255f;
-                        float g = selectedCelestial.Orbit.OrbitLineColor.RGB.Y / 255f;
-                        float b = selectedCelestial.Orbit.OrbitLineColor.RGB.Z / 255f;
-                        ImGui.Text("Adjust Orbit Line Color:");
+                        float r = orbit.OrbitLineColor.RGB.X / 255f;
+                        float g = orbit.OrbitLineColor.RGB.Y / 255f;
+                        float b = orbit.OrbitLineColor.RGB.Z / 255f;
+                        ImGui.Text(" "); BigIndent(); ImGui.Text("Adjust Color:");
                         ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X * 0.25f); // Set item width
-                        ImGui.SliderFloat("R", ref r, 0f, 1f);
-                        ImGui.SliderFloat("G", ref g, 0f, 1f);
-                        ImGui.SliderFloat("B", ref b, 0f, 1f);
+                        BigIndent(); ImGui.SliderFloat("R", ref r, 0f, 1f);
+                        BigIndent(); ImGui.SliderFloat("G", ref g, 0f, 1f);
+                        BigIndent(); ImGui.SliderFloat("B", ref b, 0f, 1f);
                         ImGui.PopItemWidth();
                         // After sliders, set the orbit line color to the new RGB values
-                        var orbitColor2 = selectedCelestial.Orbit.OrbitLineColor;
+                        var orbitColor2 = orbit.OrbitLineColor;
                         orbitColor2.RGB = new Brutal.Numerics.byte3(
                             (byte)(r * 255),
                             (byte)(g * 255),
                             (byte)(b * 255)
                         );
-                        selectedCelestial.Orbit.OrbitLineColor = orbitColor2;
+                        orbit.OrbitLineColor = orbitColor2;
+                        }
                     }
                         // After displaying the celestial properties, show JSON compendium data if available
                         if (bodyJson != null)
@@ -794,13 +907,14 @@ namespace Compendium
                             }
                             ImGui.Text(" ");
                         }
+                        }
                     }
                     else
                         { ImGui.Text("\nSelect a category and celestial body!"); }
                     
-                    ImGui.PopFont();
+                    PopTheFont();
                 }
-                else
+                if (showWindow == "Category")
                 {
                     // This means category was selected but a body was not selected yet
                     // This is effectively the "category option / information" screen.
@@ -840,6 +954,8 @@ namespace Compendium
                     if (showOrbitCategoryColor)
                     {
                         ImGui.Separator();
+                        BigIndent(); ImGui.SameLine(); ImGui.Text("\nOrbit Line Color:");
+                        BigIndent(); ImGui.SameLine();
                         ImString colorPickerLabel = new ImString($"##categoryColorPicker");
                         if (ImGui.BeginCombo(colorPickerLabel, "Select Color", ImGuiComboFlags.WidthFitPreview))
                         {
@@ -850,23 +966,26 @@ namespace Compendium
                                 if (ImGui.Selectable(colorOptionLabel, isSelected))
                                 {
                                     // Iterate over all celestials in the current system and set orbit line color if in this category
-                                    foreach (var celestial in KSA.Universe.WorldSun.Children)
+                                    if (KSA.Universe.WorldSun != null)
                                     {
-                                        if (celestial is Celestial cel &&
-                                            buttonsCatsTree != null &&
-                                            buttonsCatsTree.ContainsKey(selectedCategoryKey) &&
-                                            buttonsCatsTree[selectedCategoryKey].ContainsKey(celestial.Id))
-
+                                        foreach (var celestial in KSA.Universe.WorldSun.Children)
                                         {
-                                            var orbitColor = cel.Orbit.OrbitLineColor;
-                                            orbitColor.RGB = new Brutal.Numerics.byte3(
-                                                (byte)(colorEntry.Value.X * 255),
-                                                (byte)(colorEntry.Value.Y * 255),
-                                                (byte)(colorEntry.Value.Z * 255)
-                                            );
-                                            cel.Orbit.OrbitLineColor = orbitColor;
+                                            if (celestial is Celestial cel &&
+                                                buttonsCatsTree != null &&
+                                                buttonsCatsTree.ContainsKey(selectedCategoryKey) &&
+                                                buttonsCatsTree[selectedCategoryKey].ContainsKey(celestial.Id))
+
+                                            {
+                                                var orbitColor = cel.Orbit.OrbitLineColor;
+                                                orbitColor.RGB = new Brutal.Numerics.byte3(
+                                                    (byte)(colorEntry.Value.X * 255),
+                                                    (byte)(colorEntry.Value.Y * 255),
+                                                    (byte)(colorEntry.Value.Z * 255)
+                                                );
+                                                cel.Orbit.OrbitLineColor = orbitColor;
+                                            }
+                                            
                                         }
-                                        
                                     }
                                 }
                             }
@@ -877,17 +996,19 @@ namespace Compendium
                         // Declare and initialize currentColor before using it
                         Brutal.Numerics.byte3? currentColor = null;
                         // First, get the current color of the first celestial in this category to use as reference
-                        foreach (var celestial in KSA.Universe.WorldSun.Children)
+                        if (KSA.Universe.WorldSun != null)
                         {
-                            if (celestial is Celestial cel &&
-                                buttonsCatsTree != null &&
-                                buttonsCatsTree.ContainsKey(selectedCategoryKey) &&
-                                buttonsCatsTree[selectedCategoryKey].ContainsKey(celestial.Id))
+                            foreach (var celestial in KSA.Universe.WorldSun.Children)
                             {
-                                currentColor = cel.Orbit.OrbitLineColor.RGB;
-                                break;
+                                if (celestial is Celestial cel &&
+                                    buttonsCatsTree != null &&
+                                    buttonsCatsTree.ContainsKey(selectedCategoryKey) &&
+                                    buttonsCatsTree[selectedCategoryKey].ContainsKey(celestial.Id))
+                                {
+                                    currentColor = cel.Orbit.OrbitLineColor.RGB;
+                                    break;
+                                }
                             }
-
                         }
                         if (currentColor != null)
                         {
@@ -895,14 +1016,13 @@ namespace Compendium
                             float g = currentColor.Value.Y / 255f;
                             float b = currentColor.Value.Z / 255f;
 
-                            ImGui.Text("Adjust Orbit Line Color:");
+                            ImGui.Text(" "); BigIndent(); ImGui.Text("Adjust Color:");
                             ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X * 0.25f); // Set item width
-                            ImGui.Indent();
-                            bool changedR = ImGui.SliderFloat($"R##category", ref r, 0f, 1f);
-                            bool changedG = ImGui.SliderFloat($"G##category", ref g, 0f, 1f);
-                            bool changedB = ImGui.SliderFloat($"B##category", ref b, 0f, 1f);
+
+                            BigIndent(); bool changedR = ImGui.SliderFloat($"R##category", ref r, 0f, 1f);
+                            BigIndent(); bool changedG = ImGui.SliderFloat($"G##category", ref g, 0f, 1f);
+                            BigIndent(); bool changedB = ImGui.SliderFloat($"B##category", ref b, 0f, 1f);
                             ImGui.PopItemWidth();
-                            ImGui.Unindent(); ImGui.Unindent(); ImGui.Unindent();
 
                             // Only update if any slider was changed
                             if (changedR || changedG || changedB)
@@ -916,8 +1036,9 @@ namespace Compendium
                                         {
                                             string celestialId = kvp.Key;
                                             // Find the celestial by id in WorldSun.Children
-                                            var celestial = KSA.Universe.WorldSun.Children.FirstOrDefault(c => c is Celestial cel && cel.Id == celestialId) as Celestial;
-                                            if (celestial != null)
+                                            if (KSA.Universe.WorldSun != null &&
+                                                KSA.Universe.WorldSun.Children.FirstOrDefault(c => c is Celestial cel && cel.Id == celestialId) is Celestial celestial &&
+                                                celestial.Orbit != null)
                                             {
                                                 var orbitColor2 = celestial.Orbit.OrbitLineColor;
                                                 orbitColor2.RGB = new Brutal.Numerics.byte3(
@@ -988,7 +1109,12 @@ namespace Compendium
             {
                 Console.WriteLine($"Compendium OnAfterUi error: {ex.Message}");
                 Console.WriteLine($"Stack trace: {ex.StackTrace}");
+                
+                // Try to clean up ImGui state on exception
+                try { ImGui.EndChild(); } catch { }
+                try { ImGui.End(); } catch { }
             }
+
         }
 
         [StarMapImmediateLoad]

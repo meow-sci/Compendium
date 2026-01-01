@@ -49,6 +49,11 @@
       <CompendiumFiles Include="$(BuildDir)Compendium\**\*" />
     </ItemGroup>
     <Copy SourceFiles="@(CompendiumFiles)" DestinationFolder="$(SendBuildToTestDir)\Compendium\%(RecursiveDir)" />
+    <!-- Copy the Photos folder to the build dir-->
+    <ItemGroup>
+      <PhotoFiles Include="$(BuildDir)Photos\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(PhotoFiles)" DestinationFolder="$(SendBuildToTestDir)\Photos\%(RecursiveDir)" />
 	</Target>
 
 
@@ -78,6 +83,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Compendium\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Photos\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     

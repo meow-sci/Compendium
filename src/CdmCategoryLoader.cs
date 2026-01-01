@@ -70,7 +70,7 @@ namespace Compendium
                 string fullKey = kvp.Key; // e.g., "Compendium.Mercury"
                 CompendiumData data = kvp.Value;
 
-                // Skip CompendiumJson entries - that simply identifies it as a json to read.
+                // Skip CompendiumJson key entries - that simply identifies it as a json to read.
                 if (fullKey == "CompendiumJson" || fullKey.StartsWith("CompendiumJson."))
                     { continue; }
 
@@ -284,13 +284,20 @@ namespace Compendium
                     if (listGroupData != null)
                     { buttonsCatsTree[categoryName]["Data"] = listGroupData; }
                 }
-                // Finally - look to the "Other" category and see if it has any bodies. If it does not, remove the "Other" category entirely.
-                if (buttonsCatsTree.ContainsKey("Other"))
+                // Finally - look at all categories if there are any with zero entries - if so remove that category from buttonsCatsTree to avoid empty categories in the UI.
+                var emptyCategories = new List<string>();
+                foreach (var cat in buttonsCatsTree.Keys)
                 {
-                    if (buttonsCatsTree["Other"].Count == 0)
+                    if (buttonsCatsTree[cat].Count == 0 || (buttonsCatsTree[cat].Count == 1 && buttonsCatsTree[cat].ContainsKey("Data")))
                     {
-                        buttonsCatsTree.Remove("Other");
+                        emptyCategories.Add(cat);
                     }
+                }
+                
+                // Remove empty categories from buttonsCatsTree
+                foreach (var emptyCat in emptyCategories)
+                {
+                    buttonsCatsTree.Remove(emptyCat);
                 }
             }
             

@@ -105,16 +105,32 @@ namespace Compendium
             }
         }
 
+        private static int fontPushCount = 0;
+
         public void PushTheFont(float scale)
         {
             if (fontNames.Length > 0 && selectedFontIndex < fontNames.Length && loadedFonts.TryGetValue(fontNames[selectedFontIndex], out ImFontPtr value))
             {
                 ImGui.PushFont(value, fontSizeCurrent * scale);
+                fontPushCount++;
             }
             // If no custom font is available, ImGui will use the default font automatically
         }
+
+        public void PopTheFont()
+        {
+            if (fontPushCount > 0)
+            {
+                ImGui.PopFont();
+                fontPushCount--;
+            }
+        }
         
-        
+        public void BigIndent()
+        {
+            ImGui.Text("                 ");
+            ImGui.SameLine();
+        }
         public void PushTheColor(string color)
         {
             if (color == "ltblue")
