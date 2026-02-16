@@ -8,37 +8,43 @@ namespace Compendium
         public static void AttachInfoBodyJsonDict()
         {
             Console.WriteLine("Compendium: Attaching game data to collected bodyJsonData for references...");
-            // If somehow bodyJsonDict is null or empty, just return
             if (bodyJsonDict == null || bodyJsonDict.Count == 0)
             {
                 Console.WriteLine("Compendium: HEY - bodyJsonDict IS NULL OR EMPTY!  Somehow NO Json data was found or loaded?");
                 return;
             }
-            
-            // Checks all celestials in the current universe and looks for an entry for that celestial ID in bodyJsonDict.
-            // If no entry exists then make a new entry for holding for that celestial in a bodyJsonDict entry in a key with the current system ID (Universe.CurrentSystem.Id).
-            // This is all for the sake of Celestials which are not in the default Compendium JSON data, and also not in any other jsons loaded by other mods or by the user, it givses a place to attach body data to.
 
             // Collect all celestial objects from the tree
             var allCelestials = new List<Celestial>();
-            // Use passed worldSun parameter, or fall back to Universe.WorldSun
             var sunToUse = worldSun ?? Universe.WorldSun;
-            
+
             if (sunToUse != null)
             {
-                Compendium.CollectAllCelestials(sunToUse, allCelestials);
+                // CollectAllCelestials is non-static in your project: call it on an instance.
+                CollectAllCelestials(sunToUse, allCelestials);
+
+                string systemId = Universe.CurrentSystem?.Id ?? "Dummy";
+
                 foreach (Celestial cel in allCelestials)
                 {
-                    string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
-                    string fullKey = $"{systemName}.{cel.Id}";
-                    if (!bodyJsonDict.ContainsKey(fullKey))
+                    string compKey = $"Compendium.{cel.Id}";
+                    string sysKey = $"{systemId}.{cel.Id}";
+
+                    // IMPORTANT:
+                    // - If system key exists, keep it (system overrides compendium).
+                    // - Else if compendium exists, alias system key to compendium entry so category data isn't lost.
+                    // - Else create a placeholder so it shows up under "Other".
+                    if (!bodyJsonDict.ContainsKey(sysKey))
                     {
-                        // If no entry exists for this celestial in the current system, create one.
-                        bodyJsonDict[fullKey] = new CompendiumData();
+                        if (bodyJsonDict.TryGetValue(compKey, out var compData))
+                        {
+                            bodyJsonDict[sysKey] = compData; // alias (preserves categories)
+                        }
+                        else
+                        {
+                            bodyJsonDict[sysKey] = new CompendiumData(); // no JSON: will fall into "Other"
+                        }
                     }
-                    // If the Celestial has no entry in either the default Compendium or the system-specific entry, create an entry for this Celestial for holding.
-                    if (!bodyJsonDict.ContainsKey($"Compendium.{cel.Id}") && !bodyJsonDict.ContainsKey(fullKey))
-                    { bodyJsonDict[$"{Universe.CurrentSystem}.{cel.Id}"] = new CompendiumData(); }
                 }
             }
             else
@@ -90,14 +96,14 @@ namespace Compendium
                 // Gravity values
                 // Calculates gravity using the formula: g = G * M / R^2 and then what the surface gravity would be.
                 // where G is the gravitational constant (6.67430 × 10^-11 m^3 kg^-1 s^-2), M is the mass in kg, R is the radius in meters.
-                double gravity = 6.67430e-11 * bodyCelestial.Mass / (bodyCelestial.ObjectRadius * bodyCelestial.ObjectRadius);
+                double gravity = 6.67430e-11 * bodyCelestial.Mass / (bodyCelestial._meanRadius * bodyCelestial._meanRadius);
                 // if the gravity just found is less than 0.001 m/s², display it as up to six decimal places.
                 if (gravity < 0.001) { bodyJsonData.GravityText = new ImString($"Gravity (Surface): {gravity:F6} m/s²");}
                 else { bodyJsonData.GravityText = new ImString($"Gravity (Surface): {gravity:F3} m/s²"); }
 
                 // Escape velocity
                 // calculates the escape velocity using the formula: v = sqrt(2 * G * M / R)
-                var escapeVelocity = Math.Sqrt(2 * 6.67430e-11 * bodyCelestial.Mass / bodyCelestial.MeanRadius);
+                var escapeVelocity = Math.Sqrt(2 * 6.67430e-11 * bodyCelestial.Mass / bodyCelestial._meanRadius);
                 // If the escape velocity is less than 1000 m/s, display it in m/s with one decimal place, otherwise display in km/s with three decimal places.
                 if (escapeVelocity < 1000) { bodyJsonData.EscapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity:F1} m/s"); }
                 else { bodyJsonData.EscapeVelocityText = new ImString($"Escape Velocity: {escapeVelocity / 1000f:F3} km/s"); }
@@ -157,7 +163,7 @@ namespace Compendium
                     double relativeInclination = inclinationDeg - parentTiltDeg;
                     // The solar ecliptic inclination we can get from the Inclination value which is inclination with respect to the parent body's equatorial plane - plus the parent's tilt.
                     // So to get the inclination relative to the solar ecliptic, we add the parent's tilt to the body's inclination to the parent.
-                    double solarEclipticInclination = Math.Abs(inclinationDeg - bodyCelestial.Parent.BodyTemplate.Rotation.Tilt.ToDegrees());
+                    double solarEclipticInclination = Math.Abs(inclinationDeg - ((Celestial)bodyCelestial.Parent).BodyTemplate.Rotation.Tilt.ToDegrees());
 
                     string parentId = bodyCelestial.Parent != null ? bodyCelestial.Parent.Id : "Unknown";
                     bodyJsonData.InclinationText = new ImString($"Inclination: {relativeInclination:F2}° ( Relative to {parentId} equator )\nInclination: {solarEclipticInclination:F2}° ( Relative to {worldsunId} plane )");

@@ -10,7 +10,7 @@ namespace Compendium
     {
 
         // Makes a dictionary of predetermined colors for orbit lines
-        public static Dictionary<string, float3> orbitLineColors = new Dictionary<string, float3>
+        private static Dictionary<string, float3> orbitLineColors = new Dictionary<string, float3>
         {
             { "White", new float3(1.0f, 1.0f, 1.0f) },
             { "Pink", new float3(1.0f, 0.75f, 0.8f) },
@@ -24,34 +24,50 @@ namespace Compendium
             { "Purple", new float3(0.5f, 0.0f, 0.5f) },
             { "Black", new float3(0.0f, 0.0f, 0.0f) },
         };
-        public static void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
+        private static void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
         {
             if (astro is Celestial cel && !collection.Contains(cel))
             {
                 collection.Add(cel);
             }
-            foreach (var child in astro.Children)
+
+            // KSA API change: Children moved to IParentBody, which Celestial and StellarBody implement.
+            if (astro is IParentBody parentBody && parentBody.Children != null)
             {
-                CollectAllCelestials(child, collection);
+                foreach (var child in parentBody.Children)
+                {
+                    if (child is Astronomical childAstro)
+                    {
+                        CollectAllCelestials(childAstro, collection);
+                    }
+                }
             }
         }
 
-        public static Celestial? FindCelestialById(Astronomical? body, string id)
+        private static Celestial? FindCelestialById(Astronomical? body, string id)
         {
             if (body == null) return null;
             if (body is Celestial cel && cel.Id == id)
             {
                 return cel;
             }
-            foreach (var child in body.Children)
+
+            // Walk children via IParentBody.Children instead of Astronomical.Children.
+            if (body is IParentBody parentBody && parentBody.Children != null)
             {
-                var found = FindCelestialById(child, id);
-                if (found != null) return found;
+                foreach (var child in parentBody.Children)
+                {
+                    if (child is Astronomical childAstro)
+                    {
+                        var found = FindCelestialById(childAstro, id);
+                        if (found != null) return found;
+                    }
+                }
             }
             return null;
         }
 
-        public static void ToggleCategoryOrbits(string categoryKey, bool showOrbit)
+        private static void ToggleCategoryOrbits(string categoryKey, bool showOrbit)
         {
             if (buttonsCatsTree == null || !buttonsCatsTree.ContainsKey(categoryKey)) return;
             
@@ -107,7 +123,7 @@ namespace Compendium
 
         private static int fontPushCount = 0;
 
-        public void PushTheFont(float scale)
+        private void PushTheFont(float scale)
         {
             if (fontNames.Length > 0 && selectedFontIndex < fontNames.Length && loadedFonts.TryGetValue(fontNames[selectedFontIndex], out ImFontPtr value))
             {
@@ -117,7 +133,7 @@ namespace Compendium
             // If no custom font is available, ImGui will use the default font automatically
         }
 
-        public void PopTheFont()
+        private void PopTheFont()
         {
             if (fontPushCount > 0)
             {
@@ -126,12 +142,12 @@ namespace Compendium
             }
         }
         
-        public void BigIndent()
+        private void BigIndent()
         {
             ImGui.Text("                 ");
             ImGui.SameLine();
         }
-        public void PushTheColor(string color)
+        private void PushTheColor(string color)
         {
             if (color == "ltblue")
             { ImGui.PushStyleColor(ImGuiCol.Header, new float4(0.26f, 0.59f, 0.98f, 0.80f)); }
@@ -143,7 +159,7 @@ namespace Compendium
             }
         }
 
-        public void DrawBoldSeparator(float thickness, Vector4 color)
+        private void DrawBoldSeparator(float thickness, Vector4 color)
         {
             ImGui.Dummy(new float2(-1, thickness)); // Add spacing/height to the layout
             float2 p_min = ImGui.GetCursorScreenPos();
@@ -156,7 +172,7 @@ namespace Compendium
             ImGui.GetWindowDrawList().AddRectFilled(p_min, p_max, colorU32);
         }
 
-        public static string FormatMassWithUnit(double massInKg)
+        private static string FormatMassWithUnit(double massInKg)
         {
             // Convert mass to appropriate order of magnitude unit
             // Based on https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)

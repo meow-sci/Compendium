@@ -9,7 +9,7 @@ namespace Compendium
     public partial class Compendium
     {
         // Add this field to store the selected celestial object
-        public static object? selectedCelestial;
+        private static object? selectedCelestial;
 
         public void PrintSelectedCategoryByKey(string categoryKey)
         {

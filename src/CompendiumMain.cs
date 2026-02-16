@@ -11,28 +11,28 @@ namespace Compendium
     [StarMapMod]
     public partial class Compendium
     {
-        public static string? dllDir;
-        public static float fontSizeCurrent = 30f;
-        public static float windowOpacity = 1.0f;
-        public static bool CompendiumWindow = true;
-        public static int selectedFontIndex = 0;
-        public static int previousFontIndex = -1;
-        public static int selectedCategoryIndex = -1;
-        public static string selectedCategoryKey = "None";
-        public static string showWindow = "None"; // "None", "Category", "Celestial", "Terms"
-        public static bool showFontSettings = false;
-        public static bool showOrbitLineSettings = false;
-        public static Dictionary<string, bool>? showOrbitGroupColor;
-        public static bool showOrbitCategoryColor = false;
-        public static string selectedCelestialId = "Compendium Astronomicals Database";
-        public static float mainContentWidth = 400f;
-        public static List<string> categoryKeys = new List<string>();
+        private static string? dllDir;
+        private static float fontSizeCurrent = 30f;
+        private static float windowOpacity = 1.0f;
+        private static bool CompendiumWindow = true;
+        private static int selectedFontIndex = 0;
+        private static int previousFontIndex = -1;
+        private static int selectedCategoryIndex = -1;
+        private static string selectedCategoryKey = "None";
+        private static string showWindow = "None"; // "None", "Category", "Celestial", "Terms"
+        private static bool showFontSettings = false;
+        private static bool showOrbitLineSettings = false;
+        private static Dictionary<string, bool>? showOrbitGroupColor;
+        private static bool showOrbitCategoryColor = false;
+        private static string selectedCelestialId = "Compendium Astronomicals Database";
+        private static float mainContentWidth = 400f;
+        private static List<string> categoryKeys = new List<string>();
         //private static string justSelected = "";
         private static string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
-        public static Dictionary<string, CompendiumData> bodyJsonDict = new Dictionary<string, CompendiumData>();
-        public static string? parentDir;
-        public static bool processedBodyJsonDict = false;
-        public static StellarBody? worldSun = Universe.WorldSun;
+        private static Dictionary<string, CompendiumData> bodyJsonDict = new Dictionary<string, CompendiumData>();
+        private static string? parentDir;
+        private static bool processedBodyJsonDict = false;
+        private static StellarBody? worldSun = Universe.WorldSun;
 
         [ModMenuEntry("Compendium Window")]
 
@@ -48,7 +48,7 @@ namespace Compendium
         [StarMapAfterGui]
         public void OnAfterUi(double dt)
         {
-            systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+
             Celestial? selectedCelestial = null;
             try
             {
@@ -154,10 +154,32 @@ namespace Compendium
 
                     // Makes a Terms button AND a button which focuses on the Sun but make it so that it displays on the same line as the font settings arrow button, with them on the right side of the window.
                     // Make it so that the first button is the S button, and the second is the D button for Definitions/Terms (all the way on the right)
-                    float buttonSWidth = ImGui.CalcTextSize(" S ").X;
-                    float buttonDWidth = ImGui.CalcTextSize(" D ").X;
+                    float buttonMWidth = ImGui.CalcTextSize(" MN ").X;
+                    float buttonSWidth = ImGui.CalcTextSize(" FC ").X;
+                    float buttonDWidth = ImGui.CalcTextSize(" TD ").X;
                     
-                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonSWidth - buttonDWidth - 4); // 4 for spacing
+                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonMWidth - buttonSWidth - buttonDWidth - 8); // 8 for spacing
+
+                    // Makes a button to make the display window go back to the original state on startup
+                    if (ImGui.Button(" M ##MainButton", new float2(buttonMWidth, 0)))
+                    {
+                        showWindow = "None";
+                        selectedCategoryIndex = -1;
+                        selectedCategoryKey = "None";
+                        selectedCelestial = null;
+                        selectedCelestialId = "Compendium Astronomicals Database";
+                    }
+                    if (ImGui.IsItemHovered())
+                    {
+                        ImGui.BeginTooltip();
+                        ImGui.Text($"Main Menu Screen");
+                        ImGui.EndTooltip();
+                    }
+                    
+                    // Makes the FC button to focus on the Sun.  Starts by putting the cursor at the right location.
+                    ImGui.SameLine();
+                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonSWidth - buttonDWidth -4 );
+
                     if (ImGui.Button(" S ##SunButton", new float2(buttonSWidth, 0)))
                     {
                         // Focus camera on the Sun
@@ -170,21 +192,21 @@ namespace Compendium
                     if (ImGui.IsItemHovered())
                     {
                         ImGui.BeginTooltip();
-                        ImGui.Text($"Focus Camera on {Universe.WorldSun.Id}");
+                        ImGui.Text($"Focus Camera on Star - {Universe.WorldSun.Id}");
                         ImGui.EndTooltip();
                     }
                     // Now make the D button for Definitions/Terms all the way to the right
                     ImGui.SameLine();
                     ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonDWidth);
 
-                    if (ImGui.Button("D##TermsButton", new float2(buttonDWidth, 0)))
+                    if (ImGui.Button(" D ##TermsButton", new float2(buttonDWidth, 0)))
                     {
                         showWindow = "Terms";
                     }
                     if (ImGui.IsItemHovered())
                     {
                         ImGui.BeginTooltip();
-                        ImGui.Text("Definitions and Terms");
+                        ImGui.Text("Definitions");
                         ImGui.EndTooltip();
                     }
 
@@ -337,13 +359,39 @@ namespace Compendium
                     DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                     PopTheFont();
                     PushTheFont(1.4f);
-                    ImGui.Text("\n\n\nAstronomicals Information\n\nPlease select a category, astronomical, or option!\n\n\n");
+                    ImGui.Text("\n\n\nAstronomicals Information\n\nPlease select a category, astronomical, or option!\n");
 
                     PopTheFont();
                     //ImTextureDataPtr photoPath = Path.Combine(parentDir ?? "", "Photos", "KSA_Logo.png");
                     //Brutal.ImGuiApi.ImTextureRef myTextureRef = (Path.Combine(parentDir ?? "", "Photos", "KSA_Logo.png"));
                     //ImGui.ImageWithBg(myTextureRef, new float2(sidePaneWidth - 20f, (sidePaneWidth - 20f) * 0.6f));
                     // Puts up a logo image if it exists in the Photos folder - if we can figure out how to do that
+
+
+
+                    // var texture = new TextureAsset(
+                    // "Content/Compendium/Photos/lol.jpg",
+                    // new(new StbTexture.LoadSettings { ForceChannels = 4 }));
+                    // var renderer = KSA.Program.GetRenderer();
+                    // SimpleVkTexture vkTex;
+                    // using (var stagingPool = renderer.Device.CreateStagingPool(renderer.Graphics, 1))
+                    // {
+                    // vkTex = new SimpleVkTexture(renderer.Device, stagingPool, texture);
+                    // }
+                    // var sampler = renderer.Device.CreateSampler(Presets.Sampler.SamplerPointClamped, null);
+                    // texID = ImGuiBackend.Vulkan.AddTexture(sampler, vkTex.ImageView);
+
+                    // Gets the current pane height and sets the image size to fit within the side pane while maintaining aspect ratio
+
+                    // Checks if the image texture was loaded successfully
+                
+
+                    float paneHeight = ImGui.GetContentRegionAvail().Y;
+                    float imageSize = Math.Min(sidePaneWidth - 20f, paneHeight);
+
+                    ImGui.Image(texID, new(imageSize, imageSize), new(0f, 0f), new(1f, 1f));
+
+
 
                     ImGui.EndChild(); // End side pane
                     ImGui.End();
@@ -390,7 +438,11 @@ namespace Compendium
                         if (selectedCelestial != null)
                         {
                         var celestial = selectedCelestial;
-                        var children = celestial.Children;
+                        IReadOnlyList<IOrbiter>? children = null;
+                        if (celestial is IParentBody parentBody && parentBody.Children != null)
+                        {
+                            children = parentBody.Children;
+                        }
 
                         // Show URL link if JSON data with URL is available
                         if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.WikipediaUrl))
@@ -967,9 +1019,9 @@ namespace Compendium
                                 if (ImGui.Selectable(colorOptionLabel, isSelected))
                                 {
                                     // Iterate over all celestials in the current system and set orbit line color if in this category
-                                    if (KSA.Universe.WorldSun != null)
+                                    if (KSA.Universe.WorldSun is IParentBody worldParent && worldParent.Children != null)
                                     {
-                                        foreach (var celestial in KSA.Universe.WorldSun.Children)
+                                        foreach (var celestial in worldParent.Children)
                                         {
                                             if (celestial is Celestial cel &&
                                                 buttonsCatsTree != null &&
@@ -997,9 +1049,9 @@ namespace Compendium
                         // Declare and initialize currentColor before using it
                         Brutal.Numerics.byte3? currentColor = null;
                         // First, get the current color of the first celestial in this category to use as reference
-                        if (KSA.Universe.WorldSun != null)
+                        if (KSA.Universe.WorldSun is IParentBody worldParent2 && worldParent2.Children != null)
                         {
-                            foreach (var celestial in KSA.Universe.WorldSun.Children)
+                            foreach (var celestial in worldParent2.Children)
                             {
                                 if (celestial is Celestial cel &&
                                     buttonsCatsTree != null &&
@@ -1031,15 +1083,15 @@ namespace Compendium
                                 if (buttonsCatsTree != null && buttonsCatsTree.ContainsKey(selectedCategoryKey))
                                 {
                                     var categoryEntry = buttonsCatsTree[selectedCategoryKey];
-                                    if (categoryEntry is Dictionary<string, object> parentEntryDict)
+                                    if (categoryEntry is Dictionary<string, object> parentEntryDict &&
+                                        KSA.Universe.WorldSun is IParentBody worldParent3 && worldParent3.Children != null)
                                     {
                                         foreach (var kvp in parentEntryDict)
                                         {
                                             string celestialId = kvp.Key;
-                                            // Find the celestial by id in WorldSun.Children
-                                            if (KSA.Universe.WorldSun != null &&
-                                                KSA.Universe.WorldSun.Children.FirstOrDefault(c => c is Celestial cel && cel.Id == celestialId) is Celestial celestial &&
-                                                celestial.Orbit != null)
+                                            // Find the celestial by id in the world's children
+                                            var celestial = worldParent3.Children.FirstOrDefault(c => c is Celestial cel && cel.Id == celestialId) as Celestial;
+                                            if (celestial != null && celestial.Orbit != null)
                                             {
                                                 var orbitColor2 = celestial.Orbit.OrbitLineColor;
                                                 orbitColor2.RGB = new Brutal.Numerics.byte3(
@@ -1134,6 +1186,9 @@ namespace Compendium
                     // Load celestial body descriptions from JSON files - pass dllDir since LoadCompendiumJsonData will search subdirectories
                     LoadCompendiumJsonData(dllDir);
                 }
+
+                // Loads photos found in the Photos folder
+                RegisterPhotos();
             }
             catch (Exception ex)
             {

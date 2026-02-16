@@ -109,6 +109,34 @@
       <HintPath>$(KSAFolder)\KSA.dll</HintPath>
 		<Private>false</Private>
     </Reference>
+    <Reference Include="Planet.Render.Core">
+      <HintPath>$(KSAFolder)\Planet.Render.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Planet.Core">
+      <HintPath>$(KSAFolder)\Planet.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+        <Reference Include="Brutal.Vulkan.Abstractions">
+      <HintPath>$(KSAFolder)\Brutal.Vulkan.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+            <Reference Include="Brutal.Vulkan">
+      <HintPath>$(KSAFolder)\Brutal.Vulkan.dll</HintPath>
+      <Private>false</Private>
+          </Reference>
+            <Reference Include="Brutal.Texture">
+      <HintPath>$(KSAFolder)\Brutal.Texture.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+                <Reference Include="Brutal.Texture.Abstractions">
+      <HintPath>$(KSAFolder)\Brutal.Texture.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+                <Reference Include="Brutal.Stb.Texture">
+      <HintPath>$(KSAFolder)\Brutal.Stb.Texture.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 
 

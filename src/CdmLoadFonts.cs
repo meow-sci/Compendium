@@ -6,11 +6,11 @@ namespace Compendium
 
     public partial class Compendium
     {
-        public static string[] fontFiles = Array.Empty<string>();
-        public static string[] fontNames = Array.Empty<string>();
-        public static Dictionary<string, ImFontPtr> loadedFonts = new Dictionary<string, ImFontPtr>();
+        private static string[] fontFiles = Array.Empty<string>();
+        private static string[] fontNames = Array.Empty<string>();
+        private static Dictionary<string, ImFontPtr> loadedFonts = new Dictionary<string, ImFontPtr>();
 
-        public static void LoadFonts(string? dllDir, float fontSizeCurrent)
+        private static void LoadFonts(string? dllDir, float fontSizeCurrent)
         {
             if (!string.IsNullOrEmpty(dllDir))
             {

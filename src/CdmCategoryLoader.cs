@@ -4,9 +4,9 @@ namespace Compendium
 {  
     public partial class Compendium
     {
-        public static Dictionary<string, HashSet<string>> categoriesDict = new Dictionary<string, HashSet<string>>();
-        public static string[]? categoryNames;
-        public static Dictionary<string, Dictionary<string, object>>? buttonsCatsTree;
+        private static Dictionary<string, HashSet<string>> categoriesDict = new Dictionary<string, HashSet<string>>();
+        private static string[]? categoryNames;
+        private static Dictionary<string, Dictionary<string, object>>? buttonsCatsTree;
         private static bool categoriesBuiltWithCelestials = false;
 
         // Method to load categories from the loaded JSON data, or hardcoded defaults if none found
@@ -36,16 +36,13 @@ namespace Compendium
                 categoriesBuiltWithCelestials = false;
             }
 
-            // Build a lookup for parent-child relationships
+            // Build a lookup for parent-child relationships based on Parent, since Children was removed in newer KSA builds
             var childToParentMap = new Dictionary<string, string>();
             foreach (var cel in allCelestials)
             {
-                foreach (var child in cel.Children)
+                if (cel.Parent is Celestial parentCel)
                 {
-                    if (child is Celestial childCel)
-                    {
-                        childToParentMap[childCel.Id] = cel.Id;
-                    }
+                    childToParentMap[cel.Id] = parentCel.Id;
                 }
             }
             
@@ -55,12 +52,13 @@ namespace Compendium
             // First, find the sun's direct children (top-level bodies)
             var sunDirectChildren = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             if (sunToUse != null)
+
             {
-                foreach (var child in sunToUse.Children)
+                foreach (var cel in allCelestials)
                 {
-                    if (child is Celestial childCel)
+                    if (ReferenceEquals(cel.Parent, sunToUse))
                     {
-                        sunDirectChildren.Add(childCel.Id);
+                        sunDirectChildren.Add(cel.Id);
                     }
                 }
             }
@@ -206,13 +204,13 @@ namespace Compendium
                         {
                             var parentData = (Dictionary<string, object>)buttonsCatsTree[categoryName][cel.Id];
                             var childrenList = (List<string>)parentData["Children"];
-                            
-                            // Add all children of this celestial
-                            foreach (var child in cel.Children)
+
+                            // Add all children of this celestial based on the childToParentMap
+                            foreach (var possibleChild in allCelestials)
                             {
-                                if (child is Celestial childCel)
+                                if (childToParentMap.TryGetValue(possibleChild.Id, out var parentId) && parentId == cel.Id)
                                 {
-                                    childrenList.Add(childCel.Id);
+                                    childrenList.Add(possibleChild.Id);
                                 }
                             }
                         }
@@ -251,12 +249,12 @@ namespace Compendium
                                 // Also add its children
                                 var parentData = (Dictionary<string, object>)buttonsCatsTree["Other"][cel.Id];
                                 var childrenList = (List<string>)parentData["Children"];
-                                
-                                foreach (var child in cel.Children)
+
+                                foreach (var possibleChild in allCelestials)
                                 {
-                                    if (child is Celestial childCel)
+                                    if (childToParentMap.TryGetValue(possibleChild.Id, out var parentId) && parentId == cel.Id)
                                     {
-                                        childrenList.Add(childCel.Id);
+                                        childrenList.Add(possibleChild.Id);
                                     }
                                 }
                             }
