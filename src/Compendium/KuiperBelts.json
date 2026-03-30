@@ -46,6 +46,14 @@
             "Factoids": [ "Has a very high density compared with other Kuiper belt objects.", "It was discovered in 2003.", "Has a rapid rotation period of approximately 4.13 hours." ],
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "(455502)_2003_UZ413"
+        },
+        "MakemakeComet": {
+            "ListGroups": [ "Dwarf Planets", "Kuiper Belt" ],
+            "OrbitLineGroup": "Kuiper Belt Objects",
+            "Text": "Makemake is a dwarf planet in the Kuiper belt that has a small moon named MK2. The moon was discovered in 2016 and is thought to be composed of water ice. MK2's orbit around Makemake is not well understood, but it is believed to be relatively close to the dwarf planet.",
+            "Factoids": [ "MK2 is much smaller than Makemake, with an estimated diameter of around 175 kilometers.", "The discovery of MK2 provided insights into the formation and evolution of the Makemake system." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "Makemake"
         }
     }
 }

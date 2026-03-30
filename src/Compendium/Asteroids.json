@@ -127,6 +127,14 @@
             "VisitedBy": [ "None" ],
             "WikipediaUrl": "624_Hektor"
         },
+        "Hygiea": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Hygiea is the fourth largest asteroid in the Solar System and is classified as a dwarf planet.",
+            "Factoids": [ "Hygiea has a diameter of approximately 430 kilometers.", "It is located in the asteroid belt between Mars and Jupiter." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": "10_Hygiea"
+        },
         "Ida": {
             "ListGroups": [ "Asteroids" ],
             "OrbitLineGroup": "Asteroids",
@@ -206,6 +214,14 @@
             "Factoids": [ "Mathilde has a diameter of approximately 53 kilometers.", "It has a very low density, suggesting a porous structure." ],
             "VisitedBy": [ "NEAR_Shoemaker (1997)" ],
             "WikipediaUrl": "253_Mathilde"
+        },
+        "ScottManleyAsteroid": {
+            "ListGroups": [ "Asteroids" ],
+            "OrbitLineGroup": "Asteroids",
+            "Text": "Scott Manley Asteroid is a small asteroid in the asteroid belt named after Scott Manley, a popular YouTuber known for his videos on space and astronomy.",
+            "Factoids": [ "Scott Manley Asteroid has a diameter of approximately 3 kilometers.", "It was discovered in 2019." ],
+            "VisitedBy": [ "None" ],
+            "WikipediaUrl": ""
         },
         "Steins": {
             "ListGroups": [ "Asteroids" ],

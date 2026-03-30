@@ -16,14 +16,15 @@
 		<!-- Edit (optional) - Location to send the built mod files, include your mod folder name! -->
 		<!--                   This location has to also have copies of the necessary core game dlls since it's also used to get the game dlls -->
     <!--                   If you use the default game install location it saves alot of work and your mods copy there on build for testing -->
-		<KSAFolder>C:\Program Files\Kitten Space Agency</KSAFolder>
+		<KSAFolder>C:\Program Files\Kitten Space Agency</KSAFolder> 
+    <ModsFolder>$(USERPROFILE)\Documents\My Games\Kitten Space Agency\mods</ModsFolder>
 
 		<!-- Do not edit - Location where the built mod files will be found -->
 		<!--               This folder will be named by your target framework when you build -->
 		<BuildDir>bin\Debug\$(TargetFramework)\</BuildDir>
 
     <!-- Do not edit - Full path to send built mod files to -->
-		<SendBuildToTestDir>$(KSAFolder)\Content\$(ModNamespace)</SendBuildToTestDir>
+		<SendBuildToTestDir>$(ModsFolder)\$(ModNamespace)</SendBuildToTestDir>
 	</PropertyGroup>
 
 

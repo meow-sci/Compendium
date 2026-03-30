@@ -24,6 +24,7 @@ namespace Compendium
         private static bool showOrbitLineSettings = false;
         private static Dictionary<string, bool>? showOrbitGroupColor;
         private static bool showOrbitCategoryColor = false;
+        private static bool showVesselDropdown = false;
         private static string selectedCelestialId = "Compendium Astronomicals Database";
         private static float mainContentWidth = 400f;
         private static List<string> categoryKeys = new List<string>();
@@ -33,6 +34,9 @@ namespace Compendium
         private static string? parentDir;
         private static bool processedBodyJsonDict = false;
         private static StellarBody? worldSun = Universe.WorldSun;
+        private static readonly float2 defaultWindowPos = new float2(700f, 350f);
+        private static readonly float2 defaultWindowSize = new float2(1500f, 1200f);
+
 
         [ModMenuEntry("Compendium Window")]
 
@@ -48,6 +52,8 @@ namespace Compendium
         [StarMapAfterGui]
         public void OnAfterUi(double dt)
         {
+            ImGui.SetNextWindowPos(defaultWindowPos, ImGuiCond.FirstUseEver, (float2?)null);
+            ImGui.SetNextWindowSize(defaultWindowSize, ImGuiCond.FirstUseEver);
 
             Celestial? selectedCelestial = null;
             try
@@ -59,7 +65,6 @@ namespace Compendium
                 // Wait for universe to be fully loaded
                 if (Universe.WorldSun == null)
                 {
-                    ImGui.SetNextWindowBgAlpha(windowOpacity);
                     if (ImGui.Begin("Compendium"))
                     {
                         ImGui.Text("Waiting for universe to load...");
@@ -154,11 +159,15 @@ namespace Compendium
 
                     // Makes a Terms button AND a button which focuses on the Sun but make it so that it displays on the same line as the font settings arrow button, with them on the right side of the window.
                     // Make it so that the first button is the S button, and the second is the D button for Definitions/Terms (all the way on the right)
-                    float buttonMWidth = ImGui.CalcTextSize(" MN ").X;
-                    float buttonSWidth = ImGui.CalcTextSize(" FC ").X;
-                    float buttonDWidth = ImGui.CalcTextSize(" TD ").X;
+                    float buttonMWidth = ImGui.CalcTextSize(" MM ").X;
+                    float buttonSWidth = ImGui.CalcTextSize(" SS ").X;
+                    // a new button to focus the camera on the current vessel - does nothing if there is no controlled vessel at all, but leave the button here
+                    float buttonVWidth = ImGui.CalcTextSize(" VV ").X;
+                    float buttonDWidth = ImGui.CalcTextSize(" DD ").X;
                     
-                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonMWidth - buttonSWidth - buttonDWidth - 8); // 8 for spacing
+                    float itemSpacingX = ImGui.GetStyle().ItemSpacing.X;
+                    float totalButtonWidth = buttonMWidth + buttonSWidth + buttonVWidth + buttonDWidth + itemSpacingX * 3;
+                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - totalButtonWidth);
 
                     // Makes a button to make the display window go back to the original state on startup
                     if (ImGui.Button(" M ##MainButton", new float2(buttonMWidth, 0)))
@@ -176,10 +185,8 @@ namespace Compendium
                         ImGui.EndTooltip();
                     }
                     
-                    // Makes the FC button to focus on the Sun.  Starts by putting the cursor at the right location.
+                    // Makes the FC button to focus on the Sun.
                     ImGui.SameLine();
-                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonSWidth - buttonDWidth -4 );
-
                     if (ImGui.Button(" S ##SunButton", new float2(buttonSWidth, 0)))
                     {
                         // Focus camera on the Sun
@@ -187,6 +194,7 @@ namespace Compendium
                         if (sun != null)
                         {
                             KSA.Universe.MoveCameraTo(sun);
+                            KSA.Program.SetOrbitCamera(0.3, -0.43, 905); // azimuth, elevation, distancePower
                         }
                     }
                     if (ImGui.IsItemHovered())
@@ -195,10 +203,53 @@ namespace Compendium
                         ImGui.Text($"Focus Camera on Star - {Universe.WorldSun.Id}");
                         ImGui.EndTooltip();
                     }
-                    // Now make the D button for Definitions/Terms all the way to the right
+                    // V button toggles vessel picker popup
                     ImGui.SameLine();
-                    ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonDWidth);
+                    if (ImGui.Button(" V ##VesselButton", new float2(buttonVWidth, 0)))
+                    {
+                        showVesselDropdown = !showVesselDropdown;
+                    }
+                    if (ImGui.IsItemHovered())
+                    {
+                        ImGui.BeginTooltip();
+                        ImGui.Text("Select Active Vessel");
+                        ImGui.EndTooltip();
+                    }
+                    if (showVesselDropdown)
+                    {
+                        ImGui.SetNextWindowPos(ImGui.GetItemRectMin() + new float2(0, ImGui.GetItemRectSize().Y), ImGuiCond.Always, (float2?)null);
+                        if (ImGui.Begin("##VesselPicker", ref showVesselDropdown, ImGuiWindowFlags.NoDecoration | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoSavedSettings))
+                        {
+                            var vessels = KSA.Universe.CurrentSystem?.Vehicles.GetList();
+                            if (vessels == null || vessels.Count == 0)
+                            {
+                                ImGui.Text("No vessels found");
+                            }
+                            else
+                            {
+                                foreach (var v in vessels)
+                                {
+                                    bool isCurrent = Program.ControlledVehicle != null && Program.ControlledVehicle.Id == v.Id;
+                                    if (isCurrent) ImGui.PushStyleColor(ImGuiCol.Text, new float4(0.4f, 1.0f, 0.4f, 1.0f));
+                                    ImString vesselLabel = new ImString(v.Id.ToString());
+                                    if (ImGui.Selectable(vesselLabel))
+                                    {
+                                        Program.ControlledVehicle = (Vehicle)v;
+                                        KSA.Universe.MoveCameraTo(v);
+                                        showVesselDropdown = false;
+                                    }
+                                    if (isCurrent) ImGui.PopStyleColor();
+                                }
+                            }
+                            ImGui.End();
+                        }
+                    }
 
+
+
+
+                    // Now make the D button for Definitions/Terms
+                    ImGui.SameLine();
                     if (ImGui.Button(" D ##TermsButton", new float2(buttonDWidth, 0)))
                     {
                         showWindow = "Terms";
@@ -359,6 +410,24 @@ namespace Compendium
                     DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                     PopTheFont();
                     PushTheFont(1.4f);
+                    ImGui.Text(" ");
+                    // On the far left hand side of the pane, put text "Toggle all Orbit Lines" and then buttons for "On" and "Off" to toggle all orbit lines in the universe on or off, for users who want to see the full orbital paths of everything in the universe at once without having to click each celestial object and toggle their orbit lines individually.
+                    ImGui.Text("         All Orbit Lines");
+                    ImGui.SameLine();
+                    // The orbit line toggling has to cycle through all the celestials in the universe and toggle their ShowOrbit variable, which is what makes the orbit lines show or hide for each celestial object.
+                    ImString allOnText = new ImString("< On >");
+                    if (ImGui.Button(allOnText))
+                    {
+                        ToggleAllOrbitLines(true);
+                    }
+                    ImGui.SameLine();
+                    ImString allOffText = new ImString("< Off >");
+                    if (ImGui.Button(allOffText))
+                    {
+                        ToggleAllOrbitLines(false);
+                    }
+
+
                     ImGui.Text("\n\n\nAstronomicals Information\n\nPlease select a category, astronomical, or option!\n");
 
                     PopTheFont();

@@ -120,6 +120,21 @@ namespace Compendium
                 }
             }
         }
+        private static void ToggleAllOrbitLines(bool showOrbit)
+        {
+            if (Universe.WorldSun == null) return;
+            var allCelestials = new List<Celestial>();
+            CollectAllCelestials(Universe.WorldSun, allCelestials);
+            var systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+            
+            foreach (var celestial in allCelestials)
+            {
+                // Toggle orbit visibility
+                celestial.ShowOrbit = showOrbit;
+                
+
+            }
+        }
 
         private static int fontPushCount = 0;
 

@@ -13,7 +13,9 @@ public partial class Compendium
 
         public static void RegisterPhotos ()
         {
-                    var texture = new TextureAsset("Content/Compendium/Photos/compendium-logo-1.png", new(new StbTexture.LoadSettings { ForceChannels = 4 }));
+                    var assemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) ?? "";
+                    var photoPath = Path.Combine(assemblyPath, "..", "Compendium", "Photos", "compendium-logo-1.png");
+                    var texture = new TextureAsset(photoPath, new(new StbTexture.LoadSettings { ForceChannels = 4 }));
                     var renderer = KSA.Program.GetRenderer();
                     SimpleVkTexture vkTex;
                     
