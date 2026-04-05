@@ -1,0 +1,207 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Historic Great Comets": {
+        "CatText": "Historic great comets are especially bright comets noted in historical records.",
+        "CatWikipediaUrl": "Great_comet"
+      }
+    },
+    "Brooks_1893": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Brooks 1893 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Coggia_1874": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Coggia 1874 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Daylight_1910": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Daylight 1910 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Donati_1858": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Donati 1858 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Eclipse_1948": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Eclipse 1948 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Flaugergues_1811": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Flaugergues 1811 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "GreatComet_1680": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "GreatComet 1680 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "GreatComet_1811": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "GreatComet 1811 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "GreatComet_1843": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "GreatComet 1843 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "GreatComet_1882": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "GreatComet 1882 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "GreatComet_1965": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "GreatComet 1965 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Morehouse_1908": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Morehouse 1908 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Skjellerup-Maristany_1927": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Skjellerup-Maristany 1927 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Tebbutt_1861": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Historic Great Comets",
+      "Text": "Tebbutt 1861 is a historic great comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}

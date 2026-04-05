@@ -1,0 +1,109 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Halley-Type Comets": {
+        "CatText": "Halley-type comets have orbital periods roughly between 20 and 200 years.",
+        "CatWikipediaUrl": "Halley-type_comet"
+      }
+    },
+    "Brorsen-Metcalf": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Halley-Type Comets",
+      "Text": "Brorsen-Metcalf is a Halley-type comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Olbers": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Halley-Type Comets",
+      "Text": "Olbers is a Halley-type comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Pons-Brooks": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Halley-Type Comets",
+      "Text": "Pons-Brooks is a Halley-type comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Stephan-Oterma": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Halley-Type Comets",
+      "Text": "Stephan-Oterma is a Halley-type comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Swift-Tuttle": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Halley-Type Comets",
+      "Text": "Swift-Tuttle is a Halley-type comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Tuttle-Giacobini-Kresak": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Halley-Type Comets",
+      "Text": "Tuttle-Giacobini-Kresak is a Halley-type comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Westphal": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Halley-Type Comets",
+      "Text": "Westphal is a Halley-type comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}

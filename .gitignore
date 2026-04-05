@@ -42,6 +42,7 @@ ScaffoldingReadMe.txt
 CodeCoverage/
 *.tmp
 *.temp
+.decompiled
 
 # MSBuild Binary and Structured Log
 *.binlog
@@ -54,3 +55,4 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+

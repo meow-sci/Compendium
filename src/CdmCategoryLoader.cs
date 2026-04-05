@@ -15,6 +15,7 @@ namespace Compendium
             // Build the category tree structure
             // buttonsCatsTree will have structure: [categoryName][parentBodyId] = { "Body": parentBodyId, "Children": [childBodyId1, childBodyId2, ...] }
             buttonsCatsTree = new Dictionary<string, Dictionary<string, object>>();
+            categoryDisplayCacheByKey = null;
             
             
             // Collect all celestial objects from the tree
@@ -122,13 +123,13 @@ namespace Compendium
                 else
                 {
                     // Fallback to hardcoded default categories
-                    categoryNames = ["FallbackCats", "Planets", "Dwarf Planets", "Trans-Neptunian Objects", "Main Asteroids", "Comets", "Interstellar Objects", "Other"];
+                    categoryNames = ["FallbackCats", "Planets", "Dwarf Planets", "Trans-Neptunian Objects", "Asteroids", "Comets", "Interstellar Objects", "Other"];
                 }
             }
             else 
             {
                 // Fallback to hardcoded default categories
-                categoryNames = ["FallbackCats", "Planets", "Dwarf Planets", "Trans-Neptunian Objects", "Main Asteroids", "Comets", "Interstellar Objects", "Other"];
+                categoryNames = ["FallbackCats", "Planets", "Dwarf Planets", "Trans-Neptunian Objects", "Asteroids", "Comets", "Interstellar Objects", "Other"];
             }
 
             // Ensure "Other" category always exists for uncategorized bodies
@@ -158,17 +159,7 @@ namespace Compendium
                             continue;
                         }
 
-                        // Try system-specific key first (e.g., "SolarSystem.Mercury")
-                        CompendiumData? celData = null;
-                        string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
-                        string systemKey = $"{systemName}.{cel.Id}";
-                        string compendiumKey = $"Compendium.{cel.Id}";
-
-                        if (!Compendium.bodyJsonDict.TryGetValue(systemKey, out celData))
-                        {
-                            // Fall back to default "Compendium" key (e.g., "Compendium.Mercury")
-                            Compendium.bodyJsonDict.TryGetValue(compendiumKey, out celData);
-                        }
+                        CompendiumData? celData = GetBodyJsonData(cel);
 
                         bool addToCategory = false;
                         if (celData != null && celData.ListGroups != null && celData.ListGroups.Contains(categoryName))
@@ -210,7 +201,7 @@ namespace Compendium
                             {
                                 if (childToParentMap.TryGetValue(possibleChild.Id, out var parentId) && parentId == cel.Id)
                                 {
-                                    childrenList.Add(possibleChild.Id);
+                                    childrenList.Add(GetCelestialPath(possibleChild));
                                 }
                             }
                         }
@@ -254,7 +245,7 @@ namespace Compendium
                                 {
                                     if (childToParentMap.TryGetValue(possibleChild.Id, out var parentId) && parentId == cel.Id)
                                     {
-                                        childrenList.Add(possibleChild.Id);
+                                        childrenList.Add(GetCelestialPath(possibleChild));
                                     }
                                 }
                             }

@@ -1,135 +1,243 @@
 {
-    "CompendiumJson": "True",
-    "Compendium": {
-        "ListGroupsData": {
-            "Comets": {
-                "CatText": "Comets are icy bodies that release gas or dust, originating from the outer regions of the Solar System.",
-                "CatWikipediaUrl": "Comet"
-            },
-            "Interstellar Objects": {
-                "CatText": "Interstellar Objects are objects that originate outside the Solar System, passing through it.",
-                "CatWikipediaUrl": "Interstellar_object"
-            }
-        },
-        "Oumuamua": {
-            "ListGroups": [ "Interstellar Objects" ],
-            "OrbitLineGroup": "Interstellar Objects",
-            "Text": "Oumuamua is the first known interstellar object detected passing through the Solar System.",
-            "Factoids": [ "Oumuamua has a highly elongated shape.", "It was discovered in October 2017." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "1I/ʻOumuamua"
-        },
-        "1I/Oumuamua": {
-            "ListGroups": [ "Interstellar Objects" ],
-            "OrbitLineGroup": "Interstellar Objects",
-            "Text": "Oumuamua is the first known interstellar object detected passing through the Solar System.",
-            "Factoids": [ "Oumuamua has a highly elongated shape.", "It was discovered in October 2017." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "1I/ʻOumuamua"
-        },
-        "2I/Borisov": {
-            "ListGroups": [ "Interstellar Objects" ],
-            "OrbitLineGroup": "Interstellar Objects",
-            "Text": "2I/Borisov is the second known interstellar object and the first known interstellar comet.",
-            "Factoids": [ "2I/Borisov has a composition similar to Solar System comets.", "It was discovered in August 2019." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "2I/Borisov"
-        },
-        "Borisov": {
-            "ListGroups": [ "Interstellar Objects" ],
-            "OrbitLineGroup": "Interstellar Objects",
-            "Text": "2I/Borisov is the second known interstellar object and the first known interstellar comet.",
-            "Factoids": [ "2I/Borisov has a composition similar to Solar System comets.", "It was discovered in August 2019." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "2I/Borisov"
-        },
-        "3I/Atlas": {
-            "ListGroups": [ "Interstellar Objects" ],
-            "OrbitLineGroup": "Interstellar Objects",
-            "Text": "3I/Atlas, the third known interstellar, a comet  Made closest approach to the Earth on December 19th, 2025 .",
-            "Factoids": [ "" ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "3I/Atlas"
-        },
-        "3I_ATLAS": {
-            "ListGroups": [ "Interstellar Objects" ],
-            "OrbitLineGroup": "Interstellar Objects",
-            "Text": "3I/Atlas, the third known interstellar, a comet  Made closest approach to the Earth on December 19th, 2025 .",
-            "Factoids": [ "" ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "3I/Atlas"
-        },
-        "Halley": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Halley's Comet is a short-period comet visible from Earth every 75-76 years.",
-            "Factoids": [ "Halley's Comet last appeared in 1986.", "It is the only known short-period comet that is regularly visible to the naked eye from Earth." ],
-            "VisitedBy": [ "Giotto (1986)", "Vega 1 (1986)", "Vega 2 (1986)" ],
-            "WikipediaUrl": "Halley's_Comet"
-        },
-        "HalleysComet": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Halley's Comet is a short-period comet visible from Earth every 75-76 years.",
-            "Factoids": [ "Halley's Comet last appeared in 1986.", "It is the only known short-period comet that is regularly visible to the naked eye from Earth." ],
-            "VisitedBy": [ "Giotto (1986)", "Vega 1 (1986)", "Vega 2 (1986)" ],
-            "WikipediaUrl": "Halley's_Comet"
-        },
-        "Borrelly": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Comet Borrelly is a short-period comet that was visited by the Deep Space 1 spacecraft in 2001.",
-            "Factoids": [ "Comet Borrelly has a nucleus approximately 8 kilometers long.", "It has a dark surface with low reflectivity." ],
-            "VisitedBy": [ "Deep Space 1 (2001)" ],
-            "WikipediaUrl": "19P/Borrelly"
-        },
-        "Tempel 1": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Comet Tempel 1 is a periodic comet that was the target of NASA's Deep Impact mission in 2005.",
-            "Factoids": [ "Comet Tempel 1 has a nucleus approximately 6 kilometers in diameter.", "The Deep Impact mission created a crater on the comet's surface to study its composition." ],
-            "VisitedBy": [ "Deep Impact (2005)", "Stardust-NExT (2011)" ],
-            "WikipediaUrl": "9P/Tempel"
-        },
-        "Wild 2": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Comet Wild 2 is a Jupiter-family comet that was visited by NASA's Stardust mission in 2004.",
-            "Factoids": [ "Comet Wild 2 has a nucleus approximately 5 kilometers in diameter.", "The Stardust mission collected samples of the comet's dust and returned them to Earth." ],
-            "VisitedBy": [ "Stardust (2004)" ],
-            "WikipediaUrl": "81P/Wild"
-        },
-        "Hartley 2": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Comet Hartley 2 is a small, active comet that was visited by NASA's EPOXI mission in 2010.",
-            "Factoids": [ "Comet Hartley 2 has a nucleus approximately 2.2 kilometers long.", "The EPOXI mission observed the comet's activity and surface features." ],
-            "VisitedBy": [ "EPOXI (2010)" ],
-            "WikipediaUrl": "103P/Hartley"
-        },
-        "Churyumov-Gerasimnko": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Comet 67P/Churyumov-Gerasimenko is a Jupiter-family comet that was the target of the European Space Agency's Rosetta mission.",
-            "Factoids": [ "The comet has a distinctive rubber duck shape.", "The Rosetta mission deployed the Philae lander to the comet's surface." ],
-            "VisitedBy": [ "Rosetta (2014-2016)", "Philae (2014)" ],
-            "WikipediaUrl": "67P/Churyumov–Gerasimenko"
-        },
-        "HaleBoppComet": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Comet Hale-Bopp is a long-period comet that was visible to the naked eye for a record 18 months around its closest approach to the Sun in 1997.",
-            "Factoids": [ "Comet Hale-Bopp has a nucleus approximately 60 kilometers in diameter.", "It was one of the brightest comets of the 20th century." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "Comet_Hale–Bopp"
-        },
-        "LovejoyComet": {
-            "ListGroups": [ "Comets" ],
-            "OrbitLineGroup": "Comets",
-            "Text": "Comet Lovejoy is a name given to several comets discovered by Australian amateur astronomer Terry Lovejoy.",
-            "Factoids": [ "Comet C/2011 W3 (Lovejoy) was a Kreutz sungrazer that survived its close approach to the Sun in 2011." ],
-            "VisitedBy": [ "None" ],
-            "WikipediaUrl": "2011_W3_(Lovejoy)"
-         }
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Comets": {
+        "CatText": "Comets are icy bodies that release gas or dust, originating from the outer regions of the Solar System.",
+        "CatWikipediaUrl": "Comet"
+      },
+      "Interstellar Objects": {
+        "CatText": "Interstellar Objects are objects that originate outside the Solar System, passing through it.",
+        "CatWikipediaUrl": "Interstellar_object"
+      }
+    },
+    "1I/Oumuamua": {
+      "ListGroups": [
+        "Interstellar Objects"
+      ],
+      "OrbitLineGroup": "Interstellar Objects",
+      "Text": "Oumuamua is the first known interstellar object detected passing through the Solar System.",
+      "Factoids": [
+        "Oumuamua has a highly elongated shape.",
+        "It was discovered in October 2017."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "1I/ʻOumuamua"
+    },
+    "2I/Borisov": {
+      "ListGroups": [
+        "Interstellar Objects"
+      ],
+      "OrbitLineGroup": "Interstellar Objects",
+      "Text": "2I/Borisov is the second known interstellar object and the first known interstellar comet.",
+      "Factoids": [
+        "2I/Borisov has a composition similar to Solar System comets.",
+        "It was discovered in August 2019."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "2I/Borisov"
+    },
+    "3I_ATLAS": {
+      "ListGroups": [
+        "Interstellar Objects"
+      ],
+      "OrbitLineGroup": "Interstellar Objects",
+      "Text": "3I/Atlas, the third known interstellar, a comet  Made closest approach to the Earth on December 19th, 2025 .",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "3I/Atlas"
+    },
+    "3I/Atlas": {
+      "ListGroups": [
+        "Interstellar Objects"
+      ],
+      "OrbitLineGroup": "Interstellar Objects",
+      "Text": "3I/Atlas, the third known interstellar, a comet  Made closest approach to the Earth on December 19th, 2025 .",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "3I/Atlas"
+    },
+    "Borisov": {
+      "ListGroups": [
+        "Interstellar Objects"
+      ],
+      "OrbitLineGroup": "Interstellar Objects",
+      "Text": "2I/Borisov is the second known interstellar object and the first known interstellar comet.",
+      "Factoids": [
+        "2I/Borisov has a composition similar to Solar System comets.",
+        "It was discovered in August 2019."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "2I/Borisov"
+    },
+    "Borrelly": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Short-Period Comets",
+      "Text": "Comet Borrelly is a short-period comet that was visited by the Deep Space 1 spacecraft in 2001.",
+      "Factoids": [
+        "Comet Borrelly has a nucleus approximately 8 kilometers long.",
+        "It has a dark surface with low reflectivity."
+      ],
+      "VisitedBy": [
+        "Deep Space 1 (2001)"
+      ],
+      "WikipediaUrl": "19P/Borrelly"
+    },
+    "Churyumov-Gerasimnko": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Comet 67P/Churyumov-Gerasimenko is a Jupiter-family comet that was the target of the European Space Agency's Rosetta mission.",
+      "Factoids": [
+        "The comet has a distinctive rubber duck shape.",
+        "The Rosetta mission deployed the Philae lander to the comet's surface."
+      ],
+      "VisitedBy": [
+        "Rosetta (2014-2016)",
+        "Philae (2014)"
+      ],
+      "WikipediaUrl": "67P/Churyumov–Gerasimenko"
+    },
+    "HaleBoppComet": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Comet Hale-Bopp is a long-period comet that was visible to the naked eye for a record 18 months around its closest approach to the Sun in 1997.",
+      "Factoids": [
+        "Comet Hale-Bopp has a nucleus approximately 60 kilometers in diameter.",
+        "It was one of the brightest comets of the 20th century."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Comet_Hale–Bopp"
+    },
+    "Halley": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Halley's Comet is a short-period comet visible from Earth every 75-76 years.",
+      "Factoids": [
+        "Halley's Comet last appeared in 1986.",
+        "It is the only known short-period comet that is regularly visible to the naked eye from Earth."
+      ],
+      "VisitedBy": [
+        "Giotto (1986)",
+        "Vega 1 (1986)",
+        "Vega 2 (1986)"
+      ],
+      "WikipediaUrl": "Halley's_Comet"
+    },
+    "HalleysComet": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Halley's Comet is a short-period comet visible from Earth every 75-76 years.",
+      "Factoids": [
+        "Halley's Comet last appeared in 1986.",
+        "It is the only known short-period comet that is regularly visible to the naked eye from Earth."
+      ],
+      "VisitedBy": [
+        "Giotto (1986)",
+        "Vega 1 (1986)",
+        "Vega 2 (1986)"
+      ],
+      "WikipediaUrl": "Halley's_Comet"
+    },
+    "Hartley 2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Comet Hartley 2 is a small, active comet that was visited by NASA's EPOXI mission in 2010.",
+      "Factoids": [
+        "Comet Hartley 2 has a nucleus approximately 2.2 kilometers long.",
+        "The EPOXI mission observed the comet's activity and surface features."
+      ],
+      "VisitedBy": [
+        "EPOXI (2010)"
+      ],
+      "WikipediaUrl": "103P/Hartley"
+    },
+    "LovejoyComet": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Comet Lovejoy is a name given to several comets discovered by Australian amateur astronomer Terry Lovejoy.",
+      "Factoids": [
+        "Comet C/2011 W3 (Lovejoy) was a Kreutz sungrazer that survived its close approach to the Sun in 2011."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "2011_W3_(Lovejoy)"
+    },
+    "Oumuamua": {
+      "ListGroups": [
+        "Interstellar Objects"
+      ],
+      "OrbitLineGroup": "Interstellar Objects",
+      "Text": "Oumuamua is the first known interstellar object detected passing through the Solar System.",
+      "Factoids": [
+        "Oumuamua has a highly elongated shape.",
+        "It was discovered in October 2017."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "1I/ʻOumuamua"
+    },
+    "Tempel 1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Comet Tempel 1 is a periodic comet that was the target of NASA's Deep Impact mission in 2005.",
+      "Factoids": [
+        "Comet Tempel 1 has a nucleus approximately 6 kilometers in diameter.",
+        "The Deep Impact mission created a crater on the comet's surface to study its composition."
+      ],
+      "VisitedBy": [
+        "Deep Impact (2005)",
+        "Stardust-NExT (2011)"
+      ],
+      "WikipediaUrl": "9P/Tempel"
+    },
+    "Wild 2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Comets",
+      "Text": "Comet Wild 2 is a Jupiter-family comet that was visited by NASA's Stardust mission in 2004.",
+      "Factoids": [
+        "Comet Wild 2 has a nucleus approximately 5 kilometers in diameter.",
+        "The Stardust mission collected samples of the comet's dust and returned them to Earth."
+      ],
+      "VisitedBy": [
+        "Stardust (2004)"
+      ],
+      "WikipediaUrl": "81P/Wild"
     }
+  }
 }

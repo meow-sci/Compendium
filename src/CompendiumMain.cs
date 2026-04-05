@@ -19,13 +19,15 @@ namespace Compendium
         private static int previousFontIndex = -1;
         private static int selectedCategoryIndex = -1;
         private static string selectedCategoryKey = "None";
-        private static string showWindow = "None"; // "None", "Category", "Celestial", "Terms"
+        private static string showWindow = "None"; // "None", "Category", "Celestial", "Group", "Terms"
         private static bool showFontSettings = false;
         private static bool showOrbitLineSettings = false;
         private static Dictionary<string, bool>? showOrbitGroupColor;
         private static bool showOrbitCategoryColor = false;
         private static bool showVesselDropdown = false;
         private static string selectedCelestialId = "Compendium Astronomicals Database";
+        private static string? selectedOrbitGroupKey = null;
+        private static string? selectedOrbitGroupParentBodyKey = null;
         private static float mainContentWidth = 400f;
         private static List<string> categoryKeys = new List<string>();
         //private static string justSelected = "";
@@ -175,8 +177,10 @@ namespace Compendium
                         showWindow = "None";
                         selectedCategoryIndex = -1;
                         selectedCategoryKey = "None";
-                        selectedCelestial = null;
+                        Compendium.selectedCelestial = null;
                         selectedCelestialId = "Compendium Astronomicals Database";
+                        selectedOrbitGroupKey = null;
+                        selectedOrbitGroupParentBodyKey = null;
                     }
                     if (ImGui.IsItemHovered())
                     {
@@ -220,26 +224,29 @@ namespace Compendium
                         ImGui.SetNextWindowPos(ImGui.GetItemRectMin() + new float2(0, ImGui.GetItemRectSize().Y), ImGuiCond.Always, (float2?)null);
                         if (ImGui.Begin("##VesselPicker", ref showVesselDropdown, ImGuiWindowFlags.NoDecoration | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoSavedSettings))
                         {
-                            var vessels = KSA.Universe.CurrentSystem?.Vehicles.GetList();
-                            if (vessels == null || vessels.Count == 0)
-                            {
-                                ImGui.Text("No vessels found");
-                            }
-                            else
+                            var vessels = Universe.CurrentSystem?.All.UnsafeAsList().OfType<Vehicle>().ToList();
+                            bool foundVessels = false;
+
+                            if (vessels != null)
                             {
                                 foreach (var v in vessels)
+                            {
+                                foundVessels = true;
+                                bool isCurrent = Program.ControlledVehicle != null && Program.ControlledVehicle.Id == v.Id;
+                                if (isCurrent) ImGui.PushStyleColor(ImGuiCol.Text, new float4(0.4f, 1.0f, 0.4f, 1.0f));
+                                ImString vesselLabel = new ImString(v.Id.ToString());
+                                if (ImGui.Selectable(vesselLabel))
                                 {
-                                    bool isCurrent = Program.ControlledVehicle != null && Program.ControlledVehicle.Id == v.Id;
-                                    if (isCurrent) ImGui.PushStyleColor(ImGuiCol.Text, new float4(0.4f, 1.0f, 0.4f, 1.0f));
-                                    ImString vesselLabel = new ImString(v.Id.ToString());
-                                    if (ImGui.Selectable(vesselLabel))
-                                    {
-                                        Program.ControlledVehicle = (Vehicle)v;
-                                        KSA.Universe.MoveCameraTo(v);
-                                        showVesselDropdown = false;
-                                    }
-                                    if (isCurrent) ImGui.PopStyleColor();
+                                    Program.ControlledVehicle = v;
+                                    KSA.Universe.MoveCameraTo(v);
+                                    showVesselDropdown = false;
                                 }
+                                if (isCurrent) ImGui.PopStyleColor();
+                            }
+                            if (!foundVessels)
+                            {
+                                ImGui.Text("No vessels in current system");
+                            }
                             }
                             ImGui.End();
                         }
@@ -339,8 +346,10 @@ namespace Compendium
                     {
                         selectedCategoryKey = categoryKey;
                         selectedCategoryIndex = sortedCategoryKeys.IndexOf(categoryKey);
-                        selectedCelestial = null;
+                        Compendium.selectedCelestial = null;
                         selectedCelestialId = "Category";
+                        selectedOrbitGroupKey = null;
+                        selectedOrbitGroupParentBodyKey = null;
                         showWindow = "Category";
                     }
                 }
@@ -414,17 +423,23 @@ namespace Compendium
                     // On the far left hand side of the pane, put text "Toggle all Orbit Lines" and then buttons for "On" and "Off" to toggle all orbit lines in the universe on or off, for users who want to see the full orbital paths of everything in the universe at once without having to click each celestial object and toggle their orbit lines individually.
                     ImGui.Text("         All Orbit Lines");
                     ImGui.SameLine();
-                    // The orbit line toggling has to cycle through all the celestials in the universe and toggle their ShowOrbit variable, which is what makes the orbit lines show or hide for each celestial object.
+                    // The orbit line toggling cycles through all celestials and sets their Compendium orbit visibility mode.
+                    ImString allAlwaysText = new ImString("< Always >");
+                    if (ImGui.Button(allAlwaysText))
+                    {
+                        ToggleAllOrbitLines(OrbitVisibilityMode.Always);
+                    }
+                    ImGui.SameLine();
                     ImString allOnText = new ImString("< On >");
                     if (ImGui.Button(allOnText))
                     {
-                        ToggleAllOrbitLines(true);
+                        ToggleAllOrbitLines(OrbitVisibilityMode.On);
                     }
                     ImGui.SameLine();
                     ImString allOffText = new ImString("< Off >");
                     if (ImGui.Button(allOffText))
                     {
-                        ToggleAllOrbitLines(false);
+                        ToggleAllOrbitLines(OrbitVisibilityMode.Off);
                     }
 
 
@@ -473,7 +488,7 @@ namespace Compendium
                     ImGui.Separator();
                     // pushes a larger font only for the selected celestial id display
                     PushTheFont(1.7f);
-                    ImString selectedIdText = new ImString($"{selectedCelestialId}");
+                    ImString selectedIdText = new ImString($"{GetDisplayBodyId(selectedCelestialId)}");
                     ImGui.Text(selectedIdText);
                     PopTheFont();
                     PushTheFont(1);
@@ -483,23 +498,11 @@ namespace Compendium
                     
                     if (selectedCelestialId != "None" && Universe.WorldSun != null)
                     {
-                        var allCelestials = new List<Celestial>();
-                        CollectAllCelestials(Universe.WorldSun, allCelestials);
-                        selectedCelestial = allCelestials.FirstOrDefault(c => c.Id == selectedCelestialId);
+                        selectedCelestial = FindCelestialByKey(Universe.WorldSun, selectedCelestialId);
                     }
 
                     // Try to get the JSON data for the selected celestial loaded into a bodyJson object.
-                    // Try system-specific data first, then fall back to default "Compendium" data
-                    CompendiumData? bodyJson = null;
-                    if (selectedCelestial != null) 
-                    { 
-                        // Try system-specific key first (e.g., "SolarSystem.Mercury")
-                        if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{selectedCelestial.Id}", out bodyJson))
-                        {
-                            // Fall back to default "Compendium" key (e.g., "Compendium.Mercury")
-                            Compendium.bodyJsonDict.TryGetValue($"Compendium.{selectedCelestial.Id}", out bodyJson);
-                        }
-                    }
+                    CompendiumData? bodyJson = selectedCelestial is Celestial selectedBody ? GetBodyJsonData(selectedBody) : null;
     
                     // If selectedCelestial was found, display its information, checking at each step if the specific data being looked for is available.
                     if (selectedCelestialId != "None")
@@ -649,15 +652,12 @@ namespace Compendium
                             KSA.Universe.MoveCameraTo(celestial);
                         }
                         ImGui.SameLine(); ImGui.Text(" | "); ImGui.SameLine();
-                        // Tries to make a button which toggles on/off the orbit lines for the selected celestial object
-                        ImString orbitText = new ImString("Orbit Line"); 
-                        if (ImGui.Button(orbitText))
-                        {
-                            celestial.ShowOrbit = !celestial.ShowOrbit;
-                        }
+                        ImGui.Text("Orbit Line:");
                         ImGui.SameLine();
-                        // Makes a checkbox that has an x to show the current state of the orbit line visibility
-                        ImGui.Checkbox("##orbitCheckbox", ref celestial.ShowOrbit);
+                        OrbitVisibilityMode currentOrbitMode = GetOrbitVisibilityMode(celestial);
+                        DrawOrbitModeButtons($"orbitMode_{celestial.Id}", currentOrbitMode, mode => SetOrbitVisibilityMode(celestial, mode));
+                        ImGui.SameLine();
+                        ImGui.Text($"({currentOrbitMode})");
 
                         // Gets the current vessel ID as a string if there is a controlled vehicle.
                         string thisVehicle = Program.ControlledVehicle != null ? Program.ControlledVehicle.Id.ToString() : "None";
@@ -708,7 +708,18 @@ namespace Compendium
                             ImGui.Text(" ");
                             ImString toggleMoonsText = new ImString("Toggle All Satellite Body Orbits:  ");
                             ImGui.Text(toggleMoonsText); ImGui.SameLine();
-                            // Makes two buttons, one which turns on all the orbit lines of the moons, and one which turns them all off
+                            ImString moonsAlwaysText = new ImString("< Always >");
+                            if (ImGui.Button(moonsAlwaysText))
+                            {
+                                foreach (var child in children)
+                                {
+                                    if (child is Celestial cel)
+                                    {
+                                        SetOrbitVisibilityMode(cel, OrbitVisibilityMode.Always);
+                                    }
+                                }
+                            }
+                            ImGui.SameLine();
                             ImString moonsOnText = new ImString("< On >");
                             if (ImGui.Button(moonsOnText))
                             {
@@ -716,7 +727,7 @@ namespace Compendium
                                 {
                                     if (child is Celestial cel)
                                     {
-                                        cel.ShowOrbit = true;
+                                        SetOrbitVisibilityMode(cel, OrbitVisibilityMode.On);
                                     }
                                 }
                             }
@@ -728,7 +739,7 @@ namespace Compendium
                                 {
                                     if (child is Celestial cel)
                                     {
-                                        cel.ShowOrbit = false;
+                                        SetOrbitVisibilityMode(cel, OrbitVisibilityMode.Off);
                                     }
                                 }
                             }
@@ -742,10 +753,7 @@ namespace Compendium
                             if (child is Celestial cel)
                             {
                                 // Try to get the OrbitLineGroup from the JSON data for this child celestial
-                                CompendiumData? childBodyJson = null;
-
-                                if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
-                                    { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                CompendiumData? childBodyJson = GetBodyJsonData(cel);
                                 if (childBodyJson != null && !string.IsNullOrEmpty(childBodyJson.OrbitLineGroup))
                                     { orbitLineGroups.Add(childBodyJson.OrbitLineGroup); }
                             }
@@ -760,6 +768,21 @@ namespace Compendium
                             foreach (var group in orbitLineGroups)
                             {
                                 ImGui.BulletText($" "); ImGui.SameLine();
+                                ImString groupAlwaysText = new ImString($"< Always >##groupAlways_{group}");
+                                if (ImGui.Button(groupAlwaysText))
+                                {
+                                    if (children != null)
+                                    foreach (var child in children)
+                                    {
+                                        if (child is Celestial cel)
+                                        {
+                                            CompendiumData? childBodyJson = GetBodyJsonData(cel);
+                                            if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
+                                                { SetOrbitVisibilityMode(cel, OrbitVisibilityMode.Always); }
+                                        }
+                                    }
+                                }
+                                ImGui.SameLine();
                                 ImString groupOnText = new ImString($"< On >##groupOn_{group}");
             
                                 if (ImGui.Button(groupOnText))
@@ -769,13 +792,9 @@ namespace Compendium
                                     {
                                         if (child is Celestial cel)
                                         {
-                                            // Get the OrbitLineGroup from JSON
-                                            CompendiumData? childBodyJson = null;
-
-                                            if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
-                                                { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                            CompendiumData? childBodyJson = GetBodyJsonData(cel);
                                             if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
-                                                { cel.ShowOrbit = true; }
+                                                { SetOrbitVisibilityMode(cel, OrbitVisibilityMode.On); }
                                         }
                                     }
                                 }
@@ -788,13 +807,9 @@ namespace Compendium
                                     {
                                         if (child is Celestial cel)
                                         {
-                                            // Get the OrbitLineGroup from JSON
-                                            CompendiumData? childBodyJson = null;
-
-                                            if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
-                                                { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                            CompendiumData? childBodyJson = GetBodyJsonData(cel);
                                             if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
-                                                { cel.ShowOrbit = false; }
+                                                { SetOrbitVisibilityMode(cel, OrbitVisibilityMode.Off); }
                                         }
                                     }
                                 }
@@ -838,11 +853,7 @@ namespace Compendium
                                                 {
                                                     if (child is Celestial cel)
                                                     {
-                                                        // Get the OrbitLineGroup from JSON
-                                                        CompendiumData? childBodyJson = null;
-
-                                                        if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
-                                                            { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                                        CompendiumData? childBodyJson = GetBodyJsonData(cel);
                                                         if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
                                                         {
                                                             if (cel.Orbit != null)
@@ -870,11 +881,7 @@ namespace Compendium
                                     {
                                         if (child is Celestial cel)
                                         {
-                                            // Get the OrbitLineGroup from JSON
-                                            CompendiumData? childBodyJson = null;
-
-                                            if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
-                                                { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                            CompendiumData? childBodyJson = GetBodyJsonData(cel);
                                             if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
                                             {
                                                 if (cel.Orbit != null)
@@ -905,11 +912,7 @@ namespace Compendium
                                         {
                                             if (child is Celestial cel)
                                             {
-                                                // Get the OrbitLineGroup from JSON
-                                                CompendiumData? childBodyJson = null;
-
-                                                if (!Compendium.bodyJsonDict.TryGetValue($"{systemName}.{cel.Id}", out childBodyJson))
-                                                    { Compendium.bodyJsonDict.TryGetValue($"Compendium.{cel.Id}", out childBodyJson); }
+                                                CompendiumData? childBodyJson = GetBodyJsonData(cel);
                                                 if (childBodyJson != null && childBodyJson.OrbitLineGroup == group)
                                                 {
                                                     if (cel.Orbit != null)
@@ -1055,16 +1058,85 @@ namespace Compendium
                     ImString toggleCategoryOrbitsText = new ImString($"Toggle ALL Orbit Lines for {selectedCategoryKey}");
                     ImGui.Text(toggleCategoryOrbitsText); ImGui.Text(" ");
                     
-                    // Makes two buttons, one which turns on all the orbit lines of the category bodies, and one which turns them all off. Uses the celestials stored in buttonsCatsTree.  It stores both parents and children.
+                    // Makes three buttons to force Always, use default On behavior, or turn orbit lines Off for the whole category.
+                    ImString categoryAlwaysText = new ImString("< Always >");
+                    if (ImGui.Button(categoryAlwaysText))
+                    { ToggleCategoryOrbits(selectedCategoryKey, OrbitVisibilityMode.Always); }
+                    ImGui.SameLine();
+
                     ImString categoryOnText = new ImString("< On >");
                     if (ImGui.Button(categoryOnText))
-                    { ToggleCategoryOrbits(selectedCategoryKey, true); }
+                    { ToggleCategoryOrbits(selectedCategoryKey, OrbitVisibilityMode.On); }
                     ImGui.SameLine();
 
                     ImString categoryOffText = new ImString("< Off >");
                     if (ImGui.Button(categoryOffText))
-                    { ToggleCategoryOrbits(selectedCategoryKey, false); }
+                    { ToggleCategoryOrbits(selectedCategoryKey, OrbitVisibilityMode.Off); }
                     ImGui.Text(" ");
+
+                    if (!string.Equals(selectedCategoryKey, "Planets", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var subgroupKeys = GetCategorySubgroupKeys(selectedCategoryKey);
+                        if (subgroupKeys.Count > 0)
+                        {
+                            ImGui.Separator();
+                            ImGui.Text("Subcategory Orbit Lines:");
+                            ImGui.Text(" ");
+
+                            foreach (var subgroupKey in subgroupKeys)
+                            {
+                                ImGui.BulletText(" "); ImGui.SameLine();
+
+                                ImString subgroupAlwaysText = new ImString($"< Always >##categoryGroupAlways_{subgroupKey}");
+                                if (ImGui.Button(subgroupAlwaysText))
+                                {
+                                    ToggleOrbitGroupOrbits(selectedCategoryKey, subgroupKey, OrbitVisibilityMode.Always);
+                                }
+                                ImGui.SameLine();
+
+                                ImString subgroupOnText = new ImString($"< On >##categoryGroupOn_{subgroupKey}");
+                                if (ImGui.Button(subgroupOnText))
+                                {
+                                    ToggleOrbitGroupOrbits(selectedCategoryKey, subgroupKey, OrbitVisibilityMode.On);
+                                }
+                                ImGui.SameLine();
+
+                                ImString subgroupOffText = new ImString($"< Off >##categoryGroupOff_{subgroupKey}");
+                                if (ImGui.Button(subgroupOffText))
+                                {
+                                    ToggleOrbitGroupOrbits(selectedCategoryKey, subgroupKey, OrbitVisibilityMode.Off);
+                                }
+                                ImGui.SameLine();
+
+                                bool isSelectedGroup =
+                                    showWindow == "Group" &&
+                                    string.Equals(selectedOrbitGroupKey, subgroupKey, StringComparison.OrdinalIgnoreCase) &&
+                                    string.IsNullOrWhiteSpace(selectedOrbitGroupParentBodyKey);
+
+                                if (isSelectedGroup)
+                                {
+                                    PushTheColor("ltblue");
+                                }
+
+                                ImString subgroupButtonText = new ImString($"({subgroupKey})##categoryGroup_{subgroupKey}");
+                                if (ImGui.Selectable(subgroupButtonText, isSelectedGroup))
+                                {
+                                    selectedCelestial = null;
+                                    selectedCelestialId = "Group";
+                                    selectedOrbitGroupKey = subgroupKey;
+                                    selectedOrbitGroupParentBodyKey = null;
+                                    showWindow = "Group";
+                                }
+
+                                if (isSelectedGroup)
+                                {
+                                    ImGui.PopStyleColor(1);
+                                }
+                            }
+
+                            ImGui.Text(" ");
+                        }
+                    }
 
                     // Now on sameline makes an arrow button to show/hide the category-level orbit line color picker and sliders, and then make the color picker and sliders similar to the other times it was done above.
                     // In order to change the orbitlinecolors of each body in the category we need to iterate over all celestials in the loaded system's Universe.WorldSun.Children and apply the orbitlinecolor to each one of those which is in this category of the buttonsCatsTree.
@@ -1182,21 +1254,7 @@ namespace Compendium
                     // private static Dictionary<string, (float r, float g, float b)>? categoryOrbitColorDict;
                     // Category was just selected - show category-level data if available
                     CompendiumData? categoryData = null;
-                    // Try to get the ListGroupsData container, checking system-specific first, then default
-                    CompendiumData? listGroupsContainer = null;
-                    
-                    // Try system-specific key first
-                    if (!bodyJsonDict.TryGetValue($"{systemName}.ListGroupsData", out listGroupsContainer))
-                    {
-                        // Fall back to default key
-                        bodyJsonDict.TryGetValue("Compendium.ListGroupsData", out listGroupsContainer);
-                    }
-                    
-                    // If ListGroupsData was found, try to get the specific category from it
-                    if (listGroupsContainer?.ListGroupsData != null)
-                    {
-                        listGroupsContainer.ListGroupsData.TryGetValue(selectedCategoryKey, out categoryData);
-                    }
+                    TryGetListGroupData(selectedCategoryKey, out categoryData);
 
                     // If category data was found, display its text and Wikipedia URL if available
                     if (categoryData != null)
@@ -1223,6 +1281,79 @@ namespace Compendium
                         ImGui.PopFont();
                     }
                 }
+                if (showWindow == "Group" && !string.IsNullOrWhiteSpace(selectedOrbitGroupKey))
+                {
+                    PushTheFont(1.9f);
+                    ImString groupTitle = new ImString($"{selectedOrbitGroupKey}");
+                    ImGui.Text(groupTitle);
+                    ImGui.PopFont();
+
+                    if (!string.IsNullOrWhiteSpace(selectedOrbitGroupParentBodyKey))
+                    {
+                        ImGui.Text(new ImString($"Subgroup of {GetDisplayBodyId(selectedOrbitGroupParentBodyKey)}"));
+                    }
+                    else
+                    {
+                        ImGui.Text(new ImString($"Subgroup in {selectedCategoryKey}"));
+                    }
+
+                    DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
+
+                    PushTheFont(1.2f);
+                    ImGui.Text(" ");
+                    ImString toggleGroupOrbitsText = new ImString($"Toggle Orbit Lines for {selectedOrbitGroupKey}");
+                    ImGui.Text(toggleGroupOrbitsText);
+                    ImGui.Text(" ");
+
+                    ImString groupAlwaysText = new ImString("< Always >##selectedGroupAlways");
+                    if (ImGui.Button(groupAlwaysText))
+                    {
+                        ToggleOrbitGroupOrbits(selectedCategoryKey, selectedOrbitGroupKey, OrbitVisibilityMode.Always, selectedOrbitGroupParentBodyKey);
+                    }
+                    ImGui.SameLine();
+
+                    ImString groupOnText = new ImString("< On >##selectedGroupOn");
+                    if (ImGui.Button(groupOnText))
+                    {
+                        ToggleOrbitGroupOrbits(selectedCategoryKey, selectedOrbitGroupKey, OrbitVisibilityMode.On, selectedOrbitGroupParentBodyKey);
+                    }
+                    ImGui.SameLine();
+
+                    ImString groupOffText = new ImString("< Off >##selectedGroupOff");
+                    if (ImGui.Button(groupOffText))
+                    {
+                        ToggleOrbitGroupOrbits(selectedCategoryKey, selectedOrbitGroupKey, OrbitVisibilityMode.Off, selectedOrbitGroupParentBodyKey);
+                    }
+                    ImGui.Text(" ");
+                    ImGui.PopFont();
+
+                    CompendiumData? groupData = null;
+                    TryGetListGroupData(selectedOrbitGroupKey, out groupData);
+
+                    PushTheFont(1.2f);
+                    DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
+                    ImGui.Text(" ");
+
+                    if (groupData?.CatText != null)
+                    {
+                        ImGui.TextWrapped(groupData.CatText);
+                    }
+                    else
+                    {
+                        ImGui.TextWrapped("No additional compendium text is currently defined for this subgroup.");
+                    }
+
+                    if (groupData?.CatWikipediaUrl != null)
+                    {
+                        ImGui.Text(" ");
+                        ImGui.Text("Wikipedia Url:");
+                        ImString linkText = new ImString($"https://en.wikipedia.org/wiki/{groupData.CatWikipediaUrl}");
+                        ImGui.TextLinkOpenURL(linkText);
+                        ImGui.Text(" ");
+                    }
+
+                    ImGui.PopFont();
+                }
                 ImGui.EndChild(); // End side pane
 
                 ImGui.End();
@@ -1246,6 +1377,9 @@ namespace Compendium
             {
                 // Gets the current working directory path (of the DLL)
                 dllDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+                // Enable Harmony patches used for orbit visibility overrides
+                Patcher.Patch();
 
                 // Loads fonts from the Fonts folder
                 LoadFonts(dllDir, fontSizeCurrent);
@@ -1294,7 +1428,7 @@ namespace Compendium
         public void Unload()
         {
             Console.WriteLine("Compendium - Unload");
-            //Patcher.Unload();
+            Patcher.Unload();
         }
     }
 }

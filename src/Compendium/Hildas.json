@@ -1,0 +1,2811 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Hildas": {
+        "CatText": "Hilda asteroids occupy a 3:2 orbital resonance with Jupiter.",
+        "CatWikipediaUrl": "Hilda_asteroid"
+      }
+    },
+    "Hilda_1": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 1 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_10": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 10 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_100": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 100 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_101": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 101 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_102": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 102 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_103": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 103 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_104": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 104 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_105": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 105 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_106": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 106 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_107": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 107 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_108": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 108 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_109": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 109 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_11": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 11 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_110": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 110 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_111": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 111 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_112": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 112 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_113": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 113 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_114": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 114 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_115": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 115 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_116": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 116 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_117": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 117 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_118": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 118 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_119": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 119 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_12": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 12 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_120": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 120 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_121": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 121 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_122": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 122 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_123": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 123 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_124": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 124 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_125": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 125 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_126": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 126 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_127": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 127 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_128": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 128 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_129": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 129 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_13": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 13 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_130": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 130 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_131": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 131 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_132": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 132 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_133": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 133 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_134": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 134 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_135": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 135 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_136": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 136 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_137": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 137 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_138": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 138 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_139": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 139 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_14": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 14 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_140": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 140 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_141": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 141 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_142": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 142 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_143": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 143 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_144": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 144 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_145": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 145 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_146": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 146 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_147": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 147 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_148": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 148 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_149": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 149 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_15": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 15 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_150": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 150 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_151": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 151 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_152": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 152 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_153": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 153 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_154": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 154 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_155": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 155 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_156": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 156 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_157": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 157 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_158": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 158 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_159": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 159 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_16": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 16 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_160": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 160 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_161": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 161 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_162": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 162 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_163": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 163 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_164": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 164 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_165": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 165 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_166": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 166 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_167": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 167 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_168": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 168 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_169": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 169 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_17": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 17 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_170": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 170 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_171": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 171 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_172": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 172 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_173": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 173 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_174": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 174 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_175": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 175 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_176": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 176 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_177": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 177 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_178": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 178 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_179": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 179 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_18": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 18 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_180": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 180 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_181": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 181 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_182": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 182 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_183": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 183 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_184": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 184 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_185": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 185 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_186": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 186 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_187": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 187 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_188": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 188 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_189": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 189 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_19": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 19 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_190": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 190 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_191": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 191 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_192": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 192 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_193": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 193 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_194": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 194 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_195": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 195 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_196": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 196 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_197": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 197 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_198": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 198 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_199": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 199 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_2": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 2 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_20": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 20 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_200": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 200 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_21": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 21 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_22": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 22 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_23": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 23 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_24": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 24 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_25": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 25 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_26": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 26 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_27": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 27 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_28": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 28 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_29": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 29 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_3": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 3 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_30": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 30 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_31": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 31 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_32": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 32 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_33": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 33 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_34": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 34 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_35": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 35 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_36": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 36 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_37": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 37 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_38": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 38 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_39": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 39 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_4": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 4 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_40": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 40 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_41": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 41 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_42": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 42 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_43": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 43 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_44": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 44 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_45": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 45 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_46": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 46 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_47": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 47 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_48": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 48 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_49": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 49 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_5": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 5 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_50": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 50 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_51": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 51 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_52": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 52 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_53": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 53 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_54": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 54 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_55": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 55 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_56": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 56 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_57": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 57 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_58": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 58 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_59": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 59 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_6": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 6 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_60": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 60 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_61": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 61 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_62": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 62 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_63": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 63 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_64": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 64 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_65": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 65 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_66": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 66 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_67": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 67 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_68": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 68 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_69": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 69 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_7": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 7 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_70": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 70 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_71": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 71 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_72": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 72 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_73": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 73 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_74": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 74 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_75": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 75 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_76": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 76 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_77": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 77 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_78": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 78 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_79": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 79 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_8": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 8 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_80": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 80 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_81": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 81 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_82": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 82 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_83": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 83 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_84": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 84 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_85": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 85 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_86": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 86 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_87": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 87 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_88": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 88 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_89": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 89 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_9": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 9 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_90": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 90 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_91": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 91 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_92": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 92 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_93": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 93 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_94": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 94 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_95": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 95 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_96": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 96 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_97": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 97 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_98": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 98 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hilda_99": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Hildas",
+      "Text": "Hilda 99 is a Hilda asteroid in a 3:2 resonance with Jupiter cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}

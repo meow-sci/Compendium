@@ -5,7 +5,14 @@ using System.Numerics;
 using ImGui = Brutal.ImGuiApi.ImGui;
 
 namespace Compendium
-{  
+{
+    internal enum OrbitVisibilityMode
+    {
+        Always,
+        On,
+        Off
+    }
+
     public partial class Compendium
     {
 
@@ -24,6 +31,134 @@ namespace Compendium
             { "Purple", new float3(0.5f, 0.0f, 0.5f) },
             { "Black", new float3(0.0f, 0.0f, 0.0f) },
         };
+
+        private static readonly Dictionary<string, OrbitVisibilityMode> orbitVisibilityOverrides = new();
+
+        private static string GetCelestialPath(Celestial celestial)
+        {
+            var pathSegments = new Stack<string>();
+            Astronomical? current = celestial;
+
+            while (current is Celestial currentCelestial)
+            {
+                pathSegments.Push(currentCelestial.Id);
+                current = currentCelestial.Parent as Astronomical;
+            }
+
+            return string.Join(".", pathSegments);
+        }
+
+        private static string GetDisplayBodyId(string bodyKey)
+        {
+            if (string.IsNullOrWhiteSpace(bodyKey))
+            {
+                return bodyKey;
+            }
+
+            int dotIndex = bodyKey.LastIndexOf('.');
+            return dotIndex >= 0 ? bodyKey[(dotIndex + 1)..] : bodyKey;
+        }
+
+        private static string GetOrbitVisibilityKey(Celestial celestial)
+        {
+            string currentSystem = Universe.CurrentSystem?.Id ?? "Dummy";
+            return $"{currentSystem}.{GetCelestialPath(celestial)}";
+        }
+
+        private static IEnumerable<string> GetBodyJsonLookupKeys(Celestial celestial)
+        {
+            string currentSystem = Universe.CurrentSystem?.Id ?? "Dummy";
+            string celestialPath = GetCelestialPath(celestial);
+
+            yield return $"{currentSystem}.{celestialPath}";
+            yield return $"Compendium.{celestialPath}";
+            yield return $"{currentSystem}.{celestial.Id}";
+            yield return $"Compendium.{celestial.Id}";
+        }
+
+        private static CompendiumData? GetBodyJsonData(Celestial celestial)
+        {
+            foreach (string key in GetBodyJsonLookupKeys(celestial))
+            {
+                if (bodyJsonDict.TryGetValue(key, out var data))
+                {
+                    return data;
+                }
+            }
+
+            return null;
+        }
+
+        internal static bool TryGetOrbitVisibilityOverride(Astronomical astronomical, out OrbitVisibilityMode mode)
+        {
+            if (astronomical is Celestial celestial)
+            {
+                return orbitVisibilityOverrides.TryGetValue(GetOrbitVisibilityKey(celestial), out mode);
+            }
+
+            mode = OrbitVisibilityMode.On;
+            return false;
+        }
+
+        private static OrbitVisibilityMode GetOrbitVisibilityMode(Celestial celestial)
+        {
+            if (orbitVisibilityOverrides.TryGetValue(GetOrbitVisibilityKey(celestial), out var mode))
+            {
+                return mode;
+            }
+
+            return celestial.ShowOrbit ? OrbitVisibilityMode.On : OrbitVisibilityMode.Off;
+        }
+
+        private static void SetOrbitVisibilityMode(Celestial celestial, OrbitVisibilityMode mode)
+        {
+            string key = GetOrbitVisibilityKey(celestial);
+
+            if (mode == OrbitVisibilityMode.On)
+            {
+                orbitVisibilityOverrides.Remove(key);
+            }
+            else
+            {
+                orbitVisibilityOverrides[key] = mode;
+            }
+
+            celestial.ShowOrbit = mode != OrbitVisibilityMode.Off;
+            CompendiumData? data = GetBodyJsonData(celestial);
+            celestial.DrawnUiBox = mode == OrbitVisibilityMode.Off ? (data?.DrawnUiBox ?? false) : true;
+        }
+
+        private void DrawOrbitModeButtons(string idPrefix, OrbitVisibilityMode currentMode, Action<OrbitVisibilityMode> applyMode)
+        {
+            DrawOrbitModeButton($"< Always >##{idPrefix}_always", currentMode == OrbitVisibilityMode.Always, () => applyMode(OrbitVisibilityMode.Always));
+            ImGui.SameLine();
+            DrawOrbitModeButton($"< On >##{idPrefix}_on", currentMode == OrbitVisibilityMode.On, () => applyMode(OrbitVisibilityMode.On));
+            ImGui.SameLine();
+            DrawOrbitModeButton($"< Off >##{idPrefix}_off", currentMode == OrbitVisibilityMode.Off, () => applyMode(OrbitVisibilityMode.Off));
+        }
+
+        private void DrawOrbitModeButton(string label, bool selected, Action onClick)
+        {
+            if (selected)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Button, new float4(0.26f, 0.59f, 0.98f, 0.80f));
+                ImGui.PushStyleColor(ImGuiCol.ButtonHovered, new float4(0.26f, 0.59f, 0.98f, 1.0f));
+                ImGui.PushStyleColor(ImGuiCol.ButtonActive, new float4(0.20f, 0.50f, 0.90f, 1.0f));
+            }
+
+            if (ImGui.Button(new ImString(label)))
+            {
+                onClick();
+            }
+
+            if (selected)
+            {
+                ImGui.PopStyleColor();
+                ImGui.PopStyleColor();
+                ImGui.PopStyleColor();
+            }
+        }
+
         private static void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
         {
             if (astro is Celestial cel && !collection.Contains(cel))
@@ -44,22 +179,29 @@ namespace Compendium
             }
         }
 
-        private static Celestial? FindCelestialById(Astronomical? body, string id)
+        private static Celestial? FindCelestialById(Astronomical? body, string id, string? parentId = null)
         {
             if (body == null) return null;
-            if (body is Celestial cel && cel.Id == id)
+            if (body is Celestial cel && cel.Id.Equals(id, StringComparison.OrdinalIgnoreCase))
             {
-                return cel;
+                if (string.IsNullOrEmpty(parentId))
+                {
+                    return cel;
+                }
+
+                if (cel.Parent is Celestial parentCelestial && parentCelestial.Id.Equals(parentId, StringComparison.OrdinalIgnoreCase))
+                {
+                    return cel;
+                }
             }
 
-            // Walk children via IParentBody.Children instead of Astronomical.Children.
             if (body is IParentBody parentBody && parentBody.Children != null)
             {
                 foreach (var child in parentBody.Children)
                 {
                     if (child is Astronomical childAstro)
                     {
-                        var found = FindCelestialById(childAstro, id);
+                        var found = FindCelestialById(childAstro, id, parentId);
                         if (found != null) return found;
                     }
                 }
@@ -67,72 +209,128 @@ namespace Compendium
             return null;
         }
 
-        private static void ToggleCategoryOrbits(string categoryKey, bool showOrbit)
+        private static Celestial? FindCelestialByKey(Astronomical? body, string bodyKey)
+        {
+            if (string.IsNullOrWhiteSpace(bodyKey))
+            {
+                return null;
+            }
+
+            string[] parts = bodyKey.Split('.', StringSplitOptions.RemoveEmptyEntries);
+            string id = parts.Length > 0 ? parts[^1] : bodyKey;
+            string? parentId = parts.Length > 1 ? parts[^2] : null;
+            return FindCelestialById(body, id, parentId);
+        }
+
+        private static void ToggleCategoryOrbits(string categoryKey, OrbitVisibilityMode mode)
         {
             if (buttonsCatsTree == null || !buttonsCatsTree.ContainsKey(categoryKey)) return;
-            
-            var systemName = Universe.CurrentSystem?.Id ?? "Dummy";
+
             var categoryTreeData = buttonsCatsTree[categoryKey];
             foreach (var parentEntry in categoryTreeData)
             {
                 // Skip the "Data" entry which contains CompendiumData for category description
                 if (parentEntry.Key == "Data") continue;
-                
+
                 // Toggle parent orbit
-                var parentCelestial = FindCelestialById(Universe.WorldSun, parentEntry.Key);
+                var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
                 if (parentCelestial != null)
                 {
-                    // Toggle orbit visibility
-                    parentCelestial.ShowOrbit = showOrbit;
-                    
-                    // Try to get the body's data from bodyJsonDict with proper key format
-                    CompendiumData? parentData = null;
-                    if (!bodyJsonDict.TryGetValue($"{systemName}.{parentCelestial.Id}", out parentData))
-                    {
-                        bodyJsonDict.TryGetValue($"Compendium.{parentCelestial.Id}", out parentData);
-                    }
-                    
-                    // Set DrawnUiBox based on data or default
-                    parentCelestial.DrawnUiBox = showOrbit ? true : (parentData?.DrawnUiBox ?? false);
+                    SetOrbitVisibilityMode(parentCelestial, mode);
                 }
-                
+
                 // Toggle children orbits
                 var parentEntryData = (Dictionary<string, object>)parentEntry.Value;
                 var childrenIds = (List<string>)parentEntryData["Children"];
                 foreach (var childId in childrenIds)
                 {
-                    var childCelestial = FindCelestialById(Universe.WorldSun, childId);
+                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
                     if (childCelestial != null)
                     {
-                        // Toggle orbit visibility
-                        childCelestial.ShowOrbit = showOrbit;
-                        
-                        // Try to get the child's data from bodyJsonDict with proper key format
-                        CompendiumData? childData = null;
-                        if (!bodyJsonDict.TryGetValue($"{systemName}.{childCelestial.Id}", out childData))
-                        {
-                            bodyJsonDict.TryGetValue($"Compendium.{childCelestial.Id}", out childData);
-                        }
-                        
-                        // Set DrawnUiBox based on data or default
-                        childCelestial.DrawnUiBox = showOrbit ? true : (childData?.DrawnUiBox ?? false);
+                        SetOrbitVisibilityMode(childCelestial, mode);
                     }
                 }
             }
         }
-        private static void ToggleAllOrbitLines(bool showOrbit)
+
+        private static void ToggleOrbitGroupOrbits(string categoryKey, string groupKey, OrbitVisibilityMode mode, string? parentBodyKey = null)
+        {
+            if (buttonsCatsTree == null || !buttonsCatsTree.TryGetValue(categoryKey, out var categoryTreeData))
+            {
+                return;
+            }
+
+            foreach (var parentEntry in categoryTreeData)
+            {
+                if (parentEntry.Key == "Data")
+                {
+                    continue;
+                }
+
+                if (!string.IsNullOrWhiteSpace(parentBodyKey) &&
+                    !string.Equals(parentEntry.Key, parentBodyKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                var parentEntryData = (Dictionary<string, object>)parentEntry.Value;
+                var childrenIds = (List<string>)parentEntryData["Children"];
+
+                if (childrenIds.Count == 0)
+                {
+                    if (string.IsNullOrWhiteSpace(parentBodyKey))
+                    {
+                        var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
+                        CompendiumData? parentBodyJson = parentCelestial != null ? GetBodyJsonData(parentCelestial) : null;
+                        if (parentCelestial != null && string.Equals(parentBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase))
+                        {
+                            SetOrbitVisibilityMode(parentCelestial, mode);
+                        }
+                    }
+
+                    continue;
+                }
+
+                foreach (var childId in childrenIds)
+                {
+                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
+                    CompendiumData? childBodyJson = childCelestial != null ? GetBodyJsonData(childCelestial) : null;
+                    if (childCelestial != null && string.Equals(childBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase))
+                    {
+                        SetOrbitVisibilityMode(childCelestial, mode);
+                    }
+                }
+            }
+        }
+
+        private static bool TryGetListGroupData(string listGroupKey, out CompendiumData? listGroupData)
+        {
+            listGroupData = null;
+            CompendiumData? listGroupsContainer = null;
+            string currentSystem = Universe.CurrentSystem?.Id ?? "Dummy";
+
+            if (!bodyJsonDict.TryGetValue($"{currentSystem}.ListGroupsData", out listGroupsContainer))
+            {
+                bodyJsonDict.TryGetValue("Compendium.ListGroupsData", out listGroupsContainer);
+            }
+
+            if (listGroupsContainer?.ListGroupsData == null)
+            {
+                return false;
+            }
+
+            return listGroupsContainer.ListGroupsData.TryGetValue(listGroupKey, out listGroupData);
+        }
+
+        private static void ToggleAllOrbitLines(OrbitVisibilityMode mode)
         {
             if (Universe.WorldSun == null) return;
             var allCelestials = new List<Celestial>();
             CollectAllCelestials(Universe.WorldSun, allCelestials);
-            var systemName = Universe.CurrentSystem?.Id ?? "Dummy";
-            
+
             foreach (var celestial in allCelestials)
             {
-                // Toggle orbit visibility
-                celestial.ShowOrbit = showOrbit;
-                
-
+                SetOrbitVisibilityMode(celestial, mode);
             }
         }
 

@@ -1,0 +1,151 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Centaurs": {
+        "CatText": "Centaurs are small Solar System bodies with orbits between Jupiter and Neptune.",
+        "CatWikipediaUrl": "Centaur_(small_Solar_System_body)"
+      }
+    },
+    "Asbolus": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Asbolus is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Bienor": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Bienor is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Chariklo": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Chariklo is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Chiron": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Chiron is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Echeclus": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Echeclus is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hylonome": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Hylonome is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Nessus": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Nessus is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Okyrhoe": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Okyrhoe is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Pholus": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Pholus is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Thereus": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Centaurs",
+      "Text": "Thereus is a centaur minor body cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}

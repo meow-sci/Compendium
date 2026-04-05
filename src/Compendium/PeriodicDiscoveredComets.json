@@ -1,0 +1,445 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Periodic & Discovered Comets": {
+        "CatText": "This category collects additional periodic and otherwise cataloged discovered comets from the dense solar system file.",
+        "CatWikipediaUrl": "Periodic_comet"
+      }
+    },
+    "29P_SW1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "29P SW1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "ATLAS_C2019Y4": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "ATLAS C2019Y4 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Blanpain": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Blanpain is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Boattini_C2007W1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Boattini C2007W1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Bradfield_C2004F4": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Bradfield C2004F4 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Chiron_comet": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Chiron comet is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Clark": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Clark is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "deVico-Swift-NEAT": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "deVico-Swift-NEAT is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Garradd_C2009P1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Garradd C2009P1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Halebopp_fragment": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Halebopp fragment is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Howell": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Howell is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Lemmon_C2012F6": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Lemmon C2012F6 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Levy": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Levy is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "LINEAR_C2000WM1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "LINEAR C2000WM1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "LINEAR_C2001A2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "LINEAR C2001A2 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "LINEAR_C2002T7": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "LINEAR C2002T7 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Lulin_C2007N3": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Lulin C2007N3 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Machholz_C2004Q2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Machholz C2004Q2 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Machholz1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Machholz1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Mueller1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Mueller1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEAT_C2002V1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "NEAT C2002V1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Neujmin3": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Neujmin3 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Panstarrs_C2017K2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Panstarrs C2017K2 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Pojmanski_C2006A1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Pojmanski C2006A1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Sarabat_C1729": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Sarabat C1729 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "SidingSpring_C2013A1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "SidingSpring C2013A1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "SWAN_C2006M4": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "SWAN C2006M4 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "TaburC1996Q1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "TaburC1996Q1 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Tsuchinshan2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Tsuchinshan2 is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Whipple": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Whipple is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Wiseman-Skiff": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Periodic & Discovered Comets",
+      "Text": "Wiseman-Skiff is a periodic comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}

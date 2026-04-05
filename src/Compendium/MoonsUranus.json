@@ -2,236 +2,410 @@
   "CompendiumJson": "True",
   "Compendium": {
     "Ariel": {
-      "ListGroups": ["Major"],
+      "ListGroups": [
+        "Major"
+      ],
       "OrbitLineGroup": "Major",
       "Text": "Ariel is one of Uranus's major moons. It is known for its varied surface, which includes both heavily cratered regions and relatively young, tectonically deformed areas.",
-      "Factoids": ["Ariel has a surface composed primarily of water ice with a small amount of rock." ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        "Ariel has a surface composed primarily of water ice with a small amount of rock."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Ariel"
     },
-    "Umbriel": {
-      "ListGroups": ["Major"],
-      "OrbitLineGroup": "Major",
-      "Text": "Umbriel is one of Uranus's major moons. It is known for its dark surface and heavily cratered terrain.",
-      "Factoids": [ "Has a surface composed primarily of water ice with a small amount of rock." ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Umbriel"
-    },
-    "Titania": {
-      "ListGroups": ["Major"],
-      "OrbitLineGroup": "Major",
-      "Text": "Titania is one of Uranus's major moons. It is the largest of Uranus's moons and has a surface marked by large canyons and ice cliffs.",
-      "Factoids": [ "Titania has a surface composed primarily of water ice with a small amount of rock." ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Titania"
-    },
-    "Oberon": {
-      "ListGroups": ["Major"],
-      "OrbitLineGroup": "Major",
-      "Text": "Oberon is one of Uranus's major moons. It is known for its heavily cratered surface and large canyons.",
-      "Factoids": [ "Oberon has a surface composed primarily of water ice with a small amount of rock." ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Oberon"
-    },
-    "Miranda": {
-      "ListGroups": ["Major"],
-      "OrbitLineGroup": "Major",
-      "Text": "Miranda is one of Uranus's major moons. It is known for its extreme and varied geological features, including large canyons and cliffs.",
-      "Factoids": [ "Miranda has a surface composed primarily of water ice with a small amount of rock." ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Miranda"
-    },
-    "Cordelia": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Cordelia is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Cordelia"
-    },
-    "Ophelia": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Ophelia is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Ophelia"
-    },
-    "Bianca": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Bianca is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Bianca"
-    },
-    "Cressida": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Cressida is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Cressida"
-    },
-    "Desdemona": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Desdemona is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Desdemona"
-    },
-    "Juliet": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Juliet is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Juliet"
-    },
-    "Portia": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Portia is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Portia"
-    },
-    "Rosalind": {
-      "ListGroups": ["Inner Uranus"],
-      "OrbitLineGroup": "Inner Uranus",
-      "Text": "Rosalind is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Rosalind"
-    },
     "Belinda": {
-      "ListGroups": ["Inner Uranus"],
+      "ListGroups": [
+        "Inner Uranus"
+      ],
       "OrbitLineGroup": "Inner Uranus",
       "Text": "Belinda is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Belinda"
     },
-    "Puck": {
-      "ListGroups": ["Inner Uranus"],
+    "Bianca": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
       "OrbitLineGroup": "Inner Uranus",
-      "Text": "Puck is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Puck"
+      "Text": "Bianca is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Bianca"
     },
     "Caliban": {
-      "ListGroups": ["Caliban"],
+      "ListGroups": [
+        "Caliban"
+      ],
       "OrbitLineGroup": "Caliban",
       "Text": "Caliban is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Caliban"
     },
-    "Sycorax": {
-      "ListGroups": ["Irregular Uranus"],
-      "OrbitLineGroup": "Irregular Uranus",
-      "Text": "Sycorax is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Sycorax"
-    },
-    "Prospero": {
-      "ListGroups": ["Irregular Uranus"],
-      "OrbitLineGroup": "Irregular Uranus",
-      "Text": "Prospero is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Prospero"
-    },
-    "Setebos": {
-      "ListGroups": ["Irregular Uranus"],
-      "OrbitLineGroup": "Irregular Uranus",
-      "Text": "Setebos is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Setebos"
-    },
-    "Stephano": {
-      "ListGroups": ["Caliban"],
-      "OrbitLineGroup": "Caliban",
-      "Text": "Stephano is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Stephano"
-    },
-    "Trinculo": {
-      "ListGroups": ["Irregular Uranus"],
-      "OrbitLineGroup": "Irregular Uranus",
-      "Text": "Trinculo is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Trinculo"
-    },
-    "Francisco": {
-      "ListGroups": ["Irregular Uranus"],
-      "OrbitLineGroup": "Irregular Uranus",
-      "Text": "Francisco is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Francisco"
-    },
-    "Margaret": {
-      "ListGroups": ["Margaret"],
-      "OrbitLineGroup": "Margaret",
-      "Text": "Margaret is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Margaret"
-    },
-    "Ferdinand": {
-      "ListGroups": ["Irregular Uranus"],
-      "OrbitLineGroup": "Irregular Uranus",
-      "Text": "Ferdinand is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Ferdinand"
-    },
-    "Perdita": {
-      "ListGroups": ["Inner Uranus"],
+    "Cordelia": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
       "OrbitLineGroup": "Inner Uranus",
-      "Text": "Perdita is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Perdita"
+      "Text": "Cordelia is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Cordelia"
     },
-    "Mab": {
-      "ListGroups": ["Inner Uranus"],
+    "Cressida": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
       "OrbitLineGroup": "Inner Uranus",
-      "Text": "Mab is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Mab"
+      "Text": "Cressida is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Cressida"
     },
     "Cupid": {
-      "ListGroups": ["Inner Uranus"],
+      "ListGroups": [
+        "Inner Uranus"
+      ],
       "OrbitLineGroup": "Inner Uranus",
       "Text": "Cupid is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Cupid"
     },
+    "Desdemona": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Desdemona is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Desdemona"
+    },
+    "Ferdinand": {
+      "ListGroups": [
+        "Irregular Uranus"
+      ],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "Ferdinand is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Ferdinand"
+    },
+    "Francisco": {
+      "ListGroups": [
+        "Irregular Uranus"
+      ],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "Francisco is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Francisco"
+    },
+    "Juliet": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Juliet is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Juliet"
+    },
+    "Mab": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Mab is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Mab"
+    },
+    "Margaret": {
+      "ListGroups": [
+        "Margaret"
+      ],
+      "OrbitLineGroup": "Margaret",
+      "Text": "Margaret is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Margaret"
+    },
+    "Miranda": {
+      "ListGroups": [
+        "Major"
+      ],
+      "OrbitLineGroup": "Major",
+      "Text": "Miranda is one of Uranus's major moons. It is known for its extreme and varied geological features, including large canyons and cliffs.",
+      "Factoids": [
+        "Miranda has a surface composed primarily of water ice with a small amount of rock."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Miranda"
+    },
+    "Oberon": {
+      "ListGroups": [
+        "Major"
+      ],
+      "OrbitLineGroup": "Major",
+      "Text": "Oberon is one of Uranus's major moons. It is known for its heavily cratered surface and large canyons.",
+      "Factoids": [
+        "Oberon has a surface composed primarily of water ice with a small amount of rock."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Oberon"
+    },
+    "Ophelia": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Ophelia is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Ophelia"
+    },
+    "Perdita": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Perdita is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Perdita"
+    },
+    "Portia": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Portia is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Portia"
+    },
+    "Prospero": {
+      "ListGroups": [
+        "Irregular Uranus"
+      ],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "Prospero is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Prospero"
+    },
+    "Puck": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Puck is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Puck"
+    },
+    "Rosalind": {
+      "ListGroups": [
+        "Inner Uranus"
+      ],
+      "OrbitLineGroup": "Inner Uranus",
+      "Text": "Rosalind is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Rosalind"
+    },
     "S2023_U_01": {
-      "ListGroups": ["Caliban"],
+      "ListGroups": [
+        "Caliban"
+      ],
       "OrbitLineGroup": "Caliban",
       "Text": "S/2023 U 1 is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "S/2023_U_1"
     },
     "S2025_U_01": {
-      "ListGroups": ["Inner Uranus"],
+      "ListGroups": [
+        "Inner Uranus"
+      ],
       "OrbitLineGroup": "Inner Uranus",
       "Text": "S/2025 U 1 is one of Uranus's inner moons. It orbits close to the planet and is one of the smaller moons in the Uranian system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "S/2025_U_1"
+    },
+    "Setebos": {
+      "ListGroups": [
+        "Irregular Uranus"
+      ],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "Setebos is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Setebos"
+    },
+    "Stephano": {
+      "ListGroups": [
+        "Caliban"
+      ],
+      "OrbitLineGroup": "Caliban",
+      "Text": "Stephano is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Stephano"
+    },
+    "Sycorax": {
+      "ListGroups": [
+        "Irregular Uranus"
+      ],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "Sycorax is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Sycorax"
+    },
+    "Titania": {
+      "ListGroups": [
+        "Major"
+      ],
+      "OrbitLineGroup": "Major",
+      "Text": "Titania is one of Uranus's major moons. It is the largest of Uranus's moons and has a surface marked by large canyons and ice cliffs.",
+      "Factoids": [
+        "Titania has a surface composed primarily of water ice with a small amount of rock."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Titania"
+    },
+    "Trinculo": {
+      "ListGroups": [
+        "Irregular Uranus"
+      ],
+      "OrbitLineGroup": "Irregular Uranus",
+      "Text": "Trinculo is one of Uranus's irregular moons. It has a retrograde orbit and is one of the larger irregular moons of Uranus.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Trinculo"
+    },
+    "Umbriel": {
+      "ListGroups": [
+        "Major"
+      ],
+      "OrbitLineGroup": "Major",
+      "Text": "Umbriel is one of Uranus's major moons. It is known for its dark surface and heavily cratered terrain.",
+      "Factoids": [
+        "Has a surface composed primarily of water ice with a small amount of rock."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Umbriel"
     }
   }
 }

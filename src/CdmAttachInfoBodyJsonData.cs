@@ -5,6 +5,19 @@ namespace Compendium
 {
     public partial class Compendium
     {
+        private static string? TryGetOrbitLineMode(Celestial bodyCelestial)
+        {
+            try
+            {
+                return bodyCelestial.GetType().GetProperty("OrbitLineMode")?.GetValue(bodyCelestial)?.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Compendium: Unable to read OrbitLineMode for {bodyCelestial.Id}: {ex.Message}");
+                return null;
+            }
+        }
+
         public static void AttachInfoBodyJsonDict()
         {
             Console.WriteLine("Compendium: Attaching game data to collected bodyJsonData for references...");
@@ -29,6 +42,14 @@ namespace Compendium
                 {
                     string compKey = $"Compendium.{cel.Id}";
                     string sysKey = $"{systemId}.{cel.Id}";
+                    string celestialPath = GetCelestialPath(cel);
+                    string compPathKey = $"Compendium.{celestialPath}";
+                    string sysPathKey = $"{systemId}.{celestialPath}";
+
+                    if (!bodyJsonDict.ContainsKey(sysPathKey) && bodyJsonDict.TryGetValue(compPathKey, out var compPathData))
+                    {
+                        bodyJsonDict[sysPathKey] = compPathData;
+                    }
 
                     // IMPORTANT:
                     // - If system key exists, keep it (system overrides compendium).
@@ -58,13 +79,14 @@ namespace Compendium
                 // The key is the body ID, but it may need to be looked up with the system prefix or Compendium prefix, that isn't part of the bodyId itself.
                 // For example, "Sol.Earth" or "Compendium.Earth" both refer to the body with ID "Earth".  We want bodyId to just be "Earth" here.
                 string fullKey = kvp.Key;
-                string bodyId = fullKey.Contains('.') ? fullKey.Substring(fullKey.LastIndexOf('.') + 1) : fullKey;
+                string bodyKey = fullKey.Contains('.') ? fullKey.Substring(fullKey.IndexOf('.') + 1) : fullKey;
+                string bodyId = GetDisplayBodyId(bodyKey);
 
                 var bodyJsonData = kvp.Value;
-                // gets the celestial body by its ID
+                // gets the celestial body by its ID / parent path when available
                 var worldSun = Universe.WorldSun;
-                //Console.WriteLine($"Compendium: Looking for celestial body with ID: {bodyId} with WorldSun {worldSun}");
-                Celestial? bodyCelestial = FindCelestialById(worldSun, bodyId);
+                //Console.WriteLine($"Compendium: Looking for celestial body with key: {bodyKey} with WorldSun {worldSun}");
+                Celestial? bodyCelestial = FindCelestialByKey(worldSun, bodyKey);
 
                 // First checks if the entry as key exists as a celestial body in the current universe - if it doesn't then skip it.
                 if (bodyCelestial == null)
@@ -74,7 +96,7 @@ namespace Compendium
                 }
 
                 //Console.WriteLine($"Compendium: Attaching bodyJson data to celestial body: {bodyId}");
-                bodyJsonData.OrbitLineMode = bodyCelestial.OrbitLineMode;
+                bodyJsonData.OrbitLineMode = TryGetOrbitLineMode(bodyCelestial);
                 bodyJsonData.DrawnUiBox = bodyCelestial.DrawnUiBox;
                 // Mean radius in kilometers
                 bodyJsonData.RadiusKm = (float)(bodyCelestial.MeanRadius / 1000f);

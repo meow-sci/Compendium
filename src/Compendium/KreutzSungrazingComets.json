@@ -1,0 +1,291 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Kreutz Sungrazing Comets": {
+        "CatText": "Kreutz sungrazers are comets that pass extremely close to the Sun.",
+        "CatWikipediaUrl": "Kreutz_Sungrazers"
+      }
+    },
+    "Kreutz_1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 1 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_10": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 10 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_11": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 11 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_12": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 12 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_13": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 13 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_14": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 14 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_15": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 15 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_16": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 16 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_17": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 17 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_18": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 18 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_19": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 19 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 2 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_20": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 20 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_3": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 3 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_4": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 4 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_5": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 5 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_6": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 6 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_7": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 7 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_8": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 8 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kreutz_9": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Kreutz Sungrazing Comets",
+      "Text": "Kreutz 9 is a Kreutz sungrazing comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}

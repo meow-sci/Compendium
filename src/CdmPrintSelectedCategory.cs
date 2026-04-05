@@ -11,194 +11,354 @@ namespace Compendium
         // Add this field to store the selected celestial object
         private static object? selectedCelestial;
 
+        private sealed class CategoryDisplayEntry
+        {
+            public string BodyKey { get; init; } = string.Empty;
+            public string DisplayBodyId { get; init; } = string.Empty;
+            public List<string> DirectChildren { get; } = new();
+            public SortedDictionary<string, List<string>> GroupedChildren { get; } = new(StringComparer.OrdinalIgnoreCase);
+            public bool HasChildren => DirectChildren.Count > 0 || GroupedChildren.Count > 0;
+        }
+
+        private sealed class CategoryDisplayCache
+        {
+            public List<CategoryDisplayEntry> Entries { get; } = new();
+            public SortedDictionary<string, List<CategoryDisplayEntry>> GroupedEntries { get; } = new(StringComparer.OrdinalIgnoreCase);
+            public SortedDictionary<string, List<string>> GroupedLeafEntries { get; } = new(StringComparer.OrdinalIgnoreCase);
+        }
+
+        private static Dictionary<string, CategoryDisplayCache>? categoryDisplayCacheByKey;
+
         public void PrintSelectedCategoryByKey(string categoryKey)
         {
             try
-            {                
+            {
                 if (string.IsNullOrEmpty(categoryKey) || buttonsCatsTree == null || !buttonsCatsTree.ContainsKey(categoryKey))
                 {
                     if (selectedCategoryKey != "Legend")
                     {
-                    ImGui.Text("No data for this category");
+                        ImGui.Text("No data for this category");
                     }
                     return;
                 }
 
-                // Get the category data from buttonsCatsTree
-                IDictionary<string, object> categoryData = buttonsCatsTree[categoryKey];
-                // Sorts the parent bodies alphabetically, but ONLY if the category is not "Planets" or is "Planets" but does not contain Mercury
-                if (categoryKey != "Planets" || (categoryKey == "Planets" && !categoryData.ContainsKey("Mercury")))
+                var cachedCategoryData = GetOrBuildCategoryDisplayCache(categoryKey);
+                if (cachedCategoryData.Entries.Count == 0 && cachedCategoryData.GroupedEntries.Count == 0 && cachedCategoryData.GroupedLeafEntries.Count == 0)
                 {
-                    categoryData = new SortedDictionary<string, object>(categoryData);
+                    return;
                 }
-                else
+
+                foreach (var displayEntry in cachedCategoryData.Entries)
                 {
-                    // For "Planets" category which contains Mercury, fix to put Mercury first. For some reason the game lists it second after Venus.
-                    // Only gets here if Mercury is present in the category
-                        var tempDict = new Dictionary<string, object>
-                        {
-                            { "Mercury", buttonsCatsTree[categoryKey]["Mercury"] }
-                        };
-                        foreach (var kvp in categoryData)
-                        {
-                            if (kvp.Key == "Mercury")
-                                { continue; }
-                            tempDict.Add(kvp.Key, kvp.Value);
-                        }
-                        categoryData = tempDict;
+                    DrawCategoryDisplayEntry(displayEntry);
                 }
-            
-            if (categoryData.Count > 0)
-            {
-                
-                // Iterate through each parent body in this category
-                foreach (var parentEntry in categoryData)
+
+                var groupedCategoryKeys = new SortedSet<string>(cachedCategoryData.GroupedEntries.Keys, StringComparer.OrdinalIgnoreCase);
+                foreach (var groupKey in cachedCategoryData.GroupedLeafEntries.Keys)
                 {
-                    string parentBodyId = parentEntry.Key;
-                    
-                    // Skip the "Data" entry which contains category-level information
-                    if (parentBodyId == "Data")
-                        continue;
-                    
-                    var parentData = (Dictionary<string, object>)parentEntry.Value;
-                    var childrenIds = (List<string>)parentData["Children"];
-                    
-                    if (childrenIds.Count > 0)
-                    {
-                        // Has children, show as collapsing header with black background
-                        PushTheColor("blackstuff");
+                    groupedCategoryKeys.Add(groupKey);
+                }
 
-                        ImString headerLabel = new ImString($"{parentBodyId}");
-                        if (ImGui.CollapsingHeader(headerLabel))
-                        {
-                            ImGui.Separator();
-                            // Add the parent celestial as a selectable entry first
-                            ImString parentId = new ImString($"         ({parentBodyId})##parent_{parentBodyId}");
-                            bool isParentSelected = selectedCelestialId == parentBodyId;
-                            
-                            if (isParentSelected)
-                            { PushTheColor("ltblue"); }
-                            
-                            if (ImGui.Selectable(parentId, isParentSelected))
-                            { 
-                                selectedCelestialId = parentBodyId; 
-                                selectedCelestial = FindCelestialById(Universe.WorldSun, parentBodyId);
-                                showWindow = "Celestial";
-                            }
-                            
-                            if (isParentSelected)
-                            { ImGui.PopStyleColor(1); }
-                            
-                            // Check if parent has more than 10 children - if so, group by OrbitLineGroup
-                            if (childrenIds.Count > 10)
-                            {
-                                // Group children by their OrbitLineGroup
-                                var groupedChildren = new Dictionary<string, List<string>>();
-                                
-                                foreach (var childId in childrenIds)
-                                {
-                                    // Get the OrbitLineGroup from JSON
-                                    CompendiumData? childData = null;
-                                    string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
-                                    string systemKey = $"{systemName}.{childId}";
-                                    string compendiumKey = $"Compendium.{childId}";
-                                    
-                                    if (!Compendium.bodyJsonDict.TryGetValue(systemKey, out childData))
-                                    {
-                                        Compendium.bodyJsonDict.TryGetValue(compendiumKey, out childData);
-                                    }
-                                    
-                                    string orbitGroup = childData?.OrbitLineGroup ?? "Other";
-                                    
-                                    if (!groupedChildren.ContainsKey(orbitGroup))
-                                    {
-                                        groupedChildren[orbitGroup] = new List<string>();
-                                    }
-                                    groupedChildren[orbitGroup].Add(childId);
-                                }
-                                
-                                // Display each group as a collapsing header
-                                foreach (var group in groupedChildren)
-                                {
-                                    ImString groupLabel = new ImString($"          {group.Key}");
-                                    if (ImGui.TreeNode(groupLabel))
-                                    {
-                                        foreach (var childId in group.Value)
-                                        {
-                                            ImString childIdStr = new ImString($"               {childId}##child_{childId}");
-                                            bool isChildSelected = selectedCelestialId == childId;
-                                            
-                                            if (isChildSelected)
-                                            { PushTheColor("ltblue"); }
-                                            
-                                            if (ImGui.Selectable(childIdStr, isChildSelected))
-                                            { 
-                                                selectedCelestialId = childId; 
-                                                selectedCelestial = FindCelestialById(Universe.WorldSun, childId);
-                                                showWindow = "Celestial";
-                                            }
-                                            
-                                            if (isChildSelected)
-                                            { ImGui.PopStyleColor(1); }
-                                        }
-                                        ImGui.TreePop();
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                // 10 or fewer children - show them directly without grouping
-                                foreach (var childId in childrenIds)
-                                {
-                                    ImString childIdStr = new ImString($"          {childId}##child_{childId}");
-                                    bool isChildSelected = selectedCelestialId == childId;
-                                    
-                                    if (isChildSelected)
-                                    { PushTheColor("ltblue"); }
-                                    
-                                    if (ImGui.Selectable(childIdStr, isChildSelected))
-                                    { 
-                                        selectedCelestialId = childId; 
-                                        selectedCelestial = FindCelestialById(Universe.WorldSun, childId);
-                                        showWindow = "Celestial";
-                                    }
-                                    
-                                    if (isChildSelected)
-                                    { ImGui.PopStyleColor(1); }
-                                }
-                            }
-
-                        }
-                        ImGui.Separator();
-                        ImGui.PopStyleColor(3);
-                    }
-                    else
+                foreach (var groupKey in groupedCategoryKeys)
+                {
+                    ImString groupLabel = new ImString($"      {groupKey}##leafgroup_{categoryKey}_{groupKey}");
+                    if (ImGui.TreeNode(groupLabel))
                     {
-                        // No children, make selectable
-                        ImString celestialId = new ImString($"      {parentBodyId}##celestial_{parentBodyId}");
-                        bool isCelestialSelected = selectedCelestialId == parentBodyId;
-                        
-                        if (isCelestialSelected)
-                        { PushTheColor("ltblue"); }
-                        
-                        if (ImGui.Selectable(celestialId, isCelestialSelected))
+                        DrawOrbitGroupSelectable($"          ({groupKey})##leafgroupinfo_{categoryKey}_{groupKey}", groupKey, null);
+
+                        if (cachedCategoryData.GroupedEntries.TryGetValue(groupKey, out var groupedEntries))
                         {
-                            selectedCelestialId = parentBodyId; 
-                            selectedCelestial = FindCelestialById(Universe.WorldSun, parentBodyId);
-                            showWindow = "Celestial";
+                            foreach (var displayEntry in groupedEntries)
+                            {
+                                DrawCategoryDisplayEntry(displayEntry, nestedInSubgroup: true);
+                            }
                         }
 
-                        if (isCelestialSelected)
-                        { ImGui.PopStyleColor(1); }
+                        if (cachedCategoryData.GroupedLeafEntries.TryGetValue(groupKey, out var groupedLeafEntries))
+                        {
+                            foreach (var bodyId in groupedLeafEntries)
+                            {
+                                DrawCelestialSelectable($"          {GetDisplayBodyId(bodyId)}##grouped_{bodyId}", bodyId);
+                            }
+                        }
+
+                        ImGui.TreePop();
                     }
                 }
-            }
             }
             catch (Exception ex)
             {
                 ImString errorMsg = new ImString($"Error: {ex.Message}");
                 ImGui.Text(errorMsg);
             }
+        }
+
+        private void DrawCelestialSelectable(string label, string bodyKey)
+        {
+            ImString celestialId = new ImString(label);
+            bool isSelected = selectedCelestialId == bodyKey;
+
+            if (isSelected)
+            {
+                PushTheColor("ltblue");
+            }
+
+            if (ImGui.Selectable(celestialId, isSelected))
+            {
+                selectedCelestialId = bodyKey;
+                selectedCelestial = FindCelestialByKey(Universe.WorldSun, bodyKey);
+                selectedOrbitGroupKey = null;
+                selectedOrbitGroupParentBodyKey = null;
+                showWindow = "Celestial";
+            }
+
+            if (isSelected)
+            {
+                ImGui.PopStyleColor(1);
+            }
+        }
+
+        private void DrawCategoryDisplayEntry(CategoryDisplayEntry displayEntry, bool nestedInSubgroup = false)
+        {
+            string headerPrefix = nestedInSubgroup ? "      " : string.Empty;
+            string parentPrefix = nestedInSubgroup ? "               " : "         ";
+            string childPrefix = nestedInSubgroup ? "               " : "          ";
+            string subgroupPrefix = nestedInSubgroup ? "               " : "          ";
+            string subgroupItemPrefix = nestedInSubgroup ? "                    " : "               ";
+            string leafPrefix = nestedInSubgroup ? "          " : "      ";
+
+            if (displayEntry.HasChildren)
+            {
+                PushTheColor("blackstuff");
+
+                ImString headerLabel = new ImString($"{headerPrefix}{displayEntry.DisplayBodyId}##parentHeader_{displayEntry.BodyKey}");
+                if (ImGui.CollapsingHeader(headerLabel))
+                {
+                    ImGui.Separator();
+                    DrawCelestialSelectable($"{parentPrefix}({displayEntry.DisplayBodyId})##parent_{displayEntry.BodyKey}", displayEntry.BodyKey);
+
+                    foreach (var childId in displayEntry.DirectChildren)
+                    {
+                        DrawCelestialSelectable($"{childPrefix}{GetDisplayBodyId(childId)}##child_{childId}", childId);
+                    }
+
+                    foreach (var group in displayEntry.GroupedChildren)
+                    {
+                        ImString groupLabel = new ImString($"{subgroupPrefix}{group.Key}##group_{displayEntry.BodyKey}_{group.Key}");
+                        if (ImGui.TreeNode(groupLabel))
+                        {
+                            DrawOrbitGroupSelectable($"{subgroupItemPrefix}({group.Key})##groupinfo_{displayEntry.BodyKey}_{group.Key}", group.Key, displayEntry.BodyKey);
+
+                            foreach (var childId in group.Value)
+                            {
+                                DrawCelestialSelectable($"{subgroupItemPrefix}{GetDisplayBodyId(childId)}##child_{childId}", childId);
+                            }
+
+                            ImGui.TreePop();
+                        }
+                    }
+                }
+
+                ImGui.Separator();
+                ImGui.PopStyleColor(3);
+            }
+            else
+            {
+                DrawCelestialSelectable($"{leafPrefix}{displayEntry.DisplayBodyId}##celestial_{displayEntry.BodyKey}", displayEntry.BodyKey);
+            }
+        }
+
+        private void DrawOrbitGroupSelectable(string label, string groupKey, string? parentBodyKey)
+        {
+            ImString groupSelectableLabel = new ImString(label);
+            bool isSelected =
+                showWindow == "Group" &&
+                string.Equals(selectedOrbitGroupKey, groupKey, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(selectedOrbitGroupParentBodyKey ?? string.Empty, parentBodyKey ?? string.Empty, StringComparison.OrdinalIgnoreCase);
+
+            if (isSelected)
+            {
+                PushTheColor("ltblue");
+            }
+
+            if (ImGui.Selectable(groupSelectableLabel, isSelected))
+            {
+                SelectOrbitGroup(groupKey, parentBodyKey);
+            }
+
+            if (isSelected)
+            {
+                ImGui.PopStyleColor(1);
+            }
+        }
+
+        private void SelectOrbitGroup(string groupKey, string? parentBodyKey)
+        {
+            selectedCelestial = null;
+            selectedCelestialId = "Group";
+            selectedOrbitGroupKey = groupKey;
+            selectedOrbitGroupParentBodyKey = parentBodyKey;
+            showWindow = "Group";
+        }
+
+        private List<string> GetCategorySubgroupKeys(string categoryKey)
+        {
+            var subgroupKeys = new SortedSet<string>(StringComparer.OrdinalIgnoreCase);
+            var cachedCategoryData = GetOrBuildCategoryDisplayCache(categoryKey);
+
+            foreach (var subgroupKey in cachedCategoryData.GroupedEntries.Keys)
+            {
+                subgroupKeys.Add(subgroupKey);
+            }
+
+            foreach (var displayEntry in cachedCategoryData.Entries)
+            {
+                foreach (var subgroupKey in displayEntry.GroupedChildren.Keys)
+                {
+                    subgroupKeys.Add(subgroupKey);
+                }
+            }
+
+            foreach (var subgroupKey in cachedCategoryData.GroupedLeafEntries.Keys)
+            {
+                subgroupKeys.Add(subgroupKey);
+            }
+
+            return subgroupKeys.ToList();
+        }
+
+        private CategoryDisplayCache GetOrBuildCategoryDisplayCache(string categoryKey)
+        {
+            categoryDisplayCacheByKey ??= new Dictionary<string, CategoryDisplayCache>(StringComparer.OrdinalIgnoreCase);
+            if (categoryDisplayCacheByKey.TryGetValue(categoryKey, out var cachedCategoryData))
+            {
+                return cachedCategoryData;
+            }
+
+            cachedCategoryData = new CategoryDisplayCache();
+            if (buttonsCatsTree == null || !buttonsCatsTree.TryGetValue(categoryKey, out var rawCategoryData))
+            {
+                categoryDisplayCacheByKey[categoryKey] = cachedCategoryData;
+                return cachedCategoryData;
+            }
+
+            IDictionary<string, object> orderedCategoryData;
+            if (categoryKey != "Planets" || (categoryKey == "Planets" && !rawCategoryData.ContainsKey("Mercury")))
+            {
+                orderedCategoryData = new SortedDictionary<string, object>(rawCategoryData, StringComparer.OrdinalIgnoreCase);
+            }
+            else
+            {
+                var tempDict = new Dictionary<string, object>
+                {
+                    { "Mercury", rawCategoryData["Mercury"] }
+                };
+
+                foreach (var kvp in rawCategoryData)
+                {
+                    if (kvp.Key == "Mercury")
+                    {
+                        continue;
+                    }
+
+                    tempDict.Add(kvp.Key, kvp.Value);
+                }
+
+                orderedCategoryData = tempDict;
+            }
+
+            bool groupLeafEntriesByOrbitGroup = categoryKey == "Asteroids" || categoryKey == "Comets";
+
+            foreach (var parentEntry in orderedCategoryData)
+            {
+                string parentBodyId = parentEntry.Key;
+                if (parentBodyId == "Data")
+                {
+                    continue;
+                }
+
+                var parentData = (Dictionary<string, object>)parentEntry.Value;
+                var childrenIds = (List<string>)parentData["Children"];
+
+                if (childrenIds.Count == 0 && groupLeafEntriesByOrbitGroup)
+                {
+                    string orbitGroup = GetOrbitGroupLabel(parentBodyId);
+                    if (!cachedCategoryData.GroupedLeafEntries.ContainsKey(orbitGroup))
+                    {
+                        cachedCategoryData.GroupedLeafEntries[orbitGroup] = new List<string>();
+                    }
+
+                    cachedCategoryData.GroupedLeafEntries[orbitGroup].Add(parentBodyId);
+                    continue;
+                }
+
+                var displayEntry = new CategoryDisplayEntry
+                {
+                    BodyKey = parentBodyId,
+                    DisplayBodyId = GetDisplayBodyId(parentBodyId)
+                };
+
+                foreach (var childId in childrenIds.OrderBy(GetDisplayBodyId, StringComparer.OrdinalIgnoreCase))
+                {
+                    if (ShouldSkipOrbitGroupDropdown(childId))
+                    {
+                        displayEntry.DirectChildren.Add(childId);
+                        continue;
+                    }
+
+                    string orbitGroup = GetOrbitGroupLabel(childId);
+                    if (!displayEntry.GroupedChildren.ContainsKey(orbitGroup))
+                    {
+                        displayEntry.GroupedChildren[orbitGroup] = new List<string>();
+                    }
+
+                    displayEntry.GroupedChildren[orbitGroup].Add(childId);
+                }
+
+                if (groupLeafEntriesByOrbitGroup)
+                {
+                    string orbitGroup = GetOrbitGroupLabel(parentBodyId);
+                    if (!cachedCategoryData.GroupedEntries.ContainsKey(orbitGroup))
+                    {
+                        cachedCategoryData.GroupedEntries[orbitGroup] = new List<CategoryDisplayEntry>();
+                    }
+
+                    cachedCategoryData.GroupedEntries[orbitGroup].Add(displayEntry);
+                }
+                else
+                {
+                    cachedCategoryData.Entries.Add(displayEntry);
+                }
+            }
+
+            foreach (var group in cachedCategoryData.GroupedLeafEntries.Values)
+            {
+                group.Sort((left, right) => StringComparer.OrdinalIgnoreCase.Compare(GetDisplayBodyId(left), GetDisplayBodyId(right)));
+            }
+
+            categoryDisplayCacheByKey[categoryKey] = cachedCategoryData;
+            return cachedCategoryData;
+        }
+
+        private string GetOrbitGroupLabel(string bodyKey)
+        {
+            var celestial = FindCelestialByKey(Universe.WorldSun, bodyKey);
+            CompendiumData? bodyData = celestial != null ? GetBodyJsonData(celestial) : null;
+
+            if (!string.IsNullOrWhiteSpace(bodyData?.OrbitLineGroup))
+            {
+                return bodyData.OrbitLineGroup;
+            }
+
+            return "Other";
+        }
+
+        private bool ShouldSkipOrbitGroupDropdown(string bodyKey)
+        {
+            var celestial = FindCelestialByKey(Universe.WorldSun, bodyKey);
+            CompendiumData? bodyData = celestial != null ? GetBodyJsonData(celestial) : null;
+
+            return bodyData?.ListGroups?.Any(group => string.Equals(group, "Moons", StringComparison.OrdinalIgnoreCase)) == true;
         }
 
         public void PrintTermsCategory()

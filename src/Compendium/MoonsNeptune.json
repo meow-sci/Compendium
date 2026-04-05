@@ -1,133 +1,233 @@
 {
   "CompendiumJson": "True",
   "Compendium": {
-    "Triton": {
-      "ListGroups": ["Triton"],
-      "OrbitLineGroup": "Triton",
-      "Text": "Triton is the largest moon of Neptune and is unique among large moons in the Solar System for its retrograde orbit, indicating that it was likely a Kuiper Belt object captured by Neptune's gravity rather than forming in place.  One of the most geologically active bodies in the Solar System due to cryovolcanism - the surface is one of the youngest in the known solar system due to constant resurfacing.",
-      "Factoids": [ "One of the brightest bodies in the Solar System due to its highly reflective surface.", "Has geysers that erupt nitrogen gas / slush", "Its surface is primarily composed of frozen nitrogen, with traces of methane and carbon monoxide.", "Triton is one of the coldest objects in the Solar System, with surface temperatures around -235 degrees Celsius.", "It has a thin atmosphere primarily composed of you guessed it - nitrogen." ],
-      "VisitedBy": ["Voyager 2 (1989)"],
-      "WikipediaUrl": "Triton"
-    },
-    "Nereid": {
-      "ListGroups": ["Nereid"],
-      "OrbitLineGroup": "Nereid",
-      "Text": "Nereid is one of Neptune's irregular moons, known for its highly eccentric orbit. It was discovered in 1949 and is one of the largest irregular satellites of Neptune.",
-      "Factoids": [ "Believed to be a captured object, possibly a Kuiper Belt object." ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Nereid"
-    },
-    "Naiad": {
-      "ListGroups": ["Inner Neptune"],
-      "OrbitLineGroup": "Inner Neptune",
-      "Text": "Naiad is the innermost of Neptune's known moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
-      "Factoids": [ "Innermost known moon orbiting Neptune" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Naiad"
-    },
-    "Thalassa": {
-      "ListGroups": ["Inner Neptune"],
-      "OrbitLineGroup": "Inner Neptune",
-      "Text": "Thalassa is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Thalassa"
-    },
     "Despina": {
-      "ListGroups": ["Inner Neptune"],
+      "ListGroups": [
+        "Inner Neptune"
+      ],
       "OrbitLineGroup": "Inner Neptune",
       "Text": "Despina is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Despina"
     },
     "Galatea": {
-      "ListGroups": ["Inner Neptune"],
+      "ListGroups": [
+        "Inner Neptune"
+      ],
       "OrbitLineGroup": "Inner Neptune",
       "Text": "Galatea is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        "Galatea helps gravitationally confine part of Neptune's Adams ring system."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Galatea"
     },
-    "Larissa": {
-      "ListGroups": ["Inner Neptune"],
-      "OrbitLineGroup": "Inner Neptune",
-      "Text": "Larissa is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Larissa"
-    },
-    "Proteus": {
-      "ListGroups": ["Inner Neptune"],
-      "OrbitLineGroup": "Inner Neptune",
-      "Text": "Proteus is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Proteus"
-    },
     "Halimede": {
-      "ListGroups": ["Halimede"],
+      "ListGroups": [
+        "Halimede"
+      ],
       "OrbitLineGroup": "Halimede",
       "Text": "Halimede is an irregular moon of Neptune with a retrograde orbit. It is believed to be a captured object and is part of Neptune's outer satellite system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Halimede"
     },
-    "Psamathe": {
-      "ListGroups": ["Neso"],
-      "OrbitLineGroup": "Neso",
-      "Text": "Psamathe is an irregular moon of Neptune with a retrograde orbit. It is believed to be a captured object and is part of Neptune's outer satellite system.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Psamathe"
-    },
-    "Sao": {
-      "ListGroups": ["Sao"],
-      "OrbitLineGroup": "Sao",
-      "Text": "Sao is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Sao"
-    },
-    "Laomedeia": {
-      "ListGroups": ["Sao"],
-      "OrbitLineGroup": "Sao",
-      "Text": "Laomedeia is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Laomedeia"
-    },
-    "Neso": {
-      "ListGroups": ["Neso"],
-      "OrbitLineGroup": "Neso",
-      "Text": "Neso is an irregular moon of Neptune with a retrograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
-      "WikipediaUrl": "Neso"
-    },
     "Hippocamp": {
-      "ListGroups": ["Inner"],
+      "ListGroups": [
+        "Inner"
+      ],
       "OrbitLineGroup": "Inner",
       "Text": "Hippocamp is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "Hippocamp"
     },
+    "Laomedeia": {
+      "ListGroups": [
+        "Sao"
+      ],
+      "OrbitLineGroup": "Sao",
+      "Text": "Laomedeia is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Laomedeia"
+    },
+    "Larissa": {
+      "ListGroups": [
+        "Inner Neptune"
+      ],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "Larissa is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Larissa"
+    },
+    "Naiad": {
+      "ListGroups": [
+        "Inner Neptune"
+      ],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "Naiad is the innermost of Neptune's known moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
+      "Factoids": [
+        "Innermost known moon orbiting Neptune"
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Naiad"
+    },
+    "Nereid": {
+      "ListGroups": [
+        "Nereid"
+      ],
+      "OrbitLineGroup": "Nereid",
+      "Text": "Nereid is one of Neptune's irregular moons, known for its highly eccentric orbit. It was discovered in 1949 and is one of the largest irregular satellites of Neptune.",
+      "Factoids": [
+        "Believed to be a captured object, possibly a Kuiper Belt object."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Nereid"
+    },
+    "Neso": {
+      "ListGroups": [
+        "Neso"
+      ],
+      "OrbitLineGroup": "Neso",
+      "Text": "Neso is an irregular moon of Neptune with a retrograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Neso"
+    },
+    "Proteus": {
+      "ListGroups": [
+        "Inner Neptune"
+      ],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "Proteus is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Proteus"
+    },
+    "Psamathe": {
+      "ListGroups": [
+        "Neso"
+      ],
+      "OrbitLineGroup": "Neso",
+      "Text": "Psamathe is an irregular moon of Neptune with a retrograde orbit. It is believed to be a captured object and is part of Neptune's outer satellite system.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Psamathe"
+    },
     "S2002_N_05": {
-      "ListGroups": ["Sao"],
+      "ListGroups": [
+        "Sao"
+      ],
       "OrbitLineGroup": "Sao",
       "Text": "S/2002 N 5 is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "S/2002_N_5"
     },
     "S2021_N_01": {
-      "ListGroups": ["Neso"],
+      "ListGroups": [
+        "Neso"
+      ],
       "OrbitLineGroup": "Neso",
       "Text": "S/2021 N 1 is an irregular moon of Neptune with a retrograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
-      "Factoids": [ "" ],
-      "VisitedBy": ["None"],
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
       "WikipediaUrl": "S/2021_N_1"
+    },
+    "Sao": {
+      "ListGroups": [
+        "Sao"
+      ],
+      "OrbitLineGroup": "Sao",
+      "Text": "Sao is an irregular moon of Neptune with a prograde orbit. It is part of Neptune's outer satellite system and is believed to be a captured object.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Sao"
+    },
+    "Thalassa": {
+      "ListGroups": [
+        "Inner Neptune"
+      ],
+      "OrbitLineGroup": "Inner Neptune",
+      "Text": "Thalassa is one of Neptune's inner moons. It orbits close to the planet and is irregularly shaped, likely composed of water ice and rock.",
+      "Factoids": [
+        ""
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": "Thalassa"
+    },
+    "Triton": {
+      "ListGroups": [
+        "Triton"
+      ],
+      "OrbitLineGroup": "Triton",
+      "Text": "Triton is the largest moon of Neptune and is unique among large moons in the Solar System for its retrograde orbit, indicating that it was likely a Kuiper Belt object captured by Neptune's gravity rather than forming in place.  One of the most geologically active bodies in the Solar System due to cryovolcanism - the surface is one of the youngest in the known solar system due to constant resurfacing.",
+      "Factoids": [
+        "One of the brightest bodies in the Solar System due to its highly reflective surface.",
+        "Has geysers that erupt nitrogen gas / slush",
+        "Its surface is primarily composed of frozen nitrogen, with traces of methane and carbon monoxide.",
+        "Triton is one of the coldest objects in the Solar System, with surface temperatures around -235 degrees Celsius.",
+        "It has a thin atmosphere primarily composed of you guessed it - nitrogen."
+      ],
+      "VisitedBy": [
+        "Voyager 2 (1989)"
+      ],
+      "WikipediaUrl": "Triton"
     }
   }
 }

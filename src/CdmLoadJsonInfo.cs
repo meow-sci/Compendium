@@ -16,7 +16,7 @@ namespace Compendium
         public Dictionary<string, CompendiumData>? ListGroupsData { get; set; }
         public string? CatText { get; set; }
         public string? CatWikipediaUrl { get; set; }
-        public OrbitLineMode? OrbitLineMode { get; set; }
+        public string? OrbitLineMode { get; set; }
         public bool? DrawnUiBox { get; set; }
         public float RadiusKm { get; internal set; }
         public double Mass { get; internal set; }
@@ -43,6 +43,27 @@ namespace Compendium
         // Deserializes the json data for text descriptions later into a dictionary, load all of the jsons found in the folderpath given
         // The resulting dictionary is stored in bodyJsonDict
 
+        private static string? GetParentHintFromJsonFile(string filePath, string bodyId)
+        {
+            string fileName = Path.GetFileNameWithoutExtension(filePath);
+            if (!fileName.StartsWith("Moons", StringComparison.OrdinalIgnoreCase))
+            {
+                return null;
+            }
+
+            string moonSet = fileName.Substring("Moons".Length);
+            return moonSet switch
+            {
+                "Jupiter" or "Neptune" or "Saturn" or "Uranus" or "Pluto" => moonSet,
+                "EarthMars" => bodyId switch
+                {
+                    "Moon" or "Luna" => "Earth",
+                    "Phobos" or "Deimos" => "Mars",
+                    _ => null
+                },
+                _ => null
+            };
+        }
 
         public void LoadCompendiumJsonData(string dataDir)
         {
@@ -170,8 +191,19 @@ namespace Compendium
                                                 if (bodyData != null)
                                                 {
                                                     string fullKey = $"{property.Name}.{kvp.Key}";
-                                                    bodyJsonDict[fullKey] = bodyData;
-                                                    //Console.WriteLine($"      Loaded: {fullKey}");
+                                                    string? parentHint = GetParentHintFromJsonFile(file, kvp.Key);
+
+                                                    if (!string.IsNullOrWhiteSpace(parentHint) && !kvp.Key.Contains('.'))
+                                                    {
+                                                        string qualifiedKey = $"{property.Name}.{parentHint}.{kvp.Key}";
+                                                        bodyJsonDict[qualifiedKey] = bodyData;
+                                                        //Console.WriteLine($"      Loaded (qualified): {qualifiedKey}");
+                                                    }
+                                                    else
+                                                    {
+                                                        bodyJsonDict[fullKey] = bodyData;
+                                                        //Console.WriteLine($"      Loaded: {fullKey}");
+                                                    }
                                                 }
                                             }
                                         }

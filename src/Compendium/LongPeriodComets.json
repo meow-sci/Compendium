@@ -1,0 +1,305 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Long-Period Comets": {
+        "CatText": "Long-period comets come from the outer Solar System and may take centuries or more to return.",
+        "CatWikipediaUrl": "Long-period_comet"
+      }
+    },
+    "Arend-Roland": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Arend-Roland is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Bennett": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Bennett is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Bernardinelli-Bernstein": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Bernardinelli-Bernstein is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Catalina_C2013US10": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Catalina C2013US10 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hyakutake": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Hyakutake is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Ikeya-Seki": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Ikeya-Seki is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "ISON": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "ISON is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kohoutek": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Kohoutek is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Leonard_C2021A1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Leonard C2021A1 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Lovejoy_C2011W3": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Lovejoy C2011W3 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Lovejoy_C2014Q2": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Lovejoy C2014Q2 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "McNaught_C2006P1": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "McNaught C2006P1 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Mrkos_1957": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Mrkos 1957 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEOWISE_C2020F3": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "NEOWISE C2020F3 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "PanSTARRS_C2011L4": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "PanSTARRS C2011L4 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Sarabat": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Sarabat is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Seki-Lines": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Seki-Lines is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Tago-Sato-Kosaka": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Tago-Sato-Kosaka is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Tsuchinshan-ATLAS_C2023A3": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "Tsuchinshan-ATLAS C2023A3 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "West": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "West is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "ZTF_C2022E3": {
+      "ListGroups": [
+        "Comets"
+      ],
+      "OrbitLineGroup": "Long-Period Comets",
+      "Text": "ZTF C2022E3 is a long-period comet cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}

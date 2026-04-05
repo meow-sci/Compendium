@@ -1,0 +1,3063 @@
+{
+  "CompendiumJson": "True",
+  "Compendium": {
+    "ListGroupsData": {
+      "Near-Earth Asteroids": {
+        "CatText": "Near-Earth asteroids have orbits that bring them into the vicinity of Earth.",
+        "CatWikipediaUrl": "Near-Earth_object"
+      }
+    },
+    "1950DA": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "1950DA is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Atira": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Atira is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Castalia": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Castalia is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Cruithne": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Cruithne is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Duende": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Duende is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Florence": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Florence is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Ganymed": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Ganymed is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Geographos": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Geographos is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Golevka": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Golevka is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hathor": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Hathor is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Hermes": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Hermes is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Icarus": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Icarus is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Kamo_oalewa": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Kamo oalewa is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Midas": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Midas is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_1": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 1 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_10": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 10 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_100": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 100 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_101": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 101 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_102": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 102 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_103": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 103 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_104": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 104 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_105": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 105 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_106": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 106 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_107": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 107 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_108": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 108 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_109": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 109 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_11": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 11 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_110": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 110 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_111": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 111 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_112": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 112 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_113": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 113 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_114": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 114 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_115": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 115 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_116": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 116 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_117": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 117 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_118": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 118 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_119": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 119 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_12": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 12 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_120": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 120 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_121": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 121 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_122": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 122 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_123": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 123 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_124": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 124 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_125": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 125 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_126": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 126 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_127": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 127 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_128": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 128 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_129": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 129 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_13": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 13 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_130": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 130 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_131": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 131 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_132": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 132 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_133": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 133 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_134": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 134 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_135": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 135 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_136": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 136 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_137": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 137 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_138": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 138 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_139": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 139 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_14": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 14 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_140": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 140 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_141": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 141 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_142": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 142 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_143": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 143 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_144": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 144 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_145": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 145 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_146": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 146 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_147": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 147 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_148": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 148 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_149": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 149 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_15": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 15 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_150": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 150 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_151": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 151 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_152": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 152 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_153": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 153 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_154": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 154 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_155": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 155 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_156": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 156 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_157": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 157 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_158": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 158 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_159": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 159 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_16": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 16 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_160": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 160 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_161": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 161 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_162": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 162 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_163": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 163 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_164": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 164 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_165": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 165 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_166": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 166 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_167": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 167 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_168": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 168 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_169": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 169 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_17": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 17 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_170": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 170 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_171": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 171 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_172": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 172 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_173": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 173 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_174": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 174 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_175": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 175 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_176": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 176 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_177": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 177 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_178": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 178 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_179": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 179 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_18": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 18 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_180": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 180 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_181": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 181 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_182": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 182 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_183": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 183 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_184": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 184 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_185": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 185 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_186": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 186 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_187": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 187 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_188": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 188 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_189": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 189 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_19": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 19 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_190": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 190 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_191": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 191 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_192": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 192 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_193": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 193 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_194": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 194 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_195": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 195 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_196": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 196 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_197": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 197 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_198": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 198 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_199": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 199 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_2": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 2 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_20": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 20 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_200": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 200 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_21": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 21 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_22": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 22 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_23": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 23 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_24": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 24 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_25": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 25 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_26": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 26 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_27": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 27 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_28": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 28 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_29": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 29 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_3": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 3 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_30": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 30 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_31": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 31 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_32": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 32 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_33": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 33 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_34": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 34 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_35": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 35 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_36": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 36 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_37": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 37 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_38": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 38 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_39": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 39 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_4": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 4 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_40": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 40 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_41": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 41 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_42": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 42 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_43": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 43 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_44": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 44 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_45": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 45 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_46": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 46 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_47": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 47 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_48": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 48 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_49": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 49 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_5": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 5 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_50": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 50 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_51": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 51 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_52": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 52 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_53": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 53 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_54": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 54 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_55": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 55 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_56": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 56 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_57": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 57 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_58": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 58 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_59": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 59 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_6": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 6 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_60": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 60 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_61": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 61 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_62": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 62 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_63": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 63 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_64": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 64 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_65": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 65 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_66": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 66 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_67": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 67 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_68": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 68 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_69": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 69 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_7": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 7 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_70": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 70 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_71": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 71 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_72": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 72 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_73": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 73 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_74": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 74 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_75": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 75 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_76": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 76 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_77": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 77 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_78": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 78 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_79": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 79 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_8": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 8 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_80": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 80 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_81": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 81 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_82": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 82 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_83": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 83 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_84": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 84 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_85": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 85 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_86": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 86 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_87": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 87 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_88": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 88 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_89": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 89 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_9": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 9 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_90": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 90 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_91": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 91 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_92": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 92 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_93": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 93 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_94": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 94 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_95": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 95 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_96": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 96 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_97": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 97 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_98": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 98 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "NEA_99": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "NEA 99 is a generated near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Nereus": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Nereus is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Phaethon": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Phaethon is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Quetzalcoatl": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Quetzalcoatl is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    },
+    "Ra-Shalom": {
+      "ListGroups": [
+        "Asteroids"
+      ],
+      "OrbitLineGroup": "Near-Earth Asteroids",
+      "Text": "Ra-Shalom is a near-Earth asteroid cataloged from the current SolSystemDense.xml set.",
+      "Factoids": [
+        "Cataloged from the current SolSystemDense.xml data set."
+      ],
+      "VisitedBy": [
+        "None"
+      ],
+      "WikipediaUrl": ""
+    }
+  }
+}
