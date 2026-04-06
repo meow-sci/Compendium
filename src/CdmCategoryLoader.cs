@@ -16,6 +16,7 @@ namespace Compendium
             // buttonsCatsTree will have structure: [categoryName][parentBodyId] = { "Body": parentBodyId, "Children": [childBodyId1, childBodyId2, ...] }
             buttonsCatsTree = new Dictionary<string, Dictionary<string, object>>();
             categoryDisplayCacheByKey = null;
+            ResetOrbitUiCaches();
             
             
             // Collect all celestial objects from the tree

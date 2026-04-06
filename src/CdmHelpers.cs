@@ -33,6 +33,14 @@ namespace Compendium
         };
 
         private static readonly Dictionary<string, OrbitVisibilityMode> orbitVisibilityOverrides = new();
+        private static Dictionary<string, List<Celestial>>? categoryCelestialsCache;
+        private static Dictionary<string, List<Celestial>>? orbitGroupCelestialsCache;
+
+        private static void ResetOrbitUiCaches()
+        {
+            categoryCelestialsCache = null;
+            orbitGroupCelestialsCache = null;
+        }
 
         private static string GetCelestialPath(Celestial celestial)
         {
@@ -301,6 +309,237 @@ namespace Compendium
                     }
                 }
             }
+        }
+
+        private static List<Celestial> GetCategoryCelestials(string categoryKey)
+        {
+            categoryCelestialsCache ??= new Dictionary<string, List<Celestial>>(StringComparer.OrdinalIgnoreCase);
+            if (categoryCelestialsCache.TryGetValue(categoryKey, out var cachedCelestials))
+            {
+                return cachedCelestials;
+            }
+
+            var celestials = new List<Celestial>();
+
+            if (buttonsCatsTree == null || !buttonsCatsTree.TryGetValue(categoryKey, out var categoryTreeData))
+            {
+                categoryCelestialsCache[categoryKey] = celestials;
+                return celestials;
+            }
+
+            foreach (var parentEntry in categoryTreeData)
+            {
+                if (parentEntry.Key == "Data")
+                {
+                    continue;
+                }
+
+                var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
+                if (parentCelestial != null && !celestials.Contains(parentCelestial))
+                {
+                    celestials.Add(parentCelestial);
+                }
+
+                var parentEntryData = (Dictionary<string, object>)parentEntry.Value;
+                var childrenIds = (List<string>)parentEntryData["Children"];
+                foreach (var childId in childrenIds)
+                {
+                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
+                    if (childCelestial != null && !celestials.Contains(childCelestial))
+                    {
+                        celestials.Add(childCelestial);
+                    }
+                }
+            }
+
+            categoryCelestialsCache[categoryKey] = celestials;
+            return celestials;
+        }
+
+        private static List<Celestial> GetOrbitGroupCelestials(string categoryKey, string groupKey, string? parentBodyKey = null)
+        {
+            orbitGroupCelestialsCache ??= new Dictionary<string, List<Celestial>>(StringComparer.OrdinalIgnoreCase);
+            string cacheKey = $"{categoryKey}|{parentBodyKey ?? string.Empty}|{groupKey}";
+            if (orbitGroupCelestialsCache.TryGetValue(cacheKey, out var cachedCelestials))
+            {
+                return cachedCelestials;
+            }
+
+            var celestials = new List<Celestial>();
+
+            if (buttonsCatsTree == null || !buttonsCatsTree.TryGetValue(categoryKey, out var categoryTreeData))
+            {
+                orbitGroupCelestialsCache[cacheKey] = celestials;
+                return celestials;
+            }
+
+            foreach (var parentEntry in categoryTreeData)
+            {
+                if (parentEntry.Key == "Data")
+                {
+                    continue;
+                }
+
+                if (!string.IsNullOrWhiteSpace(parentBodyKey) &&
+                    !string.Equals(parentEntry.Key, parentBodyKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                var parentEntryData = (Dictionary<string, object>)parentEntry.Value;
+                var childrenIds = (List<string>)parentEntryData["Children"];
+
+                if (childrenIds.Count == 0 && string.IsNullOrWhiteSpace(parentBodyKey))
+                {
+                    var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
+                    CompendiumData? parentBodyJson = parentCelestial != null ? GetBodyJsonData(parentCelestial) : null;
+                    if (parentCelestial != null &&
+                        string.Equals(parentBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase) &&
+                        !celestials.Contains(parentCelestial))
+                    {
+                        celestials.Add(parentCelestial);
+                    }
+
+                    continue;
+                }
+
+                foreach (var childId in childrenIds)
+                {
+                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
+                    CompendiumData? childBodyJson = childCelestial != null ? GetBodyJsonData(childCelestial) : null;
+                    if (childCelestial != null &&
+                        string.Equals(childBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase) &&
+                        !celestials.Contains(childCelestial))
+                    {
+                        celestials.Add(childCelestial);
+                    }
+                }
+            }
+
+            orbitGroupCelestialsCache[cacheKey] = celestials;
+            return celestials;
+        }
+
+        private static void SetOrbitLineColor(IEnumerable<Celestial> celestials, float3 color)
+        {
+            var rgb = new byte3(
+                (byte)(color.X * 255),
+                (byte)(color.Y * 255),
+                (byte)(color.Z * 255));
+
+            foreach (var celestial in celestials)
+            {
+                if (celestial.Orbit == null)
+                {
+                    continue;
+                }
+
+                var orbitColor = celestial.Orbit.OrbitLineColor;
+                orbitColor.RGB = rgb;
+                celestial.Orbit.OrbitLineColor = orbitColor;
+            }
+        }
+
+        private static bool TryGetOrbitLineColor(IEnumerable<Celestial> celestials, out byte3 color)
+        {
+            foreach (var celestial in celestials)
+            {
+                if (celestial.Orbit != null)
+                {
+                    color = celestial.Orbit.OrbitLineColor.RGB;
+                    return true;
+                }
+            }
+
+            color = default;
+            return false;
+        }
+
+        private static bool HasOrbitColorTargets(IEnumerable<Celestial> celestials)
+        {
+            foreach (var celestial in celestials)
+            {
+                if (celestial.Orbit != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool DrawOrbitColorDropdownButton(string stateKey, IEnumerable<Celestial> celestials)
+        {
+            if (!HasOrbitColorTargets(celestials))
+            {
+                return false;
+            }
+
+            showOrbitGroupColor ??= new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+            if (!showOrbitGroupColor.ContainsKey(stateKey))
+            {
+                showOrbitGroupColor[stateKey] = false;
+            }
+
+            if (ImGui.ArrowButton($"OrbitColorArrow##{stateKey}", showOrbitGroupColor[stateKey] ? ImGuiDir.Up : ImGuiDir.Down))
+            {
+                bool nextState = !showOrbitGroupColor[stateKey];
+                foreach (var key in showOrbitGroupColor.Keys.ToList())
+                {
+                    showOrbitGroupColor[key] = false;
+                }
+
+                showOrbitGroupColor[stateKey] = nextState;
+            }
+
+            return showOrbitGroupColor[stateKey];
+        }
+
+        private void DrawOrbitColorDropdownContents(string stateKey, IEnumerable<Celestial> celestials)
+        {
+            showOrbitGroupColor ??= new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+            if (!showOrbitGroupColor.TryGetValue(stateKey, out bool isOpen) || !isOpen || !HasOrbitColorTargets(celestials))
+            {
+                return;
+            }
+
+            ImGui.Separator();
+            BigIndent(); ImGui.SameLine(); ImGui.Text("\nOrbit Line Color:");
+            BigIndent(); ImGui.SameLine();
+            ImString colorPickerLabel = new ImString($"##colorPicker_{stateKey}");
+            if (ImGui.BeginCombo(colorPickerLabel, "Select Color", ImGuiComboFlags.WidthFitPreview))
+            {
+                foreach (var colorEntry in orbitLineColors)
+                {
+                    ImString colorOptionLabel = new ImString($"{colorEntry.Key}");
+                    if (ImGui.Selectable(colorOptionLabel, false))
+                    {
+                        SetOrbitLineColor(celestials, colorEntry.Value);
+                    }
+                }
+                ImGui.EndCombo();
+            }
+
+            if (TryGetOrbitLineColor(celestials, out var currentColor))
+            {
+                float r = currentColor.X / 255f;
+                float g = currentColor.Y / 255f;
+                float b = currentColor.Z / 255f;
+
+                ImGui.Text(" "); BigIndent(); ImGui.Text("Adjust Color:");
+                ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X * 0.25f);
+                BigIndent(); bool changedR = ImGui.SliderFloat($"R##{stateKey}", ref r, 0f, 1f);
+                BigIndent(); bool changedG = ImGui.SliderFloat($"G##{stateKey}", ref g, 0f, 1f);
+                BigIndent(); bool changedB = ImGui.SliderFloat($"B##{stateKey}", ref b, 0f, 1f);
+                ImGui.PopItemWidth();
+
+                if (changedR || changedG || changedB)
+                {
+                    SetOrbitLineColor(celestials, new float3(r, g, b));
+                }
+            }
+
+            ImGui.Separator();
         }
 
         private static bool TryGetListGroupData(string listGroupKey, out CompendiumData? listGroupData)
