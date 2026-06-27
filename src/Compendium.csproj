@@ -134,8 +134,8 @@
       <HintPath>$(KSAFolder)\Brutal.Texture.Abstractions.dll</HintPath>
       <Private>false</Private>
     </Reference>
-                <Reference Include="Brutal.Stb.Texture">
-      <HintPath>$(KSAFolder)\Brutal.Stb.Texture.dll</HintPath>
+                <Reference Include="Brutal.Stb">
+      <HintPath>$(KSAFolder)\Brutal.Stb.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>

@@ -204,7 +204,22 @@ namespace Compendium
                 }
                 else
                 {
-                    siderealPeriod = bodyCelestial.BodyTemplate.Rotation.SiderealPeriod.ToNearest();
+                    //siderealPeriod = bodyCelestial.BodyTemplate.Rotation.SiderealPeriod.ToNearest();
+                    siderealPeriod = bodyCelestial.BodyTemplate.Rotation.SiderealPeriod.GetSeconds().ToString();
+                    if (double.TryParse(siderealPeriod, out double siderealSeconds))
+                    {
+                        if (siderealSeconds >= 259200) // More than 3 days
+                        {
+                            double siderealVal = siderealSeconds / 86400;
+                            siderealPeriod = $"{siderealVal:F2} days";
+                        }
+                        else if (siderealSeconds >= 3600) // Use hours
+                        {
+                            double siderealVal = siderealSeconds / 3600;
+                            siderealPeriod = $"{siderealVal:F2} hours";
+                        }
+                    }
+
                     if (siderealPeriod != null)
                     {
                         bodyJsonData.TidalLockText = new ImString("False");

@@ -2,7 +2,10 @@ using Brutal.ImGuiApi;
 using KSA;
 using Brutal.VulkanApi.Abstractions;
 using Brutal.VulkanApi;
-using Brutal.StbApi.Texture;
+//using Brutal.TextureApi;
+//using Brutal.TextureApi.Stb;
+//using System.IO;
+
 using RenderCore;
 
 namespace Compendium
@@ -15,7 +18,7 @@ public partial class Compendium
         {
                     var assemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) ?? "";
                     var photoPath = Path.Combine(assemblyPath, "..", "Compendium", "Photos", "compendium-logo-1.png");
-                    var texture = new TextureAsset(photoPath, new(new StbTexture.LoadSettings { ForceChannels = 4 }));
+                    var texture = new TextureAsset(photoPath, new Brutal.TextureApi.Stb.Loader.LoadSettings { ForceChannels = 4 });
                     var renderer = KSA.Program.GetRenderer();
                     SimpleVkTexture vkTex;
                     

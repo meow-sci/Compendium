@@ -668,17 +668,17 @@ namespace Compendium
                         // Gets the current vessel ID as a string if there is a controlled vehicle.
                         string thisVehicle = Program.ControlledVehicle != null ? Program.ControlledVehicle.Id.ToString() : "None";
 
-                        // Makes a button to set the current celestial as the Target for the currently controlled vehicle, if there is one.
-                        ImString targetText = new ImString($"Select {celestial.Id} as Target");
-                        if (ImGui.Button(targetText))
+                        // `ImGuiDisabledScope` disables all enclosed UI until the scope exits.
+                        bool disableTargetSelection = thisVehicle == "None";
+                        using (new ImGuiDisabledScope(disableTargetSelection))
                         {
-                            // Toggles setting or unsetting the target for the controlled vehicle
-                            if (thisVehicle != "None")
+                            ImString targetText = new ImString($"Select {celestial.Id} as Target");
+                            if (ImGui.Button(targetText))
                             {
                                 if (!selectedCelestial.TargetOfControlledVehicle)
                                 { KSA.Universe.SetTargetCommand(thisVehicle, celestial.Id.ToString()); }
                                 else
-                                {  KSA.Universe.UnsetTargetCommand(thisVehicle); }
+                                { KSA.Universe.UnsetTargetCommand(thisVehicle); }
                             }
                         }
 
@@ -1116,6 +1116,7 @@ namespace Compendium
                 ImGui.EndChild(); // End side pane
 
                 ImGui.End();
+            
             }
             catch (Exception ex)
             {
@@ -1123,6 +1124,7 @@ namespace Compendium
                 Console.WriteLine($"Stack trace: {ex.StackTrace}");
                 
                 // Try to clean up ImGui state on exception
+
                 try { ImGui.EndChild(); } catch { }
                 try { ImGui.End(); } catch { }
             }
