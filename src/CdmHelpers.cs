@@ -132,8 +132,6 @@ namespace Compendium
             }
 
             celestial.ShowOrbit = mode != OrbitVisibilityMode.Off;
-            CompendiumData? data = GetBodyJsonData(celestial);
-            celestial.DrawnUiBox = mode == OrbitVisibilityMode.Off ? (data?.DrawnUiBox ?? false) : true;
         }
 
         private void DrawOrbitModeButtons(string idPrefix, OrbitVisibilityMode currentMode, Action<OrbitVisibilityMode> applyMode)

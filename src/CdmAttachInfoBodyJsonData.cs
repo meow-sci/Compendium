@@ -97,7 +97,6 @@ namespace Compendium
 
                 //Console.WriteLine($"Compendium: Attaching bodyJson data to celestial body: {bodyId}");
                 bodyJsonData.OrbitLineMode = TryGetOrbitLineMode(bodyCelestial);
-                bodyJsonData.DrawnUiBox = bodyCelestial.DrawnUiBox;
                 // Mean radius in kilometers
                 bodyJsonData.RadiusKm = (float)(bodyCelestial.MeanRadius / 1000f);
                 // Mass values
@@ -266,10 +265,10 @@ namespace Compendium
                 // Atmosphere height & SL pressure
                 if (bodyCelestial.BodyTemplate.AtmosphereReference != null)
                 {
-                    string atmosphereHeightKm = bodyCelestial.BodyTemplate.AtmosphereReference.Physical.Height.ToNearest();
+                    string atmosphereHeightKm = bodyCelestial.BodyTemplate.AtmosphereReference.Physical.Height.InKilometers().ToString("N1");
                     bodyJsonData.AtmosphereHeightText = new ImString($"Atmosphere Height: {atmosphereHeightKm}");
 
-                    bodyJsonData.SLPressureText = new ImString("Sea Level Pressure: " + bodyCelestial.BodyTemplate.AtmosphereReference.Physical.SeaLevelPressure.ToNearest());
+                    bodyJsonData.SLPressureText = new ImString("Sea Level Pressure: " + bodyCelestial.BodyTemplate.AtmosphereReference.Physical.SeaLevelPressure.Atm.ToString("F3") + " atm");
                 }
             }    
         }

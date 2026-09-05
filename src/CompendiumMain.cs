@@ -1,4 +1,5 @@
 ﻿using Brutal.ImGuiApi;
+using Brutal.ImGuiApi.Extensions;
 using Brutal.Numerics;
 using KSA;
 using ModMenu;
@@ -36,6 +37,11 @@ namespace Compendium
         private static StellarBody? worldSun = Universe.WorldSun;
         private static readonly float2 defaultWindowPos = new float2(700f, 350f);
         private static readonly float2 defaultWindowSize = new float2(1500f, 1200f);
+        private static Celestial? atmosphereGraphCelestial;
+        private static bool showAtmosphereDensityWindow;
+        private static float atmosphereGraphSelectedAltitudeKm;
+        private static int atmosphereGraphPressureUnitIndex = 1;
+        private static readonly float2 atmosphereGraphWindowSize = new float2(760f, 900f);
 
 
         [ModMenuEntry("Compendium Window")]
@@ -56,6 +62,7 @@ namespace Compendium
             ImGui.SetNextWindowSize(defaultWindowSize, ImGuiCond.FirstUseEver);
 
             Celestial? selectedCelestial = null;
+            bool consoleStylePushed = false;
             try
             {
                 if (!CompendiumWindow)
@@ -65,7 +72,7 @@ namespace Compendium
                 // Wait for universe to be fully loaded
                 if (Universe.WorldSun == null)
                 {
-                    if (ImGui.Begin("Compendium"))
+                    if (ImGui.Begin("Compendium", ref CompendiumWindow))
                     {
                         ImGui.Text("Waiting for universe to load...");
                         ImGui.End();
@@ -128,11 +135,15 @@ namespace Compendium
                 }
 
                 ImGui.SetNextWindowBgAlpha(windowOpacity);
-                if (!ImGui.Begin("Compendium"))
+                if (!ImGui.Begin("Compendium", ref CompendiumWindow))
                 {
                     ImGui.End();
                     return;
                 }
+
+                ConsoleStyle.PushWidgetStyle();
+                consoleStylePushed = true;
+                DrawAtmosphereDensityGraphPopup();
                 
                 // Get available window size
                 float2 windowSize = ImGui.GetContentRegionAvail();
@@ -230,7 +241,8 @@ namespace Compendium
                                 foreach (var v in vessels)
                             {
                                 foundVessels = true;
-                                bool isCurrent = Program.ControlledVehicle != null && Program.ControlledVehicle.Id == v.Id;
+                                bool isCurrent = Program.ControlledVehicle != null && Program.ControlledVehicle.Id.ToString() == v.Id;
+                                
                                 if (isCurrent) ImGui.PushStyleColor(ImGuiCol.Text, new float4(0.4f, 1.0f, 0.4f, 1.0f));
                                 ImString vesselLabel = new ImString(v.Id.ToString());
                                 if (ImGui.Selectable(vesselLabel))
@@ -361,7 +373,7 @@ namespace Compendium
                 }
 
                 // Pop small font and restore large font
-                ImGui.PopFont();
+                PopTheFont();
                 PushTheFont(1);
 
                 ImGui.Separator();
@@ -405,6 +417,8 @@ namespace Compendium
                     selectedCategoryIndex = -2;
                     PrintTermsCategory();
                     ImGui.EndChild(); // End side pane
+                    ConsoleStyle.PopWidgetStyle();
+                    consoleStylePushed = false;
                     ImGui.End();
                     return;
                 }
@@ -476,6 +490,8 @@ namespace Compendium
 
 
                     ImGui.EndChild(); // End side pane
+                    ConsoleStyle.PopWidgetStyle();
+                    consoleStylePushed = false;
                     ImGui.End();
                     return;
                 }
@@ -612,7 +628,18 @@ namespace Compendium
                                 {
                                     // Atmosphere height
                                     if (!string.IsNullOrEmpty(bodyJson.AtmosphereHeightText))
-                                    { ImGui.Text(bodyJson.AtmosphereHeightText); }
+                                    {
+                                        ImGui.Text(bodyJson.AtmosphereHeightText);
+                                        ImGui.SameLine();
+                                        ImGui.PushID(new ImString($"DensityGraph_{celestial.Id}"));
+                                        if (ConsoleWidgets.Button("DENSITY GRAPH"))
+                                        {
+                                            atmosphereGraphCelestial = celestial as Celestial;
+                                            showAtmosphereDensityWindow = atmosphereGraphCelestial != null;
+                                            atmosphereGraphSelectedAltitudeKm = 0f;
+                                        }
+                                        ImGui.PopID();
+                                    }
                                     else
                                     { ImGui.Text("Has Atmosphere"); }
                                     // Sea Level Pressure
@@ -635,8 +662,8 @@ namespace Compendium
                             { ImGui.Text("Sphere of Influence: N/A"); }
 
                             // current speed
-
-                            ImGui.Text("Current Speed: " + DistanceReference.FromMeters(celestial.OrbitalSpeed).ToNearestPerSecond());
+                            // ImGui.Text("Current Speed: " + DistanceReference.FromMeters(celestial.OrbitalSpeed).ToNearestPerSecond());
+                            ImGui.Text("Current Speed: " + DistanceReference.FromMeters(celestial.OrbitalSpeed).InKilometers().ToString("N2") + " km/s");
   
                             PopTheFont();
                         }
@@ -887,7 +914,7 @@ namespace Compendium
                     PushTheFont(1.9f);
                     ImString categoryTitle = new ImString($"{selectedCategoryKey}");
                     ImGui.Text(categoryTitle);
-                    ImGui.PopFont();
+                    PopTheFont();
                     DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
 
                     // Now makes Buttons that can < on > and < off > all orbit lines for all bodies in this category
@@ -996,7 +1023,7 @@ namespace Compendium
                     {
                         DrawOrbitColorDropdownContents(categoryColorStateKey, categoryCelestials);
                     }
-                    ImGui.PopFont();
+                    PopTheFont();
 
                     // Add this at class level (private static):
                     // private static Dictionary<string, (float r, float g, float b)>? categoryOrbitColorDict;
@@ -1026,7 +1053,7 @@ namespace Compendium
                                 ImGui.Text(" ");
                             }
                         }
-                        ImGui.PopFont();
+                        PopTheFont();
                     }
                 }
                 if (showWindow == "Group" && !string.IsNullOrWhiteSpace(selectedOrbitGroupKey))
@@ -1034,7 +1061,7 @@ namespace Compendium
                     PushTheFont(1.9f);
                     ImString groupTitle = new ImString($"{selectedOrbitGroupKey}");
                     ImGui.Text(groupTitle);
-                    ImGui.PopFont();
+                    PopTheFont();
 
                     if (!string.IsNullOrWhiteSpace(selectedOrbitGroupParentBodyKey))
                     {
@@ -1084,7 +1111,7 @@ namespace Compendium
                         DrawOrbitColorDropdownContents(groupColorStateKey, selectedGroupCelestials);
                         ImGui.Text(" ");
                     }
-                    ImGui.PopFont();
+                    PopTheFont();
 
                     CompendiumData? groupData = null;
                     TryGetListGroupData(selectedOrbitGroupKey, out groupData);
@@ -1111,10 +1138,12 @@ namespace Compendium
                         ImGui.Text(" ");
                     }
 
-                    ImGui.PopFont();
+                    PopTheFont();
                 }
                 ImGui.EndChild(); // End side pane
 
+                ConsoleStyle.PopWidgetStyle();
+                consoleStylePushed = false;
                 ImGui.End();
             
             }
@@ -1125,10 +1154,153 @@ namespace Compendium
                 
                 // Try to clean up ImGui state on exception
 
+                if (consoleStylePushed)
+                {
+                    try { ConsoleStyle.PopWidgetStyle(); } catch { }
+                }
                 try { ImGui.EndChild(); } catch { }
                 try { ImGui.End(); } catch { }
             }
 
+        }
+
+        private static void DrawAtmosphereDensityGraphPopup()
+        {
+            if (!showAtmosphereDensityWindow || atmosphereGraphCelestial == null)
+            {
+                return;
+            }
+
+            var atmosphere = atmosphereGraphCelestial.BodyTemplate.AtmosphereReference?.Physical;
+            if (atmosphere == null)
+            {
+                return;
+            }
+
+            ImGui.SetNextWindowSize(atmosphereGraphWindowSize, ImGuiCond.FirstUseEver);
+            if (!ImGui.Begin("Atmospheric Density", ref showAtmosphereDensityWindow, ImGuiWindowFlags.None))
+            {
+                ImGui.End();
+                return;
+            }
+
+            double cutoffMeters = atmosphere.Height.InMeters();
+            const int sampleCount = 101;
+            var densities = new float[sampleCount];
+            var pressures = new float[sampleCount];
+            float maximumDensity = 0f;
+            float maximumPressure = 0f;
+
+            for (int index = 0; index < sampleCount; index++)
+            {
+                double altitudeMeters = cutoffMeters * index / (sampleCount - 1);
+                float density = (float)atmosphere.GetAtmosphericDensityAtAltitude(altitudeMeters);
+                float pressure = ConvertPressureFromPascals((float)atmosphere.GetAtmosphericPressureAtAltitude(altitudeMeters), atmosphereGraphPressureUnitIndex);
+                densities[index] = density;
+                pressures[index] = pressure;
+                maximumDensity = Math.Max(maximumDensity, density);
+                maximumPressure = Math.Max(maximumPressure, pressure);
+            }
+
+            string cutoffKilometers = atmosphere.Height.InKilometers().ToString("N1");
+            float cutoffKilometersValue = (float)atmosphere.Height.InKilometers();
+            atmosphereGraphSelectedAltitudeKm = Math.Clamp(atmosphereGraphSelectedAltitudeKm, 0f, cutoffKilometersValue);
+            float selectedDensity = (float)atmosphere.GetAtmosphericDensityAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000d);
+            float selectedPressure = ConvertPressureFromPascals((float)atmosphere.GetAtmosphericPressureAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000d), atmosphereGraphPressureUnitIndex);
+            ImGui.Text($"{GetDisplayBodyId(atmosphereGraphCelestial.Id)} atmosphere");
+            ImGui.Text($"Height (km): 0 to {cutoffKilometers}");
+            ImGui.Text($"Density (kg/m^3): 0 to {maximumDensity:N4}");
+            ImGui.Separator();
+            ImGui.SliderFloat("Selected altitude (km)", ref atmosphereGraphSelectedAltitudeKm, 0f, cutoffKilometersValue);
+            ImGui.Text($"Selected: {atmosphereGraphSelectedAltitudeKm:N3} km   Density: {selectedDensity:N6} kg/m^3");
+            ImGui.Separator();
+            DrawAtmosphereChart("AtmosphereDensityCanvas", densities, cutoffKilometersValue, maximumDensity, atmosphereGraphSelectedAltitudeKm, selectedDensity, "Density (kg/m^3)", new ImColor8(100, 222, 170, 255));
+            ImGui.Text("Pressure units:");
+            ImGui.SameLine();
+            string[] pressureUnits = { "Pascal", "kPa", "atm", "bar", "psi", "mmHg" };
+            ImGui.Combo("##PressureUnits", ref atmosphereGraphPressureUnitIndex, pressureUnits, pressureUnits.Length);
+            ImGui.Text($"Selected pressure: {selectedPressure:N6} {pressureUnits[atmosphereGraphPressureUnitIndex]}");
+            DrawAtmosphereChart("AtmospherePressureCanvas", pressures, cutoffKilometersValue, maximumPressure, atmosphereGraphSelectedAltitudeKm, selectedPressure, $"Pressure ({pressureUnits[atmosphereGraphPressureUnitIndex]})", new ImColor8(102, 180, 255, 255));
+
+            ImGui.End();
+        }
+
+        private static float ConvertPressureFromPascals(float pascals, int unitIndex)
+        {
+            return unitIndex switch
+            {
+                0 => pascals,
+                1 => pascals / 1_000f,
+                2 => pascals / 101_325f,
+                3 => pascals / 100_000f,
+                4 => pascals / 6_894.757f,
+                5 => pascals / 133.322387f,
+                _ => pascals
+            };
+        }
+
+        private static void DrawAtmosphereChart(string canvasId, float[] values, float cutoffKilometers, float maximumValue, float selectedAltitudeKilometers, float selectedValue, string verticalAxisTitle, ImColor8 curveColor)
+        {
+            float2 canvasPosition = ImGui.GetCursorScreenPos();
+            float2 canvasSize = new float2(ImGui.GetContentRegionAvail().X, 270f);
+            const float leftMargin = 80f;
+            const float topMargin = 20f;
+            const float rightMargin = 20f;
+            const float bottomMargin = 55f;
+            float2 plotTopLeft = new float2(canvasPosition.X + leftMargin, canvasPosition.Y + topMargin);
+            float2 plotBottomRight = new float2(canvasPosition.X + canvasSize.X - rightMargin, canvasPosition.Y + canvasSize.Y - bottomMargin);
+            float plotWidth = plotBottomRight.X - plotTopLeft.X;
+            float plotHeight = plotBottomRight.Y - plotTopLeft.Y;
+            float valueRange = maximumValue > 0f ? maximumValue : 1f;
+
+            ImGui.InvisibleButton(canvasId, canvasSize, ImGuiButtonFlags.None);
+            var drawList = ImGui.GetWindowDrawList();
+            var panelColor = new ImColor8(18, 28, 36, 255);
+            var gridColor = new ImColor8(57, 78, 88, 255);
+            var axisColor = new ImColor8(190, 210, 220, 255);
+            var labelColor = new ImColor8(210, 220, 226, 255);
+            var selectionColor = new ImColor8(255, 202, 92, 255);
+
+            drawList.AddRectFilled(canvasPosition, new float2(canvasPosition.X + canvasSize.X, canvasPosition.Y + canvasSize.Y), panelColor, 0f, ImDrawFlags.None);
+
+            const int tickCount = 5;
+            for (int tick = 0; tick <= tickCount; tick++)
+            {
+                float fraction = tick / (float)tickCount;
+                float x = plotTopLeft.X + plotWidth * fraction;
+                float y = plotBottomRight.Y - plotHeight * fraction;
+                drawList.AddLine(new float2(x, plotTopLeft.Y), new float2(x, plotBottomRight.Y), gridColor, 1f);
+                drawList.AddLine(new float2(plotTopLeft.X, y), new float2(plotBottomRight.X, y), gridColor, 1f);
+
+                string heightLabel = (cutoffKilometers * fraction).ToString("N1");
+                string valueLabel = (valueRange * fraction).ToString("N3");
+                drawList.AddText(new float2(x - 12f, plotBottomRight.Y + 10f), labelColor, new ImString(heightLabel));
+                drawList.AddText(new float2(canvasPosition.X + 4f, y - ImGui.GetFontSize() * 0.5f), labelColor, new ImString(valueLabel));
+            }
+
+            drawList.AddLine(plotTopLeft, new float2(plotTopLeft.X, plotBottomRight.Y), axisColor, 2f);
+            drawList.AddLine(new float2(plotTopLeft.X, plotBottomRight.Y), plotBottomRight, axisColor, 2f);
+            drawList.AddText(new float2(plotTopLeft.X + plotWidth * 0.5f - 65f, canvasPosition.Y + canvasSize.Y - 24f), labelColor, new ImString("Height above surface (km)"));
+            ImString axisTitle = new ImString(verticalAxisTitle);
+            float axisTitleWidth = ImGui.CalcTextSize(axisTitle).X;
+            drawList.AddText(new float2(plotTopLeft.X + (plotWidth - axisTitleWidth) * 0.5f, canvasPosition.Y + 2f), labelColor, axisTitle);
+
+            for (int index = 1; index < values.Length; index++)
+            {
+                float previousValue = Math.Clamp(values[index - 1], 0f, valueRange);
+                float value = Math.Clamp(values[index], 0f, valueRange);
+                float previousX = plotTopLeft.X + plotWidth * (index - 1) / (values.Length - 1);
+                float x = plotTopLeft.X + plotWidth * index / (values.Length - 1);
+                float previousY = plotBottomRight.Y - plotHeight * previousValue / valueRange;
+                float y = plotBottomRight.Y - plotHeight * value / valueRange;
+                drawList.AddLine(new float2(previousX, previousY), new float2(x, y), curveColor, 2f);
+            }
+
+            float selectedX = plotTopLeft.X + plotWidth * selectedAltitudeKilometers / cutoffKilometers;
+            float selectedY = plotBottomRight.Y - plotHeight * Math.Clamp(selectedValue, 0f, valueRange) / valueRange;
+            drawList.AddLine(new float2(selectedX, plotTopLeft.Y), new float2(selectedX, plotBottomRight.Y), selectionColor, 1.5f);
+            drawList.AddLine(new float2(selectedX - 5f, selectedY), new float2(selectedX + 5f, selectedY), selectionColor, 2f);
+            drawList.AddLine(new float2(selectedX, selectedY - 5f), new float2(selectedX, selectedY + 5f), selectionColor, 2f);
         }
 
         [StarMapImmediateLoad]

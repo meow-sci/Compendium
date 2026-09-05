@@ -35,7 +35,7 @@ namespace Compendium
             Console.WriteLine("ModLibrary.LoadAll patched by Compendium.");
         }
 
-        [HarmonyPatch(typeof(Astronomical), nameof(Astronomical.ShouldDrawLines), new[] { typeof(Astronomical), typeof(Viewport), typeof(Orbit) })]
+        [HarmonyPatch(typeof(Astronomical), nameof(Astronomical.ShouldDrawLines), new[] { typeof(Astronomical), typeof(IGameViewport), typeof(Orbit) })]
         [HarmonyPostfix]
         public static void ShouldDrawLinesPostfix(Astronomical astronomical, ref bool __result)
         {
