@@ -266,7 +266,7 @@ namespace Compendium
                 if (bodyCelestial.BodyTemplate.AtmosphereReference != null)
                 {
                     string atmosphereHeightKm = bodyCelestial.BodyTemplate.AtmosphereReference.Physical.Height.InKilometers().ToString("N1");
-                    bodyJsonData.AtmosphereHeightText = new ImString($"Atmosphere Height: {atmosphereHeightKm}");
+                    bodyJsonData.AtmosphereHeightText = new ImString($"Atmosphere Height: {atmosphereHeightKm} km");
 
                     bodyJsonData.SLPressureText = new ImString("Sea Level Pressure: " + bodyCelestial.BodyTemplate.AtmosphereReference.Physical.SeaLevelPressure.Atm.ToString("F3") + " atm");
                 }

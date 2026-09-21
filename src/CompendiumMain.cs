@@ -41,7 +41,7 @@ namespace Compendium
         private static bool showAtmosphereDensityWindow;
         private static float atmosphereGraphSelectedAltitudeKm;
         private static int atmosphereGraphPressureUnitIndex = 1;
-        private static readonly float2 atmosphereGraphWindowSize = new float2(760f, 900f);
+        private static readonly float2 atmosphereGraphWindowSize = new float2(1250f, 1000f);
 
 
         [ModMenuEntry("Compendium Window")]
@@ -564,14 +564,14 @@ namespace Compendium
                         // Makes a button to toggle showing or hiding a subsection for displaying the orbital properties of the selected celestial object.
                         // Always starts hidden until button is clicked.
                         bool showOrbitalProperties = false;
-                        ImString orbitalHeader = new ImString("More Orbital Properties");
+                        ImString orbitalHeader = new ImString("More Celestial Properties");
                         if (ImGui.CollapsingHeader(orbitalHeader))
                         {
                             showOrbitalProperties = true;
                         }
                         if (showOrbitalProperties)
                         {
-                            // Makes a smaller font size for the orbital properties section
+                            // Makes a smaller font size for the celestial properties section
                             PushTheFont(1.0f);
                             ImGui.Text(" ");             
                             // Axial Tilt
@@ -621,40 +621,6 @@ namespace Compendium
                                 { ImGui.Text(bodyJson.OrbitTypeText); }
                             }
 
-                            // Atmosphere Height & Sea Level Pressure
-                            if (bodyJson != null)
-                            {
-                                if (bodyJson.HasAtmosphere)
-                                {
-                                    // Atmosphere height
-                                    if (!string.IsNullOrEmpty(bodyJson.AtmosphereHeightText))
-                                    {
-                                        ImGui.Text(bodyJson.AtmosphereHeightText);
-                                        ImGui.SameLine();
-                                        ImGui.PushID(new ImString($"DensityGraph_{celestial.Id}"));
-                                        if (ConsoleWidgets.Button("DENSITY GRAPH"))
-                                        {
-                                            atmosphereGraphCelestial = celestial as Celestial;
-                                            showAtmosphereDensityWindow = atmosphereGraphCelestial != null;
-                                            atmosphereGraphSelectedAltitudeKm = 0f;
-                                        }
-                                        ImGui.PopID();
-                                    }
-                                    else
-                                    { ImGui.Text("Has Atmosphere"); }
-                                    // Sea Level Pressure
-                                    if (!string.IsNullOrEmpty(bodyJson.SLPressureText))
-                                    { ImGui.Text(bodyJson.SLPressureText); }
-                                    else
-                                    { ImGui.Text("Sea Level Pressure: N/A"); }
-
-                                }
-                                else
-                                { ImGui.Text("Atmosphere: None"); }
-                            }
-
-
-
                             // Sphere of Influence
                             if (bodyJson != null && !string.IsNullOrEmpty(bodyJson.SphereOfInfluenceText))
                             { ImGui.Text(bodyJson.SphereOfInfluenceText); }
@@ -664,6 +630,35 @@ namespace Compendium
                             // current speed
                             // ImGui.Text("Current Speed: " + DistanceReference.FromMeters(celestial.OrbitalSpeed).ToNearestPerSecond());
                             ImGui.Text("Current Speed: " + DistanceReference.FromMeters(celestial.OrbitalSpeed).InKilometers().ToString("N2") + " km/s");
+
+                            ImGui.Separator();
+                            // Atmosphere properties
+                            if (bodyJson != null)
+                            {
+                                if (bodyJson.HasAtmosphere)
+                                {
+                                    if (!string.IsNullOrEmpty(bodyJson.AtmosphereHeightText))
+                                    { ImGui.Text(bodyJson.AtmosphereHeightText); }
+                                    else
+                                    { ImGui.Text("Has Atmosphere"); }
+
+                                    if (!string.IsNullOrEmpty(bodyJson.SLPressureText))
+                                    { ImGui.Text(bodyJson.SLPressureText); }
+                                    else
+                                    { ImGui.Text("Sea Level Pressure: N/A"); }
+
+                                    ImGui.PushID(new ImString($"DensityGraph_{celestial.Id}"));
+                                    if (ConsoleWidgets.Button("ATMOSPHERIC GRAPHS"))
+                                    {
+                                        atmosphereGraphCelestial = celestial as Celestial;
+                                        showAtmosphereDensityWindow = atmosphereGraphCelestial != null;
+                                        atmosphereGraphSelectedAltitudeKm = 0f;
+                                    }
+                                    ImGui.PopID();
+                                }
+                                else
+                                { ImGui.Text("Atmosphere: None"); }
+                            }
   
                             PopTheFont();
                         }
@@ -1178,7 +1173,7 @@ namespace Compendium
             }
 
             ImGui.SetNextWindowSize(atmosphereGraphWindowSize, ImGuiCond.FirstUseEver);
-            if (!ImGui.Begin("Atmospheric Density", ref showAtmosphereDensityWindow, ImGuiWindowFlags.None))
+            if (!ImGui.Begin("Atmospheric Properties", ref showAtmosphereDensityWindow, ImGuiWindowFlags.None))
             {
                 ImGui.End();
                 return;
@@ -1243,7 +1238,7 @@ namespace Compendium
         {
             float2 canvasPosition = ImGui.GetCursorScreenPos();
             float2 canvasSize = new float2(ImGui.GetContentRegionAvail().X, 270f);
-            const float leftMargin = 80f;
+            const float leftMargin = 110f;
             const float topMargin = 20f;
             const float rightMargin = 20f;
             const float bottomMargin = 55f;
@@ -1273,9 +1268,11 @@ namespace Compendium
                 drawList.AddLine(new float2(plotTopLeft.X, y), new float2(plotBottomRight.X, y), gridColor, 1f);
 
                 string heightLabel = (cutoffKilometers * fraction).ToString("N1");
-                string valueLabel = (valueRange * fraction).ToString("N3");
+                string valueLabel = (valueRange * fraction).ToString("N2");
                 drawList.AddText(new float2(x - 12f, plotBottomRight.Y + 10f), labelColor, new ImString(heightLabel));
-                drawList.AddText(new float2(canvasPosition.X + 4f, y - ImGui.GetFontSize() * 0.5f), labelColor, new ImString(valueLabel));
+                ImString valueLabelText = new ImString(valueLabel);
+                float valueLabelWidth = ImGui.CalcTextSize(valueLabelText).X;
+                drawList.AddText(new float2(plotTopLeft.X - valueLabelWidth - 8f, y - ImGui.GetFontSize() * 0.5f), labelColor, valueLabelText);
             }
 
             drawList.AddLine(plotTopLeft, new float2(plotTopLeft.X, plotBottomRight.Y), axisColor, 2f);
