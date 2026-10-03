@@ -104,6 +104,10 @@
     <Reference Include="Brutal.Core.Numerics">
       <HintPath>$(KSAFolder)\Brutal.Core.Numerics.dll</HintPath>
     </Reference>
+    <Reference Include="BepuUtilities">
+      <HintPath>$(KSAFolder)\BepuUtilities.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="Brutal.Core.Strings">
       <HintPath>$(KSAFolder)\Brutal.Core.Strings.dll</HintPath>
     </Reference>

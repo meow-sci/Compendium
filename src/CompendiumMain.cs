@@ -686,48 +686,7 @@ namespace Compendium
                             DrawOrbitColorDropdownContents(celestialColorStateKey, new[] { celestial });
                         }
 
-                        // Gets the current vessel ID as a string if there is a controlled vehicle.
-                        string thisVehicle = Program.ControlledVehicle != null ? Program.ControlledVehicle.Id.ToString() : "None";
-
-                        // `ImGuiDisabledScope` disables all enclosed UI until the scope exits.
-                        bool disableTargetSelection = thisVehicle == "None";
-                        using (new ImGuiDisabledScope(disableTargetSelection))
-                        {
-                            ImString targetText = new ImString($"Select {GetBodyDisplayName(celestial)} as Target");
-                            if (ImGui.Button(targetText))
-                            {
-                                if (!selectedCelestial.TargetOfControlledVehicle)
-                                { KSA.Universe.SetTargetCommand(thisVehicle, celestial.Id.ToString()); }
-                                else
-                                { KSA.Universe.UnsetTargetCommand(thisVehicle); }
-                            }
-                        }
-
-                        // If the selected celestial is targeted by the controlled vehicle show indicator text
-                        if (thisVehicle != "None" && selectedCelestial.TargetOfControlledVehicle)
-                        {
-                            ImGui.SameLine();
-                            //ImString targetIndicatorText = new ImString(" >> Current Target <<");
-                            //ImGui.TextColored(new Brutal.Numerics.float4(0.0f, 1.0f, 0.0f, 1.0f), targetIndicatorText);
-                            // test indicator button colored red, which does nothing
-                            ImGui.SameLine();
-                            ImString colorbuttontext = new ImString(" >> Current Target << ##colorbutton");
-                            ImGui.PushStyleColor(ImGuiCol.Button, new Brutal.Numerics.float4(0.0f, 0.0f, 0.0f, 1.0f));
-                            ImGui.PushStyleColor(ImGuiCol.Text, new Brutal.Numerics.float4(0.0f, 1.0f, 0.0f, 1.0f));
-                            if (ImGui.Button(colorbuttontext))
-                            {
-                                KSA.Universe.UnsetTargetCommand(thisVehicle);
-                            }
-                            ImGui.PopStyleColor();
-                            ImGui.PopStyleColor();
-                        }
-                        // If there is no controlled vehicle, show indicator text
-                        else if (thisVehicle == "None")
-                        {
-                            ImGui.SameLine();
-                            ImString noVesselText = new ImString(" ( No Controlled Vehicle )");
-                            ImGui.TextColored(new Brutal.Numerics.float4(1.0f, 1.0f, 0.0f, 1.0f), noVesselText);
-                        }
+                        DrawTargetControls(celestial);
 
                         // If the selectedcelestial has moons/children, make a button which toggles all of their orbit lines on/off
                         if (children != null && children.Count > 0)
@@ -1282,7 +1241,7 @@ namespace Compendium
                 dllDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
                 LoadSettings();
 
-                // Enable Harmony patches used for orbit visibility overrides
+                // Enable orbit visibility and root navigation targeting patches.
                 Patcher.Patch();
 
                 // Loads fonts from the Fonts folder

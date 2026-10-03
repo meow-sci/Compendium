@@ -17,10 +17,12 @@ namespace Compendium
 
             Console.WriteLine("Patching Compendium...");
             _harmony.PatchAll(typeof(Patcher).Assembly);
+            RootNavigationTargets.PatchesInstalled = true;
         }
 
         public static void Unload()
         {
+            RootNavigationTargets.Unload();
             if (_harmony != null)
             {
                 _harmony.UnpatchAll(_harmony.Id);

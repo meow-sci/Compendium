@@ -271,6 +271,7 @@ namespace Compendium
             {
                 Universe.MoveCameraTo(star);
             }
+            DrawTargetControls(star);
             ImGui.Text(" ");
 
             if (bodyJson != null)

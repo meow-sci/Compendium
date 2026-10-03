@@ -80,6 +80,97 @@ namespace Compendium
             return string.IsNullOrWhiteSpace(displayName) ? astronomical.Id : displayName;
         }
 
+        private static void DrawTargetControls(Astronomical astronomical)
+        {
+            bool rootTarget = RootNavigationTargets.Supports(astronomical);
+            if (astronomical is not IOrbiter && !rootTarget)
+            {
+                return;
+            }
+
+            var vehicle = Program.ControlledVehicle;
+            bool isTarget = vehicle != null && (rootTarget
+                ? RootNavigationTargets.GetTarget(vehicle) == astronomical
+                : vehicle.Target == astronomical);
+            using (new ImGuiDisabledScope(vehicle == null || (rootTarget && !RootNavigationTargets.PatchesInstalled)))
+            {
+                if (ImGui.Button(new ImString($"Select {GetBodyDisplayName(astronomical)} as Target")) && vehicle != null)
+                {
+                    if (isTarget)
+                    {
+                        if (rootTarget)
+                        {
+                            RootNavigationTargets.QueueSelection(vehicle, null);
+                        }
+                        else
+                        {
+                            Universe.UnsetTargetCommand(vehicle.Id.ToString());
+                        }
+                    }
+                    else if (rootTarget)
+                    {
+                        RootNavigationTargets.QueueSelection(vehicle, astronomical);
+                    }
+                    else
+                    {
+                        Universe.SetTargetCommand(vehicle.Id.ToString(), astronomical.Id.ToString());
+                    }
+                }
+            }
+
+            if (vehicle != null && isTarget)
+            {
+                ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.Button, new float4(0.0f, 0.0f, 0.0f, 1.0f));
+                ImGui.PushStyleColor(ImGuiCol.Text, new float4(0.0f, 1.0f, 0.0f, 1.0f));
+                if (ImGui.Button(new ImString(" >> Current Target << ##colorbutton")))
+                {
+                    if (rootTarget)
+                    {
+                        RootNavigationTargets.QueueSelection(vehicle, null);
+                    }
+                    else
+                    {
+                        Universe.UnsetTargetCommand(vehicle.Id.ToString());
+                    }
+                }
+                ImGui.PopStyleColor();
+                ImGui.PopStyleColor();
+            }
+            else if (vehicle == null)
+            {
+                ImGui.SameLine();
+                ImGui.TextColored(new float4(1.0f, 1.0f, 0.0f, 1.0f), new ImString(" ( No Controlled Vehicle )"));
+            }
+
+            if (rootTarget)
+            {
+                ImGui.TextWrapped(RootNavigationTargets.PatchesInstalled
+                    ? "Navigation target only (session only): native TGT frame, rotation hold, and Toward/Away tracking. No orbit, rendezvous planning, Align, or Target Track."
+                    : "Root navigation targeting unavailable: Compendium's Harmony patches did not load. See the game log.");
+                ImGui.TextWrapped("Root closest approach is an estimate over the next 10 game years of available coast patches (no planned burns). Sampling can miss brief encounters; a minimum at the search boundary is not a predicted flyby.");
+                if (vehicle != null && RootNavigationTargets.GetTarget(vehicle) == astronomical)
+                {
+                    using (new ImGuiDisabledScope(!vehicle.IsControllable))
+                    {
+                        if (ImGui.Button(new ImString("Track Toward##rootTarget")))
+                        {
+                            RootNavigationTargets.QueueTracking(vehicle, astronomical, FlightComputerAttitudeTrackTarget.Toward);
+                        }
+                        ImGui.SameLine();
+                        if (ImGui.Button(new ImString("Track Away##rootTarget")))
+                        {
+                            RootNavigationTargets.QueueTracking(vehicle, astronomical, FlightComputerAttitudeTrackTarget.Away);
+                        }
+                    }
+                    if (!vehicle.IsControllable)
+                    {
+                        ImGui.TextWrapped("Attitude tracking requires a controllable vehicle.");
+                    }
+                }
+            }
+        }
+
         private static string GetBodyDisplayName(string bodyKey)
         {
             if (string.IsNullOrWhiteSpace(bodyKey))
