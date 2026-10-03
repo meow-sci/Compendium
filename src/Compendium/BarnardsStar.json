@@ -1,0 +1,47 @@
+{
+  "CompendiumJson": "True",
+  "BarnardsStar": {
+    "ListGroupsData": {
+      "Planets": {
+        "CatText": "Planets of Barnard's Star. All four confirmed planets are small rocky worlds packed into orbits of under seven days, far too close and hot to be habitable.",
+        "CatWikipediaUrl": "Barnard%27s_Star"
+      }
+    },
+    "BarnardsStarb": {
+      "DisplayName": "Barnard's Star b",
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Barnard's Star b is a rocky planet of at least about 0.3 Earth masses with a 3.15-day orbit. Announced in 2024, it was the first planet confirmed around Barnard's Star.",
+      "WikipediaUrl": "Barnard%27s_Star_b"
+    },
+    "BarnardsStarc": {
+      "DisplayName": "Barnard's Star c",
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Barnard's Star c is a rocky planet of at least about 0.34 Earth masses with a 4.12-day orbit, confirmed in 2025.",
+      "WikipediaUrl": "Barnard%27s_Star"
+    },
+    "BarnardsStard": {
+      "DisplayName": "Barnard's Star d",
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Barnard's Star d is a rocky planet of at least about 0.26 Earth masses with a 2.34-day orbit - the innermost known planet of the system, confirmed in 2025.",
+      "WikipediaUrl": "Barnard%27s_Star"
+    },
+    "BarnardsStare": {
+      "DisplayName": "Barnard's Star e",
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Barnard's Star e is the lightest known planet of the system, at least about 0.19 Earth masses, with a 6.74-day orbit. Confirmed in 2025.",
+      "WikipediaUrl": "Barnard%27s_Star"
+    }
+  }
+}

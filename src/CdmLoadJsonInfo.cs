@@ -7,6 +7,7 @@ namespace Compendium
     public class CompendiumData
     {
         // The different fields that can be in the JSON data for each celestial body
+        public string? DisplayName { get; set; }
         public List<string>? ListGroups { get; set; }
         public string? OrbitLineGroup { get; set; }
         public string? Text { get; set; }
@@ -40,6 +41,9 @@ namespace Compendium
 
     public partial class Compendium
     {
+        // bodyJsonDict keys (and "Prefix.ListGroupsData.Category" keys) that came from another mod's JSON; these beat this mod's defaults
+        private static readonly HashSet<string> overrideJsonKeys = new HashSet<string>(StringComparer.Ordinal);
+
         // Deserializes the json data for text descriptions later into a dictionary, load all of the jsons found in the folderpath given
         // The resulting dictionary is stored in bodyJsonDict
 
@@ -115,11 +119,20 @@ namespace Compendium
                     var files = Directory.GetFiles(dir, "*.json", SearchOption.TopDirectoryOnly);
                     jsonFiles = jsonFiles.Concat(files).ToArray();
                 }
+                // This mod's own files are defaults: load them first so other mods' files deterministically override them
+                string defaultDir = Path.GetFullPath(dataDir).TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar;
+                bool IsDefaultFile(string path) => Path.GetFullPath(path).StartsWith(defaultDir, StringComparison.OrdinalIgnoreCase);
+                jsonFiles = jsonFiles
+                    .OrderBy(path => IsDefaultFile(path) ? 0 : 1)
+                    .ThenBy(path => path, StringComparer.OrdinalIgnoreCase)
+                    .ToArray();
+                overrideJsonKeys.Clear();
                 
                 Console.WriteLine($"Compendium: Found {jsonFiles.Length} total JSON files - looking in each for CompendiumJson marker");
 
                 foreach (var file in jsonFiles)
                 {
+                        bool isDefaultFile = IsDefaultFile(file);
                         // Read and deserialize each JSON file - only include to bodyJsonDict if the json contains the kvp "CompendiumJson":"True"
                         var json = File.ReadAllText(file);
                         var jsonDoc = JsonDocument.Parse(json);
@@ -148,9 +161,22 @@ namespace Compendium
                                         // Check if ListGroupsData exists and deserialize it specially
                                         if (mainData.TryGetValue("ListGroupsData", out var listGroupsElement))
                                         {
-                                            // Deserialize the categories dictionary directly
-                                            var categoriesDict = JsonSerializer.Deserialize<Dictionary<string, CompendiumData>>(listGroupsElement.GetRawText(), options);
-                                            if (categoriesDict != null)
+                                            // Deserialize each category separately so one malformed value doesn't drop the whole section
+                                            var categoriesDict = new Dictionary<string, CompendiumData>();
+                                            foreach (var categoryProperty in listGroupsElement.EnumerateObject())
+                                            {
+                                                if (categoryProperty.Value.ValueKind != JsonValueKind.Object)
+                                                {
+                                                    Console.WriteLine($"Compendium: Skipping '{property.Name}.ListGroupsData.{categoryProperty.Name}' in {Path.GetFileName(file)} - category entries must be objects");
+                                                    continue;
+                                                }
+                                                var categoryData = categoryProperty.Value.Deserialize<CompendiumData>(options);
+                                                if (categoryData != null)
+                                                {
+                                                    categoriesDict[categoryProperty.Name] = categoryData;
+                                                }
+                                            }
+                                            if (categoriesDict.Count > 0)
                                             {
                                                 //foreach (var cat in categoriesDict.Keys)
                                                 //{
@@ -159,6 +185,13 @@ namespace Compendium
                                                 
                                                 // Store with key format: "MainKey.ListGroupsData"
                                                 string listGroupsKey = $"{property.Name}.ListGroupsData";
+                                                if (!isDefaultFile)
+                                                {
+                                                    foreach (var categoryKey in categoriesDict.Keys)
+                                                    {
+                                                        overrideJsonKeys.Add($"{listGroupsKey}.{categoryKey}");
+                                                    }
+                                                }
                                                 
                                                 // Check if we already have a container for this key and merge
                                                 if (bodyJsonDict.TryGetValue(listGroupsKey, out var existingContainer) && 
@@ -187,22 +220,28 @@ namespace Compendium
                                         {
                                             if (kvp.Key != "ListGroupsData")
                                             {
-                                                var bodyData = JsonSerializer.Deserialize<CompendiumData>(kvp.Value.GetRawText(), options);
+                                                CompendiumData? bodyData;
+                                                try
+                                                {
+                                                    bodyData = kvp.Value.Deserialize<CompendiumData>(options);
+                                                }
+                                                catch (Exception bodyEx)
+                                                {
+                                                    Console.WriteLine($"Compendium: Skipping '{property.Name}.{kvp.Key}' in {Path.GetFileName(file)}: {bodyEx.Message}");
+                                                    continue;
+                                                }
                                                 if (bodyData != null)
                                                 {
                                                     string fullKey = $"{property.Name}.{kvp.Key}";
                                                     string? parentHint = GetParentHintFromJsonFile(file, kvp.Key);
 
-                                                    if (!string.IsNullOrWhiteSpace(parentHint) && !kvp.Key.Contains('.'))
+                                                    string storedKey = !string.IsNullOrWhiteSpace(parentHint) && !kvp.Key.Contains('.')
+                                                        ? $"{property.Name}.{parentHint}.{kvp.Key}"
+                                                        : fullKey;
+                                                    bodyJsonDict[storedKey] = bodyData;
+                                                    if (!isDefaultFile)
                                                     {
-                                                        string qualifiedKey = $"{property.Name}.{parentHint}.{kvp.Key}";
-                                                        bodyJsonDict[qualifiedKey] = bodyData;
-                                                        //Console.WriteLine($"      Loaded (qualified): {qualifiedKey}");
-                                                    }
-                                                    else
-                                                    {
-                                                        bodyJsonDict[fullKey] = bodyData;
-                                                        //Console.WriteLine($"      Loaded: {fullKey}");
+                                                        overrideJsonKeys.Add(storedKey);
                                                     }
                                                 }
                                             }

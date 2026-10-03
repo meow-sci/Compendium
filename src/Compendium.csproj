@@ -31,6 +31,7 @@
   <!-- Copies files -->
 	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
 		<Copy SourceFiles="$(BuildDir)mod.toml" DestinationFolder="$(SendBuildToTestDir)" />
+		<Copy SourceFiles="$(BuildDir)settings.ini" DestinationFolder="$(SendBuildToTestDir)" />
 		<Copy SourceFiles="$(BuildDir)$(ModNamespace).deps.json" DestinationFolder="$(SendBuildToTestDir)" />
 		<Copy SourceFiles="$(BuildDir)$(ModNamespace).dll" DestinationFolder="$(SendBuildToTestDir)" />
     <Copy SourceFiles="ModMenu.Attributes.dll" DestinationFolder="$(SendBuildToTestDir)" />
@@ -75,6 +76,10 @@
   <ItemGroup>
     <!-- Copies each of the things to the output dir -->
     <None Update="mod.toml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <!-- Default settings; every build resets the test copy so published files ship with defaults -->
+    <None Update="settings.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Fonts\**\*">

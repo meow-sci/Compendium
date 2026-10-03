@@ -78,7 +78,7 @@ namespace Compendium
                         {
                             foreach (var bodyId in groupedLeafEntries)
                             {
-                                DrawCelestialSelectable($"          {GetDisplayBodyId(bodyId)}##grouped_{bodyId}", bodyId);
+                                DrawCelestialSelectable($"          {GetBodyDisplayName(bodyId)}##grouped_{bodyId}", bodyId);
                             }
                         }
 
@@ -106,7 +106,7 @@ namespace Compendium
             if (ImGui.Selectable(celestialId, isSelected))
             {
                 selectedCelestialId = bodyKey;
-                selectedCelestial = FindCelestialByKey(Universe.WorldSun, bodyKey);
+                selectedCelestial = FindCelestialByKey(GetSelectedRoot(), bodyKey);
                 selectedOrbitGroupKey = null;
                 selectedOrbitGroupParentBodyKey = null;
                 showWindow = "Celestial";
@@ -139,7 +139,7 @@ namespace Compendium
 
                     foreach (var childId in displayEntry.DirectChildren)
                     {
-                        DrawCelestialSelectable($"{childPrefix}{GetDisplayBodyId(childId)}##child_{childId}", childId);
+                        DrawCelestialSelectable($"{childPrefix}{GetBodyDisplayName(childId)}##child_{childId}", childId);
                     }
 
                     foreach (var group in displayEntry.GroupedChildren)
@@ -151,7 +151,7 @@ namespace Compendium
 
                             foreach (var childId in group.Value)
                             {
-                                DrawCelestialSelectable($"{subgroupItemPrefix}{GetDisplayBodyId(childId)}##child_{childId}", childId);
+                                DrawCelestialSelectable($"{subgroupItemPrefix}{GetBodyDisplayName(childId)}##child_{childId}", childId);
                             }
 
                             ImGui.TreePop();
@@ -295,10 +295,10 @@ namespace Compendium
                 var displayEntry = new CategoryDisplayEntry
                 {
                     BodyKey = parentBodyId,
-                    DisplayBodyId = GetDisplayBodyId(parentBodyId)
+                    DisplayBodyId = GetBodyDisplayName(parentBodyId)
                 };
 
-                foreach (var childId in childrenIds.OrderBy(GetDisplayBodyId, StringComparer.OrdinalIgnoreCase))
+                foreach (var childId in childrenIds.OrderBy(GetBodyDisplayName, StringComparer.OrdinalIgnoreCase))
                 {
                     if (ShouldSkipOrbitGroupDropdown(childId))
                     {
@@ -333,7 +333,7 @@ namespace Compendium
 
             foreach (var group in cachedCategoryData.GroupedLeafEntries.Values)
             {
-                group.Sort((left, right) => StringComparer.OrdinalIgnoreCase.Compare(GetDisplayBodyId(left), GetDisplayBodyId(right)));
+                group.Sort((left, right) => StringComparer.OrdinalIgnoreCase.Compare(GetBodyDisplayName(left), GetBodyDisplayName(right)));
             }
 
             categoryDisplayCacheByKey[categoryKey] = cachedCategoryData;
@@ -342,7 +342,7 @@ namespace Compendium
 
         private string GetOrbitGroupLabel(string bodyKey)
         {
-            var celestial = FindCelestialByKey(Universe.WorldSun, bodyKey);
+            var celestial = FindCelestialByKey(GetSelectedRoot(), bodyKey);
             CompendiumData? bodyData = celestial != null ? GetBodyJsonData(celestial) : null;
 
             if (!string.IsNullOrWhiteSpace(bodyData?.OrbitLineGroup))
@@ -355,7 +355,7 @@ namespace Compendium
 
         private bool ShouldSkipOrbitGroupDropdown(string bodyKey)
         {
-            var celestial = FindCelestialByKey(Universe.WorldSun, bodyKey);
+            var celestial = FindCelestialByKey(GetSelectedRoot(), bodyKey);
             CompendiumData? bodyData = celestial != null ? GetBodyJsonData(celestial) : null;
 
             return bodyData?.ListGroups?.Any(group => string.Equals(group, "Moons", StringComparison.OrdinalIgnoreCase)) == true;

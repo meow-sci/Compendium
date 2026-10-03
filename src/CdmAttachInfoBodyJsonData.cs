@@ -27,14 +27,16 @@ namespace Compendium
                 return;
             }
 
-            // Collect all celestial objects from the tree
+            // Collect all celestial objects from every star system
             var allCelestials = new List<Celestial>();
-            var sunToUse = worldSun ?? Universe.WorldSun;
+            var systemRoots = GetSystemRoots();
 
-            if (sunToUse != null)
+            if (systemRoots.Count > 0)
             {
-                // CollectAllCelestials is non-static in your project: call it on an instance.
-                CollectAllCelestials(sunToUse, allCelestials);
+                foreach (var root in systemRoots)
+                {
+                    CollectAllCelestials(root, allCelestials);
+                }
 
                 string systemId = Universe.CurrentSystem?.Id ?? "Dummy";
 
@@ -49,6 +51,7 @@ namespace Compendium
                     if (!bodyJsonDict.ContainsKey(sysPathKey) && bodyJsonDict.TryGetValue(compPathKey, out var compPathData))
                     {
                         bodyJsonDict[sysPathKey] = compPathData;
+                        if (overrideJsonKeys.Contains(compPathKey)) { overrideJsonKeys.Add(sysPathKey); }
                     }
 
                     // IMPORTANT:
@@ -60,6 +63,7 @@ namespace Compendium
                         if (bodyJsonDict.TryGetValue(compKey, out var compData))
                         {
                             bodyJsonDict[sysKey] = compData; // alias (preserves categories)
+                            if (overrideJsonKeys.Contains(compKey)) { overrideJsonKeys.Add(sysKey); }
                         }
                         else
                         {
@@ -70,7 +74,7 @@ namespace Compendium
             }
             else
             {
-                Console.WriteLine("Compendium: sunToUse is null, cannot collect celestials.");
+                Console.WriteLine("Compendium: no star system roots loaded, cannot collect celestials.");
                 return;
             }
 
@@ -83,10 +87,14 @@ namespace Compendium
                 string bodyId = GetDisplayBodyId(bodyKey);
 
                 var bodyJsonData = kvp.Value;
-                // gets the celestial body by its ID / parent path when available
-                var worldSun = Universe.WorldSun;
-                //Console.WriteLine($"Compendium: Looking for celestial body with key: {bodyKey} with WorldSun {worldSun}");
-                Celestial? bodyCelestial = FindCelestialByKey(worldSun, bodyKey);
+                // A key prefixed with a star-system root Id only matches bodies in that system
+                string keyPrefix = fullKey.Contains('.') ? fullKey.Substring(0, fullKey.IndexOf('.')) : string.Empty;
+                var prefixRoot = FindRootById(keyPrefix);
+                Celestial? bodyCelestial = prefixRoot != null
+                    ? FindCelestialByKey(prefixRoot, bodyKey)
+                    : null;
+                // Game system Ids can equal a root Id (e.g. system "Sol" and star "Sol"), so fall back to every root
+                bodyCelestial ??= systemRoots.Select(root => FindCelestialByKey(root, bodyKey)).FirstOrDefault(found => found != null);
 
                 // First checks if the entry as key exists as a celestial body in the current universe - if it doesn't then skip it.
                 if (bodyCelestial == null)
@@ -151,7 +159,7 @@ namespace Compendium
 
                 // Axial tilt
                 // Gets the axial tilt values depending on whether the selected celestial's parent is the sun or another body.
-                if (bodyCelestial.Parent == Universe.WorldSun)
+                if (bodyCelestial.Parent is not Celestial)
                 { 
                     //thisTilt = selectedCelestial.GetCce2Cci().ToXyzRadians().X * (180.0 / Math.PI);
                     double thisTilt = bodyCelestial.BodyTemplate.Rotation.Tilt.ToDegrees();
@@ -162,7 +170,7 @@ namespace Compendium
                 {
                     double thisTilt = bodyCelestial.GetCci2Orb().Inverse().ToXyzRadians().X * (180.0 / Math.PI);
                     //string parentName = bodyCelestial.Parent.Id;
-                    ImString thisTiltText = new ImString($"{thisTilt:F2}° ( Relative to {bodyCelestial.Parent.Id} )");
+                    ImString thisTiltText = new ImString($"{thisTilt:F2}° ( Relative to {(bodyCelestial.Parent is Astronomical tiltParent ? GetBodyDisplayName(tiltParent) : bodyCelestial.Parent.Id)} )");
                     bodyJsonData.ThisTiltText = new ImString($"Axial Tilt: {thisTiltText}");
                 } 
                 // Eccentricity
@@ -173,20 +181,20 @@ namespace Compendium
                 // First gets the inclination in degrees from radians.
                 double inclinationDeg = bodyCelestial.Inclination * (180.0 / Math.PI);
                 // Gets a string for the WorldSun's ID for display purposes.
-                string worldsunId = (Universe.WorldSun != null && Universe.WorldSun.Id != null) ? Universe.WorldSun.Id.ToString() : "Unknown";
+                string worldsunId = GetHostStarId(bodyCelestial);
 
                 // If a body is not a child of the sun, it is a satellite of another body, so we need to get the inclination relative to its parent body's orbital plane.
                 // We need to calculate the relative inclination by subtracting the parent's axial tilt from the body's inclination.
-                if (bodyCelestial.Parent != Universe.WorldSun)
+                if (bodyCelestial.Parent is Celestial parentCelestial)
                 {
                     double parentTiltDeg = bodyCelestial.GetOrb2Cci().ToXyzRadians().X * (180.0 / Math.PI);
 
                     double relativeInclination = inclinationDeg - parentTiltDeg;
                     // The solar ecliptic inclination we can get from the Inclination value which is inclination with respect to the parent body's equatorial plane - plus the parent's tilt.
                     // So to get the inclination relative to the solar ecliptic, we add the parent's tilt to the body's inclination to the parent.
-                    double solarEclipticInclination = Math.Abs(inclinationDeg - ((Celestial)bodyCelestial.Parent).BodyTemplate.Rotation.Tilt.ToDegrees());
+                    double solarEclipticInclination = Math.Abs(inclinationDeg - parentCelestial.BodyTemplate.Rotation.Tilt.ToDegrees());
 
-                    string parentId = bodyCelestial.Parent != null ? bodyCelestial.Parent.Id : "Unknown";
+                    string parentId = GetBodyDisplayName(parentCelestial);
                     bodyJsonData.InclinationText = new ImString($"Inclination: {relativeInclination:F2}° ( Relative to {parentId} equator )\nInclination: {solarEclipticInclination:F2}° ( Relative to {worldsunId} plane )");
                 }
                 else

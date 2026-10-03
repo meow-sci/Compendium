@@ -30,11 +30,9 @@ namespace Compendium
         private static float mainContentWidth = 400f;
         private static List<string> categoryKeys = new List<string>();
         //private static string justSelected = "";
-        private static string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
         private static Dictionary<string, CompendiumData> bodyJsonDict = new Dictionary<string, CompendiumData>();
         private static string? parentDir;
         private static bool processedBodyJsonDict = false;
-        private static StellarBody? worldSun = Universe.WorldSun;
         private static readonly float2 defaultWindowPos = new float2(700f, 350f);
         private static readonly float2 defaultWindowSize = new float2(1500f, 1200f);
         private static Celestial? atmosphereGraphCelestial;
@@ -58,6 +56,9 @@ namespace Compendium
         [StarMapAfterGui]
         public void OnAfterUi(double dt)
         {
+            PersistWindowOpenState();
+            DrawBodyPointer();
+            pointerWindowVisible = false;
             ImGui.SetNextWindowPos(defaultWindowPos, ImGuiCond.FirstUseEver, (float2?)null);
             ImGui.SetNextWindowSize(defaultWindowSize, ImGuiCond.FirstUseEver);
 
@@ -90,23 +91,13 @@ namespace Compendium
                 }
                 
                 // Build category tree on first render when Universe is loaded, or rebuild if it was built without celestials
-                if (buttonsCatsTree == null || buttonsCatsTree.Count == 0 || !Compendium.categoriesBuiltWithCelestials)
+                if (buttonsCatsTree == null || buttonsCatsTree.Count == 0 || !Compendium.categoriesBuiltWithCelestials || categoriesBuiltForRoot != GetSelectedRoot())
                 {
-                    CategoryLoader(worldSun);
+                    CategoryLoader(GetSelectedRoot());
                     categoryKeys = GetCategoryKeys();
+                    selectedCategoryKey = GetDefaultCategoryKey(categoryKeys);
+                    selectedCategoryIndex = -1;
                     
-                    // Initialize selectedCategoryKey with first non-Moons category
-                    if (categoryKeys != null && categoryKeys.Count > 0)
-                    {
-                        foreach (var key in categoryKeys)
-                        {
-                            if (string.IsNullOrEmpty(selectedCategoryKey) && key != "Moons")
-                            {
-                                selectedCategoryKey = key;
-                            }
-                        }
-                    }
-
                     // // for debugging purposes writes to console each body in each category
                     // if (buttonsCatsTree != null)
                     // {
@@ -143,6 +134,7 @@ namespace Compendium
 
                 ConsoleStyle.PushWidgetStyle();
                 consoleStylePushed = true;
+                CaptureWindowRectForPointer();
                 DrawAtmosphereDensityGraphPopup();
                 
                 // Get available window size
@@ -202,8 +194,8 @@ namespace Compendium
                     ImGui.SameLine();
                     if (ImGui.Button(" S ##SunButton", new float2(buttonSWidth, 0)))
                     {
-                        // Focus camera on the Sun
-                        var sun = Universe.WorldSun;
+                        // Focus camera on the selected system's primary star / barycenter
+                        var sun = GetSelectedRoot();
                         if (sun != null)
                         {
                             KSA.Universe.MoveCameraTo(sun);
@@ -213,7 +205,7 @@ namespace Compendium
                     if (ImGui.IsItemHovered())
                     {
                         ImGui.BeginTooltip();
-                        ImGui.Text($"Focus Camera on Star - {Universe.WorldSun.Id}");
+                        ImGui.Text($"Focus Camera on Star - {(GetSelectedRoot() is Astronomical focusRoot ? GetBodyDisplayName(focusRoot) : "None")}");
                         ImGui.EndTooltip();
                     }
                     // V button toggles vessel picker popup
@@ -271,6 +263,7 @@ namespace Compendium
                     {
                         showWindow = "Terms";
                     }
+                    topRowRightEdgeX = ImGui.GetItemRectMax().X;
                     if (ImGui.IsItemHovered())
                     {
                         ImGui.BeginTooltip();
@@ -300,10 +293,8 @@ namespace Compendium
                         ImGui.SliderFloat("Size", ref fontSizeCurrent, 16f, 46f);
                         ImGui.SliderFloat("Opacity", ref windowOpacity, 0.1f, 1.0f);
                         ImGui.Separator();
-                        ImGui.Text(" ");
-                        // Display the selected font name
-                        ImString selectedText = new ImString($"Selected: {fontNames[selectedFontIndex]}");
-                        ImGui.Text(selectedText); ImGui.Text(" ");
+                        DrawPointerSettings();
+                        ImGui.Separator();
                         PopTheFont();
                         DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                         ImGui.Text(" ");
@@ -317,6 +308,8 @@ namespace Compendium
 
                 // Always render categories (with or without custom fonts)
                 PushTheFont(1);
+
+                DrawSystemSelector();
    
                 // Category selection buttons
                 ImGui.Text("\nAstronomicals Categories:");
@@ -339,6 +332,10 @@ namespace Compendium
                 {
                     sortedCategoryKeys.Remove("Planets");
                     sortedCategoryKeys.Insert(0, "Planets");
+                }
+                if (sortedCategoryKeys.Remove(StarsCategoryKey))
+                {
+                    sortedCategoryKeys.Insert(0, StarsCategoryKey);
                 }
                 if (sortedCategoryKeys.Contains("Other"))
                 {
@@ -365,11 +362,9 @@ namespace Compendium
                 }
                 
                 // If the button wasn't pushed and the selectedCategoryIndex is -1, set it to 0 and select the first category by default.
-                if (selectedCategoryIndex == -1 && sortedCategoryKeys.Count > 0)
+                if (!sortedCategoryKeys.Contains(selectedCategoryKey) && sortedCategoryKeys.Count > 0)
                 {
-                 //   selectedCategoryIndex = 0;
-                    selectedCategoryKey = sortedCategoryKeys[0];
-                  //  justSelected = selectedCategoryKey;
+                    selectedCategoryKey = GetDefaultCategoryKey(sortedCategoryKeys);
                 }
 
                 // Pop small font and restore large font
@@ -377,7 +372,7 @@ namespace Compendium
                 PushTheFont(1);
 
                 ImGui.Separator();
-                ImString selectedCategory = new ImString($"Selected: {selectedCategoryKey}");
+                ImString selectedCategory = new ImString($"Category: {selectedCategoryKey}");
 
                 ImGui.Text(" ");
                 ImGui.Text(selectedCategory);
@@ -497,22 +492,26 @@ namespace Compendium
                 }
 
                 // Next if regular bodies if selected, then later in 'else' meaning the category was just selected, make special text for the category and it's information / data.
-                if (showWindow == "Celestial")
+                if (showWindow == "Celestial" && FindSystemStar(selectedCelestialId) is Astronomical selectedStar)
+                {
+                    DrawStarInformation(selectedStar);
+                }
+                else if (showWindow == "Celestial")
                 {
                     ImGui.Separator();
                     // pushes a larger font only for the selected celestial id display
                     PushTheFont(1.7f);
-                    ImString selectedIdText = new ImString($"{GetDisplayBodyId(selectedCelestialId)}");
+                    ImString selectedIdText = new ImString($"{GetBodyDisplayName(selectedCelestialId)}");
                     ImGui.Text(selectedIdText);
                     PopTheFont();
                     PushTheFont(1);
                     ImGui.Text(" ");
                     
-                    // Find the selected celestial object from Universe.WorldSun tree
+                    // Find the selected celestial object in the selected star system's tree
                     
-                    if (selectedCelestialId != "None" && Universe.WorldSun != null)
+                    if (selectedCelestialId != "None" && GetSelectedRoot() != null)
                     {
-                        selectedCelestial = FindCelestialByKey(Universe.WorldSun, selectedCelestialId);
+                        selectedCelestial = FindCelestialByKey(GetSelectedRoot(), selectedCelestialId);
                     }
 
                     // Try to get the JSON data for the selected celestial loaded into a bodyJson object.
@@ -666,7 +665,7 @@ namespace Compendium
                         DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
                         ImGui.Text(" ");
                         // Makes a button to focus on the selected celestial objeect, but does not put a newline after it
-                        ImString focusText = new ImString($"Focus Camera on {celestial.Id}");
+                        ImString focusText = new ImString($"Focus Camera on {GetBodyDisplayName(celestial)}");
                         if (ImGui.Button(focusText))
                         {
                             KSA.Universe.MoveCameraTo(celestial);
@@ -694,7 +693,7 @@ namespace Compendium
                         bool disableTargetSelection = thisVehicle == "None";
                         using (new ImGuiDisabledScope(disableTargetSelection))
                         {
-                            ImString targetText = new ImString($"Select {celestial.Id} as Target");
+                            ImString targetText = new ImString($"Select {GetBodyDisplayName(celestial)} as Target");
                             if (ImGui.Button(targetText))
                             {
                                 if (!selectedCelestial.TargetOfControlledVehicle)
@@ -861,37 +860,7 @@ namespace Compendium
                         // After displaying the celestial properties, show JSON compendium data if available
                         if (bodyJson != null)
                         {
-                            DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
-                            ImGui.Text(" ");
-                            if (bodyJson.Text != null)
-                                { ImGui.TextWrapped(bodyJson.Text); }
-                            // If the bodyJson has Factoids, display them as a pseudo-bulleted list
-                            if (bodyJson.Factoids != null && bodyJson.Factoids.Count > 0)
-                            {
-                                ImGui.Text(" ");
-                                ImGui.SeparatorText("Factoids:"); ImGui.Text(" ");
-                                foreach (var factoid in bodyJson.Factoids)
-                                {
-                                    // Uses the unicode bullet point character for factoids and then the factoid text to make wrapping work properly
-                                    ImString factoidText = new ImString($"• {factoid}\n\n");
-                                    ImGui.TextWrapped(factoidText);
-
-                                    //ImGui.BulletText(factoid);
-                                }
-                            }
-                            // If the bodyJson has a VisitedBy list, display it as a bulleted list
-                            if (bodyJson.VisitedBy != null && bodyJson.VisitedBy.Count > 0)
-                            {
-                                ImGui.Text(" ");
-                                ImGui.SeparatorText("Visited By:"); ImGui.Text(" ");
-                                foreach (var visitor in bodyJson.VisitedBy)
-                                {
-                                    ImString visitorText = new ImString($"{visitor}");
-                                    ImGui.BulletText(visitorText);
-                                }
-                                ImGui.Text(" ");
-                            }
-                            ImGui.Text(" ");
+                            DrawBodyJsonText(bodyJson);
                         }
                         }
                     }
@@ -900,7 +869,11 @@ namespace Compendium
                     
                     PopTheFont();
                 }
-                if (showWindow == "Category")
+                if (showWindow == "Category" && selectedCategoryKey == StarsCategoryKey)
+                {
+                    DrawStarsCategoryInformation();
+                }
+                else if (showWindow == "Category")
                 {
                     // This means category was selected but a body was not selected yet
                     // This is effectively the "category option / information" screen.
@@ -1060,7 +1033,7 @@ namespace Compendium
 
                     if (!string.IsNullOrWhiteSpace(selectedOrbitGroupParentBodyKey))
                     {
-                        ImGui.Text(new ImString($"Subgroup of {GetDisplayBodyId(selectedOrbitGroupParentBodyKey)}"));
+                        ImGui.Text(new ImString($"Subgroup of {GetBodyDisplayName(selectedOrbitGroupParentBodyKey)}"));
                     }
                     else
                     {
@@ -1202,7 +1175,7 @@ namespace Compendium
             atmosphereGraphSelectedAltitudeKm = Math.Clamp(atmosphereGraphSelectedAltitudeKm, 0f, cutoffKilometersValue);
             float selectedDensity = (float)atmosphere.GetAtmosphericDensityAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000d);
             float selectedPressure = ConvertPressureFromPascals((float)atmosphere.GetAtmosphericPressureAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000d), atmosphereGraphPressureUnitIndex);
-            ImGui.Text($"{GetDisplayBodyId(atmosphereGraphCelestial.Id)} atmosphere");
+            ImGui.Text($"{GetBodyDisplayName(atmosphereGraphCelestial)} atmosphere");
             ImGui.Text($"Height (km): 0 to {cutoffKilometers}");
             ImGui.Text($"Density (kg/m^3): 0 to {maximumDensity:N4}");
             ImGui.Separator();
@@ -1307,6 +1280,7 @@ namespace Compendium
             {
                 // Gets the current working directory path (of the DLL)
                 dllDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                LoadSettings();
 
                 // Enable Harmony patches used for orbit visibility overrides
                 Patcher.Patch();

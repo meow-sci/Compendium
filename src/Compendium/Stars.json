@@ -3,7 +3,7 @@
   "Compendium": {
     "ListGroupsData": {
       "Stars": {
-        "CatText": "Stars are luminous spheres of plasma held together by gravity. They are the fundamental building blocks of galaxies and are responsible for producing light and heat through nuclear fusion processes in their cores.",
+        "CatText": "Stars are luminous spheres of plasma held together by gravity. They are the fundamental building blocks of galaxies and are responsible for producing light and heat through nuclear fusion processes in their cores.  Some stars such as white dwarfs and neutron stars represent the final evolutionary stages of stellar life cycles and do not undergo further fusion.",
         "CatWikipediaUrl": "Star"
       }
     },
@@ -12,14 +12,86 @@
         "Stars"
       ],
       "OrbitLineGroup": "Stars",
-      "Text": "The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core. The Sun provides the necessary light and heat to sustain life on Earth and influences the orbits of all the planets and other objects in the Solar System.  It is the dominant gravitational body in the Solar System, containing more than 99.8% of its total mass.",
+      "Text": "The Sun is the star at the center of the Sol System - of classification G2V. It is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core. The Sun provides the necessary light and heat to sustain life on Earth and influences the orbits of all the planets and other objects in the Solar System.  It is the dominant gravitational body in the Solar System, containing more than 99.8% of its total mass.",
       "Factoids": [
-        "Known by several names historically including: Sol, Helios, and the Sun."
+        "Known by several names historically including: Sol, Helios, and the Sun.",
+        "Sol used to be cooler than present day and is gradually increasing in temperature over time because of the ongoing nuclear fusion reactions in its core turning hydrogen into helium.  Temperature increases roughly 10 percent every billion years."
       ],
       "VisitedBy": [
-        "SOHO 1995-Present, Solar Dynamics Observatory 2010-Present, Parker Solar Probe 2018-Present"
+        "SOHO 1995-Present",
+        "Solar Dynamics Observatory 2010-Present",
+        "Parker Solar Probe 2018-Present"
       ],
       "WikipediaUrl": "Sun"
+    },
+    "AlphaCentauri": {
+      "DisplayName": "Alpha Centauri",
+      "ListGroups": [
+        "Stars"
+      ],
+      "Text": "Alpha Centauri is the closest star system to the Solar System, about 4.34 light years away in the southern constellation of Centaurus. It is a triple system: the Sun-like pair Alpha Centauri A and B orbit each other every 79.9 years, and the red dwarf Proxima Centauri orbits the pair at a much greater distance.  This entry is the system's barycenter - the shared center of mass that the stars orbit, which is a point in space rather than a physical object.",
+      "Factoids": [
+        "To the naked eye A and B appear as a single star, the third brightest in the night sky.",
+        "The A-B pair's separation varies from about 11 AU to 36 AU over their eccentric orbit."
+      ],
+      "WikipediaUrl": "Alpha_Centauri"
+    },
+    "AlphaCentauriA": {
+      "DisplayName": "Alpha Centauri A",
+      "ListGroups": [
+        "Stars"
+      ],
+      "Text": "Alpha Centauri A (Rigil Kentaurus) is the larger and brighter member of the Alpha Centauri binary pair. It is a G2 main-sequence star, the same spectral type as the Sun, but about 10% more massive and roughly 1.5 times as luminous.",
+      "Factoids": [
+        "Officially named Rigil Kentaurus by the IAU in 2016, from the Arabic for 'foot of the centaur'."
+      ],
+      "WikipediaUrl": "Alpha_Centauri"
+    },
+    "AlphaCentauriB": {
+      "DisplayName": "Alpha Centauri B",
+      "ListGroups": [
+        "Stars"
+      ],
+      "Text": "Alpha Centauri B (Toliman) is the smaller member of the Alpha Centauri binary pair. It is a K1 orange main-sequence star, slightly less massive and about half as luminous as the Sun.",
+      "Factoids": [
+        "Officially named Toliman by the IAU in 2018."
+      ],
+      "WikipediaUrl": "Alpha_Centauri"
+    },
+    "ProximaCentauri": {
+      "DisplayName": "Proxima Centauri",
+      "ListGroups": [
+        "Stars"
+      ],
+      "Text": "Also known as Alpha Centauri C.  Proxima Centauri is a small M5.5 red dwarf and the nearest known star to the Sun, about 4.25 light years away. It orbits the Alpha Centauri A-B pair at roughly 13,000 AU with a period of over 500,000 years, and hosts at least two known planets.",
+      "Factoids": [
+        "Too faint to be seen with the naked eye despite being the closest star to the Sun.",
+        "A flare star - it can brighten dramatically for minutes at a time from magnetic activity."
+      ],
+      "WikipediaUrl": "Proxima_Centauri"
+    },
+    "BarnardsStar": {
+      "DisplayName": "Barnard's Star",
+      "ListGroups": [
+        "Stars"
+      ],
+      "Text": "Barnard's Star is an M4 red dwarf about 5.96 light years away in the constellation Ophiuchus, the nearest single star to the Sun. It has the largest proper motion of any known star, moving across the sky about 10.3 arcseconds per year.",
+      "Factoids": [
+        "Named after astronomer E. E. Barnard, who measured its proper motion in 1916.",
+        "Four small rocky planets were confirmed orbiting it in 2024-2025."
+      ],
+      "WikipediaUrl": "Barnard%27s_Star"
+    },
+    "TauCeti": {
+      "DisplayName": "Tau Ceti",
+      "ListGroups": [
+        "Stars"
+      ],
+      "Text": "Tau Ceti is a G8 main-sequence star about 11.9 light years away in the constellation Cetus. It is the nearest single Sun-like star, somewhat smaller and less luminous than the Sun, and is surrounded by a debris disk roughly ten times more massive than the Solar System's.",
+      "Factoids": [
+        "A frequent target of SETI searches and a popular setting in science fiction."
+      ],
+      "WikipediaUrl": "Tau_Ceti"
     }
   }
 }

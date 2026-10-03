@@ -1,0 +1,31 @@
+{
+  "CompendiumJson": "True",
+  "AlphaCentauri": {
+    "ListGroupsData": {
+      "Planets": {
+        "CatText": "Planets known in the Alpha Centauri system. Both confirmed planets orbit the red dwarf Proxima Centauri, very close in - well inside the distance of Mercury from the Sun.",
+        "CatWikipediaUrl": "Proxima_Centauri"
+      }
+    },
+    "ProximaCentaurib": {
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Proxima Centauri b is a rocky planet of at least about 1.07 Earth masses orbiting within the habitable zone of Proxima Centauri, with an orbital period of about 11.2 days. Discovered in 2016, it is the closest known exoplanet to the Solar System.",
+      "Factoids": [
+        "Likely tidally locked to its star.",
+        "Receives frequent flares from its active red dwarf host, which may strip any atmosphere."
+      ],
+      "WikipediaUrl": "Proxima_Centauri_b"
+    },
+    "ProximaCentaurid": {
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Proxima Centauri d is a small planet of roughly a quarter of Earth's mass, orbiting Proxima Centauri every 5.1 days. It was confirmed in 2022 and is one of the lightest exoplanets detected by the radial velocity method.",
+      "WikipediaUrl": "Proxima_Centauri_d"
+    }
+  }
+}

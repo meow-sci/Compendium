@@ -43,6 +43,7 @@ CodeCoverage/
 *.tmp
 *.temp
 .decompiled
+decompiled/
 
 # MSBuild Binary and Structured Log
 *.binlog

@@ -1,0 +1,48 @@
+{
+  "CompendiumJson": "True",
+  "TauCeti": {
+    "ListGroupsData": {
+      "Planets": {
+        "CatText": "Planets of Tau Ceti. The planets listed here are unconfirmed candidates detected by radial velocity (Feng et al. 2017); their masses are minimum masses.",
+        "CatWikipediaUrl": "Tau_Ceti"
+      }
+    },
+    "TauCetig": {
+      "DisplayName": "Tau Ceti g",
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Tau Ceti g is a candidate planet of at least about 1.75 Earth masses with a 20-day orbit.",
+      "Factoids": [
+        "Unconfirmed candidate."
+      ],
+      "WikipediaUrl": "Tau_Ceti"
+    },
+    "TauCetih": {
+      "DisplayName": "Tau Ceti h",
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Tau Ceti h is a candidate planet of at least about 1.83 Earth masses with a 49-day orbit.",
+      "Factoids": [
+        "Unconfirmed candidate."
+      ],
+      "WikipediaUrl": "Tau_Ceti"
+    },
+    "TauCetif": {
+      "DisplayName": "Tau Ceti f",
+      "ListGroups": [
+        "Planets"
+      ],
+      "OrbitLineGroup": "Planets",
+      "Text": "Tau Ceti f is a candidate super-Earth of at least about 3.9 Earth masses with a 636-day orbit, near the outer edge of Tau Ceti's habitable zone.",
+      "Factoids": [
+        "Unconfirmed candidate.",
+        "Its rotation period is unknown."
+      ],
+      "WikipediaUrl": "Tau_Ceti_f"
+    }
+  }
+}

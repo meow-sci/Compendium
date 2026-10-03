@@ -35,17 +35,23 @@ namespace Compendium
         private static readonly Dictionary<string, OrbitVisibilityMode> orbitVisibilityOverrides = new();
         private static Dictionary<string, List<Celestial>>? categoryCelestialsCache;
         private static Dictionary<string, List<Celestial>>? orbitGroupCelestialsCache;
+        private static Dictionary<string, string>? displayNameCache;
 
         private static void ResetOrbitUiCaches()
         {
             categoryCelestialsCache = null;
             orbitGroupCelestialsCache = null;
+            displayNameCache = null;
         }
 
-        private static string GetCelestialPath(Celestial celestial)
+        private static string GetCelestialPath(Astronomical astronomical)
         {
             var pathSegments = new Stack<string>();
-            Astronomical? current = celestial;
+            if (astronomical is not Celestial)
+            {
+                return astronomical.Id;
+            }
+            Astronomical? current = astronomical;
 
             while (current is Celestial currentCelestial)
             {
@@ -67,34 +73,72 @@ namespace Compendium
             return dotIndex >= 0 ? bodyKey[(dotIndex + 1)..] : bodyKey;
         }
 
+        // JSON "DisplayName" if the body's entry has one, otherwise the game Id.
+        private static string GetBodyDisplayName(Astronomical astronomical)
+        {
+            string? displayName = GetBodyJsonData(astronomical)?.DisplayName;
+            return string.IsNullOrWhiteSpace(displayName) ? astronomical.Id : displayName;
+        }
+
+        private static string GetBodyDisplayName(string bodyKey)
+        {
+            if (string.IsNullOrWhiteSpace(bodyKey))
+            {
+                return bodyKey;
+            }
+
+            displayNameCache ??= new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            if (displayNameCache.TryGetValue(bodyKey, out var cachedName))
+            {
+                return cachedName;
+            }
+
+            Astronomical? body = FindCelestialByKey(GetSelectedRoot(), bodyKey) ?? FindSystemStar(bodyKey);
+            string name = body != null ? GetBodyDisplayName(body) : GetDisplayBodyId(bodyKey);
+            displayNameCache[bodyKey] = name;
+            return name;
+        }
+
         private static string GetOrbitVisibilityKey(Celestial celestial)
         {
             string currentSystem = Universe.CurrentSystem?.Id ?? "Dummy";
             return $"{currentSystem}.{GetCelestialPath(celestial)}";
         }
 
-        private static IEnumerable<string> GetBodyJsonLookupKeys(Celestial celestial)
+        private static IEnumerable<string> GetBodyJsonLookupKeys(Astronomical celestial)
         {
             string currentSystem = Universe.CurrentSystem?.Id ?? "Dummy";
             string celestialPath = GetCelestialPath(celestial);
+            string? rootId = GetRootOf(celestial)?.Id;
 
+            // Star-system JSON files use the system root Id as their top-level key
+            if (rootId != null)
+            {
+                yield return $"{rootId}.{celestialPath}";
+                yield return $"{rootId}.{celestial.Id}";
+            }
             yield return $"{currentSystem}.{celestialPath}";
             yield return $"Compendium.{celestialPath}";
             yield return $"{currentSystem}.{celestial.Id}";
             yield return $"Compendium.{celestial.Id}";
         }
 
-        private static CompendiumData? GetBodyJsonData(Celestial celestial)
+        private static CompendiumData? GetBodyJsonData(Astronomical celestial)
         {
+            CompendiumData? defaultData = null;
             foreach (string key in GetBodyJsonLookupKeys(celestial))
             {
                 if (bodyJsonDict.TryGetValue(key, out var data))
                 {
-                    return data;
+                    if (overrideJsonKeys.Contains(key))
+                    {
+                        return data;
+                    }
+                    defaultData ??= data;
                 }
             }
 
-            return null;
+            return defaultData;
         }
 
         internal static bool TryGetOrbitVisibilityOverride(Astronomical astronomical, out OrbitVisibilityMode mode)
@@ -239,7 +283,7 @@ namespace Compendium
                 if (parentEntry.Key == "Data") continue;
 
                 // Toggle parent orbit
-                var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
+                var parentCelestial = FindCelestialByKey(GetSelectedRoot(), parentEntry.Key);
                 if (parentCelestial != null)
                 {
                     SetOrbitVisibilityMode(parentCelestial, mode);
@@ -250,7 +294,7 @@ namespace Compendium
                 var childrenIds = (List<string>)parentEntryData["Children"];
                 foreach (var childId in childrenIds)
                 {
-                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
+                    var childCelestial = FindCelestialByKey(GetSelectedRoot(), childId);
                     if (childCelestial != null)
                     {
                         SetOrbitVisibilityMode(childCelestial, mode);
@@ -286,7 +330,7 @@ namespace Compendium
                 {
                     if (string.IsNullOrWhiteSpace(parentBodyKey))
                     {
-                        var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
+                        var parentCelestial = FindCelestialByKey(GetSelectedRoot(), parentEntry.Key);
                         CompendiumData? parentBodyJson = parentCelestial != null ? GetBodyJsonData(parentCelestial) : null;
                         if (parentCelestial != null && string.Equals(parentBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase))
                         {
@@ -299,7 +343,7 @@ namespace Compendium
 
                 foreach (var childId in childrenIds)
                 {
-                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
+                    var childCelestial = FindCelestialByKey(GetSelectedRoot(), childId);
                     CompendiumData? childBodyJson = childCelestial != null ? GetBodyJsonData(childCelestial) : null;
                     if (childCelestial != null && string.Equals(childBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase))
                     {
@@ -332,7 +376,7 @@ namespace Compendium
                     continue;
                 }
 
-                var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
+                var parentCelestial = FindCelestialByKey(GetSelectedRoot(), parentEntry.Key);
                 if (parentCelestial != null && !celestials.Contains(parentCelestial))
                 {
                     celestials.Add(parentCelestial);
@@ -342,7 +386,7 @@ namespace Compendium
                 var childrenIds = (List<string>)parentEntryData["Children"];
                 foreach (var childId in childrenIds)
                 {
-                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
+                    var childCelestial = FindCelestialByKey(GetSelectedRoot(), childId);
                     if (childCelestial != null && !celestials.Contains(childCelestial))
                     {
                         celestials.Add(childCelestial);
@@ -389,7 +433,7 @@ namespace Compendium
 
                 if (childrenIds.Count == 0 && string.IsNullOrWhiteSpace(parentBodyKey))
                 {
-                    var parentCelestial = FindCelestialByKey(Universe.WorldSun, parentEntry.Key);
+                    var parentCelestial = FindCelestialByKey(GetSelectedRoot(), parentEntry.Key);
                     CompendiumData? parentBodyJson = parentCelestial != null ? GetBodyJsonData(parentCelestial) : null;
                     if (parentCelestial != null &&
                         string.Equals(parentBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase) &&
@@ -403,7 +447,7 @@ namespace Compendium
 
                 foreach (var childId in childrenIds)
                 {
-                    var childCelestial = FindCelestialByKey(Universe.WorldSun, childId);
+                    var childCelestial = FindCelestialByKey(GetSelectedRoot(), childId);
                     CompendiumData? childBodyJson = childCelestial != null ? GetBodyJsonData(childCelestial) : null;
                     if (childCelestial != null &&
                         string.Equals(childBodyJson?.OrbitLineGroup, groupKey, StringComparison.OrdinalIgnoreCase) &&
@@ -543,27 +587,34 @@ namespace Compendium
         private static bool TryGetListGroupData(string listGroupKey, out CompendiumData? listGroupData)
         {
             listGroupData = null;
-            CompendiumData? listGroupsContainer = null;
             string currentSystem = Universe.CurrentSystem?.Id ?? "Dummy";
+            string? rootId = GetSelectedRoot()?.Id;
 
-            if (!bodyJsonDict.TryGetValue($"{currentSystem}.ListGroupsData", out listGroupsContainer))
+            foreach (string? prefix in new[] { rootId, currentSystem, "Compendium" })
             {
-                bodyJsonDict.TryGetValue("Compendium.ListGroupsData", out listGroupsContainer);
+                if (prefix != null &&
+                    bodyJsonDict.TryGetValue($"{prefix}.ListGroupsData", out var listGroupsContainer) &&
+                    listGroupsContainer.ListGroupsData != null &&
+                    listGroupsContainer.ListGroupsData.TryGetValue(listGroupKey, out var foundData))
+                {
+                    if (overrideJsonKeys.Contains($"{prefix}.ListGroupsData.{listGroupKey}"))
+                    {
+                        listGroupData = foundData;
+                        return true;
+                    }
+                    listGroupData ??= foundData;
+                }
             }
 
-            if (listGroupsContainer?.ListGroupsData == null)
-            {
-                return false;
-            }
-
-            return listGroupsContainer.ListGroupsData.TryGetValue(listGroupKey, out listGroupData);
+            return listGroupData != null;
         }
 
         private static void ToggleAllOrbitLines(OrbitVisibilityMode mode)
         {
-            if (Universe.WorldSun == null) return;
+            var root = GetSelectedRoot();
+            if (root == null) return;
             var allCelestials = new List<Celestial>();
-            CollectAllCelestials(Universe.WorldSun, allCelestials);
+            CollectAllCelestials(root, allCelestials);
 
             foreach (var celestial in allCelestials)
             {

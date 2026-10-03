@@ -10,7 +10,7 @@ namespace Compendium
         private static bool categoriesBuiltWithCelestials = false;
 
         // Method to load categories from the loaded JSON data, or hardcoded defaults if none found
-        public void CategoryLoader(Astronomical? worldSun = null)
+        public void CategoryLoader(Astronomical? systemRoot = null)
         {
             // Build the category tree structure
             // buttonsCatsTree will have structure: [categoryName][parentBodyId] = { "Body": parentBodyId, "Children": [childBodyId1, childBodyId2, ...] }
@@ -22,16 +22,13 @@ namespace Compendium
             // Collect all celestial objects from the tree
             var allCelestials = new List<Celestial>();
             
-            // Use passed worldSun parameter, or fall back to Universe.WorldSun
-            var sunToUse = worldSun ?? Universe.WorldSun;
+            var sunToUse = systemRoot ?? GetSelectedRoot();
+            categoriesBuiltForRoot = sunToUse;
             
             if (sunToUse != null)
             {
                 CollectAllCelestials(sunToUse, allCelestials);
-                if (allCelestials.Count > 0)
-                {
-                    categoriesBuiltWithCelestials = true;
-                }
+                categoriesBuiltWithCelestials = true;
             }
             else
             {
@@ -51,17 +48,13 @@ namespace Compendium
             // NOW build categoriesDict from JSON data
             categoriesDict.Clear(); // Clear any previous data
             
-            // First, find the sun's direct children (top-level bodies)
+            // Top-level bodies orbit a star or barycenter directly rather than another celestial
             var sunDirectChildren = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            if (sunToUse != null)
-
+            foreach (var cel in allCelestials)
             {
-                foreach (var cel in allCelestials)
+                if (cel.Parent is not Celestial)
                 {
-                    if (ReferenceEquals(cel.Parent, sunToUse))
-                    {
-                        sunDirectChildren.Add(cel.Id);
-                    }
+                    sunDirectChildren.Add(cel.Id);
                 }
             }
             
@@ -108,24 +101,11 @@ namespace Compendium
                 }
             }
 
-            // First - Check if the categoriesDict got made, and use a bit of logic to determine if the Universe.System.Id is one of the loaded keys in the categoriesDict from CdmCategoryLoader. If categoriedDict does exist and the System.Id does not have a key in categoriesDict, check that "Compendium" exists and fall back to using that for categories.
+            // Categories from every JSON prefix (Compendium, game system Id, star-system root Id) are merged; empty ones are removed below.
             // After all of that fallback if nothing found, just use default hardcoded lists for each category.
             if (categoriesDict != null && categoriesDict.Count > 0)
             {
-                string systemName = Universe.CurrentSystem?.Id ?? "Dummy";
-                if (categoriesDict.ContainsKey(systemName))
-                {
-                    categoryNames = categoriesDict[systemName].ToArray();
-                }
-                else if (categoriesDict.ContainsKey("Compendium"))
-                {
-                    categoryNames = categoriesDict["Compendium"].ToArray();
-                }
-                else
-                {
-                    // Fallback to hardcoded default categories
-                    categoryNames = ["FallbackCats", "Planets", "Dwarf Planets", "Trans-Neptunian Objects", "Asteroids", "Comets", "Interstellar Objects", "Other"];
-                }
+                categoryNames = categoriesDict.Values.SelectMany(groups => groups).Distinct().ToArray();
             }
             else 
             {
@@ -256,20 +236,7 @@ namespace Compendium
                     // Now see if the categoryName has category-level data in ListGroupsData
                     // This attaches some category-level descriptive data to the category for display in the UI when the category is selected.
                     CompendiumData? listGroupData = null;
-                    
-                    // Try to get the ListGroupsData container, checking system-specific first, then default
-                    CompendiumData? listGroupsContainer = null;
-                    if (!bodyJsonDict.TryGetValue($"{systemName}.ListGroupsData", out listGroupsContainer))
-                    {
-                        // Fall back to default "Compendium" key
-                        bodyJsonDict.TryGetValue("Compendium.ListGroupsData", out listGroupsContainer);
-                    }
-                    
-                    // If ListGroupsData was found, try to get the specific category from it
-                    if (listGroupsContainer?.ListGroupsData != null)
-                    {
-                        listGroupsContainer.ListGroupsData.TryGetValue(categoryName, out listGroupData);
-                    }
+                    TryGetListGroupData(categoryName, out listGroupData);
                     
                     if (listGroupData != null)
                     { buttonsCatsTree[categoryName]["Data"] = listGroupData; }
@@ -290,7 +257,11 @@ namespace Compendium
                     buttonsCatsTree.Remove(emptyCat);
                 }
             }
-            
+
+            if (sunToUse != null)
+            {
+                AddStarsCategory(sunToUse);
+            }
         }
         // Method to get the list of category keys - it gets called after CategoryLoader runs to populate buttonsCatsTree
         public List<string> GetCategoryKeys()
