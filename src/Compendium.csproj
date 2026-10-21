@@ -16,7 +16,7 @@
 		<!-- Edit (optional) - Location to send the built mod files, include your mod folder name! -->
 		<!--                   This location has to also have copies of the necessary core game dlls since it's also used to get the game dlls -->
     <!--                   If you use the default game install location it saves alot of work and your mods copy there on build for testing -->
-		<KSAFolder>C:\Program Files\Kitten Space Agency</KSAFolder> 
+		<KSAFolder>C:\Program Files\Ahwoo\Games\Kitten Space Agency</KSAFolder>
     <ModsFolder>$(USERPROFILE)\Documents\My Games\Kitten Space Agency\mods</ModsFolder>
 
 		<!-- Do not edit - Location where the built mod files will be found -->
@@ -98,18 +98,18 @@
     <Reference Include="ModMenu.Attributes">
       <HintPath>ModMenu.Attributes.dll</HintPath>
     </Reference>
-    <Reference Include="Brutal.Core.Common">
-      <HintPath>$(KSAFolder)\Brutal.Core.Common.dll</HintPath>
+    <Reference Include="Brutal.Core">
+      <HintPath>$(KSAFolder)\Brutal.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Brutal.Core.Numerics">
-      <HintPath>$(KSAFolder)\Brutal.Core.Numerics.dll</HintPath>
+    <Reference Include="Brutal.Numerics">
+      <HintPath>$(KSAFolder)\Brutal.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="BepuUtilities">
       <HintPath>$(KSAFolder)\BepuUtilities.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="Brutal.Core.Strings">
-      <HintPath>$(KSAFolder)\Brutal.Core.Strings.dll</HintPath>
+    <Reference Include="Brutal.Strings">
+      <HintPath>$(KSAFolder)\Brutal.Strings.dll</HintPath>
     </Reference>
     <Reference Include="Brutal.ImGui">
       <HintPath>$(KSAFolder)\Brutal.ImGui.dll</HintPath>

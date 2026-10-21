@@ -12,8 +12,8 @@
 
 ## Game source reference (use instead of ILSpy)
 
-- Decompiled game source lives in `decompiled/` (gitignored): `KSA`, `Brutal.ImGui`, `Brutal.Core.Numerics`, `Planet.Core`. `decompiled/VERSION.txt` records the game version it was made from.
+- Decompiled game source lives in `decompiled/` (gitignored): `KSA`, `Brutal.ImGui`, `Brutal.ImGui.Abstractions`, `Brutal.ImGui.Extensions`, `Brutal.Numerics`, `Planet.Core`. `decompiled/VERSION.txt` records the game version it was made from.
 - Search/read those `.cs` files with normal workspace search instead of running ILSpy/ilspycmd for each lookup.
 - After a game update (or if `VERSION.txt` doesn't match `KSA.dll`'s version), regenerate with `pwsh ./tools/Refresh-Decompiled.ps1` (add assemblies via `-Assemblies`).
-- Game content XML (systems, bodies) is under `C:\Program Files\Kitten Space Agency\Content\Core\`.
+- Game content XML (systems, bodies) is under `C:\Program Files\Ahwoo\Games\Kitten Space Agency\Content\Core\`.
 - Multi-star-system model: all systems live in one `Universe.CurrentSystem`; each star system is an `IIndependentRoot` in `Universe.Roots` (`FixedStar` or `Barycenter`). `OrbitingStar`/`FixedStar` derive from `StellarBody : Astronomical` (not `Celestial`). `Universe.WorldSun` is the star nearest the camera and changes as it moves - Compendium uses `GetSelectedRoot()` instead.

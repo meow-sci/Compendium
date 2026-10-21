@@ -53,6 +53,19 @@ namespace Compendium
             }
         }
 
+        internal static void DrawProgramMenu()
+        {
+            if (AppDomain.CurrentDomain.GetAssemblies().Any(assembly => assembly.GetName().Name == "ModMenu"))
+            {
+                return;
+            }
+
+            if (ImGui.MenuItem("Compendium"))
+            {
+                CompendiumWindow = true;
+            }
+        }
+
         [StarMapAfterGui]
         public void OnAfterUi(double dt)
         {

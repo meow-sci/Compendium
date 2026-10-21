@@ -1,6 +1,28 @@
 # Compendium
 KSA Game mod - Creates a window with information and minor utilities for loaded celestials
 
+Without ModMenu, click **Compendium** in the game's menu bar to open the window.
+When ModMenu is loaded, use its existing **Compendium Window** entry instead;
+the standalone menu item is hidden to avoid duplicate entries.
+
+## Building and game source
+
+The project targets .NET 10 and uses game assemblies from
+`C:\Program Files\Ahwoo\Games\Kitten Space Agency`. Build with
+`dotnet build src\Compendium.csproj`; the build also deploys the mod to
+`%USERPROFILE%\Documents\My Games\Kitten Space Agency\mods\Compendium`.
+For a different install location, pass `-p:KSAFolder="C:\path\to\game"`.
+
+After updating the game, run `pwsh .\tools\Refresh-Decompiled.ps1` to regenerate
+the local, gitignored source reference with ILSpy (`ilspycmd`). Use `-GameDir`
+to override the install location and `-Assemblies` to select assemblies.
+The script replaces each selected assembly's old source and writes
+`decompiled\VERSION.txt` only after all selected assemblies decompile successfully.
+Current game libraries use `Brutal.Numerics.dll`, `Brutal.Core.dll`, and
+`Brutal.Strings.dll` instead of the former `Brutal.Core.*` assembly names.
+
+## Target selection
+
 The Stars category offers target selection for orbiting stars, using the currently
 controlled vehicle. Select the target again, or click the Current Target indicator,
 to clear it. Target selection is disabled when no vehicle is controlled.
