@@ -594,7 +594,9 @@ namespace Compendium
                                     { ImGui.Text("Sea Level Pressure: N/A"); }
 
                                     ImGui.PushID(new ImString($"DensityGraph_{celestial.Id}"));
-                                    if (ConsoleWidgets.Button("ATMOSPHERIC GRAPHS"))
+                                    // Creates a unique button ID for the atmospheric graphs button to avoid conflicts with other buttons in the UI.  adds a ## to make the button ID unique.
+                                    ImString atmoButtonId = new ImString($"ATMOSPHERIC GRAPHS");
+                                    if (ConsoleWidgets.Button(atmoButtonId))
                                     {
                                         atmosphereGraphCelestial = celestial as Celestial;
                                         showAtmosphereDensityWindow = atmosphereGraphCelestial != null;
@@ -692,7 +694,8 @@ namespace Compendium
                                     { ImGui.Text("Sea Level Pressure: N/A"); }
 
                                     ImGui.PushID(new ImString($"DensityGraph_{celestial.Id}"));
-                                    if (ConsoleWidgets.Button("ATMOSPHERIC GRAPHS"))
+                                    ImString atmoButtonId = new ImString($"ATMOSPHERIC GRAPHS ");
+                                    if (ConsoleWidgets.Button(atmoButtonId))
                                     {
                                         Celestial? atmosphereGraphCelestial = celestial;
                                         showAtmosphereDensityWindow = atmosphereGraphCelestial != null;
