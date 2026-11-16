@@ -271,12 +271,18 @@ namespace Compendium
                 bodyJsonData.HasAtmosphere = (bodyCelestial.BodyTemplate.AtmosphereReference != null) ? true : false;
 
                 // Atmosphere height & SL pressure
-                if (bodyCelestial.BodyTemplate.AtmosphereReference != null)
+                PhysicalAtmosphere? physicalAtmosphere = bodyCelestial.GetPhysicalAtmosphere();
+                
+                if (physicalAtmosphere?.Height != null )
                 {
-                    string atmosphereHeightKm = bodyCelestial.BodyTemplate.AtmosphereReference.Physical.Height.InKilometers().ToString("N1");
+                   // string atmosphereHeightKm = bodyCelestial.BodyTemplate.AtmosphereReference.Physical.Height.InKilometers().ToString("N1");
+                    string atmosphereHeightKm = physicalAtmosphere.Height.ToString("N1");
+                    atmosphereHeightKm = (double.Parse(atmosphereHeightKm) / 1000).ToString("N1");
                     bodyJsonData.AtmosphereHeightText = new ImString($"Atmosphere Height: {atmosphereHeightKm} km");
 
-                    bodyJsonData.SLPressureText = new ImString("Sea Level Pressure: " + bodyCelestial.BodyTemplate.AtmosphereReference.Physical.SeaLevelPressure.Atm.ToString("F3") + " atm");
+                    // bodyJsonData.SLPressureText = new ImString("Sea Level Pressure: " + bodyCelestial.BodyTemplate.AtmosphereReference.Physical.SeaLevelPressure.Atm.ToString("F3") + " atm");
+                    // Note that ComputePressureAtAltitude(0) gives the sea level pressure in Pascals, so we need to convert it to atmospheres.
+                    bodyJsonData.SLPressureText = new ImString("Sea Level Pressure: " + (physicalAtmosphere.ComputePressureAtAltitude(0) / 101325f).ToString("F3") + " atm");
                 }
             }    
         }

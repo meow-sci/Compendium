@@ -268,17 +268,8 @@ namespace Compendium
 
             celestial.ShowOrbit = mode != OrbitVisibilityMode.Off;
         }
-
-        private void DrawOrbitModeButtons(string idPrefix, OrbitVisibilityMode currentMode, Action<OrbitVisibilityMode> applyMode)
-        {
-            DrawOrbitModeButton($"< Always >##{idPrefix}_always", currentMode == OrbitVisibilityMode.Always, () => applyMode(OrbitVisibilityMode.Always));
-            ImGui.SameLine();
-            DrawOrbitModeButton($"< On >##{idPrefix}_on", currentMode == OrbitVisibilityMode.On, () => applyMode(OrbitVisibilityMode.On));
-            ImGui.SameLine();
-            DrawOrbitModeButton($"< Off >##{idPrefix}_off", currentMode == OrbitVisibilityMode.Off, () => applyMode(OrbitVisibilityMode.Off));
-        }
-
-        private void DrawOrbitModeButton(string label, bool selected, Action onClick)
+        
+        private static void DrawToggleButton(string label, bool selected, Action onClick)
         {
             if (selected)
             {
@@ -298,6 +289,15 @@ namespace Compendium
                 ImGui.PopStyleColor();
                 ImGui.PopStyleColor();
             }
+        }
+
+        private void DrawOrbitModeButtons(string idPrefix, OrbitVisibilityMode currentMode, Action<OrbitVisibilityMode> applyMode)
+        {
+            DrawToggleButton($"< Always >##{idPrefix}_always", currentMode == OrbitVisibilityMode.Always, () => applyMode(OrbitVisibilityMode.Always));
+            ImGui.SameLine();
+            DrawToggleButton($"< On >##{idPrefix}_on", currentMode == OrbitVisibilityMode.On, () => applyMode(OrbitVisibilityMode.On));
+            ImGui.SameLine();
+            DrawToggleButton($"< Off >##{idPrefix}_off", currentMode == OrbitVisibilityMode.Off, () => applyMode(OrbitVisibilityMode.Off));
         }
 
         private static void CollectAllCelestials(Astronomical astro, List<Celestial> collection)
@@ -715,7 +715,7 @@ namespace Compendium
 
         private static int fontPushCount = 0;
 
-        private void PushTheFont(float scale)
+        private static void PushTheFont(float scale)
         {
             if (fontNames.Length > 0 && selectedFontIndex < fontNames.Length && loadedFonts.TryGetValue(fontNames[selectedFontIndex], out ImFontPtr value))
             {
@@ -725,7 +725,7 @@ namespace Compendium
             // If no custom font is available, ImGui will use the default font automatically
         }
 
-        private void PopTheFont()
+        private static void PopTheFont()
         {
             if (fontPushCount > 0)
             {
@@ -751,7 +751,7 @@ namespace Compendium
             }
         }
 
-        private void DrawBoldSeparator(float thickness, Vector4 color)
+        private static void DrawBoldSeparator(float thickness, Vector4 color)
         {
             ImGui.Dummy(new float2(-1, thickness)); // Add spacing/height to the layout
             float2 p_min = ImGui.GetCursorScreenPos();

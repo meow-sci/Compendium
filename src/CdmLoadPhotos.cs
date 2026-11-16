@@ -29,7 +29,7 @@ public partial class Compendium
 
                     var sampler = renderer.Device.CreateSampler(Presets.Sampler.SamplerPointClamped, null);
 
-                    texID = ImGuiBackend.Vulkan.AddTexture(sampler, vkTex.ImageView);
+                    texID = ImGuiBackend.Vulkan.AddTexture(sampler, vkTex.VkImageView);
         
         }
 

@@ -1,6 +1,7 @@
 ﻿using Brutal.ImGuiApi;
 using Brutal.ImGuiApi.Extensions;
 using Brutal.Numerics;
+using HarmonyLib;
 using KSA;
 using ModMenu;
 using StarMap.API;
@@ -39,8 +40,11 @@ namespace Compendium
         private static bool showAtmosphereDensityWindow;
         private static float atmosphereGraphSelectedAltitudeKm;
         private static int atmosphereGraphPressureUnitIndex = 1;
+        private static int atmosphereGraphTemperatureUnitIndex = 0; // 0: Kelvin, 1: Celsius, 2: Fahrenheit
         private static readonly float2 atmosphereGraphWindowSize = new float2(1250f, 1000f);
-
+        private static bool showDensityChart = true;
+        private static bool showPressureChart = true;
+        private static bool showTemperatureChart = true;
 
         [ModMenuEntry("Compendium Window")]
 
@@ -148,7 +152,9 @@ namespace Compendium
                 ConsoleStyle.PushWidgetStyle();
                 consoleStylePushed = true;
                 CaptureWindowRectForPointer();
+
                 DrawAtmosphereDensityGraphPopup();
+
                 
                 // Get available window size
                 float2 windowSize = ImGui.GetContentRegionAvail();
@@ -572,6 +578,32 @@ namespace Compendium
                         else
                         { ImGui.Text("Escape Velocity: N/A"); }
 
+                        // This makes the same button that appears if showOrbitalProperties is selected to expand but also displays it here for faster access if it's available.
+                        if (bodyJson != null)
+                            {
+                                if (bodyJson.HasAtmosphere)
+                                {
+                                    if (!string.IsNullOrEmpty(bodyJson.AtmosphereHeightText))
+                                    { ImGui.Text(bodyJson.AtmosphereHeightText); }
+                                    else
+                                    { ImGui.Text("Has Atmosphere"); }
+
+                                    if (!string.IsNullOrEmpty(bodyJson.SLPressureText))
+                                    { ImGui.Text(bodyJson.SLPressureText); }
+                                    else
+                                    { ImGui.Text("Sea Level Pressure: N/A"); }
+
+                                    ImGui.PushID(new ImString($"DensityGraph_{celestial.Id}"));
+                                    if (ConsoleWidgets.Button("ATMOSPHERIC GRAPHS"))
+                                    {
+                                        atmosphereGraphCelestial = celestial as Celestial;
+                                        showAtmosphereDensityWindow = atmosphereGraphCelestial != null;
+                                        atmosphereGraphSelectedAltitudeKm = 0f;
+                                    }
+                                    ImGui.PopID();
+                                }
+                            }
+
                         ImGui.Text(" ");
                         // Makes a button to toggle showing or hiding a subsection for displaying the orbital properties of the selected celestial object.
                         // Always starts hidden until button is clicked.
@@ -662,7 +694,7 @@ namespace Compendium
                                     ImGui.PushID(new ImString($"DensityGraph_{celestial.Id}"));
                                     if (ConsoleWidgets.Button("ATMOSPHERIC GRAPHS"))
                                     {
-                                        atmosphereGraphCelestial = celestial as Celestial;
+                                        Celestial? atmosphereGraphCelestial = celestial;
                                         showAtmosphereDensityWindow = atmosphereGraphCelestial != null;
                                         atmosphereGraphSelectedAltitudeKm = 0f;
                                     }
@@ -1106,17 +1138,25 @@ namespace Compendium
 
         private static void DrawAtmosphereDensityGraphPopup()
         {
-            if (!showAtmosphereDensityWindow || atmosphereGraphCelestial == null)
-            {
-                return;
-            }
+            // Uncomment to set the atmosphere graph celestial to the currently selected celestial and make graph celestial object change immediate.
+            //atmosphereGraphCelestial = selectedCelestial as Celestial;
+            
+            if (!showAtmosphereDensityWindow ) return;
 
-            var atmosphere = atmosphereGraphCelestial.BodyTemplate.AtmosphereReference?.Physical;
-            if (atmosphere == null)
-            {
-                return;
-            }
+            // Doing it this way keeps the window if a newly selected celestial has no atmosphere but changes it if the currently selected celestial is different than the current window atmospheric celestial.
+            Celestial? thisCelestial = selectedCelestial as Celestial;
+            PhysicalAtmosphere? thisAtmoTest = thisCelestial?.GetPhysicalAtmosphere();
 
+            if (atmosphereGraphCelestial != null && atmosphereGraphCelestial.GetAtmosphereReference() == null) return;
+            if (atmosphereGraphCelestial != thisCelestial && thisAtmoTest != null)
+                atmosphereGraphCelestial = thisCelestial;
+
+
+            PhysicalAtmosphere? thisAtmosphere = atmosphereGraphCelestial?.GetPhysicalAtmosphere();
+            if (thisAtmosphere == null) return;
+
+
+            
             ImGui.SetNextWindowSize(atmosphereGraphWindowSize, ImGuiCond.FirstUseEver);
             if (!ImGui.Begin("Atmospheric Properties", ref showAtmosphereDensityWindow, ImGuiWindowFlags.None))
             {
@@ -1124,49 +1164,160 @@ namespace Compendium
                 return;
             }
 
-            double cutoffMeters = atmosphere.Height.InMeters();
-            const int sampleCount = 101;
+
+            var composition = thisAtmosphere.Mixture.Components;
+            var thing = thisAtmosphere.Mixture;
+
+            if (atmosphereGraphCelestial == null) return;
+
+            // makes the text for this part larger as a header
+            PushTheFont(1.3f);
+            ImGui.Text($"{GetBodyDisplayName(atmosphereGraphCelestial)} atmospheric composition:");
+            PopTheFont(); // Restore the previous font after the header
+            ImGui.Separator();
+            foreach (var component in composition)
+            {
+                ImGui.Text($"{component.Gas.Name}: {component.MoleFraction:P2}");
+            }
+
+            //example var densityAtSelectedAltitude = atmosphereGraphCelestial.GetPhysicalAtmosphere().ComputeConditionsAtAltitude(0).Density;
+            DrawBoldSeparator(2.0f, new Vector4(1.0f, 1.0f, 1.0f, 1.0f)); // White color
+            ImGui.NewLine();
+
+            // Re-writes the above commented out atmosphere graph using the fixed new atmosphere classes and methods, after big changes to how atmospheres work in the system.
+            float cutoffMeters = (float)thisAtmosphere.Height;
+            float cutoffKilometersValue = (float)(cutoffMeters / 1000.0);
+            const int sampleCount = 250;
             var densities = new float[sampleCount];
             var pressures = new float[sampleCount];
+            var temperatures = new float[sampleCount];
             float maximumDensity = 0f;
             float maximumPressure = 0f;
+            float maximumTemperature = 0f;
 
             for (int index = 0; index < sampleCount; index++)
             {
-                double altitudeMeters = cutoffMeters * index / (sampleCount - 1);
-                float density = (float)atmosphere.GetAtmosphericDensityAtAltitude(altitudeMeters);
-                float pressure = ConvertPressureFromPascals((float)atmosphere.GetAtmosphericPressureAtAltitude(altitudeMeters), atmosphereGraphPressureUnitIndex);
-                densities[index] = density;
-                pressures[index] = pressure;
-                maximumDensity = Math.Max(maximumDensity, density);
-                maximumPressure = Math.Max(maximumPressure, pressure);
+                float altitudeMeters = cutoffMeters * index / (sampleCount - 1);
+
+                var density = thisAtmosphere.ComputeDensityAtAltitude(altitudeMeters);
+                var pressure = thisAtmosphere.ComputePressureAtAltitude(altitudeMeters);
+                var temperature = thisAtmosphere.ComputeTemperatureAtAltitude(altitudeMeters);
+
+
+                densities[index] = (float)density;
+                pressures[index] = (float)pressure;
+                temperatures[index] = (float)temperature;
+                if (densities[index] > maximumDensity) maximumDensity = densities[index];
+                if (pressures[index] > maximumPressure) maximumPressure = pressures[index];
+                
+                if (temperatures[index] > maximumTemperature) maximumTemperature = temperatures[index];
+
             }
 
-            string cutoffKilometers = atmosphere.Height.InKilometers().ToString("N1");
-            float cutoffKilometersValue = (float)atmosphere.Height.InKilometers();
-            atmosphereGraphSelectedAltitudeKm = Math.Clamp(atmosphereGraphSelectedAltitudeKm, 0f, cutoffKilometersValue);
-            float selectedDensity = (float)atmosphere.GetAtmosphericDensityAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000d);
-            float selectedPressure = ConvertPressureFromPascals((float)atmosphere.GetAtmosphericPressureAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000d), atmosphereGraphPressureUnitIndex);
-            ImGui.Text($"{GetBodyDisplayName(atmosphereGraphCelestial)} atmosphere");
-            ImGui.Text($"Height (km): 0 to {cutoffKilometers}");
-            ImGui.Text($"Density (kg/m^3): 0 to {maximumDensity:N4}");
+            // the result of this maximumTemperature is unit type of Kelvin
+            float selectedTemperature = (float)thisAtmosphere.ComputeTemperatureAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000.0);
+            // the result of this maximumPressure is unit type of Pascals
+            float selectedPressure = (float)thisAtmosphere.ComputePressureAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000.0);
+            // the result of this selectedDensity is unit type of kg/m^3
+            float selectedDensity = (float)thisAtmosphere.ComputeDensityAtAltitude(atmosphereGraphSelectedAltitudeKm * 1000.0);
+
+            // now makes a percent relative to the maximum values for each for display later
+            float selectedDensityPercent = selectedDensity / maximumDensity * 100f;
+            float selectedPressurePercent = selectedPressure / maximumPressure * 100f;
+            float selectedTemperaturePercent = selectedTemperature / maximumTemperature * 100f;
+
+            ImGui.Text($"{GetBodyDisplayName(atmosphereGraphCelestial)} atmospheric profile:");
             ImGui.Separator();
-            ImGui.SliderFloat("Selected altitude (km)", ref atmosphereGraphSelectedAltitudeKm, 0f, cutoffKilometersValue);
-            ImGui.Text($"Selected: {atmosphereGraphSelectedAltitudeKm:N3} km   Density: {selectedDensity:N6} kg/m^3");
+            ImGui.Text($"Height (km): {cutoffKilometersValue}");
+            ImGui.Text($"Density (kg/m^3)(max): {maximumDensity:N4}");
             ImGui.Separator();
-            DrawAtmosphereChart("AtmosphereDensityCanvas", densities, cutoffKilometersValue, maximumDensity, atmosphereGraphSelectedAltitudeKm, selectedDensity, "Density (kg/m^3)", new ImColor8(100, 222, 170, 255));
-            ImGui.Text("Pressure units:");
+            ImGui.NewLine();
+            ImGui.Text("Set an altitude (km) with the slider bar or entry box");
+            ImGui.SliderFloat("Altitude (km)", ref atmosphereGraphSelectedAltitudeKm, 0f, cutoffKilometersValue);
+            // A text entry box that you can also use to set the same selected altitude
+            ImGui.InputFloat("##SelectedAltitude", ref atmosphereGraphSelectedAltitudeKm, 0.1f, 1f);
+            if (atmosphereGraphSelectedAltitudeKm < 0f) atmosphereGraphSelectedAltitudeKm = 0f;
+            if (atmosphereGraphSelectedAltitudeKm > cutoffKilometersValue) atmosphereGraphSelectedAltitudeKm = cutoffKilometersValue;
+            
+            // Before the following charts of density, pressure, and temperature - put a horizontal row of 3 buttons, each if enabled shows it's chart, and if not enabled does not make that chart
+
+            DrawToggleButton("Density", showDensityChart, () => showDensityChart = !showDensityChart) ;
             ImGui.SameLine();
-            string[] pressureUnits = { "Pascal", "kPa", "atm", "bar", "psi", "mmHg" };
-            ImGui.Combo("##PressureUnits", ref atmosphereGraphPressureUnitIndex, pressureUnits, pressureUnits.Length);
-            ImGui.Text($"Selected pressure: {selectedPressure:N6} {pressureUnits[atmosphereGraphPressureUnitIndex]}");
-            DrawAtmosphereChart("AtmospherePressureCanvas", pressures, cutoffKilometersValue, maximumPressure, atmosphereGraphSelectedAltitudeKm, selectedPressure, $"Pressure ({pressureUnits[atmosphereGraphPressureUnitIndex]})", new ImColor8(102, 180, 255, 255));
+            DrawToggleButton("Pressure", showPressureChart, () => showPressureChart = !showPressureChart) ;
+            ImGui.SameLine();
+            DrawToggleButton("Temperature", showTemperatureChart, () => showTemperatureChart = !showTemperatureChart) ;
+
+            // if the chart is not enabled just do nothing silently but if enabled do all of this
+            if (showDensityChart)
+            {
+                ImGui.Text($"Selected: {atmosphereGraphSelectedAltitudeKm:N3} km -->  Density: {selectedDensity:N6} kg/m^3 / {selectedDensityPercent:N2}% max");
+                ImGui.Separator();
+                float minDensity = densities.Min();
+                DrawAtmosphereChart("AtmosphereDensityCanvas", densities, (float)cutoffKilometersValue, maximumDensity, atmosphereGraphSelectedAltitudeKm, selectedDensity, "Density (kg/m³)", new ImColor8(102, 180, 255, 255), minDensity);
+            }
+            if (showPressureChart)
+            {
+                ImGui.Text("Pressure units:");
+                ImGui.SameLine();
+
+                // First makes a combo box to select the pressure unit type, gets from this both a name and the index of the selected unit for later conversion - which uses the same index as ConvertPressureFromPascals
+                string[] pressureUnits = { "Pascal", "kPa", "atm", "bar", "psi", "mmHg" };
+                ImGui.Combo("##PressureUnits", ref atmosphereGraphPressureUnitIndex, pressureUnits, pressureUnits.Length);
+
+                // Next make a conversion of the pressures array and selected pressure to the selected unit type for use with the chart
+                pressures = pressures.Select(p => ConvertPressureFromPascals(p, atmosphereGraphPressureUnitIndex)).ToArray();
+                selectedPressure = ConvertPressureFromPascals(selectedPressure, atmosphereGraphPressureUnitIndex);
+                maximumPressure = ConvertPressureFromPascals(maximumPressure, atmosphereGraphPressureUnitIndex);
+                float minPressure = pressures.Min();
+
+                ImGui.Text($"Selected pressure: {selectedPressure:N6} {pressureUnits[atmosphereGraphPressureUnitIndex]} / {selectedPressurePercent:N2}% max");
+
+                DrawAtmosphereChart("AtmospherePressureCanvas", pressures, cutoffKilometersValue, maximumPressure, atmosphereGraphSelectedAltitudeKm, selectedPressure, $"Pressure ({pressureUnits[atmosphereGraphPressureUnitIndex]})", new ImColor8(255, 202, 92, 255), minPressure);
+            }
+
+
+            if (showTemperatureChart)
+            {
+                // TEMPERATURE
+
+                string[] temperatureUnits = { "Kelvin", "Celsius", "Fahrenheit" };
+                ImGui.Text("Temperature units:");
+                ImGui.SameLine();
+                ImGui.Combo("##TemperatureUnits", ref atmosphereGraphTemperatureUnitIndex, temperatureUnits, temperatureUnits.Length);
+
+                selectedTemperature = ConvertTemperatureFromKelvin(selectedTemperature, atmosphereGraphTemperatureUnitIndex);
+                ImGui.Text($"Selected temperature: {selectedTemperature:N2} {temperatureUnits[atmosphereGraphTemperatureUnitIndex]}");
+
+                temperatures = temperatures.Select(t => ConvertTemperatureFromKelvin(t, atmosphereGraphTemperatureUnitIndex)).ToArray();
+                // Need to find max and min temps this way because it can be non linear with altitude - it's not always starting at a max or ending with a min.
+                float minTemperature = temperatures.Min();
+                float maxTemperature = temperatures.Max();
+
+
+                ImGui.Text($"Maximum temperature: {maxTemperature:N2} {temperatureUnits[atmosphereGraphTemperatureUnitIndex]}");
+                // makes a chart of the atmosphere temperature profile
+                DrawAtmosphereChart("AtmosphereTemperatureCanvas", temperatures, cutoffKilometersValue, maxTemperature, atmosphereGraphSelectedAltitudeKm, selectedTemperature, $"Temperature ({temperatureUnits[atmosphereGraphTemperatureUnitIndex]})", new ImColor8(255, 92, 92, 255), minTemperature);
+            }
+
+
 
             ImGui.End();
         }
-
+        private static float ConvertTemperatureFromKelvin(float kelvin, int unitIndex)
+        {
+            return unitIndex switch
+            {
+                0 => kelvin,
+                // kelvin to celcius
+                1 => kelvin - 273.15f,
+                // kelvin to fahrenheit
+                2 => ((kelvin - 273.15f) * (9f / 5f)) + 32f,
+                _ => kelvin
+            };
+        }
         private static float ConvertPressureFromPascals(float pascals, int unitIndex)
         {
+            // Results are returned in the unit specified by unitIndex. 0: Pascal, 1: kPa, 2: atm, 3: bar, 4: psi, 5: mmHg
             return unitIndex switch
             {
                 0 => pascals,
@@ -1179,8 +1330,9 @@ namespace Compendium
             };
         }
 
-        private static void DrawAtmosphereChart(string canvasId, float[] values, float cutoffKilometers, float maximumValue, float selectedAltitudeKilometers, float selectedValue, string verticalAxisTitle, ImColor8 curveColor)
+        private static void DrawAtmosphereChart(string canvasId, float[] values, float cutoffKilometers, float maximumValue, float selectedAltitudeKilometers, float selectedValue, string verticalAxisTitle, ImColor8 curveColor, float minimumValue)
         {
+            // new to change is adding a minValue parameter to the chart
             float2 canvasPosition = ImGui.GetCursorScreenPos();
             float2 canvasSize = new float2(ImGui.GetContentRegionAvail().X, 270f);
             const float leftMargin = 110f;
@@ -1191,7 +1343,8 @@ namespace Compendium
             float2 plotBottomRight = new float2(canvasPosition.X + canvasSize.X - rightMargin, canvasPosition.Y + canvasSize.Y - bottomMargin);
             float plotWidth = plotBottomRight.X - plotTopLeft.X;
             float plotHeight = plotBottomRight.Y - plotTopLeft.Y;
-            float valueRange = maximumValue > 0f ? maximumValue : 1f;
+            // the value range has to be calculated based on the minimum and maximum values regardless of whether the minimum is zero or not
+            float valueRange = maximumValue - minimumValue > 0f ? maximumValue - minimumValue : 1f;
 
             ImGui.InvisibleButton(canvasId, canvasSize, ImGuiButtonFlags.None);
             var drawList = ImGui.GetWindowDrawList();
@@ -1203,6 +1356,7 @@ namespace Compendium
 
             drawList.AddRectFilled(canvasPosition, new float2(canvasPosition.X + canvasSize.X, canvasPosition.Y + canvasSize.Y), panelColor, 0f, ImDrawFlags.None);
 
+            // the y axis for the plot needs to be labeled starting with the minimum value and ending with the maximum value
             const int tickCount = 5;
             for (int tick = 0; tick <= tickCount; tick++)
             {
@@ -1213,7 +1367,7 @@ namespace Compendium
                 drawList.AddLine(new float2(plotTopLeft.X, y), new float2(plotBottomRight.X, y), gridColor, 1f);
 
                 string heightLabel = (cutoffKilometers * fraction).ToString("N1");
-                string valueLabel = (valueRange * fraction).ToString("N2");
+                string valueLabel = (minimumValue + valueRange * fraction).ToString("N2");
                 drawList.AddText(new float2(x - 12f, plotBottomRight.Y + 10f), labelColor, new ImString(heightLabel));
                 ImString valueLabelText = new ImString(valueLabel);
                 float valueLabelWidth = ImGui.CalcTextSize(valueLabelText).X;
@@ -1229,8 +1383,8 @@ namespace Compendium
 
             for (int index = 1; index < values.Length; index++)
             {
-                float previousValue = Math.Clamp(values[index - 1], 0f, valueRange);
-                float value = Math.Clamp(values[index], 0f, valueRange);
+                float previousValue = Math.Clamp(values[index - 1] - minimumValue, 0f, valueRange);
+                float value = Math.Clamp(values[index] - minimumValue, 0f, valueRange);
                 float previousX = plotTopLeft.X + plotWidth * (index - 1) / (values.Length - 1);
                 float x = plotTopLeft.X + plotWidth * index / (values.Length - 1);
                 float previousY = plotBottomRight.Y - plotHeight * previousValue / valueRange;
